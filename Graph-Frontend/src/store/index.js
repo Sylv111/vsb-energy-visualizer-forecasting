@@ -189,8 +189,8 @@ export default createStore({
       return { wind: windData, solar: solarData }
     },
 
-    // Renewable energy percentages and totals for the last month
-    renewablePercentages: (state) => {
+    // Renewable energy percentages and totals for the selected month
+    renewablePercentages: (state) => (selectedMonth = null) => {
       const data = state.electricityData
       if (!Array.isArray(data) || data.length === 0) return { 
         solar: 0, 
@@ -201,27 +201,18 @@ export default createStore({
         totalDemandMW: 0
       }
 
-      // Get last month's data (use current month if no data for last month)
-      const now = new Date()
-      const currentMonth = new Date(now.getFullYear(), now.getMonth(), 1)
-      const currentMonthEnd = new Date(now.getFullYear(), now.getMonth() + 1, 0)
-
-      const monthData = data.filter(item => {
-        const itemDate = new Date(item.date)
-        return itemDate >= currentMonth && itemDate <= currentMonthEnd
-      })
-
-      // If no current month data, try last month
-      if (monthData.length === 0) {
-        const lastMonth = new Date(now.getFullYear(), now.getMonth() - 1, 1)
-        const lastMonthEnd = new Date(now.getFullYear(), now.getMonth(), 0)
-        
-        const lastMonthData = data.filter(item => {
-          const itemDate = new Date(item.date)
-          return itemDate >= lastMonth && itemDate <= lastMonthEnd
-        })
-        
-        if (lastMonthData.length === 0) return { 
+      // Use selected month or find the last month that has data
+      let targetMonth, targetMonthEnd
+      
+      if (selectedMonth) {
+        // Parse selected month (format: "YYYY-MM")
+        const [year, month] = selectedMonth.split('-')
+        targetMonth = new Date(parseInt(year), parseInt(month) - 1, 1)
+        targetMonthEnd = new Date(parseInt(year), parseInt(month), 0)
+      } else {
+        // Find the last month that has data
+        const dates = data.map(item => new Date(item.date)).sort((a, b) => b - a)
+        if (dates.length === 0) return { 
           solar: 0, 
           wind: 0, 
           total: 0,
@@ -229,36 +220,34 @@ export default createStore({
           totalWindMW: 0,
           totalDemandMW: 0
         }
-        
-        // Use last month data
-        const totalDemand = lastMonthData.reduce((sum, item) => sum + (parseFloat(item.demand) || 0), 0)
-        const totalSolar = lastMonthData.reduce((sum, item) => sum + (parseFloat(item.solarGeneration) || 0), 0)
-        const totalWind = lastMonthData.reduce((sum, item) => sum + (parseFloat(item.windGeneration) || 0), 0)
-
-        // Calculate percentages relative to total generation (solar + wind + demand)
-        const totalGeneration = totalSolar + totalWind + totalDemand
-        const solarPercentage = totalGeneration > 0 ? (totalSolar / totalGeneration) * 100 : 0
-        const windPercentage = totalGeneration > 0 ? (totalWind / totalGeneration) * 100 : 0
-
-        return {
-          solar: Math.round(solarPercentage * 100) / 100,
-          wind: Math.round(windPercentage * 100) / 100,
-          total: Math.round((solarPercentage + windPercentage) * 100) / 100,
-          totalSolarMW: Math.round(totalSolar),
-          totalWindMW: Math.round(totalWind),
-          totalDemandMW: Math.round(totalDemand)
-        }
+        const lastDate = dates[0]
+        targetMonth = new Date(lastDate.getFullYear(), lastDate.getMonth(), 1)
+        targetMonthEnd = new Date(lastDate.getFullYear(), lastDate.getMonth() + 1, 0)
       }
 
-      // Use current month data
+      const monthData = data.filter(item => {
+        const itemDate = new Date(item.date)
+        return itemDate >= targetMonth && itemDate <= targetMonthEnd
+      })
+
+      if (monthData.length === 0) return { 
+        solar: 0, 
+        wind: 0, 
+        total: 0,
+        totalSolarMW: 0,
+        totalWindMW: 0,
+        totalDemandMW: 0
+      }
+
+      // Calculate totals for the selected month
       const totalDemand = monthData.reduce((sum, item) => sum + (parseFloat(item.demand) || 0), 0)
       const totalSolar = monthData.reduce((sum, item) => sum + (parseFloat(item.solarGeneration) || 0), 0)
       const totalWind = monthData.reduce((sum, item) => sum + (parseFloat(item.windGeneration) || 0), 0)
 
-      // Calculate percentages relative to total generation
-      const totalGeneration = totalSolar + totalWind + totalDemand
-      const solarPercentage = totalGeneration > 0 ? (totalSolar / totalGeneration) * 100 : 0
-      const windPercentage = totalGeneration > 0 ? (totalWind / totalGeneration) * 100 : 0
+      // Calculate percentages relative to total renewable generation (solar + wind only)
+      const totalRenewableGeneration = totalSolar + totalWind
+      const solarPercentage = totalRenewableGeneration > 0 ? (totalSolar / totalRenewableGeneration) * 100 : 0
+      const windPercentage = totalRenewableGeneration > 0 ? (totalWind / totalRenewableGeneration) * 100 : 0
 
       return {
         solar: Math.round(solarPercentage * 100) / 100,

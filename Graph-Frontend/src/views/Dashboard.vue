@@ -10,55 +10,55 @@
       ❌ {{ errorMessage }}
     </div>
 
-    <!-- Statistics -->
-    <div v-if="stats" class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-icon">📈</div>
-        <div class="stat-content">
-          <h3>Max Demand</h3>
-          <p class="stat-value">{{ formatNumber(stats.maxDemand) }} MW</p>
+               <!-- Statistics -->
+     <div v-if="stats" class="stats-grid">
+             <div class="stat-card">
+         <div class="stat-icon"><span>📈</span></div>
+         <div class="stat-content">
+           <h3>Max Demand</h3>
+           <p class="stat-value">{{ formatNumber(stats.maxDemand) }} MW</p>
+         </div>
+       </div>
+       
+       <div class="stat-card">
+         <div class="stat-icon"><span>📉</span></div>
+         <div class="stat-content">
+           <h3>Min Demand</h3>
+           <p class="stat-value">{{ formatNumber(stats.minDemand) }} MW</p>
+         </div>
+       </div>
+       
+       <div class="stat-card">
+         <div class="stat-icon"><span>📊</span></div>
+         <div class="stat-content">
+           <h3>Average Demand</h3>
+           <p class="stat-value">{{ formatNumber(stats.avgDemand) }} MW</p>
+         </div>
+       </div>
+       
+               <div class="stat-card">
+          <div class="stat-icon"><span>📅</span></div>
+          <div class="stat-content">
+            <h3>Period</h3>
+            <p class="stat-value">{{ formatYear(stats.dateRange.start) }} - {{ formatYear(stats.dateRange.end) }}</p>
+          </div>
         </div>
-      </div>
-      
-      <div class="stat-card">
-        <div class="stat-icon">📉</div>
-        <div class="stat-content">
-          <h3>Min Demand</h3>
-          <p class="stat-value">{{ formatNumber(stats.minDemand) }} MW</p>
+       
+       <div class="stat-card">
+         <div class="stat-icon"><span>📋</span></div>
+         <div class="stat-content">
+           <h3>Records</h3>
+           <p class="stat-value">{{ formatNumber(stats.totalRecords) }}</p>
+         </div>
+       </div>
+       
+               <div class="stat-card">
+          <div class="stat-icon"><span>⚡</span></div>
+          <div class="stat-content">
+            <h3>Total Demand</h3>
+            <p class="stat-value">{{ formatTW(stats.totalDemand) }} TW</p>
+          </div>
         </div>
-      </div>
-      
-      <div class="stat-card">
-        <div class="stat-icon">📊</div>
-        <div class="stat-content">
-          <h3>Average Demand</h3>
-          <p class="stat-value">{{ formatNumber(stats.avgDemand) }} MW</p>
-        </div>
-      </div>
-      
-      <div class="stat-card">
-        <div class="stat-icon">📅</div>
-        <div class="stat-content">
-          <h3>Period</h3>
-          <p class="stat-value">{{ formatDate(stats.dateRange.start) }} - {{ formatDate(stats.dateRange.end) }}</p>
-        </div>
-      </div>
-      
-      <div class="stat-card">
-        <div class="stat-icon">📋</div>
-        <div class="stat-content">
-          <h3>Records</h3>
-          <p class="stat-value">{{ formatNumber(stats.totalRecords) }}</p>
-        </div>
-      </div>
-      
-      <div class="stat-card">
-        <div class="stat-icon">⚡</div>
-        <div class="stat-content">
-          <h3>Total Demand</h3>
-          <p class="stat-value">{{ formatNumber(stats.totalDemand) }} MW</p>
-        </div>
-      </div>
     </div>
 
     <!-- Charts -->
@@ -102,19 +102,35 @@
        </div>
      </div>
 
-                 <!-- Renewable Energy Percentages -->
-       <div class="charts-section">
-         <h2>📊 Renewable Energy Contribution (Last Month) - Solar: {{ renewablePercentages.solar }}% ({{ formatNumber(renewablePercentages.totalSolarMW) }} MW), Wind: {{ renewablePercentages.wind }}% ({{ formatNumber(renewablePercentages.totalWindMW) }} MW)</h2>
-       
-       <div class="chart-container">
-         <apexchart
-           type="radialBar"
-           height="400"
-           :options="renewablePercentagesOptions"
-           :series="renewablePercentagesSeries"
-         />
-       </div>
-     </div>
+                                               <!-- Renewable Energy Percentages -->
+         <div class="charts-section">
+           <div class="chart-header">
+                           <h2>📊 Renewable Energy Mix ({{ selectedMonthLabel }})</h2>
+             
+             <div class="month-selector">
+               <label for="month-selector">Select Month:</label>
+                               <select 
+                  id="month-selector" 
+                  v-model="selectedMonth" 
+                  class="select-control"
+                  @change="updateRenewableData"
+                >
+                  <option v-for="month in availableMonths" :key="month.value" :value="month.value">
+                    {{ month.label }}
+                  </option>
+                </select>
+             </div>
+           </div>
+        
+        <div class="chart-container">
+          <apexchart
+            type="radialBar"
+            height="400"
+            :options="renewablePercentagesOptions"
+            :series="renewablePercentagesSeries"
+          />
+        </div>
+      </div>
   </div>
 </template>
 
@@ -130,19 +146,52 @@ export default {
     // SafeChart
   },
   
-  data() {
-    return {
-      selectedPeriod: 'month',
-      selectedPrecision: this.$store.state.selectedPrecision || 2
-    }
-  },
+     data() {
+     return {
+       selectedPeriod: 'month',
+       selectedPrecision: this.$store.state.selectedPrecision || 2,
+       selectedMonth: ''
+     }
+   },
   
   computed: {
-    ...mapState(['electricityData', 'stats', 'loading', 'error']),
-         ...mapGetters(['isLoading', 'hasError', 'errorMessage', 'aggregatedChartData', 'windSolarData', 'renewablePercentages']),
-    
-
-    
+         ...mapState(['electricityData', 'stats', 'loading', 'error']),
+     ...mapGetters(['isLoading', 'hasError', 'errorMessage', 'aggregatedChartData', 'windSolarData', 'renewablePercentages']),
+     
+     availableMonths() {
+       if (!this.electricityData || this.electricityData.length === 0) return []
+       
+       // Get unique months from data
+       const months = new Set()
+       this.electricityData.forEach(item => {
+         const date = new Date(item.date)
+         const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`
+         months.add(monthKey)
+       })
+       
+       // Convert to array and sort (newest first)
+       return Array.from(months)
+         .sort((a, b) => b.localeCompare(a))
+         .map(monthKey => {
+           const [year, month] = monthKey.split('-')
+           const date = new Date(parseInt(year), parseInt(month) - 1, 1)
+           return {
+             value: monthKey,
+             label: date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' })
+           }
+                  })
+       },
+     
+           selectedMonthLabel() {
+        if (!this.selectedMonth && this.availableMonths.length > 0) {
+          return this.availableMonths[0].label
+        }
+        const selectedMonthOption = this.availableMonths.find(month => month.value === this.selectedMonth)
+        return selectedMonthOption ? selectedMonthOption.label : 'Selected Month'
+      },
+     
+   
+          
     demandChartOptions() {
       return {
         chart: {
@@ -371,48 +420,72 @@ export default {
              stops: [0, 50, 65, 91]
            }
          },
-         stroke: {
-           dashArray: 4
-         },
+                   stroke: {
+            dashArray: 0
+          },
          labels: ['Solar Energy', 'Wind Energy', 'Total Renewable'],
          colors: ['#ffd700', '#00d4aa', '#667eea']
        }
      },
 
-     renewablePercentagesSeries() {
-       const percentages = this.renewablePercentages
-       return [percentages.solar, percentages.wind, percentages.total]
-     }
+           renewablePercentagesSeries() {
+        const percentages = this.renewablePercentages(this.selectedMonth)
+        return [percentages.solar, percentages.wind, percentages.total]
+      }
    },
   
   methods: {
     ...mapActions(['fetchElectricityData', 'fetchAggregatedData', 'fetchStats']),
     
-    formatNumber(value) {
-      return new Intl.NumberFormat('en-US').format(Math.round(value))
-    },
+         formatNumber(value) {
+       return new Intl.NumberFormat('en-US').format(Math.round(value))
+     },
+     
+     formatTW(value) {
+       // Convert MW to TW (1 TW = 1,000,000 MW)
+       const twValue = value / 1000000
+       return new Intl.NumberFormat('en-US', { 
+         minimumFractionDigits: 2,
+         maximumFractionDigits: 2 
+       }).format(twValue)
+     },
     
-    formatDate(date) {
-      if (!date) return 'N/A'
-      return format(new Date(date), 'MM/dd/yyyy', { locale: enUS })
-    },
+         formatDate(date) {
+       if (!date) return 'N/A'
+       return format(new Date(date), 'MM/dd/yyyy', { locale: enUS })
+     },
+     
+     formatYear(date) {
+       if (!date) return 'N/A'
+       return format(new Date(date), 'yyyy', { locale: enUS })
+     },
     
-    async reloadData() {
-      await this.fetchElectricityData()
-      await this.fetchAggregatedData(this.selectedPeriod)
-    },
+         async reloadData() {
+       await this.fetchElectricityData()
+       await this.fetchAggregatedData(this.selectedPeriod)
+     },
+     
+     updateRenewableData() {
+       // Trigger reactive update of renewable percentages
+       this.$forceUpdate()
+     },
     
 
   },
   
-  async mounted() {
-    try {
-      await this.fetchElectricityData()
-      await this.fetchAggregatedData(this.selectedPeriod)
-    } catch (error) {
-      console.error('Error during initial loading:', error)
-    }
-  }
+     async mounted() {
+     try {
+       await this.fetchElectricityData()
+       await this.fetchAggregatedData(this.selectedPeriod)
+       
+       // Set the first available month as default if no month is selected
+       if (!this.selectedMonth && this.availableMonths.length > 0) {
+         this.selectedMonth = this.availableMonths[0].value
+       }
+     } catch (error) {
+       console.error('Error during initial loading:', error)
+     }
+   }
 }
 </script>
 
@@ -495,17 +568,21 @@ export default {
   transform: translateY(-2px);
 }
 
-.stat-icon {
-  font-size: 2rem;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border-radius: 50%;
-}
+ .stat-icon {
+   font-size: 1.8rem;
+   width: 60px;
+   height: 60px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+   color: white;
+   border-radius: 50%;
+ }
+
+ .stat-icon span {
+   color: white;
+ }
 
 .stat-content h3 {
   margin: 0 0 0.5rem 0;
@@ -526,12 +603,50 @@ export default {
   margin-bottom: 3rem;
 }
 
-.charts-section h2 {
-  color: #2c3e50;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #667eea;
-}
+ .charts-section h2 {
+   color: #2c3e50;
+   margin-bottom: 1.5rem;
+   padding-bottom: 0.5rem;
+   border-bottom: 2px solid #667eea;
+ }
+
+ .chart-header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 1.5rem;
+   padding-bottom: 0.5rem;
+   border-bottom: 2px solid #667eea;
+ }
+
+ .chart-header h2 {
+   margin: 0;
+   border: none;
+   padding: 0;
+   flex: 1;
+ }
+
+ .month-selector {
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+   margin-left: 1rem;
+ }
+
+ .month-selector label {
+   font-weight: 600;
+   color: #2c3e50;
+   white-space: nowrap;
+ }
+
+ .month-selector .select-control {
+   padding: 0.5rem;
+   border: 1px solid #ddd;
+   border-radius: 4px;
+   background: white;
+   min-width: 150px;
+   font-size: 0.9rem;
+ }
 
 .chart-container {
   background: white;
@@ -559,13 +674,28 @@ export default {
     text-align: center;
   }
 
-@media (max-width: 768px) {
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .renewable-charts {
-    grid-template-columns: 1fr;
-  }
-}
+ @media (max-width: 768px) {
+   .stats-grid {
+     grid-template-columns: 1fr;
+   }
+   
+   .renewable-charts {
+     grid-template-columns: 1fr;
+   }
+
+   .chart-header {
+     flex-direction: column;
+     align-items: flex-start;
+     gap: 1rem;
+   }
+
+   .month-selector {
+     margin-left: 0;
+     width: 100%;
+   }
+
+   .month-selector .select-control {
+     flex: 1;
+   }
+ }
 </style> 
