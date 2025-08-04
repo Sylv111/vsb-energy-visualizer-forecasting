@@ -1,0 +1,195 @@
+const csv = require('csv-parser');
+const fs = require('fs');
+const path = require('path');
+
+class ElectricityService {
+  constructor() {
+    this.processedData = null;
+    this.dataStats = null;
+    this.csvPath = path.join(__dirname, 'data', 'historic_demand_2009_2024.csv');
+  }
+
+  // Fonction pour traiter le CSV
+  async processCSVData() {
+    return new Promise((resolve, reject) => {
+      const results = [];
+      const stats = {
+        totalRecords: 0,
+        dateRange: { start: null, end: null },
+        maxDemand: 0,
+        minDemand: Infinity,
+        avgDemand: 0,
+        totalDemand: 0
+      };
+
+      fs.createReadStream(this.csvPath)
+        .pipe(csv())
+        .on('data', (data) => {
+          // Clean and validate data
+          const cleanData = {
+            date: data.settlement_date,
+            period: parseInt(data.settlement_period) || 0,
+            demand: parseFloat(data.england_wales_demand) || 0,
+            windGeneration: parseFloat(data.embedded_wind_generation) || 0,
+            windCapacity: parseFloat(data.embedded_wind_capacity) || 0,
+            solarGeneration: parseFloat(data.embedded_solar_generation) || 0,
+            solarCapacity: parseFloat(data.embedded_solar_capacity) || 0,
+            isHoliday: data.is_holiday === '1'
+          };
+
+          if (cleanData.demand > 0) {
+            results.push(cleanData);
+            
+            // Calculer les statistiques
+            stats.totalRecords++;
+            stats.totalDemand += cleanData.demand;
+            
+            if (cleanData.demand > stats.maxDemand) {
+              stats.maxDemand = cleanData.demand;
+            }
+            if (cleanData.demand < stats.minDemand) {
+              stats.minDemand = cleanData.demand;
+            }
+
+            const date = new Date(cleanData.date);
+            if (!stats.dateRange.start || date < stats.dateRange.start) {
+              stats.dateRange.start = date;
+            }
+            if (!stats.dateRange.end || date > stats.dateRange.end) {
+              stats.dateRange.end = date;
+            }
+          }
+        })
+        .on('end', () => {
+          stats.avgDemand = stats.totalDemand / stats.totalRecords;
+          resolve({ data: results, stats });
+        })
+        .on('error', reject);
+    });
+  }
+
+  // Get all data
+  async getAllData() {
+    if (!this.processedData) {
+      const result = await this.processCSVData();
+      this.processedData = result.data;
+      this.dataStats = result.stats;
+    }
+    return {
+      data: this.processedData,
+      stats: this.dataStats,
+      count: this.processedData.length
+    };
+  }
+
+  // Get data by year
+  async getDataByYear(year) {
+    if (!this.processedData) {
+      const result = await this.processCSVData();
+      this.processedData = result.data;
+    }
+
+    const yearData = this.processedData.filter(item => {
+      const itemYear = new Date(item.date).getFullYear();
+      return itemYear === year;
+    });
+
+    return {
+      year,
+      data: yearData,
+      count: yearData.length
+    };
+  }
+
+  // Get aggregated data by period
+  async getAggregatedData(period) {
+    if (!this.processedData) {
+      const result = await this.processCSVData();
+      this.processedData = result.data;
+    }
+
+    const aggregatedData = {};
+
+    this.processedData.forEach(item => {
+      const date = new Date(item.date);
+      let key;
+
+      switch (period) {
+        case 'day':
+          key = item.date;
+          break;
+        case 'week':
+          const weekStart = new Date(date);
+          weekStart.setDate(date.getDate() - date.getDay());
+          key = weekStart.toISOString().split('T')[0];
+          break;
+        case 'month':
+          key = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+          break;
+        default:
+          key = item.date;
+      }
+
+      if (!aggregatedData[key]) {
+        aggregatedData[key] = {
+          date: key,
+          totalDemand: 0,
+          avgDemand: 0,
+          maxDemand: 0,
+          minDemand: Infinity,
+          count: 0,
+          totalWind: 0,
+          totalSolar: 0
+        };
+      }
+
+      aggregatedData[key].totalDemand += item.demand;
+      aggregatedData[key].totalWind += item.windGeneration;
+      aggregatedData[key].totalSolar += item.solarGeneration;
+      aggregatedData[key].count++;
+
+      if (item.demand > aggregatedData[key].maxDemand) {
+        aggregatedData[key].maxDemand = item.demand;
+      }
+      if (item.demand < aggregatedData[key].minDemand) {
+        aggregatedData[key].minDemand = item.demand;
+      }
+    });
+
+    // Calculer les moyennes
+    Object.values(aggregatedData).forEach(item => {
+      item.avgDemand = item.totalDemand / item.count;
+    });
+
+    return {
+      period,
+      data: Object.values(aggregatedData).sort((a, b) => a.date.localeCompare(b.date)),
+      count: Object.keys(aggregatedData).length
+    };
+  }
+
+  // Obtenir les statistiques
+  async getStats() {
+    if (!this.dataStats) {
+      const result = await this.processCSVData();
+      this.processedData = result.data;
+      this.dataStats = result.stats;
+    }
+    return this.dataStats;
+  }
+
+  // Reload data
+  async reloadData() {
+    this.processedData = null;
+    this.dataStats = null;
+    const result = await this.processCSVData();
+    this.processedData = result.data;
+    this.dataStats = result.stats;
+    return { 
+      message: 'Electricity data reloaded successfully', 
+      count: this.processedData.length 
+    };
+  }
+}
+
+module.exports = new ElectricityService(); 
