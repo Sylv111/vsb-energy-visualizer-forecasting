@@ -189,10 +189,17 @@ export default createStore({
       return { wind: windData, solar: solarData }
     },
 
-    // Renewable energy percentages for the last month
+    // Renewable energy percentages and totals for the last month
     renewablePercentages: (state) => {
       const data = state.electricityData
-      if (!Array.isArray(data) || data.length === 0) return { solar: 0, wind: 0, total: 0 }
+      if (!Array.isArray(data) || data.length === 0) return { 
+        solar: 0, 
+        wind: 0, 
+        total: 0,
+        totalSolarMW: 0,
+        totalWindMW: 0,
+        totalDemandMW: 0
+      }
 
       // Get last month's data (use current month if no data for last month)
       const now = new Date()
@@ -214,7 +221,14 @@ export default createStore({
           return itemDate >= lastMonth && itemDate <= lastMonthEnd
         })
         
-        if (lastMonthData.length === 0) return { solar: 0, wind: 0, total: 0 }
+        if (lastMonthData.length === 0) return { 
+          solar: 0, 
+          wind: 0, 
+          total: 0,
+          totalSolarMW: 0,
+          totalWindMW: 0,
+          totalDemandMW: 0
+        }
         
         // Use last month data
         const totalDemand = lastMonthData.reduce((sum, item) => sum + (parseFloat(item.demand) || 0), 0)
@@ -229,7 +243,10 @@ export default createStore({
         return {
           solar: Math.round(solarPercentage * 100) / 100,
           wind: Math.round(windPercentage * 100) / 100,
-          total: Math.round((solarPercentage + windPercentage) * 100) / 100
+          total: Math.round((solarPercentage + windPercentage) * 100) / 100,
+          totalSolarMW: Math.round(totalSolar),
+          totalWindMW: Math.round(totalWind),
+          totalDemandMW: Math.round(totalDemand)
         }
       }
 
@@ -246,7 +263,10 @@ export default createStore({
       return {
         solar: Math.round(solarPercentage * 100) / 100,
         wind: Math.round(windPercentage * 100) / 100,
-        total: Math.round((solarPercentage + windPercentage) * 100) / 100
+        total: Math.round((solarPercentage + windPercentage) * 100) / 100,
+        totalSolarMW: Math.round(totalSolar),
+        totalWindMW: Math.round(totalWind),
+        totalDemandMW: Math.round(totalDemand)
       }
     }
   }
