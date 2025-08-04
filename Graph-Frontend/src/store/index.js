@@ -11,7 +11,8 @@ export default createStore({
     error: null,
     selectedPeriod: 'month',
     selectedYear: null,
-    selectedPrecision: 2
+    selectedPrecision: 2,
+    ifaFlowData: []
   },
   
   mutations: {
@@ -39,6 +40,10 @@ export default createStore({
     
     SET_SELECTED_PRECISION(state, precision) {
       state.selectedPrecision = precision
+    },
+    
+    SET_IFA_FLOW_DATA(state, data) {
+      state.ifaFlowData = data
     }
   },
   
@@ -98,6 +103,21 @@ export default createStore({
         commit('SET_STATS', response.data)
       } catch (error) {
         commit('SET_ERROR', 'Error loading statistics')
+        console.error('API Error:', error)
+      } finally {
+        commit('SET_LOADING', false)
+      }
+    },
+
+    async fetchFlowData({ commit }, { date, flowType }) {
+      commit('SET_LOADING', true)
+      commit('SET_ERROR', null)
+      
+      try {
+        const response = await axios.get(`/api/electricity/flow/${date}/${flowType}`, electricityApi)
+        commit('SET_IFA_FLOW_DATA', response.data.data)
+      } catch (error) {
+        commit('SET_ERROR', 'Error loading Flow data')
         console.error('API Error:', error)
       } finally {
         commit('SET_LOADING', false)
@@ -257,6 +277,11 @@ export default createStore({
         totalWindMW: Math.round(totalWind),
         totalDemandMW: Math.round(totalDemand)
       }
+    },
+
+    // IFA Flow data getter
+    ifaFlowData: (state) => {
+      return state.ifaFlowData
     }
   }
 }) 

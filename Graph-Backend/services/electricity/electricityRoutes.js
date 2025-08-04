@@ -69,4 +69,26 @@ router.post('/reload', async (req, res) => {
   }
 });
 
+// Route to get Flow data for a specific day
+router.get('/flow/:date/:flowType', async (req, res) => {
+  try {
+    const { date, flowType } = req.params;
+    const result = await electricityService.getFlowData(date, flowType);
+    res.json({
+      success: true,
+      data: result.data,
+      date: result.date,
+      flowType: result.flowType,
+      count: result.count
+    });
+  } catch (error) {
+    console.error('Error getting Flow data:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error getting Flow data',
+      error: error.message
+    });
+  }
+});
+
 module.exports = router; 

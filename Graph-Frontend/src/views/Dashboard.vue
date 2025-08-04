@@ -102,14 +102,14 @@
        </div>
      </div>
 
-                                               <!-- Renewable Energy Percentages -->
-         <div class="charts-section">
-           <div class="chart-header">
-                           <h2>📊 Renewable Energy Mix ({{ selectedMonthLabel }})</h2>
-             
-             <div class="month-selector">
-               <label for="month-selector">Select Month:</label>
-                               <select 
+                                                         <!-- Renewable Energy Percentages -->
+          <div class="charts-section">
+            <div class="chart-header">
+                            <h2>📊 Renewable Energy Mix ({{ selectedMonthLabel }})</h2>
+              
+              <div class="month-selector">
+                <label for="month-selector">Select Month:</label>
+                                <select 
                   id="month-selector" 
                   v-model="selectedMonth" 
                   class="select-control"
@@ -119,18 +119,61 @@
                     {{ month.label }}
                   </option>
                 </select>
-             </div>
-           </div>
-        
-        <div class="chart-container">
-          <apexchart
-            type="radialBar"
-            height="400"
-            :options="renewablePercentagesOptions"
-            :series="renewablePercentagesSeries"
-          />
-        </div>
-      </div>
+              </div>
+            </div>
+         
+         <div class="chart-container">
+           <apexchart
+             type="radialBar"
+             height="400"
+             :options="renewablePercentagesOptions"
+             :series="renewablePercentagesSeries"
+           />
+         </div>
+       </div>
+
+               <!-- Flow Chart -->
+        <div class="charts-section">
+          <div class="chart-header">
+            <h2>⚡ Flow - Daily Pattern</h2>
+            
+            <div class="flow-controls">
+              <div class="date-selector">
+                <label for="date-selector">Select Date:</label>
+                <input 
+                  id="date-selector" 
+                  type="date" 
+                  v-model="selectedDate" 
+                  class="date-control"
+                  @change="fetchFlowData"
+                />
+              </div>
+              
+              <div class="flow-selector">
+                <label for="flow-selector">Select Flow Type:</label>
+                <select 
+                  id="flow-selector" 
+                  v-model="selectedFlowType" 
+                  class="select-control"
+                  @change="fetchFlowData"
+                >
+                  <option v-for="flow in availableFlowTypes" :key="flow.value" :value="flow.value">
+                    {{ flow.label }}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+         
+         <div class="chart-container">
+           <apexchart
+             type="bar"
+             height="400"
+             :options="ifaFlowChartOptions"
+             :series="ifaFlowChartSeries"
+           />
+         </div>
+       </div>
   </div>
 </template>
 
@@ -146,17 +189,19 @@ export default {
     // SafeChart
   },
   
-     data() {
-     return {
-       selectedPeriod: 'month',
-       selectedPrecision: this.$store.state.selectedPrecision || 2,
-       selectedMonth: ''
-     }
-   },
+           data() {
+        return {
+          selectedPeriod: 'month',
+          selectedPrecision: this.$store.state.selectedPrecision || 2,
+          selectedMonth: '',
+          selectedDate: '', // Will be set to last available date in mounted
+          selectedFlowType: 'ifaFlow' // Default flow type
+        }
+      },
   
   computed: {
          ...mapState(['electricityData', 'stats', 'loading', 'error']),
-     ...mapGetters(['isLoading', 'hasError', 'errorMessage', 'aggregatedChartData', 'windSolarData', 'renewablePercentages']),
+     ...mapGetters(['isLoading', 'hasError', 'errorMessage', 'aggregatedChartData', 'windSolarData', 'renewablePercentages', 'ifaFlowData']),
      
      availableMonths() {
        if (!this.electricityData || this.electricityData.length === 0) return []
@@ -189,85 +234,113 @@ export default {
         const selectedMonthOption = this.availableMonths.find(month => month.value === this.selectedMonth)
         return selectedMonthOption ? selectedMonthOption.label : 'Selected Month'
       },
+
+      lastAvailableDate() {
+        if (!this.electricityData || this.electricityData.length === 0) return ''
+        
+        // Get all unique dates and sort them
+        const dates = [...new Set(this.electricityData.map(item => item.date))]
+          .sort((a, b) => new Date(b) - new Date(a))
+        
+        return dates[0] || ''
+      },
+
+      availableFlowTypes() {
+        return [
+          { value: 'ifaFlow', label: 'IFA Flow' },
+          { value: 'ifa2Flow', label: 'IFA2 Flow' },
+          { value: 'britnedFlow', label: 'BritNed Flow' },
+          { value: 'moyleFlow', label: 'Moyle Flow' },
+          { value: 'eastWestFlow', label: 'East-West Flow' },
+          { value: 'nemoFlow', label: 'NEMO Flow' },
+          { value: 'nslFlow', label: 'NSL Flow' }
+        ]
+      },
      
    
           
-    demandChartOptions() {
-      return {
-        chart: {
-          type: 'line',
-          zoom: {
-            enabled: true
+         demandChartOptions() {
+       return {
+         chart: {
+           type: 'line',
+           zoom: {
+             enabled: true
+           },
+           toolbar: {
+             show: true
+           }
+         },
+         dataLabels: {
+           enabled: false
+         },
+         stroke: {
+           curve: 'smooth',
+           width: 2
+         },
+                   forecastDataPoints: {
+            count: 36
           },
-          toolbar: {
-            show: true
-          }
-        },
-        dataLabels: {
-          enabled: false
-        },
-        stroke: {
-          curve: 'smooth',
-          width: 2
-        },
-        title: {
-          text: 'Real-time Electricity Demand',
-          align: 'left'
-        },
-        xaxis: {
-          type: 'datetime',
-          labels: {
-            format: 'dd/MM/yyyy'
-          }
-        },
-        yaxis: {
-          title: {
-            text: 'Demand (MW)'
-          },
-          labels: {
-            formatter: (value) => {
-              try {
-                return this.formatNumber(value)
-              } catch (error) {
-                return value
-              }
-            }
-          }
-        },
-        tooltip: {
-          x: {
-            format: 'dd/MM/yyyy HH:mm'
-          },
-          y: {
-            formatter: (value) => {
-              try {
-                return `${this.formatNumber(value)} MW`
-              } catch (error) {
-                return `${value} MW`
-              }
-            }
-          }
-        },
-        colors: ['#667eea']
-      }
-    },
+         title: {
+           text: 'Real-time Electricity Demand',
+           align: 'left'
+         },
+         xaxis: {
+           type: 'datetime',
+           labels: {
+             format: 'dd/MM/yyyy'
+           }
+         },
+         yaxis: {
+           title: {
+             text: 'Demand (MW)'
+           },
+           labels: {
+             formatter: (value) => {
+               try {
+                 return this.formatNumber(value)
+               } catch (error) {
+                 return value
+               }
+             }
+           }
+         },
+         tooltip: {
+           x: {
+             format: 'dd/MM/yyyy HH:mm'
+           },
+           y: {
+             formatter: (value) => {
+               try {
+                 return `${this.formatNumber(value)} MW`
+               } catch (error) {
+                 return `${value} MW`
+               }
+             }
+           }
+         },
+         colors: ['#667eea']
+       }
+     },
     
-    demandChartSeries() {
-      const data = this.aggregatedChartData
-      
-      // Protection against invalid data
-      if (!Array.isArray(data) || data.length === 0) {
-        return [{
-          name: 'Electricity Demand',
-          data: []
-        }]
-      }
-      
-      return [{
-        name: 'Electricity Demand',
-        data: data
-      }]
-    },
+         demandChartSeries() {
+       const data = this.aggregatedChartData
+       
+       // Protection against invalid data
+       if (!Array.isArray(data) || data.length === 0) {
+         return [{
+           name: 'Electricity Demand',
+           data: []
+         }]
+       }
+       
+               // Generate forecast data (36 points with random values between 20,000 and 27,000)
+        const forecastData = this.generateForecastData(data, 36)
+       
+       return [{
+         name: 'Electricity Demand',
+         data: [...data, ...forecastData]
+       }]
+     },
     
     windChartOptions() {
       return {
@@ -431,6 +504,71 @@ export default {
            renewablePercentagesSeries() {
         const percentages = this.renewablePercentages(this.selectedMonth)
         return [percentages.solar, percentages.wind, percentages.total]
+      },
+
+      ifaFlowChartOptions() {
+        return {
+          chart: {
+            type: 'bar',
+            height: 400,
+            toolbar: {
+              show: true
+            }
+          },
+          plotOptions: {
+            bar: {
+              horizontal: false,
+              columnWidth: '70%',
+              borderRadius: 4
+            }
+          },
+          dataLabels: {
+            enabled: false
+          },
+          stroke: {
+            show: true,
+            width: 2,
+            colors: ['transparent']
+          },
+          xaxis: {
+            categories: this.ifaFlowData.map(item => item.x),
+            title: {
+              text: 'Time (30-minute intervals)'
+            }
+          },
+          yaxis: {
+            title: {
+              text: 'IFA Flow (MW)'
+            },
+            labels: {
+              formatter: (value) => {
+                return this.formatNumber(value)
+              }
+            }
+          },
+          fill: {
+            opacity: 1,
+            colors: ['#667eea']
+          },
+          tooltip: {
+            y: {
+              formatter: (value) => {
+                return `${this.formatNumber(value)} MW`
+              }
+            }
+          },
+                     title: {
+             text: `${this.getFlowTypeLabel()} - 48 Half-Hour Periods`,
+             align: 'left'
+           }
+        }
+      },
+
+      ifaFlowChartSeries() {
+        return [{
+          name: 'IFA Flow',
+          data: this.ifaFlowData.map(item => item.y)
+        }]
       }
    },
   
@@ -469,23 +607,68 @@ export default {
        // Trigger reactive update of renewable percentages
        this.$forceUpdate()
      },
+
+           async fetchFlowData() {
+        if (this.selectedDate && this.selectedFlowType) {
+          await this.$store.dispatch('fetchFlowData', {
+            date: this.selectedDate,
+            flowType: this.selectedFlowType
+          })
+        }
+      },
+
+      getFlowTypeLabel() {
+        const flowType = this.availableFlowTypes.find(flow => flow.value === this.selectedFlowType)
+        return flowType ? flowType.label : 'Flow'
+      },
+
+      generateForecastData(historicalData, count) {
+        if (!historicalData || historicalData.length === 0) return []
+        
+        const forecastData = []
+        const lastDate = new Date(historicalData[historicalData.length - 1].x)
+        
+        for (let i = 1; i <= count; i++) {
+          const forecastDate = new Date(lastDate)
+          forecastDate.setMonth(lastDate.getMonth() + i)
+          
+          // Generate random value between 20,000 and 27,000 MW
+          const randomValue = Math.floor(Math.random() * (27000 - 20000 + 1)) + 20000
+          
+          forecastData.push({
+            x: forecastDate.getTime(),
+            y: randomValue
+          })
+        }
+        
+        return forecastData
+      },
     
 
   },
   
-     async mounted() {
-     try {
-       await this.fetchElectricityData()
-       await this.fetchAggregatedData(this.selectedPeriod)
-       
-       // Set the first available month as default if no month is selected
-       if (!this.selectedMonth && this.availableMonths.length > 0) {
-         this.selectedMonth = this.availableMonths[0].value
-       }
-     } catch (error) {
-       console.error('Error during initial loading:', error)
-     }
-   }
+           async mounted() {
+        try {
+          await this.fetchElectricityData()
+          await this.fetchStats()
+          await this.fetchAggregatedData(this.selectedPeriod)
+          
+          // Set the first available month as default if no month is selected
+          if (!this.selectedMonth && this.availableMonths.length > 0) {
+            this.selectedMonth = this.availableMonths[0].value
+          }
+
+          // Set the last available date as default for IFA Flow
+          if (!this.selectedDate) {
+            this.selectedDate = this.lastAvailableDate
+          }
+
+          // Load Flow data for the selected date
+          await this.fetchFlowData()
+        } catch (error) {
+          console.error('Error during initial loading:', error)
+        }
+      }
 }
 </script>
 
@@ -639,14 +822,55 @@ export default {
    white-space: nowrap;
  }
 
- .month-selector .select-control {
-   padding: 0.5rem;
-   border: 1px solid #ddd;
-   border-radius: 4px;
-   background: white;
-   min-width: 150px;
-   font-size: 0.9rem;
- }
+   .month-selector .select-control {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    min-width: 150px;
+    font-size: 0.9rem;
+  }
+
+  .date-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 1rem;
+  }
+
+  .date-selector label {
+    font-weight: 600;
+    color: #2c3e50;
+    white-space: nowrap;
+  }
+
+     .date-selector .date-control {
+     padding: 0.5rem;
+     border: 1px solid #ddd;
+     border-radius: 4px;
+     background: white;
+     min-width: 150px;
+     font-size: 0.9rem;
+   }
+
+   .flow-controls {
+     display: flex;
+     align-items: center;
+     gap: 1rem;
+     margin-left: 1rem;
+   }
+
+   .flow-selector {
+     display: flex;
+     align-items: center;
+     gap: 0.5rem;
+   }
+
+   .flow-selector label {
+     font-weight: 600;
+     color: #2c3e50;
+     white-space: nowrap;
+   }
 
 .chart-container {
   background: white;
@@ -694,8 +918,32 @@ export default {
      width: 100%;
    }
 
-   .month-selector .select-control {
-     flex: 1;
+       .month-selector .select-control {
+      flex: 1;
+    }
+
+    .date-selector {
+      margin-left: 0;
+      width: 100%;
+    }
+
+         .date-selector .date-control {
+       flex: 1;
+     }
+
+     .flow-controls {
+       margin-left: 0;
+       width: 100%;
+       flex-direction: column;
+       gap: 0.5rem;
+     }
+
+     .flow-selector {
+       width: 100%;
+     }
+
+     .flow-selector .select-control {
+       flex: 1;
+     }
    }
- }
 </style> 

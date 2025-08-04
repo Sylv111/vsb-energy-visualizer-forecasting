@@ -34,6 +34,13 @@ class ElectricityService {
             windCapacity: parseFloat(data.embedded_wind_capacity) || 0,
             solarGeneration: parseFloat(data.embedded_solar_generation) || 0,
             solarCapacity: parseFloat(data.embedded_solar_capacity) || 0,
+            ifaFlow: parseFloat(data.ifa_flow) || 0,
+            ifa2Flow: parseFloat(data.ifa2_flow) || 0,
+            britnedFlow: parseFloat(data.britned_flow) || 0,
+            moyleFlow: parseFloat(data.moyle_flow) || 0,
+            eastWestFlow: parseFloat(data.east_west_flow) || 0,
+            nemoFlow: parseFloat(data.nemo_flow) || 0,
+            nslFlow: parseFloat(data.nsl_flow) || 0,
             isHoliday: data.is_holiday === '1'
           };
 
@@ -176,6 +183,31 @@ class ElectricityService {
       this.dataStats = result.stats;
     }
     return this.dataStats;
+  }
+
+  // Get Flow data for a specific day (48 periods of 30 minutes)
+  async getFlowData(date, flowType = 'ifaFlow') {
+    if (!this.processedData) {
+      const result = await this.processCSVData();
+      this.processedData = result.data;
+    }
+
+    const dayData = this.processedData.filter(item => item.date === date);
+    
+    // Sort by period and format for chart
+    const formattedData = dayData
+      .sort((a, b) => a.period - b.period)
+      .map(item => ({
+        x: `${String(Math.floor((item.period - 1) / 2)).padStart(2, '0')}:${String(((item.period - 1) % 2) * 30).padStart(2, '0')}`,
+        y: item[flowType] || 0
+      }));
+
+    return {
+      date,
+      flowType,
+      data: formattedData,
+      count: formattedData.length
+    };
   }
 
   // Reload data
