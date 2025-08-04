@@ -75,32 +75,46 @@
       </div>
     </div>
 
-    <!-- Renewable Energy Charts -->
-    <div class="charts-section">
-      <h2>🌱 Renewable Energy</h2>
-      
-      <div class="renewable-charts">
-        <div class="chart-container">
-          <h3>🌪️ Wind Generation</h3>
-          <apexchart
-            type="area"
-            height="300"
-            :options="windChartOptions"
-            :series="windChartSeries"
-          />
-        </div>
-        
-        <div class="chart-container">
-          <h3>☀️ Solar Generation</h3>
-          <apexchart
-            type="area"
-            height="300"
-            :options="solarChartOptions"
-            :series="solarChartSeries"
-          />
-        </div>
-      </div>
-    </div>
+         <!-- Renewable Energy Charts -->
+     <div class="charts-section">
+       <h2>🌱 Renewable Energy</h2>
+       
+       <div class="renewable-charts">
+         <div class="chart-container">
+           <h3>🌪️ Wind Generation</h3>
+           <apexchart
+             type="area"
+             height="300"
+             :options="windChartOptions"
+             :series="windChartSeries"
+           />
+         </div>
+         
+         <div class="chart-container">
+           <h3>☀️ Solar Generation</h3>
+           <apexchart
+             type="area"
+             height="300"
+             :options="solarChartOptions"
+             :series="solarChartSeries"
+           />
+         </div>
+       </div>
+     </div>
+
+     <!-- Renewable Energy Percentages -->
+     <div class="charts-section">
+       <h2>📊 Renewable Energy Contribution (Last Month)</h2>
+       
+       <div class="chart-container">
+         <apexchart
+           type="radialBar"
+           height="400"
+           :options="renewablePercentagesOptions"
+           :series="renewablePercentagesSeries"
+         />
+       </div>
+     </div>
   </div>
 </template>
 
@@ -125,7 +139,7 @@ export default {
   
   computed: {
     ...mapState(['electricityData', 'stats', 'loading', 'error']),
-    ...mapGetters(['isLoading', 'hasError', 'errorMessage', 'aggregatedChartData', 'windSolarData']),
+         ...mapGetters(['isLoading', 'hasError', 'errorMessage', 'aggregatedChartData', 'windSolarData', 'renewablePercentages']),
     
 
     
@@ -312,12 +326,64 @@ export default {
         }]
       }
       
-      return [{
-        name: 'Solar Generation',
-        data: data
-      }]
-    }
-  },
+             return [{
+         name: 'Solar Generation',
+         data: data
+       }]
+     },
+
+     renewablePercentagesOptions() {
+       return {
+         chart: {
+           type: 'radialBar',
+           height: 400,
+           offsetY: -20
+         },
+         plotOptions: {
+           radialBar: {
+             startAngle: -135,
+             endAngle: 135,
+             dataLabels: {
+               name: {
+                 fontSize: '16px',
+                 color: undefined,
+                 offsetY: 120
+               },
+               value: {
+                 offsetY: 76,
+                 fontSize: '22px',
+                 color: undefined,
+                 formatter: function (val) {
+                   return val + '%'
+                 }
+               }
+             }
+           }
+         },
+         fill: {
+           type: 'gradient',
+           gradient: {
+             shade: 'dark',
+             shadeIntensity: 0.15,
+             inverseColors: false,
+             opacityFrom: 1,
+             opacityTo: 1,
+             stops: [0, 50, 65, 91]
+           }
+         },
+         stroke: {
+           dashArray: 4
+         },
+         labels: ['Solar Energy', 'Wind Energy', 'Total Renewable'],
+         colors: ['#ffd700', '#00d4aa', '#667eea']
+       }
+     },
+
+     renewablePercentagesSeries() {
+       const percentages = this.renewablePercentages
+       return [percentages.solar, percentages.wind, percentages.total]
+     }
+   },
   
   methods: {
     ...mapActions(['fetchElectricityData', 'fetchAggregatedData', 'fetchStats']),

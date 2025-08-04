@@ -187,6 +187,39 @@ export default createStore({
       }))
       
       return { wind: windData, solar: solarData }
+    },
+
+    // Renewable energy percentages for the last month
+    renewablePercentages: (state) => {
+      const data = state.electricityData
+      if (!Array.isArray(data) || data.length === 0) return { solar: 0, wind: 0, total: 0 }
+
+      // Get last month's data
+      const now = new Date()
+      const lastMonth = new Date(now.getFullYear(), now.getMonth() - 1, 1)
+      const lastMonthEnd = new Date(now.getFullYear(), now.getMonth(), 0)
+
+      const lastMonthData = data.filter(item => {
+        const itemDate = new Date(item.date)
+        return itemDate >= lastMonth && itemDate <= lastMonthEnd
+      })
+
+      if (lastMonthData.length === 0) return { solar: 0, wind: 0, total: 0 }
+
+      // Calculate totals
+      const totalDemand = lastMonthData.reduce((sum, item) => sum + (parseFloat(item.demand) || 0), 0)
+      const totalSolar = lastMonthData.reduce((sum, item) => sum + (parseFloat(item.solarGeneration) || 0), 0)
+      const totalWind = lastMonthData.reduce((sum, item) => sum + (parseFloat(item.windGeneration) || 0), 0)
+
+      // Calculate percentages
+      const solarPercentage = totalDemand > 0 ? (totalSolar / totalDemand) * 100 : 0
+      const windPercentage = totalDemand > 0 ? (totalWind / totalDemand) * 100 : 0
+
+      return {
+        solar: Math.round(solarPercentage * 100) / 100,
+        wind: Math.round(windPercentage * 100) / 100,
+        total: Math.round((solarPercentage + windPercentage) * 100) / 100
+      }
     }
   }
 }) 
