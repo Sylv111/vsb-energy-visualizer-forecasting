@@ -102,9 +102,9 @@
        </div>
      </div>
 
-     <!-- Renewable Energy Percentages -->
-     <div class="charts-section">
-       <h2>📊 Renewable Energy Contribution (Last Month)</h2>
+           <!-- Renewable Energy Percentages -->
+      <div class="charts-section">
+        <h2>📊 Renewable Energy Contribution (Last Month) - Solar: {{ renewablePercentages.solar }}%, Wind: {{ renewablePercentages.wind }}%</h2>
        
        <div class="chart-container">
          <apexchart
