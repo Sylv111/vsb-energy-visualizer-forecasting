@@ -61,9 +61,9 @@
         </div>
     </div>
 
-    <!-- Charts -->
-    <div class="charts-section">
-      <h2>📈 Electricity Demand Evolution</h2>
+         <!-- Charts -->
+     <div class="charts-section">
+       <h2>Electricity Demand Evolution</h2>
       
       <div class="chart-container">
         <apexchart
@@ -75,9 +75,9 @@
       </div>
     </div>
 
-         <!-- Renewable Energy Charts -->
-     <div class="charts-section">
-       <h2>🌱 Renewable Energy</h2>
+                   <!-- Renewable Energy Charts -->
+      <div class="charts-section">
+        <h2>Renewable Energy</h2>
        
        <div class="renewable-charts">
          <div class="chart-container">
@@ -102,10 +102,10 @@
        </div>
      </div>
 
-                                                         <!-- Renewable Energy Percentages -->
-          <div class="charts-section">
-            <div class="chart-header">
-                            <h2>📊 Renewable Energy Mix ({{ selectedMonthLabel }})</h2>
+                                                                                                                   <!-- Renewable Energy Percentages -->
+           <div class="charts-section">
+             <div class="chart-header">
+                             <h2>Renewable Energy Mix ({{ selectedMonthLabel }})</h2>
               
               <div class="month-selector">
                 <label for="month-selector">Select Month:</label>
@@ -132,10 +132,10 @@
          </div>
        </div>
 
-               <!-- Flow Chart -->
-        <div class="charts-section">
-          <div class="chart-header">
-            <h2>⚡ Flow - Daily Pattern</h2>
+                               <!-- Flow Chart -->
+         <div class="charts-section">
+           <div class="chart-header">
+             <h2>Flow - Daily Pattern</h2>
             
             <div class="flow-controls">
               <div class="date-selector">
