@@ -6,6 +6,7 @@ class ElectricityService {
   constructor() {
     this.processedData = null;
     this.dataStats = null;
+    this.ndData = null; // Cache for ND calculations
     this.csvPath = path.join(__dirname, 'data', 'historic_demand_2009_2024.csv');
   }
 
@@ -213,11 +214,46 @@ class ElectricityService {
 
   // Get National Demand (ND) data in optimized format
   async getNationalDemandData() {
-    if (!this.processedData) {
-      const result = await this.processCSVData();
-      this.processedData = result.data;
+    const jsonPath = path.join(__dirname, 'data', 'nd_weekly_averages.json');
+    
+    // Try to read from JSON file first (if it exists)
+    try {
+      if (fs.existsSync(jsonPath)) {
+        const jsonData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+        console.log(`📁 ND data loaded from JSON cache: ${jsonPath}`);
+        console.log(`📊 Using ${jsonData.data.length} pre-calculated weekly averages`);
+        return {
+          data: jsonData.data,
+          count: jsonData.data.length,
+          totalRecords: jsonData.data.length,
+          savedToFile: jsonPath
+        };
+      }
+    } catch (error) {
+      console.log('❌ Could not read from JSON cache, will recalculate...');
     }
 
+    // If no JSON file exists, calculate from CSV
+    console.log('🔄 No JSON cache found, calculating ND weekly averages from CSV...');
+    
+    if (!this.processedData) {
+      console.log('📖 Loading CSV data into memory...');
+      const result = await this.processCSVData();
+      this.processedData = result.data;
+      console.log(`📊 Loaded ${this.processedData.length} records from CSV`);
+    }
+
+    if (this.ndData) {
+      console.log('💾 Using ND data from memory cache');
+      return {
+        data: this.ndData,
+        count: this.ndData.length,
+        totalRecords: this.ndData.length,
+        savedToFile: null
+      };
+    }
+
+    console.log('🧮 Calculating weekly averages...');
     // Group data by week and calculate weekly averages
     const weeklyAverages = {};
     
@@ -241,6 +277,8 @@ class ElectricityService {
       weeklyAverages[weekKey].count++;
     });
 
+    console.log(`📈 Grouped data into ${Object.keys(weeklyAverages).length} weeks`);
+
     // Calculate averages and format data
     const ndData = Object.values(weeklyAverages).map(week => {
       week.averageND = week.totalND / week.count;
@@ -256,18 +294,19 @@ class ElectricityService {
     ndData.sort((a, b) => a.weekStart.localeCompare(b.weekStart));
 
     // Save to JSON file
-    const jsonPath = path.join(__dirname, 'data', 'nd_weekly_averages.json');
     try {
       fs.writeFileSync(jsonPath, JSON.stringify({
         generatedAt: new Date().toISOString(),
         totalWeeks: ndData.length,
         data: ndData
       }, null, 2));
-      console.log(`ND weekly averages saved to: ${jsonPath}`);
+      console.log(`💾 ND weekly averages saved to: ${jsonPath}`);
+      console.log(`📊 Calculated ${ndData.length} weekly averages`);
     } catch (error) {
-      console.error('Error saving ND data to JSON:', error);
+      console.error('❌ Error saving ND data to JSON:', error);
     }
 
+    this.ndData = ndData; // Cache the result
     return {
       data: ndData,
       count: ndData.length,
@@ -280,6 +319,7 @@ class ElectricityService {
   async reloadData() {
     this.processedData = null;
     this.dataStats = null;
+    this.ndData = null; // Clear cached ND data
     const result = await this.processCSVData();
     this.processedData = result.data;
     this.dataStats = result.stats;
