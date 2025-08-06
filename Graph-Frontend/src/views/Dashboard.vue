@@ -36,13 +36,13 @@
          </div>
        </div>
        
-               <div class="stat-card">
-          <div class="stat-icon"><span>📅</span></div>
-          <div class="stat-content">
-            <h3>Period</h3>
-            <p class="stat-value">{{ formatYear(stats.dateRange.start) }} - {{ formatYear(stats.dateRange.end) }}</p>
-          </div>
-        </div>
+       <div class="stat-card">
+         <div class="stat-icon"><span>📅</span></div>
+         <div class="stat-content">
+           <h3>Period</h3>
+           <p class="stat-value">{{ formatYear(stats.dateRangeStart) }} - {{ formatYear(stats.dateRangeEnd) }}</p>
+         </div>
+       </div>
        
        <div class="stat-card">
          <div class="stat-icon"><span>📋</span></div>
@@ -52,13 +52,13 @@
          </div>
        </div>
        
-               <div class="stat-card">
-          <div class="stat-icon"><span>⚡</span></div>
-          <div class="stat-content">
-            <h3>Total Demand</h3>
-            <p class="stat-value">{{ formatTW(stats.totalDemand) }} TW</p>
-          </div>
-        </div>
+       <div class="stat-card">
+         <div class="stat-icon"><span>⚡</span></div>
+         <div class="stat-content">
+           <h3>Total Demand</h3>
+           <p class="stat-value">{{ formatTW(stats.totalDemand) }} TW</p>
+         </div>
+       </div>
     </div>
 
          <!-- Charts -->
@@ -201,7 +201,7 @@ export default {
   
   computed: {
          ...mapState(['electricityData', 'stats', 'loading', 'error']),
-     ...mapGetters(['isLoading', 'hasError', 'errorMessage', 'aggregatedChartData', 'windSolarData', 'renewablePercentages', 'ifaFlowData', 'ndChartData']),
+     ...mapGetters(['isLoading', 'hasError', 'errorMessage', 'aggregatedChartData', 'windData', 'solarData', 'renewablePercentages', 'ifaFlowData', 'ndChartData']),
      
      availableMonths() {
        if (!this.electricityData || this.electricityData.length === 0) return []
@@ -375,6 +375,18 @@ export default {
         yaxis: {
           title: {
             text: 'Generation (MW)'
+          },
+          labels: {
+            formatter: (value) => {
+              return `${value.toFixed(2)} MW`
+            }
+          }
+        },
+        tooltip: {
+          y: {
+            formatter: (value) => {
+              return `${value.toFixed(2)} MW`
+            }
           }
         },
         colors: ['#00d4aa']
@@ -382,7 +394,7 @@ export default {
     },
     
     windChartSeries() {
-      const data = this.windSolarData.wind
+      const data = this.windData
       
       // Protection against invalid data
       if (!Array.isArray(data) || data.length === 0) {
@@ -431,6 +443,18 @@ export default {
         yaxis: {
           title: {
             text: 'Generation (MW)'
+          },
+          labels: {
+            formatter: (value) => {
+              return `${value.toFixed(2)} MW`
+            }
+          }
+        },
+        tooltip: {
+          y: {
+            formatter: (value) => {
+              return `${value.toFixed(2)} MW`
+            }
           }
         },
         colors: ['#ffd700']
@@ -438,7 +462,7 @@ export default {
     },
     
     solarChartSeries() {
-      const data = this.windSolarData.solar
+      const data = this.solarData
       
       // Protection against invalid data
       if (!Array.isArray(data) || data.length === 0) {
@@ -448,11 +472,11 @@ export default {
         }]
       }
       
-             return [{
-         name: 'Solar Generation',
-         data: data
-       }]
-     },
+      return [{
+        name: 'Solar Generation',
+        data: data
+      }]
+    },
 
      renewablePercentagesOptions() {
        return {
@@ -573,7 +597,7 @@ export default {
    },
   
   methods: {
-    ...mapActions(['fetchElectricityData', 'fetchAggregatedData', 'fetchStats', 'fetchNDData']),
+    ...mapActions(['fetchElectricityData', 'fetchAggregatedData', 'fetchStats', 'fetchNDData', 'fetchWindData', 'fetchSolarData']),
     
          formatNumber(value) {
        return new Intl.NumberFormat('en-US').format(Math.round(value))
@@ -649,9 +673,11 @@ export default {
   
            async mounted() {
         try {
-          await this.fetchElectricityData()
-          await this.fetchStats()
+          // Use optimized endpoints instead of heavy /data endpoint
           await this.fetchNDData()
+          await this.fetchWindData()
+          await this.fetchSolarData()
+          await this.fetchStats()
           
           // Set the first available month as default if no month is selected
           if (!this.selectedMonth && this.availableMonths.length > 0) {

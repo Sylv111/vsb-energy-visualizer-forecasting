@@ -112,4 +112,82 @@ router.get('/nd', async (req, res) => {
   }
 });
 
+// Route to get wind weekly data for charts
+router.get('/wind', async (req, res) => {
+  try {
+    const result = await electricityService.getWindData();
+    res.json({
+      success: true,
+      data: result.data,
+      totalWeeks: result.totalWeeks,
+      generatedAt: result.generatedAt
+    });
+  } catch (error) {
+    console.error('Error getting wind data:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error getting wind data',
+      error: error.message
+    });
+  }
+});
+
+// Route to get solar weekly data for charts
+router.get('/solar', async (req, res) => {
+  try {
+    const result = await electricityService.getSolarData();
+    res.json({
+      success: true,
+      data: result.data,
+      totalWeeks: result.totalWeeks,
+      generatedAt: result.generatedAt
+    });
+  } catch (error) {
+    console.error('Error getting solar data:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error getting solar data',
+      error: error.message
+    });
+  }
+});
+
+// Route to get optimized statistics data
+router.get('/stats-optimized', async (req, res) => {
+  try {
+    const result = await electricityService.getStatsData();
+    res.json({
+      success: true,
+      data: result
+    });
+  } catch (error) {
+    console.error('Error getting optimized stats data:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error getting optimized stats data',
+      error: error.message
+    });
+  }
+});
+
+// Route to get wind and solar weekly data for charts
+router.get('/wind-solar', async (req, res) => {
+  try {
+    const result = await electricityService.getWindSolarData();
+    res.json({
+      success: true,
+      wind: result.wind,
+      solar: result.solar,
+      generatedAt: result.generatedAt
+    });
+  } catch (error) {
+    console.error('Error getting wind/solar data:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error getting wind/solar data',
+      error: error.message
+    });
+  }
+});
+
 module.exports = router; 

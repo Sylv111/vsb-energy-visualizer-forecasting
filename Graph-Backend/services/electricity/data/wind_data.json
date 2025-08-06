@@ -1,3334 +1,3334 @@
 {
-  "generatedAt": "2025-08-06T15:03:04.869Z",
+  "generatedAt": "2025-08-06T15:03:07.128Z",
   "totalWeeks": 832,
   "data": [
     {
       "weekStart": "2008-12-29",
-      "averageND": 39162.19
+      "windAverage": 218.45
     },
     {
       "weekStart": "2009-01-05",
-      "averageND": 44782.02
+      "windAverage": 454.4
     },
     {
       "weekStart": "2009-01-12",
-      "averageND": 41905
+      "windAverage": 795.89
     },
     {
       "weekStart": "2009-01-19",
-      "averageND": 42372.53
+      "windAverage": 760.25
     },
     {
       "weekStart": "2009-01-26",
-      "averageND": 42400.21
+      "windAverage": 629.48
     },
     {
       "weekStart": "2009-02-02",
-      "averageND": 44185.54
+      "windAverage": 516.73
     },
     {
       "weekStart": "2009-02-09",
-      "averageND": 43347.21
+      "windAverage": 346.85
     },
     {
       "weekStart": "2009-02-16",
-      "averageND": 39759.57
+      "windAverage": 399.32
     },
     {
       "weekStart": "2009-02-23",
-      "averageND": 38965.56
+      "windAverage": 466.62
     },
     {
       "weekStart": "2009-03-02",
-      "averageND": 39510.39
+      "windAverage": 708.53
     },
     {
       "weekStart": "2009-03-09",
-      "averageND": 38465.82
+      "windAverage": 743.57
     },
     {
       "weekStart": "2009-03-16",
-      "averageND": 37003.8
+      "windAverage": 331.12
     },
     {
       "weekStart": "2009-03-23",
-      "averageND": 37426.99
+      "windAverage": 1073.8
     },
     {
       "weekStart": "2009-03-30",
-      "averageND": 36277.91
+      "windAverage": 315.15
     },
     {
       "weekStart": "2009-04-06",
-      "averageND": 33900.12
+      "windAverage": 663.99
     },
     {
       "weekStart": "2009-04-13",
-      "averageND": 33364.38
+      "windAverage": 467.44
     },
     {
       "weekStart": "2009-04-20",
-      "averageND": 33703.49
+      "windAverage": 393.01
     },
     {
       "weekStart": "2009-04-27",
-      "averageND": 33864.62
+      "windAverage": 443.43
     },
     {
       "weekStart": "2009-05-04",
-      "averageND": 32800.02
+      "windAverage": 969.95
     },
     {
       "weekStart": "2009-05-11",
-      "averageND": 33745.96
+      "windAverage": 909.09
     },
     {
       "weekStart": "2009-05-18",
-      "averageND": 33144.04
+      "windAverage": 559.31
     },
     {
       "weekStart": "2009-05-25",
-      "averageND": 31145.69
+      "windAverage": 596.96
     },
     {
       "weekStart": "2009-06-01",
-      "averageND": 32465.24
+      "windAverage": 362.69
     },
     {
       "weekStart": "2009-06-08",
-      "averageND": 32583.92
+      "windAverage": 229.66
     },
     {
       "weekStart": "2009-06-15",
-      "averageND": 32084.65
+      "windAverage": 561.38
     },
     {
       "weekStart": "2009-06-22",
-      "averageND": 32598.08
+      "windAverage": 272.09
     },
     {
       "weekStart": "2009-06-29",
-      "averageND": 33202.67
+      "windAverage": 229.45
     },
     {
       "weekStart": "2009-07-06",
-      "averageND": 31953.72
+      "windAverage": 610.42
     },
     {
       "weekStart": "2009-07-13",
-      "averageND": 32072.79
+      "windAverage": 668.77
     },
     {
       "weekStart": "2009-07-20",
-      "averageND": 31618.73
+      "windAverage": 684.78
     },
     {
       "weekStart": "2009-07-27",
-      "averageND": 31167.24
+      "windAverage": 777.41
     },
     {
       "weekStart": "2009-08-03",
-      "averageND": 31649.63
+      "windAverage": 338.7
     },
     {
       "weekStart": "2009-08-10",
-      "averageND": 31939.13
+      "windAverage": 564.34
     },
     {
       "weekStart": "2009-08-17",
-      "averageND": 31997.54
+      "windAverage": 756.29
     },
     {
       "weekStart": "2009-08-24",
-      "averageND": 31573.32
+      "windAverage": 882.09
     },
     {
       "weekStart": "2009-08-31",
-      "averageND": 31339.49
+      "windAverage": 1063.47
     },
     {
       "weekStart": "2009-09-07",
-      "averageND": 32802.16
+      "windAverage": 524.43
     },
     {
       "weekStart": "2009-09-14",
-      "averageND": 33133.65
+      "windAverage": 423.34
     },
     {
       "weekStart": "2009-09-21",
-      "averageND": 33044.03
+      "windAverage": 582.48
     },
     {
       "weekStart": "2009-09-28",
-      "averageND": 33459.53
+      "windAverage": 660.75
     },
     {
       "weekStart": "2009-10-05",
-      "averageND": 34816.07
+      "windAverage": 568.85
     },
     {
       "weekStart": "2009-10-12",
-      "averageND": 35389.83
+      "windAverage": 278.65
     },
     {
       "weekStart": "2009-10-19",
-      "averageND": 35780.75
+      "windAverage": 928.7
     },
     {
       "weekStart": "2009-10-26",
-      "averageND": 35077
+      "windAverage": 690.72
     },
     {
       "weekStart": "2009-11-02",
-      "averageND": 36921.57
+      "windAverage": 723.44
     },
     {
       "weekStart": "2009-11-09",
-      "averageND": 38321.09
+      "windAverage": 765.63
     },
     {
       "weekStart": "2009-11-16",
-      "averageND": 36913.08
+      "windAverage": 1367.96
     },
     {
       "weekStart": "2009-11-23",
-      "averageND": 38424.51
+      "windAverage": 1211.18
     },
     {
       "weekStart": "2009-11-30",
-      "averageND": 40389.36
+      "windAverage": 1026.57
     },
     {
       "weekStart": "2009-12-07",
-      "averageND": 40614.68
+      "windAverage": 780.32
     },
     {
       "weekStart": "2009-12-14",
-      "averageND": 43246.11
+      "windAverage": 744.77
     },
     {
       "weekStart": "2009-12-21",
-      "averageND": 39693.1
+      "windAverage": 722.26
     },
     {
       "weekStart": "2009-12-28",
-      "averageND": 38414.15
+      "windAverage": 852.87
     },
     {
       "weekStart": "2010-01-04",
-      "averageND": 45382.27
+      "windAverage": 747.14
     },
     {
       "weekStart": "2010-01-11",
-      "averageND": 44205.53
+      "windAverage": 970.23
     },
     {
       "weekStart": "2010-01-18",
-      "averageND": 42278.05
+      "windAverage": 595.77
     },
     {
       "weekStart": "2010-01-25",
-      "averageND": 42882.09
+      "windAverage": 873.21
     },
     {
       "weekStart": "2010-02-01",
-      "averageND": 42233.03
+      "windAverage": 646.52
     },
     {
       "weekStart": "2010-02-08",
-      "averageND": 43037.77
+      "windAverage": 661.79
     },
     {
       "weekStart": "2010-02-15",
-      "averageND": 42312.99
+      "windAverage": 343.1
     },
     {
       "weekStart": "2010-02-22",
-      "averageND": 41496.14
+      "windAverage": 764.02
     },
     {
       "weekStart": "2010-03-01",
-      "averageND": 40784.2
+      "windAverage": 440.58
     },
     {
       "weekStart": "2010-03-08",
-      "averageND": 40103.56
+      "windAverage": 598.01
     },
     {
       "weekStart": "2010-03-15",
-      "averageND": 37385.06
+      "windAverage": 916.63
     },
     {
       "weekStart": "2010-03-22",
-      "averageND": 36926.03
+      "windAverage": 921.19
     },
     {
       "weekStart": "2010-03-29",
-      "averageND": 36659.36
+      "windAverage": 1042.61
     },
     {
       "weekStart": "2010-04-05",
-      "averageND": 34080.56
+      "windAverage": 723.67
     },
     {
       "weekStart": "2010-04-12",
-      "averageND": 34799.22
+      "windAverage": 523.53
     },
     {
       "weekStart": "2010-04-19",
-      "averageND": 34644.02
+      "windAverage": 411.78
     },
     {
       "weekStart": "2010-04-26",
-      "averageND": 33663.69
+      "windAverage": 662.56
     },
     {
       "weekStart": "2010-05-03",
-      "averageND": 34035.96
+      "windAverage": 646.99
     },
     {
       "weekStart": "2010-05-10",
-      "averageND": 34596.87
+      "windAverage": 418.45
     },
     {
       "weekStart": "2010-05-17",
-      "averageND": 33120.89
+      "windAverage": 139.31
     },
     {
       "weekStart": "2010-05-24",
-      "averageND": 32078.09
+      "windAverage": 654.07
     },
     {
       "weekStart": "2010-05-31",
-      "averageND": 31306.2
+      "windAverage": 276.82
     },
     {
       "weekStart": "2010-06-07",
-      "averageND": 32347.87
+      "windAverage": 599.97
     },
     {
       "weekStart": "2010-06-14",
-      "averageND": 31900.02
+      "windAverage": 608.22
     },
     {
       "weekStart": "2010-06-21",
-      "averageND": 32261.05
+      "windAverage": 288.65
     },
     {
       "weekStart": "2010-06-28",
-      "averageND": 32222.78
+      "windAverage": 778.17
     },
     {
       "weekStart": "2010-07-05",
-      "averageND": 32033.07
+      "windAverage": 870.19
     },
     {
       "weekStart": "2010-07-12",
-      "averageND": 31798.74
+      "windAverage": 1024.81
     },
     {
       "weekStart": "2010-07-19",
-      "averageND": 32154.97
+      "windAverage": 369.21
     },
     {
       "weekStart": "2010-07-26",
-      "averageND": 31398.9
+      "windAverage": 478.85
     },
     {
       "weekStart": "2010-08-02",
-      "averageND": 30888.12
+      "windAverage": 477.97
     },
     {
       "weekStart": "2010-08-09",
-      "averageND": 31190.78
+      "windAverage": 731.08
     },
     {
       "weekStart": "2010-08-16",
-      "averageND": 31502.38
+      "windAverage": 873.08
     },
     {
       "weekStart": "2010-08-23",
-      "averageND": 31236.17
+      "windAverage": 1028.09
     },
     {
       "weekStart": "2010-08-30",
-      "averageND": 31276.96
+      "windAverage": 408.26
     },
     {
       "weekStart": "2010-09-06",
-      "averageND": 32427.78
+      "windAverage": 901.13
     },
     {
       "weekStart": "2010-09-13",
-      "averageND": 32507.55
+      "windAverage": 1382.28
     },
     {
       "weekStart": "2010-09-20",
-      "averageND": 33358.29
+      "windAverage": 846.45
     },
     {
       "weekStart": "2010-09-27",
-      "averageND": 34744.69
+      "windAverage": 697.58
     },
     {
       "weekStart": "2010-10-04",
-      "averageND": 33928.92
+      "windAverage": 1144.51
     },
     {
       "weekStart": "2010-10-11",
-      "averageND": 35217.77
+      "windAverage": 494.66
     },
     {
       "weekStart": "2010-10-18",
-      "averageND": 36491.52
+      "windAverage": 1261.35
     },
     {
       "weekStart": "2010-10-25",
-      "averageND": 36228.04
+      "windAverage": 1273.71
     },
     {
       "weekStart": "2010-11-01",
-      "averageND": 36412.11
+      "windAverage": 1178.02
     },
     {
       "weekStart": "2010-11-08",
-      "averageND": 38804.44
+      "windAverage": 1329.07
     },
     {
       "weekStart": "2010-11-15",
-      "averageND": 39858.16
+      "windAverage": 679.07
     },
     {
       "weekStart": "2010-11-22",
-      "averageND": 42005.99
+      "windAverage": 772.55
     },
     {
       "weekStart": "2010-11-29",
-      "averageND": 44913.78
+      "windAverage": 922.52
     },
     {
       "weekStart": "2010-12-06",
-      "averageND": 44818.42
+      "windAverage": 860.23
     },
     {
       "weekStart": "2010-12-13",
-      "averageND": 45036.25
+      "windAverage": 763.91
     },
     {
       "weekStart": "2010-12-20",
-      "averageND": 43996.47
+      "windAverage": 584.76
     },
     {
       "weekStart": "2010-12-27",
-      "averageND": 38051.08
+      "windAverage": 546.49
     },
     {
       "weekStart": "2011-01-03",
-      "averageND": 41709.36
+      "windAverage": 1024.3
     },
     {
       "weekStart": "2011-01-10",
-      "averageND": 40599.38
+      "windAverage": 1448.28
     },
     {
       "weekStart": "2011-01-17",
-      "averageND": 42260.76
+      "windAverage": 570.98
     },
     {
       "weekStart": "2011-01-24",
-      "averageND": 42731.93
+      "windAverage": 848.1
     },
     {
       "weekStart": "2011-01-31",
-      "averageND": 40940.88
+      "windAverage": 1410.21
     },
     {
       "weekStart": "2011-02-07",
-      "averageND": 39595.43
+      "windAverage": 883.52
     },
     {
       "weekStart": "2011-02-14",
-      "averageND": 40376.28
+      "windAverage": 771.43
     },
     {
       "weekStart": "2011-02-21",
-      "averageND": 39156.2
+      "windAverage": 941.63
     },
     {
       "weekStart": "2011-02-28",
-      "averageND": 40799.17
+      "windAverage": 356.33
     },
     {
       "weekStart": "2011-03-07",
-      "averageND": 39004.06
+      "windAverage": 820.92
     },
     {
       "weekStart": "2011-03-14",
-      "averageND": 38760.93
+      "windAverage": 343.2
     },
     {
       "weekStart": "2011-03-21",
-      "averageND": 36523.13
+      "windAverage": 192.31
     },
     {
       "weekStart": "2011-03-28",
-      "averageND": 35834.87
+      "windAverage": 640.05
     },
     {
       "weekStart": "2011-04-04",
-      "averageND": 34198.01
+      "windAverage": 677.09
     },
     {
       "weekStart": "2011-04-11",
-      "averageND": 34217.82
+      "windAverage": 358.29
     },
     {
       "weekStart": "2011-04-18",
-      "averageND": 31831.46
+      "windAverage": 154.08
     },
     {
       "weekStart": "2011-04-25",
-      "averageND": 30340.57
+      "windAverage": 533.31
     },
     {
       "weekStart": "2011-05-02",
-      "averageND": 31831.16
+      "windAverage": 623.91
     },
     {
       "weekStart": "2011-05-09",
-      "averageND": 32491.13
+      "windAverage": 776.67
     },
     {
       "weekStart": "2011-05-16",
-      "averageND": 32489.52
+      "windAverage": 860.58
     },
     {
       "weekStart": "2011-05-23",
-      "averageND": 32054.02
+      "windAverage": 993.77
     },
     {
       "weekStart": "2011-05-30",
-      "averageND": 31376.02
+      "windAverage": 423.15
     },
     {
       "weekStart": "2011-06-06",
-      "averageND": 32349.31
+      "windAverage": 365.85
     },
     {
       "weekStart": "2011-06-13",
-      "averageND": 32095.54
+      "windAverage": 515.85
     },
     {
       "weekStart": "2011-06-20",
-      "averageND": 32144.74
+      "windAverage": 488.92
     },
     {
       "weekStart": "2011-06-27",
-      "averageND": 31955.09
+      "windAverage": 160.47
     },
     {
       "weekStart": "2011-07-04",
-      "averageND": 31800.52
+      "windAverage": 445.78
     },
     {
       "weekStart": "2011-07-11",
-      "averageND": 31711.71
+      "windAverage": 388.3
     },
     {
       "weekStart": "2011-07-18",
-      "averageND": 31570.9
+      "windAverage": 340.4
     },
     {
       "weekStart": "2011-07-25",
-      "averageND": 31021.02
+      "windAverage": 118.25
     },
     {
       "weekStart": "2011-08-01",
-      "averageND": 31096.17
+      "windAverage": 209.6
     },
     {
       "weekStart": "2011-08-08",
-      "averageND": 31216.9
+      "windAverage": 555.7
     },
     {
       "weekStart": "2011-08-15",
-      "averageND": 31739.12
+      "windAverage": 301.46
     },
     {
       "weekStart": "2011-08-22",
-      "averageND": 31891.52
+      "windAverage": 301.49
     },
     {
       "weekStart": "2011-08-29",
-      "averageND": 31532.46
+      "windAverage": 311.61
     },
     {
       "weekStart": "2011-09-05",
-      "averageND": 32432.21
+      "windAverage": 945.59
     },
     {
       "weekStart": "2011-09-12",
-      "averageND": 32419.49
+      "windAverage": 714.79
     },
     {
       "weekStart": "2011-09-19",
-      "averageND": 32767.4
+      "windAverage": 674.08
     },
     {
       "weekStart": "2011-09-26",
-      "averageND": 32917.08
+      "windAverage": 388.51
     },
     {
       "weekStart": "2011-10-03",
-      "averageND": 32811.18
+      "windAverage": 999.18
     },
     {
       "weekStart": "2011-10-10",
-      "averageND": 33812.88
+      "windAverage": 523.91
     },
     {
       "weekStart": "2011-10-17",
-      "averageND": 34994.11
+      "windAverage": 846.79
     },
     {
       "weekStart": "2011-10-24",
-      "averageND": 34829.54
+      "windAverage": 633.82
     },
     {
       "weekStart": "2011-10-31",
-      "averageND": 35572.69
+      "windAverage": 516.72
     },
     {
       "weekStart": "2011-11-07",
-      "averageND": 36921.79
+      "windAverage": 507.4
     },
     {
       "weekStart": "2011-11-14",
-      "averageND": 37426.05
+      "windAverage": 471.34
     },
     {
       "weekStart": "2011-11-21",
-      "averageND": 37491.79
+      "windAverage": 817.93
     },
     {
       "weekStart": "2011-11-28",
-      "averageND": 38168.72
+      "windAverage": 994.31
     },
     {
       "weekStart": "2011-12-05",
-      "averageND": 40385.65
+      "windAverage": 965.85
     },
     {
       "weekStart": "2011-12-12",
-      "averageND": 41352.62
+      "windAverage": 847.71
     },
     {
       "weekStart": "2011-12-19",
-      "averageND": 38248.35
+      "windAverage": 948.92
     },
     {
       "weekStart": "2011-12-26",
-      "averageND": 33191.22
+      "windAverage": 1060.18
     },
     {
       "weekStart": "2012-01-02",
-      "averageND": 37804.82
+      "windAverage": 1183.85
     },
     {
       "weekStart": "2012-01-09",
-      "averageND": 39410.21
+      "windAverage": 592
     },
     {
       "weekStart": "2012-01-16",
-      "averageND": 40119.52
+      "windAverage": 954.07
     },
     {
       "weekStart": "2012-01-23",
-      "averageND": 40057.96
+      "windAverage": 513.4
     },
     {
       "weekStart": "2012-01-30",
-      "averageND": 43038.58
+      "windAverage": 407.01
     },
     {
       "weekStart": "2012-02-06",
-      "averageND": 43596.82
+      "windAverage": 257.05
     },
     {
       "weekStart": "2012-02-13",
-      "averageND": 39607.4
+      "windAverage": 874.45
     },
     {
       "weekStart": "2012-02-20",
-      "averageND": 37991.31
+      "windAverage": 861.36
     },
     {
       "weekStart": "2012-02-27",
-      "averageND": 37424.07
+      "windAverage": 469.04
     },
     {
       "weekStart": "2012-03-05",
-      "averageND": 37808.19
+      "windAverage": 769.09
     },
     {
       "weekStart": "2012-03-12",
-      "averageND": 37303.42
+      "windAverage": 213.94
     },
     {
       "weekStart": "2012-03-19",
-      "averageND": 35846.87
+      "windAverage": 355.41
     },
     {
       "weekStart": "2012-03-26",
-      "averageND": 34019.17
+      "windAverage": 237.21
     },
     {
       "weekStart": "2012-04-02",
-      "averageND": 34805.09
+      "windAverage": 480.72
     },
     {
       "weekStart": "2012-04-09",
-      "averageND": 34016.68
+      "windAverage": 418.76
     },
     {
       "weekStart": "2012-04-16",
-      "averageND": 35669.27
+      "windAverage": 522.11
     },
     {
       "weekStart": "2012-04-23",
-      "averageND": 35890.43
+      "windAverage": 729.19
     },
     {
       "weekStart": "2012-04-30",
-      "averageND": 35242.35
+      "windAverage": 439.87
     },
     {
       "weekStart": "2012-05-07",
-      "averageND": 33339.35
+      "windAverage": 601.9
     },
     {
       "weekStart": "2012-05-14",
-      "averageND": 33859.15
+      "windAverage": 495.16
     },
     {
       "weekStart": "2012-05-21",
-      "averageND": 31953.87
+      "windAverage": 351.45
     },
     {
       "weekStart": "2012-05-28",
-      "averageND": 31769.33
+      "windAverage": 235.2
     },
     {
       "weekStart": "2012-06-04",
-      "averageND": 30277.64
+      "windAverage": 529.15
     },
     {
       "weekStart": "2012-06-11",
-      "averageND": 32237.89
+      "windAverage": 539.56
     },
     {
       "weekStart": "2012-06-18",
-      "averageND": 31584.86
+      "windAverage": 571.23
     },
     {
       "weekStart": "2012-06-25",
-      "averageND": 31511.5
+      "windAverage": 567.75
     },
     {
       "weekStart": "2012-07-02",
-      "averageND": 31931.72
+      "windAverage": 331.07
     },
     {
       "weekStart": "2012-07-09",
-      "averageND": 31616.11
+      "windAverage": 307.3
     },
     {
       "weekStart": "2012-07-16",
-      "averageND": 31202.89
+      "windAverage": 486.62
     },
     {
       "weekStart": "2012-07-23",
-      "averageND": 30864.19
+      "windAverage": 333.47
     },
     {
       "weekStart": "2012-07-30",
-      "averageND": 30481.2
+      "windAverage": 358.01
     },
     {
       "weekStart": "2012-08-06",
-      "averageND": 30802.78
+      "windAverage": 235.77
     },
     {
       "weekStart": "2012-08-13",
-      "averageND": 31367.33
+      "windAverage": 605.16
     },
     {
       "weekStart": "2012-08-20",
-      "averageND": 31180.03
+      "windAverage": 350.97
     },
     {
       "weekStart": "2012-08-27",
-      "averageND": 30618.77
+      "windAverage": 662.25
     },
     {
       "weekStart": "2012-09-03",
-      "averageND": 31420.79
+      "windAverage": 485.36
     },
     {
       "weekStart": "2012-09-10",
-      "averageND": 31454.09
+      "windAverage": 884.73
     },
     {
       "weekStart": "2012-09-17",
-      "averageND": 32500.54
+      "windAverage": 579.24
     },
     {
       "weekStart": "2012-09-24",
-      "averageND": 33262.77
+      "windAverage": 920.58
     },
     {
       "weekStart": "2012-10-01",
-      "averageND": 33545.58
+      "windAverage": 577.15
     },
     {
       "weekStart": "2012-10-08",
-      "averageND": 34750.17
+      "windAverage": 411.82
     },
     {
       "weekStart": "2012-10-15",
-      "averageND": 34941.16
+      "windAverage": 451.3
     },
     {
       "weekStart": "2012-10-22",
-      "averageND": 35762.35
+      "windAverage": 596.61
     },
     {
       "weekStart": "2012-10-29",
-      "averageND": 37084.6
+      "windAverage": 600.07
     },
     {
       "weekStart": "2012-11-05",
-      "averageND": 37536.51
+      "windAverage": 702.39
     },
     {
       "weekStart": "2012-11-12",
-      "averageND": 37518.61
+      "windAverage": 422.66
     },
     {
       "weekStart": "2012-11-19",
-      "averageND": 37960.01
+      "windAverage": 902.34
     },
     {
       "weekStart": "2012-11-26",
-      "averageND": 40346.9
+      "windAverage": 508.03
     },
     {
       "weekStart": "2012-12-03",
-      "averageND": 41124.37
+      "windAverage": 916.04
     },
     {
       "weekStart": "2012-12-10",
-      "averageND": 42243.21
+      "windAverage": 565.62
     },
     {
       "weekStart": "2012-12-17",
-      "averageND": 39262.85
+      "windAverage": 666.87
     },
     {
       "weekStart": "2012-12-24",
-      "averageND": 33289.28
+      "windAverage": 1064.04
     },
     {
       "weekStart": "2012-12-31",
-      "averageND": 35432.47
+      "windAverage": 889.8
     },
     {
       "weekStart": "2013-01-07",
-      "averageND": 39828.02
+      "windAverage": 365.01
     },
     {
       "weekStart": "2013-01-14",
-      "averageND": 43068.26
+      "windAverage": 624.89
     },
     {
       "weekStart": "2013-01-21",
-      "averageND": 42416.12
+      "windAverage": 796.01
     },
     {
       "weekStart": "2013-01-28",
-      "averageND": 39032.3
+      "windAverage": 1272.52
     },
     {
       "weekStart": "2013-02-04",
-      "averageND": 40123.04
+      "windAverage": 933.78
     },
     {
       "weekStart": "2013-02-11",
-      "averageND": 40389.35
+      "windAverage": 607.86
     },
     {
       "weekStart": "2013-02-18",
-      "averageND": 40763.24
+      "windAverage": 492.26
     },
     {
       "weekStart": "2013-02-25",
-      "averageND": 40562.55
+      "windAverage": 341.77
     },
     {
       "weekStart": "2013-03-04",
-      "averageND": 38736.24
+      "windAverage": 662.71
     },
     {
       "weekStart": "2013-03-11",
-      "averageND": 40401.03
+      "windAverage": 634.98
     },
     {
       "weekStart": "2013-03-18",
-      "averageND": 40334.4
+      "windAverage": 1008.36
     },
     {
       "weekStart": "2013-03-25",
-      "averageND": 39815.54
+      "windAverage": 715.12
     },
     {
       "weekStart": "2013-04-01",
-      "averageND": 37492.16
+      "windAverage": 652.35
     },
     {
       "weekStart": "2013-04-08",
-      "averageND": 36824.04
+      "windAverage": 697.35
     },
     {
       "weekStart": "2013-04-15",
-      "averageND": 33770.06
+      "windAverage": 1049.94
     },
     {
       "weekStart": "2013-04-22",
-      "averageND": 33498.72
+      "windAverage": 759.21
     },
     {
       "weekStart": "2013-04-29",
-      "averageND": 32391.24
+      "windAverage": 695.08
     },
     {
       "weekStart": "2013-05-06",
-      "averageND": 31069.79
+      "windAverage": 892.29
     },
     {
       "weekStart": "2013-05-13",
-      "averageND": 32656.56
+      "windAverage": 640.99
     },
     {
       "weekStart": "2013-05-20",
-      "averageND": 31938.36
+      "windAverage": 698.49
     },
     {
       "weekStart": "2013-05-27",
-      "averageND": 30455.46
+      "windAverage": 526.84
     },
     {
       "weekStart": "2013-06-03",
-      "averageND": 30413.76
+      "windAverage": 338
     },
     {
       "weekStart": "2013-06-10",
-      "averageND": 30610.64
+      "windAverage": 738.13
     },
     {
       "weekStart": "2013-06-17",
-      "averageND": 30929.8
+      "windAverage": 550.17
     },
     {
       "weekStart": "2013-06-24",
-      "averageND": 30620.08
+      "windAverage": 550.57
     },
     {
       "weekStart": "2013-07-01",
-      "averageND": 30518.95
+      "windAverage": 490.39
     },
     {
       "weekStart": "2013-07-08",
-      "averageND": 31003.84
+      "windAverage": 221.93
     },
     {
       "weekStart": "2013-07-15",
-      "averageND": 31391.36
+      "windAverage": 303.47
     },
     {
       "weekStart": "2013-07-22",
-      "averageND": 31127.34
+      "windAverage": 305.2
     },
     {
       "weekStart": "2013-07-29",
-      "averageND": 30004.66
+      "windAverage": 640.52
     },
     {
       "weekStart": "2013-08-05",
-      "averageND": 29820.6
+      "windAverage": 361.84
     },
     {
       "weekStart": "2013-08-12",
-      "averageND": 30144.17
+      "windAverage": 610.37
     },
     {
       "weekStart": "2013-08-19",
-      "averageND": 30889.01
+      "windAverage": 338.21
     },
     {
       "weekStart": "2013-08-26",
-      "averageND": 29973.48
+      "windAverage": 501.97
     },
     {
       "weekStart": "2013-09-02",
-      "averageND": 31428.67
+      "windAverage": 506.41
     },
     {
       "weekStart": "2013-09-09",
-      "averageND": 32267.11
+      "windAverage": 535.03
     },
     {
       "weekStart": "2013-09-16",
-      "averageND": 32603.24
+      "windAverage": 736.56
     },
     {
       "weekStart": "2013-09-23",
-      "averageND": 32501.37
+      "windAverage": 386.06
     },
     {
       "weekStart": "2013-09-30",
-      "averageND": 32456.06
+      "windAverage": 695.2
     },
     {
       "weekStart": "2013-10-07",
-      "averageND": 32858.09
+      "windAverage": 848.18
     },
     {
       "weekStart": "2013-10-14",
-      "averageND": 34191.97
+      "windAverage": 620.42
     },
     {
       "weekStart": "2013-10-21",
-      "averageND": 33118.78
+      "windAverage": 980.75
     },
     {
       "weekStart": "2013-10-28",
-      "averageND": 34234.24
+      "windAverage": 943.04
     },
     {
       "weekStart": "2013-11-04",
-      "averageND": 36690.19
+      "windAverage": 600.52
     },
     {
       "weekStart": "2013-11-11",
-      "averageND": 37183.57
+      "windAverage": 733.98
     },
     {
       "weekStart": "2013-11-18",
-      "averageND": 38922.51
+      "windAverage": 600.66
     },
     {
       "weekStart": "2013-11-25",
-      "averageND": 39000.76
+      "windAverage": 542.67
     },
     {
       "weekStart": "2013-12-02",
-      "averageND": 39057.07
+      "windAverage": 797.84
     },
     {
       "weekStart": "2013-12-09",
-      "averageND": 38302.17
+      "windAverage": 1006.38
     },
     {
       "weekStart": "2013-12-16",
-      "averageND": 37563.89
+      "windAverage": 1231.54
     },
     {
       "weekStart": "2013-12-23",
-      "averageND": 33225.86
+      "windAverage": 1142.78
     },
     {
       "weekStart": "2013-12-30",
-      "averageND": 34739.1
+      "windAverage": 1162.71
     },
     {
       "weekStart": "2014-01-06",
-      "averageND": 38044.15
+      "windAverage": 1032.06
     },
     {
       "weekStart": "2014-01-13",
-      "averageND": 38607.05
+      "windAverage": 691.64
     },
     {
       "weekStart": "2014-01-20",
-      "averageND": 38894.47
+      "windAverage": 878.65
     },
     {
       "weekStart": "2014-01-27",
-      "averageND": 38809.81
+      "windAverage": 1062.84
     },
     {
       "weekStart": "2014-02-03",
-      "averageND": 37844.78
+      "windAverage": 1312.43
     },
     {
       "weekStart": "2014-02-10",
-      "averageND": 38535.83
+      "windAverage": 1188.13
     },
     {
       "weekStart": "2014-02-17",
-      "averageND": 36781.18
+      "windAverage": 1052.01
     },
     {
       "weekStart": "2014-02-24",
-      "averageND": 36805.63
+      "windAverage": 925.81
     },
     {
       "weekStart": "2014-03-03",
-      "averageND": 36149.54
+      "windAverage": 778.35
     },
     {
       "weekStart": "2014-03-10",
-      "averageND": 35061.34
+      "windAverage": 732.56
     },
     {
       "weekStart": "2014-03-17",
-      "averageND": 34160.07
+      "windAverage": 1179.8
     },
     {
       "weekStart": "2014-03-24",
-      "averageND": 35617.7
+      "windAverage": 704.29
     },
     {
       "weekStart": "2014-03-31",
-      "averageND": 33770.96
+      "windAverage": 607.86
     },
     {
       "weekStart": "2014-04-07",
-      "averageND": 32465.36
+      "windAverage": 818.45
     },
     {
       "weekStart": "2014-04-14",
-      "averageND": 30868.2
+      "windAverage": 660.01
     },
     {
       "weekStart": "2014-04-21",
-      "averageND": 31547.2
+      "windAverage": 604.03
     },
     {
       "weekStart": "2014-04-28",
-      "averageND": 32299.83
+      "windAverage": 292.37
     },
     {
       "weekStart": "2014-05-05",
-      "averageND": 30410.3
+      "windAverage": 751.74
     },
     {
       "weekStart": "2014-05-12",
-      "averageND": 30684.86
+      "windAverage": 315.52
     },
     {
       "weekStart": "2014-05-19",
-      "averageND": 30497.71
+      "windAverage": 484.09
     },
     {
       "weekStart": "2014-05-26",
-      "averageND": 30127.92
+      "windAverage": 362.86
     },
     {
       "weekStart": "2014-06-02",
-      "averageND": 30176.56
+      "windAverage": 611.44
     },
     {
       "weekStart": "2014-06-09",
-      "averageND": 30094.77
+      "windAverage": 390.9
     },
     {
       "weekStart": "2014-06-16",
-      "averageND": 29717.98
+      "windAverage": 411.8
     },
     {
       "weekStart": "2014-06-23",
-      "averageND": 29959.23
+      "windAverage": 376.65
     },
     {
       "weekStart": "2014-06-30",
-      "averageND": 29632.14
+      "windAverage": 671.29
     },
     {
       "weekStart": "2014-07-07",
-      "averageND": 29786.88
+      "windAverage": 496.43
     },
     {
       "weekStart": "2014-07-14",
-      "averageND": 30163.76
+      "windAverage": 599.19
     },
     {
       "weekStart": "2014-07-21",
-      "averageND": 30239.18
+      "windAverage": 427.66
     },
     {
       "weekStart": "2014-07-28",
-      "averageND": 29149.1
+      "windAverage": 632.49
     },
     {
       "weekStart": "2014-08-04",
-      "averageND": 29095.14
+      "windAverage": 622.97
     },
     {
       "weekStart": "2014-08-11",
-      "averageND": 28377.81
+      "windAverage": 1276.03
     },
     {
       "weekStart": "2014-08-18",
-      "averageND": 29398.26
+      "windAverage": 691.33
     },
     {
       "weekStart": "2014-08-25",
-      "averageND": 29098.24
+      "windAverage": 1121.49
     },
     {
       "weekStart": "2014-09-01",
-      "averageND": 30989.22
+      "windAverage": 347.83
     },
     {
       "weekStart": "2014-09-08",
-      "averageND": 30733.16
+      "windAverage": 330.83
     },
     {
       "weekStart": "2014-09-15",
-      "averageND": 31339.26
+      "windAverage": 417.05
     },
     {
       "weekStart": "2014-09-22",
-      "averageND": 30974.6
+      "windAverage": 700.38
     },
     {
       "weekStart": "2014-09-29",
-      "averageND": 31213.93
+      "windAverage": 751.05
     },
     {
       "weekStart": "2014-10-06",
-      "averageND": 32582.36
+      "windAverage": 858.04
     },
     {
       "weekStart": "2014-10-13",
-      "averageND": 32470.16
+      "windAverage": 1435.08
     },
     {
       "weekStart": "2014-10-20",
-      "averageND": 32359.62
+      "windAverage": 1628.63
     },
     {
       "weekStart": "2014-10-27",
-      "averageND": 32210.5
+      "windAverage": 1240.57
     },
     {
       "weekStart": "2014-11-03",
-      "averageND": 35082.12
+      "windAverage": 918.97
     },
     {
       "weekStart": "2014-11-10",
-      "averageND": 35292.12
+      "windAverage": 1158.82
     },
     {
       "weekStart": "2014-11-17",
-      "averageND": 36612.07
+      "windAverage": 820.16
     },
     {
       "weekStart": "2014-11-24",
-      "averageND": 37704.91
+      "windAverage": 577.89
     },
     {
       "weekStart": "2014-12-01",
-      "averageND": 38418.74
+      "windAverage": 936.68
     },
     {
       "weekStart": "2014-12-08",
-      "averageND": 38563.36
+      "windAverage": 1765.24
     },
     {
       "weekStart": "2014-12-15",
-      "averageND": 36732.94
+      "windAverage": 1788.53
     },
     {
       "weekStart": "2014-12-22",
-      "averageND": 33068.57
+      "windAverage": 1287.76
     },
     {
       "weekStart": "2014-12-29",
-      "averageND": 34326.74
+      "windAverage": 1488.41
     },
     {
       "weekStart": "2015-01-05",
-      "averageND": 37010.51
+      "windAverage": 2364.03
     },
     {
       "weekStart": "2015-01-12",
-      "averageND": 38302.18
+      "windAverage": 2048.07
     },
     {
       "weekStart": "2015-01-19",
-      "averageND": 40354.01
+      "windAverage": 1090.77
     },
     {
       "weekStart": "2015-01-26",
-      "averageND": 38672.65
+      "windAverage": 2169.77
     },
     {
       "weekStart": "2015-02-02",
-      "averageND": 40488.38
+      "windAverage": 913.41
     },
     {
       "weekStart": "2015-02-09",
-      "averageND": 39100.26
+      "windAverage": 825.84
     },
     {
       "weekStart": "2015-02-16",
-      "averageND": 37432.92
+      "windAverage": 1501.61
     },
     {
       "weekStart": "2015-02-23",
-      "averageND": 36408.85
+      "windAverage": 2168.62
     },
     {
       "weekStart": "2015-03-02",
-      "averageND": 35473.15
+      "windAverage": 2095.91
     },
     {
       "weekStart": "2015-03-09",
-      "averageND": 35908.83
+      "windAverage": 1295.29
     },
     {
       "weekStart": "2015-03-16",
-      "averageND": 36263.5
+      "windAverage": 647.99
     },
     {
       "weekStart": "2015-03-23",
-      "averageND": 34626.06
+      "windAverage": 1429.23
     },
     {
       "weekStart": "2015-03-30",
-      "averageND": 32816.97
+      "windAverage": 1605.42
     },
     {
       "weekStart": "2015-04-06",
-      "averageND": 30097.03
+      "windAverage": 947.63
     },
     {
       "weekStart": "2015-04-13",
-      "averageND": 30928.5
+      "windAverage": 987.1
     },
     {
       "weekStart": "2015-04-20",
-      "averageND": 30646.78
+      "windAverage": 686.2
     },
     {
       "weekStart": "2015-04-27",
-      "averageND": 30813.32
+      "windAverage": 1415.05
     },
     {
       "weekStart": "2015-05-04",
-      "averageND": 29770.89
+      "windAverage": 1487.24
     },
     {
       "weekStart": "2015-05-11",
-      "averageND": 29258.51
+      "windAverage": 1490.7
     },
     {
       "weekStart": "2015-05-18",
-      "averageND": 29549.8
+      "windAverage": 1147.71
     },
     {
       "weekStart": "2015-05-25",
-      "averageND": 28018.25
+      "windAverage": 1189.16
     },
     {
       "weekStart": "2015-06-01",
-      "averageND": 28171.1
+      "windAverage": 1512.31
     },
     {
       "weekStart": "2015-06-08",
-      "averageND": 29094.08
+      "windAverage": 703.76
     },
     {
       "weekStart": "2015-06-15",
-      "averageND": 28490.29
+      "windAverage": 1027.72
     },
     {
       "weekStart": "2015-06-22",
-      "averageND": 28724.68
+      "windAverage": 839.39
     },
     {
       "weekStart": "2015-06-29",
-      "averageND": 28996.06
+      "windAverage": 887.82
     },
     {
       "weekStart": "2015-07-06",
-      "averageND": 28008.47
+      "windAverage": 1186.39
     },
     {
       "weekStart": "2015-07-13",
-      "averageND": 28427.3
+      "windAverage": 1094.7
     },
     {
       "weekStart": "2015-07-20",
-      "averageND": 28480.09
+      "windAverage": 1020.16
     },
     {
       "weekStart": "2015-07-27",
-      "averageND": 27525.8
+      "windAverage": 1014.14
     },
     {
       "weekStart": "2015-08-03",
-      "averageND": 27360.99
+      "windAverage": 1210.42
     },
     {
       "weekStart": "2015-08-10",
-      "averageND": 28915.58
+      "windAverage": 656.56
     },
     {
       "weekStart": "2015-08-17",
-      "averageND": 28946.54
+      "windAverage": 1051.15
     },
     {
       "weekStart": "2015-08-24",
-      "averageND": 28553.02
+      "windAverage": 1132.34
     },
     {
       "weekStart": "2015-08-31",
-      "averageND": 28815.99
+      "windAverage": 905.39
     },
     {
       "weekStart": "2015-09-07",
-      "averageND": 29486.96
+      "windAverage": 1042.11
     },
     {
       "weekStart": "2015-09-14",
-      "averageND": 30608.28
+      "windAverage": 592.35
     },
     {
       "weekStart": "2015-09-21",
-      "averageND": 30202.83
+      "windAverage": 902.9
     },
     {
       "weekStart": "2015-09-28",
-      "averageND": 30568.51
+      "windAverage": 610.45
     },
     {
       "weekStart": "2015-10-05",
-      "averageND": 31735.4
+      "windAverage": 851.14
     },
     {
       "weekStart": "2015-10-12",
-      "averageND": 33102.27
+      "windAverage": 648.8
     },
     {
       "weekStart": "2015-10-19",
-      "averageND": 32799.7
+      "windAverage": 1261.13
     },
     {
       "weekStart": "2015-10-26",
-      "averageND": 33290.55
+      "windAverage": 1094.06
     },
     {
       "weekStart": "2015-11-02",
-      "averageND": 34025.88
+      "windAverage": 1049.76
     },
     {
       "weekStart": "2015-11-09",
-      "averageND": 32561.9
+      "windAverage": 2467.83
     },
     {
       "weekStart": "2015-11-16",
-      "averageND": 34478.2
+      "windAverage": 2033.27
     },
     {
       "weekStart": "2015-11-23",
-      "averageND": 35851.82
+      "windAverage": 2044.14
     },
     {
       "weekStart": "2015-11-30",
-      "averageND": 35033.23
+      "windAverage": 2320.69
     },
     {
       "weekStart": "2015-12-07",
-      "averageND": 35563.6
+      "windAverage": 2045.21
     },
     {
       "weekStart": "2015-12-14",
-      "averageND": 34288.2
+      "windAverage": 2142.29
     },
     {
       "weekStart": "2015-12-21",
-      "averageND": 30387.93
+      "windAverage": 2534.03
     },
     {
       "weekStart": "2015-12-28",
-      "averageND": 29806.76
+      "windAverage": 2394.07
     },
     {
       "weekStart": "2016-01-04",
-      "averageND": 35792.62
+      "windAverage": 1665.93
     },
     {
       "weekStart": "2016-01-11",
-      "averageND": 38300.68
+      "windAverage": 1301.18
     },
     {
       "weekStart": "2016-01-18",
-      "averageND": 37996.48
+      "windAverage": 1275.96
     },
     {
       "weekStart": "2016-01-25",
-      "averageND": 34541.3
+      "windAverage": 2556.45
     },
     {
       "weekStart": "2016-02-01",
-      "averageND": 34633.4
+      "windAverage": 2460.06
     },
     {
       "weekStart": "2016-02-08",
-      "averageND": 36396.71
+      "windAverage": 1435.3
     },
     {
       "weekStart": "2016-02-15",
-      "averageND": 35885.89
+      "windAverage": 1762.95
     },
     {
       "weekStart": "2016-02-22",
-      "averageND": 36625.95
+      "windAverage": 712.53
     },
     {
       "weekStart": "2016-02-29",
-      "averageND": 35896.69
+      "windAverage": 1603.03
     },
     {
       "weekStart": "2016-03-07",
-      "averageND": 36170.85
+      "windAverage": 778.16
     },
     {
       "weekStart": "2016-03-14",
-      "averageND": 35006.04
+      "windAverage": 766.3
     },
     {
       "weekStart": "2016-03-21",
-      "averageND": 32149.18
+      "windAverage": 1434.43
     },
     {
       "weekStart": "2016-03-28",
-      "averageND": 31280.69
+      "windAverage": 1101.05
     },
     {
       "weekStart": "2016-04-04",
-      "averageND": 31448.85
+      "windAverage": 1148.9
     },
     {
       "weekStart": "2016-04-11",
-      "averageND": 31690.17
+      "windAverage": 942.51
     },
     {
       "weekStart": "2016-04-18",
-      "averageND": 30812.08
+      "windAverage": 972.43
     },
     {
       "weekStart": "2016-04-25",
-      "averageND": 31116.73
+      "windAverage": 1469.76
     },
     {
       "weekStart": "2016-05-02",
-      "averageND": 27969.47
+      "windAverage": 1269.71
     },
     {
       "weekStart": "2016-05-09",
-      "averageND": 28003.62
+      "windAverage": 1207.55
     },
     {
       "weekStart": "2016-05-16",
-      "averageND": 28261.24
+      "windAverage": 1004.13
     },
     {
       "weekStart": "2016-05-23",
-      "averageND": 27939.51
+      "windAverage": 718.74
     },
     {
       "weekStart": "2016-05-30",
-      "averageND": 27080.68
+      "windAverage": 1197.4
     },
     {
       "weekStart": "2016-06-06",
-      "averageND": 28487.55
+      "windAverage": 351.03
     },
     {
       "weekStart": "2016-06-13",
-      "averageND": 28485.82
+      "windAverage": 792.71
     },
     {
       "weekStart": "2016-06-20",
-      "averageND": 27958.01
+      "windAverage": 806.44
     },
     {
       "weekStart": "2016-06-27",
-      "averageND": 27060.22
+      "windAverage": 1323.97
     },
     {
       "weekStart": "2016-07-04",
-      "averageND": 27094.19
+      "windAverage": 1201.36
     },
     {
       "weekStart": "2016-07-11",
-      "averageND": 27146.3
+      "windAverage": 1165.74
     },
     {
       "weekStart": "2016-07-18",
-      "averageND": 28022.73
+      "windAverage": 626.33
     },
     {
       "weekStart": "2016-07-25",
-      "averageND": 26899.18
+      "windAverage": 839.16
     },
     {
       "weekStart": "2016-08-01",
-      "averageND": 26067.85
+      "windAverage": 1337.36
     },
     {
       "weekStart": "2016-08-08",
-      "averageND": 26132.76
+      "windAverage": 1436.21
     },
     {
       "weekStart": "2016-08-15",
-      "averageND": 26784.29
+      "windAverage": 1168.75
     },
     {
       "weekStart": "2016-08-22",
-      "averageND": 27936.01
+      "windAverage": 665.1
     },
     {
       "weekStart": "2016-08-29",
-      "averageND": 26772.6
+      "windAverage": 1124.38
     },
     {
       "weekStart": "2016-09-05",
-      "averageND": 28103.55
+      "windAverage": 1309.64
     },
     {
       "weekStart": "2016-09-12",
-      "averageND": 28589
+      "windAverage": 960.68
     },
     {
       "weekStart": "2016-09-19",
-      "averageND": 28204.63
+      "windAverage": 1161.74
     },
     {
       "weekStart": "2016-09-26",
-      "averageND": 28480.95
+      "windAverage": 1440.32
     },
     {
       "weekStart": "2016-10-03",
-      "averageND": 29712.17
+      "windAverage": 1244.99
     },
     {
       "weekStart": "2016-10-10",
-      "averageND": 30931.6
+      "windAverage": 1195.24
     },
     {
       "weekStart": "2016-10-17",
-      "averageND": 31321.54
+      "windAverage": 1090.26
     },
     {
       "weekStart": "2016-10-24",
-      "averageND": 32099.88
+      "windAverage": 859.04
     },
     {
       "weekStart": "2016-10-31",
-      "averageND": 33311.79
+      "windAverage": 1182.18
     },
     {
       "weekStart": "2016-11-07",
-      "averageND": 35585.5
+      "windAverage": 1089.53
     },
     {
       "weekStart": "2016-11-14",
-      "averageND": 34748.66
+      "windAverage": 1521.94
     },
     {
       "weekStart": "2016-11-21",
-      "averageND": 36480.76
+      "windAverage": 1176.05
     },
     {
       "weekStart": "2016-11-28",
-      "averageND": 37720.17
+      "windAverage": 808.08
     },
     {
       "weekStart": "2016-12-05",
-      "averageND": 35928.06
+      "windAverage": 1366.28
     },
     {
       "weekStart": "2016-12-12",
-      "averageND": 36067.79
+      "windAverage": 944.6
     },
     {
       "weekStart": "2016-12-19",
-      "averageND": 33289.05
+      "windAverage": 2338.1
     },
     {
       "weekStart": "2016-12-26",
-      "averageND": 31377.72
+      "windAverage": 1802.78
     },
     {
       "weekStart": "2017-01-02",
-      "averageND": 36165.76
+      "windAverage": 1245.98
     },
     {
       "weekStart": "2017-01-09",
-      "averageND": 36186.28
+      "windAverage": 2392.42
     },
     {
       "weekStart": "2017-01-16",
-      "averageND": 38252.79
+      "windAverage": 577.61
     },
     {
       "weekStart": "2017-01-23",
-      "averageND": 38327.19
+      "windAverage": 1419.27
     },
     {
       "weekStart": "2017-01-30",
-      "averageND": 35753
+      "windAverage": 1754.73
     },
     {
       "weekStart": "2017-02-06",
-      "averageND": 37933.65
+      "windAverage": 1495
     },
     {
       "weekStart": "2017-02-13",
-      "averageND": 34635.83
+      "windAverage": 1662.54
     },
     {
       "weekStart": "2017-02-20",
-      "averageND": 32606.61
+      "windAverage": 2523.78
     },
     {
       "weekStart": "2017-02-27",
-      "averageND": 34422.19
+      "windAverage": 1534.43
     },
     {
       "weekStart": "2017-03-06",
-      "averageND": 33078.04
+      "windAverage": 1171.73
     },
     {
       "weekStart": "2017-03-13",
-      "averageND": 30932.78
+      "windAverage": 2076.65
     },
     {
       "weekStart": "2017-03-20",
-      "averageND": 31442.34
+      "windAverage": 1709.92
     },
     {
       "weekStart": "2017-03-27",
-      "averageND": 30239.32
+      "windAverage": 1208.33
     },
     {
       "weekStart": "2017-04-03",
-      "averageND": 28675.99
+      "windAverage": 1263.49
     },
     {
       "weekStart": "2017-04-10",
-      "averageND": 27513.82
+      "windAverage": 1795.67
     },
     {
       "weekStart": "2017-04-17",
-      "averageND": 28509.79
+      "windAverage": 916.35
     },
     {
       "weekStart": "2017-04-24",
-      "averageND": 29532.38
+      "windAverage": 1743.33
     },
     {
       "weekStart": "2017-05-01",
-      "averageND": 27750.29
+      "windAverage": 1629.35
     },
     {
       "weekStart": "2017-05-08",
-      "averageND": 28052.97
+      "windAverage": 1110.78
     },
     {
       "weekStart": "2017-05-15",
-      "averageND": 28239.26
+      "windAverage": 1192.62
     },
     {
       "weekStart": "2017-05-22",
-      "averageND": 26612.93
+      "windAverage": 1152.03
     },
     {
       "weekStart": "2017-05-29",
-      "averageND": 26044.65
+      "windAverage": 907.73
     },
     {
       "weekStart": "2017-06-05",
-      "averageND": 25797.65
+      "windAverage": 2255.93
     },
     {
       "weekStart": "2017-06-12",
-      "averageND": 25870.63
+      "windAverage": 1342.48
     },
     {
       "weekStart": "2017-06-19",
-      "averageND": 26750.23
+      "windAverage": 1468.12
     },
     {
       "weekStart": "2017-06-26",
-      "averageND": 26774.29
+      "windAverage": 1351.86
     },
     {
       "weekStart": "2017-07-03",
-      "averageND": 27027.84
+      "windAverage": 732.58
     },
     {
       "weekStart": "2017-07-10",
-      "averageND": 26853.99
+      "windAverage": 1061.08
     },
     {
       "weekStart": "2017-07-17",
-      "averageND": 26491.04
+      "windAverage": 1413.46
     },
     {
       "weekStart": "2017-07-24",
-      "averageND": 25774.48
+      "windAverage": 1532.44
     },
     {
       "weekStart": "2017-07-31",
-      "averageND": 25232.5
+      "windAverage": 1536.11
     },
     {
       "weekStart": "2017-08-07",
-      "averageND": 26147.98
+      "windAverage": 1085.19
     },
     {
       "weekStart": "2017-08-14",
-      "averageND": 25603.2
+      "windAverage": 1685.73
     },
     {
       "weekStart": "2017-08-21",
-      "averageND": 26924.46
+      "windAverage": 774.76
     },
     {
       "weekStart": "2017-08-28",
-      "averageND": 26366.22
+      "windAverage": 932.8
     },
     {
       "weekStart": "2017-09-04",
-      "averageND": 27519.79
+      "windAverage": 1529.99
     },
     {
       "weekStart": "2017-09-11",
-      "averageND": 27459.86
+      "windAverage": 1789.17
     },
     {
       "weekStart": "2017-09-18",
-      "averageND": 28732.27
+      "windAverage": 1166.54
     },
     {
       "weekStart": "2017-09-25",
-      "averageND": 29005.08
+      "windAverage": 1364.25
     },
     {
       "weekStart": "2017-10-02",
-      "averageND": 28337.08
+      "windAverage": 2188.89
     },
     {
       "weekStart": "2017-10-09",
-      "averageND": 28631.2
+      "windAverage": 2078.87
     },
     {
       "weekStart": "2017-10-16",
-      "averageND": 29419.14
+      "windAverage": 2129.01
     },
     {
       "weekStart": "2017-10-23",
-      "averageND": 29733.75
+      "windAverage": 1810.11
     },
     {
       "weekStart": "2017-10-30",
-      "averageND": 32114.22
+      "windAverage": 1187.09
     },
     {
       "weekStart": "2017-11-06",
-      "averageND": 32974.49
+      "windAverage": 1862.47
     },
     {
       "weekStart": "2017-11-13",
-      "averageND": 34407.89
+      "windAverage": 1394.44
     },
     {
       "weekStart": "2017-11-20",
-      "averageND": 33650.7
+      "windAverage": 2050.79
     },
     {
       "weekStart": "2017-11-27",
-      "averageND": 36077.19
+      "windAverage": 2076.45
     },
     {
       "weekStart": "2017-12-04",
-      "averageND": 35797.54
+      "windAverage": 2403.65
     },
     {
       "weekStart": "2017-12-11",
-      "averageND": 38220.96
+      "windAverage": 1927.21
     },
     {
       "weekStart": "2017-12-18",
-      "averageND": 34619.49
+      "windAverage": 1576.74
     },
     {
       "weekStart": "2017-12-25",
-      "averageND": 30323.78
+      "windAverage": 2394.57
     },
     {
       "weekStart": "2018-01-01",
-      "averageND": 34123.4
+      "windAverage": 2199.68
     },
     {
       "weekStart": "2018-01-08",
-      "averageND": 37109.27
+      "windAverage": 1632.79
     },
     {
       "weekStart": "2018-01-15",
-      "averageND": 36275.29
+      "windAverage": 2539.13
     },
     {
       "weekStart": "2018-01-22",
-      "averageND": 34145.15
+      "windAverage": 2709.68
     },
     {
       "weekStart": "2018-01-29",
-      "averageND": 35050.3
+      "windAverage": 2265.07
     },
     {
       "weekStart": "2018-02-05",
-      "averageND": 36481.4
+      "windAverage": 1986.08
     },
     {
       "weekStart": "2018-02-12",
-      "averageND": 35144.74
+      "windAverage": 2124.01
     },
     {
       "weekStart": "2018-02-19",
-      "averageND": 35159.69
+      "windAverage": 1579.24
     },
     {
       "weekStart": "2018-02-26",
-      "averageND": 38588.04
+      "windAverage": 2786.96
     },
     {
       "weekStart": "2018-03-05",
-      "averageND": 35430.01
+      "windAverage": 1344.98
     },
     {
       "weekStart": "2018-03-12",
-      "averageND": 33983.91
+      "windAverage": 2697.47
     },
     {
       "weekStart": "2018-03-19",
-      "averageND": 34162.59
+      "windAverage": 1767.53
     },
     {
       "weekStart": "2018-03-26",
-      "averageND": 32812.54
+      "windAverage": 1395.48
     },
     {
       "weekStart": "2018-04-02",
-      "averageND": 30938.97
+      "windAverage": 1685.29
     },
     {
       "weekStart": "2018-04-09",
-      "averageND": 32003.65
+      "windAverage": 1326.72
     },
     {
       "weekStart": "2018-04-16",
-      "averageND": 27408.23
+      "windAverage": 1863.62
     },
     {
       "weekStart": "2018-04-23",
-      "averageND": 28794.57
+      "windAverage": 1858.68
     },
     {
       "weekStart": "2018-04-30",
-      "averageND": 27858.05
+      "windAverage": 1658.27
     },
     {
       "weekStart": "2018-05-07",
-      "averageND": 26211.59
+      "windAverage": 1188.96
     },
     {
       "weekStart": "2018-05-14",
-      "averageND": 26165.53
+      "windAverage": 1029.78
     },
     {
       "weekStart": "2018-05-21",
-      "averageND": 25961.43
+      "windAverage": 1409.75
     },
     {
       "weekStart": "2018-05-28",
-      "averageND": 26561.4
+      "windAverage": 670.28
     },
     {
       "weekStart": "2018-06-04",
-      "averageND": 26771.58
+      "windAverage": 623.06
     },
     {
       "weekStart": "2018-06-11",
-      "averageND": 25759.95
+      "windAverage": 1549.73
     },
     {
       "weekStart": "2018-06-18",
-      "averageND": 25288.63
+      "windAverage": 1647.1
     },
     {
       "weekStart": "2018-06-25",
-      "averageND": 25991.72
+      "windAverage": 821.38
     },
     {
       "weekStart": "2018-07-02",
-      "averageND": 26466.3
+      "windAverage": 715.21
     },
     {
       "weekStart": "2018-07-09",
-      "averageND": 26939.31
+      "windAverage": 635.35
     },
     {
       "weekStart": "2018-07-16",
-      "averageND": 26993.91
+      "windAverage": 562.83
     },
     {
       "weekStart": "2018-07-23",
-      "averageND": 26287.28
+      "windAverage": 1371.9
     },
     {
       "weekStart": "2018-07-30",
-      "averageND": 25675.49
+      "windAverage": 1145.51
     },
     {
       "weekStart": "2018-08-06",
-      "averageND": 26211.6
+      "windAverage": 1009
     },
     {
       "weekStart": "2018-08-13",
-      "averageND": 25927.5
+      "windAverage": 1737.41
     },
     {
       "weekStart": "2018-08-20",
-      "averageND": 26461.43
+      "windAverage": 1402.43
     },
     {
       "weekStart": "2018-08-27",
-      "averageND": 26016.47
+      "windAverage": 1093.91
     },
     {
       "weekStart": "2018-09-03",
-      "averageND": 27185.24
+      "windAverage": 1166.5
     },
     {
       "weekStart": "2018-09-10",
-      "averageND": 26706.46
+      "windAverage": 2037.93
     },
     {
       "weekStart": "2018-09-17",
-      "averageND": 26980.68
+      "windAverage": 2511.9
     },
     {
       "weekStart": "2018-09-24",
-      "averageND": 27465.32
+      "windAverage": 1721.23
     },
     {
       "weekStart": "2018-10-01",
-      "averageND": 28708.2
+      "windAverage": 1736.88
     },
     {
       "weekStart": "2018-10-08",
-      "averageND": 27898.08
+      "windAverage": 2445.18
     },
     {
       "weekStart": "2018-10-15",
-      "averageND": 29665.06
+      "windAverage": 1188.21
     },
     {
       "weekStart": "2018-10-22",
-      "averageND": 29559.76
+      "windAverage": 2407.57
     },
     {
       "weekStart": "2018-10-29",
-      "averageND": 32657.81
+      "windAverage": 1667.49
     },
     {
       "weekStart": "2018-11-05",
-      "averageND": 31545.49
+      "windAverage": 2233.33
     },
     {
       "weekStart": "2018-11-12",
-      "averageND": 31568.09
+      "windAverage": 2035.48
     },
     {
       "weekStart": "2018-11-19",
-      "averageND": 35389.4
+      "windAverage": 1714.36
     },
     {
       "weekStart": "2018-11-26",
-      "averageND": 33596.26
+      "windAverage": 2334.09
     },
     {
       "weekStart": "2018-12-03",
-      "averageND": 33558.21
+      "windAverage": 2280.21
     },
     {
       "weekStart": "2018-12-10",
-      "averageND": 35748.46
+      "windAverage": 2140.18
     },
     {
       "weekStart": "2018-12-17",
-      "averageND": 33805.6
+      "windAverage": 1872.8
     },
     {
       "weekStart": "2018-12-24",
-      "averageND": 29850.45
+      "windAverage": 1201.35
     },
     {
       "weekStart": "2018-12-31",
-      "averageND": 33338.87
+      "windAverage": 1024.29
     },
     {
       "weekStart": "2019-01-07",
-      "averageND": 34252.04
+      "windAverage": 2369.26
     },
     {
       "weekStart": "2019-01-14",
-      "averageND": 35532.44
+      "windAverage": 1707.18
     },
     {
       "weekStart": "2019-01-21",
-      "averageND": 35866.69
+      "windAverage": 1902.13
     },
     {
       "weekStart": "2019-01-28",
-      "averageND": 37367.89
+      "windAverage": 1451.89
     },
     {
       "weekStart": "2019-02-04",
-      "averageND": 34270.82
+      "windAverage": 2651.67
     },
     {
       "weekStart": "2019-02-11",
-      "averageND": 32784.47
+      "windAverage": 2182.16
     },
     {
       "weekStart": "2019-02-18",
-      "averageND": 31355.75
+      "windAverage": 2114.37
     },
     {
       "weekStart": "2019-02-25",
-      "averageND": 31511.9
+      "windAverage": 1405.06
     },
     {
       "weekStart": "2019-03-04",
-      "averageND": 31293.79
+      "windAverage": 2815.4
     },
     {
       "weekStart": "2019-03-11",
-      "averageND": 30502.49
+      "windAverage": 3896.42
     },
     {
       "weekStart": "2019-03-18",
-      "averageND": 30969.66
+      "windAverage": 1743.52
     },
     {
       "weekStart": "2019-03-25",
-      "averageND": 29870.19
+      "windAverage": 1312.91
     },
     {
       "weekStart": "2019-04-01",
-      "averageND": 30972.17
+      "windAverage": 1784.87
     },
     {
       "weekStart": "2019-04-08",
-      "averageND": 29873.06
+      "windAverage": 1654.11
     },
     {
       "weekStart": "2019-04-15",
-      "averageND": 26665.74
+      "windAverage": 1550.06
     },
     {
       "weekStart": "2019-04-22",
-      "averageND": 26317.81
+      "windAverage": 1987.87
     },
     {
       "weekStart": "2019-04-29",
-      "averageND": 28285.84
+      "windAverage": 1094.58
     },
     {
       "weekStart": "2019-05-06",
-      "averageND": 28164.3
+      "windAverage": 937.07
     },
     {
       "weekStart": "2019-05-13",
-      "averageND": 26598.39
+      "windAverage": 943.07
     },
     {
       "weekStart": "2019-05-20",
-      "averageND": 25435.67
+      "windAverage": 1279.86
     },
     {
       "weekStart": "2019-05-27",
-      "averageND": 24709.59
+      "windAverage": 1677.02
     },
     {
       "weekStart": "2019-06-03",
-      "averageND": 25557.48
+      "windAverage": 1520.1
     },
     {
       "weekStart": "2019-06-10",
-      "averageND": 26828.01
+      "windAverage": 1685.23
     },
     {
       "weekStart": "2019-06-17",
-      "averageND": 25637.18
+      "windAverage": 1244.41
     },
     {
       "weekStart": "2019-06-24",
-      "averageND": 25489.63
+      "windAverage": 1470.48
     },
     {
       "weekStart": "2019-07-01",
-      "averageND": 25122.99
+      "windAverage": 1328.74
     },
     {
       "weekStart": "2019-07-08",
-      "averageND": 26075.1
+      "windAverage": 715.29
     },
     {
       "weekStart": "2019-07-15",
-      "averageND": 25517.95
+      "windAverage": 1239.69
     },
     {
       "weekStart": "2019-07-22",
-      "averageND": 26142.92
+      "windAverage": 1525.29
     },
     {
       "weekStart": "2019-07-29",
-      "averageND": 25323.55
+      "windAverage": 909.5
     },
     {
       "weekStart": "2019-08-05",
-      "averageND": 24406.82
+      "windAverage": 1970.99
     },
     {
       "weekStart": "2019-08-12",
-      "averageND": 24581.87
+      "windAverage": 1988.37
     },
     {
       "weekStart": "2019-08-19",
-      "averageND": 24695.12
+      "windAverage": 1568.88
     },
     {
       "weekStart": "2019-08-26",
-      "averageND": 24664.26
+      "windAverage": 1776.95
     },
     {
       "weekStart": "2019-09-02",
-      "averageND": 25072.35
+      "windAverage": 2015.57
     },
     {
       "weekStart": "2019-09-09",
-      "averageND": 26105.4
+      "windAverage": 1666.8
     },
     {
       "weekStart": "2019-09-16",
-      "averageND": 26545.44
+      "windAverage": 1173.29
     },
     {
       "weekStart": "2019-09-23",
-      "averageND": 26779.15
+      "windAverage": 1920.6
     },
     {
       "weekStart": "2019-09-30",
-      "averageND": 28468.9
+      "windAverage": 1750.74
     },
     {
       "weekStart": "2019-10-07",
-      "averageND": 28219.53
+      "windAverage": 2482.76
     },
     {
       "weekStart": "2019-10-14",
-      "averageND": 29793.35
+      "windAverage": 1462.25
     },
     {
       "weekStart": "2019-10-21",
-      "averageND": 30533.64
+      "windAverage": 1804.85
     },
     {
       "weekStart": "2019-10-28",
-      "averageND": 31821.4
+      "windAverage": 1626
     },
     {
       "weekStart": "2019-11-04",
-      "averageND": 33184.36
+      "windAverage": 1480.02
     },
     {
       "weekStart": "2019-11-11",
-      "averageND": 33949.64
+      "windAverage": 1841.01
     },
     {
       "weekStart": "2019-11-18",
-      "averageND": 34771.22
+      "windAverage": 1692.89
     },
     {
       "weekStart": "2019-11-25",
-      "averageND": 34379.55
+      "windAverage": 1396.75
     },
     {
       "weekStart": "2019-12-02",
-      "averageND": 33642.12
+      "windAverage": 2664.66
     },
     {
       "weekStart": "2019-12-09",
-      "averageND": 33810.66
+      "windAverage": 2972.22
     },
     {
       "weekStart": "2019-12-16",
-      "averageND": 34016.78
+      "windAverage": 1830.16
     },
     {
       "weekStart": "2019-12-23",
-      "averageND": 29054.39
+      "windAverage": 2063.62
     },
     {
       "weekStart": "2019-12-30",
-      "averageND": 30302.73
+      "windAverage": 2275.27
     },
     {
       "weekStart": "2020-01-06",
-      "averageND": 32155.94
+      "windAverage": 2783.04
     },
     {
       "weekStart": "2020-01-13",
-      "averageND": 32879.54
+      "windAverage": 2938.36
     },
     {
       "weekStart": "2020-01-20",
-      "averageND": 34796.34
+      "windAverage": 1392.33
     },
     {
       "weekStart": "2020-01-27",
-      "averageND": 32000.31
+      "windAverage": 3076.48
     },
     {
       "weekStart": "2020-02-03",
-      "averageND": 32274.78
+      "windAverage": 2860.01
     },
     {
       "weekStart": "2020-02-10",
-      "averageND": 32157.96
+      "windAverage": 3935.44
     },
     {
       "weekStart": "2020-02-17",
-      "averageND": 31281
+      "windAverage": 4122.99
     },
     {
       "weekStart": "2020-02-24",
-      "averageND": 32379.62
+      "windAverage": 3106.99
     },
     {
       "weekStart": "2020-03-02",
-      "averageND": 32840.94
+      "windAverage": 1940.6
     },
     {
       "weekStart": "2020-03-09",
-      "averageND": 30256.81
+      "windAverage": 3373.29
     },
     {
       "weekStart": "2020-03-16",
-      "averageND": 30038.85
+      "windAverage": 2200.38
     },
     {
       "weekStart": "2020-03-23",
-      "averageND": 26158.71
+      "windAverage": 2148.29
     },
     {
       "weekStart": "2020-03-30",
-      "averageND": 25862.72
+      "windAverage": 1997.44
     },
     {
       "weekStart": "2020-04-06",
-      "averageND": 22543.04
+      "windAverage": 1340.79
     },
     {
       "weekStart": "2020-04-13",
-      "averageND": 22448.18
+      "windAverage": 1497.21
     },
     {
       "weekStart": "2020-04-20",
-      "averageND": 21573.55
+      "windAverage": 1451.51
     },
     {
       "weekStart": "2020-04-27",
-      "averageND": 24188.08
+      "windAverage": 1134.89
     },
     {
       "weekStart": "2020-05-04",
-      "averageND": 21798.4
+      "windAverage": 1245.7
     },
     {
       "weekStart": "2020-05-11",
-      "averageND": 22619.62
+      "windAverage": 1641.63
     },
     {
       "weekStart": "2020-05-18",
-      "averageND": 20775.57
+      "windAverage": 2398.79
     },
     {
       "weekStart": "2020-05-25",
-      "averageND": 20681.94
+      "windAverage": 1143.26
     },
     {
       "weekStart": "2020-06-01",
-      "averageND": 22240.6
+      "windAverage": 1828.39
     },
     {
       "weekStart": "2020-06-08",
-      "averageND": 23354.73
+      "windAverage": 1294.14
     },
     {
       "weekStart": "2020-06-15",
-      "averageND": 23099.6
+      "windAverage": 1032.03
     },
     {
       "weekStart": "2020-06-22",
-      "averageND": 21925.6
+      "windAverage": 1892.6
     },
     {
       "weekStart": "2020-06-29",
-      "averageND": 22660.62
+      "windAverage": 2302.68
     },
     {
       "weekStart": "2020-07-06",
-      "averageND": 23615.9
+      "windAverage": 1352.99
     },
     {
       "weekStart": "2020-07-13",
-      "averageND": 23787.13
+      "windAverage": 1422.27
     },
     {
       "weekStart": "2020-07-20",
-      "averageND": 23226.53
+      "windAverage": 1220.29
     },
     {
       "weekStart": "2020-07-27",
-      "averageND": 22833.52
+      "windAverage": 1576.57
     },
     {
       "weekStart": "2020-08-03",
-      "averageND": 23949.46
+      "windAverage": 1169.68
     },
     {
       "weekStart": "2020-08-10",
-      "averageND": 25851.69
+      "windAverage": 710.96
     },
     {
       "weekStart": "2020-08-17",
-      "averageND": 23855.17
+      "windAverage": 1732.75
     },
     {
       "weekStart": "2020-08-24",
-      "averageND": 24416.53
+      "windAverage": 1586.66
     },
     {
       "weekStart": "2020-08-31",
-      "averageND": 24367.99
+      "windAverage": 1389.1
     },
     {
       "weekStart": "2020-09-07",
-      "averageND": 24618.94
+      "windAverage": 1763.82
     },
     {
       "weekStart": "2020-09-14",
-      "averageND": 25248.08
+      "windAverage": 1011.21
     },
     {
       "weekStart": "2020-09-21",
-      "averageND": 26181.8
+      "windAverage": 1559.88
     },
     {
       "weekStart": "2020-09-28",
-      "averageND": 28215.8
+      "windAverage": 1228.04
     },
     {
       "weekStart": "2020-10-05",
-      "averageND": 28035.13
+      "windAverage": 1602.85
     },
     {
       "weekStart": "2020-10-12",
-      "averageND": 29857.49
+      "windAverage": 964.42
     },
     {
       "weekStart": "2020-10-19",
-      "averageND": 28571.57
+      "windAverage": 1859.79
     },
     {
       "weekStart": "2020-10-26",
-      "averageND": 28587.13
+      "windAverage": 2435.09
     },
     {
       "weekStart": "2020-11-02",
-      "averageND": 30649.3
+      "windAverage": 1243.13
     },
     {
       "weekStart": "2020-11-09",
-      "averageND": 28830.48
+      "windAverage": 2034.85
     },
     {
       "weekStart": "2020-11-16",
-      "averageND": 29223.14
+      "windAverage": 2427.68
     },
     {
       "weekStart": "2020-11-23",
-      "averageND": 32097.12
+      "windAverage": 996.58
     },
     {
       "weekStart": "2020-11-30",
-      "averageND": 33835.46
+      "windAverage": 1345.13
     },
     {
       "weekStart": "2020-12-07",
-      "averageND": 34438.01
+      "windAverage": 1378.98
     },
     {
       "weekStart": "2020-12-14",
-      "averageND": 30973.24
+      "windAverage": 2416.68
     },
     {
       "weekStart": "2020-12-21",
-      "averageND": 29579.29
+      "windAverage": 1916.71
     },
     {
       "weekStart": "2020-12-28",
-      "averageND": 31861.93
+      "windAverage": 969.97
     },
     {
       "weekStart": "2021-01-04",
-      "averageND": 35704.46
+      "windAverage": 1104.12
     },
     {
       "weekStart": "2021-01-11",
-      "averageND": 33873.74
+      "windAverage": 1615.82
     },
     {
       "weekStart": "2021-01-18",
-      "averageND": 33106.77
+      "windAverage": 1667.98
     },
     {
       "weekStart": "2021-01-25",
-      "averageND": 33575.4
+      "windAverage": 1451.61
     },
     {
       "weekStart": "2021-02-01",
-      "averageND": 32897.71
+      "windAverage": 2043.24
     },
     {
       "weekStart": "2021-02-08",
-      "averageND": 35302.52
+      "windAverage": 2309.01
     },
     {
       "weekStart": "2021-02-15",
-      "averageND": 29946.76
+      "windAverage": 2568.74
     },
     {
       "weekStart": "2021-02-22",
-      "averageND": 29211.43
+      "windAverage": 1531.88
     },
     {
       "weekStart": "2021-03-01",
-      "averageND": 32584.57
+      "windAverage": 563.76
     },
     {
       "weekStart": "2021-03-08",
-      "averageND": 29207.4
+      "windAverage": 2636.47
     },
     {
       "weekStart": "2021-03-15",
-      "averageND": 30117.34
+      "windAverage": 1392.99
     },
     {
       "weekStart": "2021-03-22",
-      "averageND": 27673.96
+      "windAverage": 2708.78
     },
     {
       "weekStart": "2021-03-29",
-      "averageND": 25634.4
+      "windAverage": 1920.67
     },
     {
       "weekStart": "2021-04-05",
-      "averageND": 27952.34
+      "windAverage": 2134.35
     },
     {
       "weekStart": "2021-04-12",
-      "averageND": 28861.49
+      "windAverage": 559.52
     },
     {
       "weekStart": "2021-04-19",
-      "averageND": 26377.49
+      "windAverage": 964.8
     },
     {
       "weekStart": "2021-04-26",
-      "averageND": 27766.48
+      "windAverage": 962.77
     },
     {
       "weekStart": "2021-05-03",
-      "averageND": 26963.55
+      "windAverage": 2102.83
     },
     {
       "weekStart": "2021-05-10",
-      "averageND": 26890.32
+      "windAverage": 1050.35
     },
     {
       "weekStart": "2021-05-17",
-      "averageND": 26718.58
+      "windAverage": 1806.49
     },
     {
       "weekStart": "2021-05-24",
-      "averageND": 26044.25
+      "windAverage": 921.62
     },
     {
       "weekStart": "2021-05-31",
-      "averageND": 23890.78
+      "windAverage": 1048.93
     },
     {
       "weekStart": "2021-06-07",
-      "averageND": 24277.78
+      "windAverage": 1516.91
     },
     {
       "weekStart": "2021-06-14",
-      "averageND": 25400.52
+      "windAverage": 1110.45
     },
     {
       "weekStart": "2021-06-21",
-      "averageND": 25172.35
+      "windAverage": 1176.96
     },
     {
       "weekStart": "2021-06-28",
-      "averageND": 25687.03
+      "windAverage": 673.57
     },
     {
       "weekStart": "2021-07-05",
-      "averageND": 25401.67
+      "windAverage": 775.78
     },
     {
       "weekStart": "2021-07-12",
-      "averageND": 24762.31
+      "windAverage": 836.81
     },
     {
       "weekStart": "2021-07-19",
-      "averageND": 25456.47
+      "windAverage": 553.54
     },
     {
       "weekStart": "2021-07-26",
-      "averageND": 24399.91
+      "windAverage": 1056.19
     },
     {
       "weekStart": "2021-08-02",
-      "averageND": 23885.53
+      "windAverage": 1339.42
     },
     {
       "weekStart": "2021-08-09",
-      "averageND": 24158.12
+      "windAverage": 1459.2
     },
     {
       "weekStart": "2021-08-16",
-      "averageND": 25643.04
+      "windAverage": 1197.01
     },
     {
       "weekStart": "2021-08-23",
-      "averageND": 25355.33
+      "windAverage": 788.13
     },
     {
       "weekStart": "2021-08-30",
-      "averageND": 25620.83
+      "windAverage": 993.56
     },
     {
       "weekStart": "2021-09-06",
-      "averageND": 26307.86
+      "windAverage": 722.52
     },
     {
       "weekStart": "2021-09-13",
-      "averageND": 26345.35
+      "windAverage": 720.96
     },
     {
       "weekStart": "2021-09-20",
-      "averageND": 25290.32
+      "windAverage": 1663.31
     },
     {
       "weekStart": "2021-09-27",
-      "averageND": 25713.3
+      "windAverage": 2472.21
     },
     {
       "weekStart": "2021-10-04",
-      "averageND": 27116.36
+      "windAverage": 1741.55
     },
     {
       "weekStart": "2021-10-11",
-      "averageND": 28012.82
+      "windAverage": 1207.49
     },
     {
       "weekStart": "2021-10-18",
-      "averageND": 27639.75
+      "windAverage": 2412.57
     },
     {
       "weekStart": "2021-10-25",
-      "averageND": 27311.59
+      "windAverage": 2517.33
     },
     {
       "weekStart": "2021-11-01",
-      "averageND": 29975.04
+      "windAverage": 2137.98
     },
     {
       "weekStart": "2021-11-08",
-      "averageND": 30318.21
+      "windAverage": 1588.81
     },
     {
       "weekStart": "2021-11-15",
-      "averageND": 30300.21
+      "windAverage": 2009.63
     },
     {
       "weekStart": "2021-11-22",
-      "averageND": 33068.39
+      "windAverage": 2208.84
     },
     {
       "weekStart": "2021-11-29",
-      "averageND": 33360.9
+      "windAverage": 2414.71
     },
     {
       "weekStart": "2021-12-06",
-      "averageND": 33742.3
+      "windAverage": 2432.43
     },
     {
       "weekStart": "2021-12-13",
-      "averageND": 32854.91
+      "windAverage": 1243.33
     },
     {
       "weekStart": "2021-12-20",
-      "averageND": 31854.89
+      "windAverage": 1521.35
     },
     {
       "weekStart": "2021-12-27",
-      "averageND": 26749.46
+      "windAverage": 2476.98
     },
     {
       "weekStart": "2022-01-03",
-      "averageND": 32184.35
+      "windAverage": 2546.27
     },
     {
       "weekStart": "2022-01-10",
-      "averageND": 34124.34
+      "windAverage": 1317.29
     },
     {
       "weekStart": "2022-01-17",
-      "averageND": 34378.19
+      "windAverage": 1553.76
     },
     {
       "weekStart": "2022-01-24",
-      "averageND": 32991.38
+      "windAverage": 2160.54
     },
     {
       "weekStart": "2022-01-31",
-      "averageND": 30593.13
+      "windAverage": 3431.1
     },
     {
       "weekStart": "2022-02-07",
-      "averageND": 31239.16
+      "windAverage": 2797.11
     },
     {
       "weekStart": "2022-02-14",
-      "averageND": 30364.63
+      "windAverage": 3483.42
     },
     {
       "weekStart": "2022-02-21",
-      "averageND": 29542.6
+      "windAverage": 3411.64
     },
     {
       "weekStart": "2022-02-28",
-      "averageND": 31740.88
+      "windAverage": 1647.46
     },
     {
       "weekStart": "2022-03-07",
-      "averageND": 29022.33
+      "windAverage": 2891.92
     },
     {
       "weekStart": "2022-03-14",
-      "averageND": 28617.46
+      "windAverage": 1779.51
     },
     {
       "weekStart": "2022-03-21",
-      "averageND": 27506.9
+      "windAverage": 678.35
     },
     {
       "weekStart": "2022-03-28",
-      "averageND": 29410.12
+      "windAverage": 1189.63
     },
     {
       "weekStart": "2022-04-04",
-      "averageND": 27135.48
+      "windAverage": 2525.83
     },
     {
       "weekStart": "2022-04-11",
-      "averageND": 25190.48
+      "windAverage": 1382.61
     },
     {
       "weekStart": "2022-04-18",
-      "averageND": 23733.86
+      "windAverage": 1740.65
     },
     {
       "weekStart": "2022-04-25",
-      "averageND": 26578.08
+      "windAverage": 706.94
     },
     {
       "weekStart": "2022-05-02",
-      "averageND": 25001.32
+      "windAverage": 937.11
     },
     {
       "weekStart": "2022-05-09",
-      "averageND": 23166.73
+      "windAverage": 2312.42
     },
     {
       "weekStart": "2022-05-16",
-      "averageND": 23583.6
+      "windAverage": 1815.77
     },
     {
       "weekStart": "2022-05-23",
-      "averageND": 23170.28
+      "windAverage": 1961.6
     },
     {
       "weekStart": "2022-05-30",
-      "averageND": 22965.43
+      "windAverage": 920.97
     },
     {
       "weekStart": "2022-06-06",
-      "averageND": 22872.34
+      "windAverage": 1920.11
     },
     {
       "weekStart": "2022-06-13",
-      "averageND": 23364.32
+      "windAverage": 1397.81
     },
     {
       "weekStart": "2022-06-20",
-      "averageND": 22438.38
+      "windAverage": 1431.82
     },
     {
       "weekStart": "2022-06-27",
-      "averageND": 22762.92
+      "windAverage": 1511.7
     },
     {
       "weekStart": "2022-07-04",
-      "averageND": 22673.68
+      "windAverage": 1587.09
     },
     {
       "weekStart": "2022-07-11",
-      "averageND": 23552.14
+      "windAverage": 1145.57
     },
     {
       "weekStart": "2022-07-18",
-      "averageND": 24327.95
+      "windAverage": 1305.88
     },
     {
       "weekStart": "2022-07-25",
-      "averageND": 23294.34
+      "windAverage": 1083.28
     },
     {
       "weekStart": "2022-08-01",
-      "averageND": 22187.33
+      "windAverage": 1606
     },
     {
       "weekStart": "2022-08-08",
-      "averageND": 23690.21
+      "windAverage": 632.96
     },
     {
       "weekStart": "2022-08-15",
-      "averageND": 23636.68
+      "windAverage": 1401.24
     },
     {
       "weekStart": "2022-08-22",
-      "averageND": 23861.34
+      "windAverage": 685.65
     },
     {
       "weekStart": "2022-08-29",
-      "averageND": 23098.48
+      "windAverage": 1349.14
     },
     {
       "weekStart": "2022-09-05",
-      "averageND": 24167.7
+      "windAverage": 1332.18
     },
     {
       "weekStart": "2022-09-12",
-      "averageND": 23900.49
+      "windAverage": 1402.4
     },
     {
       "weekStart": "2022-09-19",
-      "averageND": 23786.63
+      "windAverage": 1029.88
     },
     {
       "weekStart": "2022-09-26",
-      "averageND": 24464.68
+      "windAverage": 2130.3
     },
     {
       "weekStart": "2022-10-03",
-      "averageND": 23817.03
+      "windAverage": 2544.64
     },
     {
       "weekStart": "2022-10-10",
-      "averageND": 25379.29
+      "windAverage": 1747.55
     },
     {
       "weekStart": "2022-10-17",
-      "averageND": 25482.55
+      "windAverage": 1792.28
     },
     {
       "weekStart": "2022-10-24",
-      "averageND": 24804.85
+      "windAverage": 2229.37
     },
     {
       "weekStart": "2022-10-31",
-      "averageND": 26645.35
+      "windAverage": 2173.44
     },
     {
       "weekStart": "2022-11-07",
-      "averageND": 26202.62
+      "windAverage": 2783.77
     },
     {
       "weekStart": "2022-11-14",
-      "averageND": 28297.05
+      "windAverage": 1922.44
     },
     {
       "weekStart": "2022-11-21",
-      "averageND": 28928.12
+      "windAverage": 2428.21
     },
     {
       "weekStart": "2022-11-28",
-      "averageND": 31244.75
+      "windAverage": 982.07
     },
     {
       "weekStart": "2022-12-05",
-      "averageND": 33892.14
+      "windAverage": 1097.68
     },
     {
       "weekStart": "2022-12-12",
-      "averageND": 35770.11
+      "windAverage": 1399.57
     },
     {
       "weekStart": "2022-12-19",
-      "averageND": 28706.03
+      "windAverage": 2282.73
     },
     {
       "weekStart": "2022-12-26",
-      "averageND": 25317.47
+      "windAverage": 2658.32
     },
     {
       "weekStart": "2023-01-02",
-      "averageND": 27748.29
+      "windAverage": 2837.32
     },
     {
       "weekStart": "2023-01-09",
-      "averageND": 29309.88
+      "windAverage": 3369.84
     },
     {
       "weekStart": "2023-01-16",
-      "averageND": 33658.03
+      "windAverage": 1730.57
     },
     {
       "weekStart": "2023-01-23",
-      "averageND": 33183.76
+      "windAverage": 1416.82
     },
     {
       "weekStart": "2023-01-30",
-      "averageND": 29386.38
+      "windAverage": 2681.42
     },
     {
       "weekStart": "2023-02-06",
-      "averageND": 30752.76
+      "windAverage": 1637.45
     },
     {
       "weekStart": "2023-02-13",
-      "averageND": 28394.21
+      "windAverage": 2167.57
     },
     {
       "weekStart": "2023-02-20",
-      "averageND": 29187.29
+      "windAverage": 1918.59
     },
     {
       "weekStart": "2023-02-27",
-      "averageND": 31417.84
+      "windAverage": 936.33
     },
     {
       "weekStart": "2023-03-06",
-      "averageND": 31526.84
+      "windAverage": 1636.25
     },
     {
       "weekStart": "2023-03-13",
-      "averageND": 28311.85
+      "windAverage": 1935.98
     },
     {
       "weekStart": "2023-03-20",
-      "averageND": 26330.57
+      "windAverage": 2515.19
     },
     {
       "weekStart": "2023-03-27",
-      "averageND": 27476.41
+      "windAverage": 1612.47
     },
     {
       "weekStart": "2023-04-03",
-      "averageND": 25089.23
+      "windAverage": 1403.67
     },
     {
       "weekStart": "2023-04-10",
-      "averageND": 25231.49
+      "windAverage": 1979.32
     },
     {
       "weekStart": "2023-04-17",
-      "averageND": 25393.81
+      "windAverage": 1694.23
     },
     {
       "weekStart": "2023-04-24",
-      "averageND": 26481.44
+      "windAverage": 1042.46
     },
     {
       "weekStart": "2023-05-01",
-      "averageND": 23849.51
+      "windAverage": 1335.94
     },
     {
       "weekStart": "2023-05-08",
-      "averageND": 23805.55
+      "windAverage": 1012.4
     },
     {
       "weekStart": "2023-05-15",
-      "averageND": 22938.11
+      "windAverage": 974.94
     },
     {
       "weekStart": "2023-05-22",
-      "averageND": 21749.54
+      "windAverage": 1004.11
     },
     {
       "weekStart": "2023-05-29",
-      "averageND": 20958.8
+      "windAverage": 1141.31
     },
     {
       "weekStart": "2023-06-05",
-      "averageND": 21960.55
+      "windAverage": 1219.71
     },
     {
       "weekStart": "2023-06-12",
-      "averageND": 22698.14
+      "windAverage": 786.78
     },
     {
       "weekStart": "2023-06-19",
-      "averageND": 22777.55
+      "windAverage": 1217.4
     },
     {
       "weekStart": "2023-06-26",
-      "averageND": 22108.35
+      "windAverage": 1891.89
     },
     {
       "weekStart": "2023-07-03",
-      "averageND": 21975.77
+      "windAverage": 1736.67
     },
     {
       "weekStart": "2023-07-10",
-      "averageND": 21842.03
+      "windAverage": 2234.07
     },
     {
       "weekStart": "2023-07-17",
-      "averageND": 22479.06
+      "windAverage": 1236.12
     },
     {
       "weekStart": "2023-07-24",
-      "averageND": 21928.53
+      "windAverage": 1568.29
     },
     {
       "weekStart": "2023-07-31",
-      "averageND": 22119.84
+      "windAverage": 1621.93
     },
     {
       "weekStart": "2023-08-07",
-      "averageND": 21865.59
+      "windAverage": 1576.1
     },
     {
       "weekStart": "2023-08-14",
-      "averageND": 22253.54
+      "windAverage": 1738.96
     },
     {
       "weekStart": "2023-08-21",
-      "averageND": 22414.93
+      "windAverage": 1168.32
     },
     {
       "weekStart": "2023-08-28",
-      "averageND": 22628.24
+      "windAverage": 876.76
     },
     {
       "weekStart": "2023-09-04",
-      "averageND": 24646.09
+      "windAverage": 631.25
     },
     {
       "weekStart": "2023-09-11",
-      "averageND": 24195.14
+      "windAverage": 1161.93
     },
     {
       "weekStart": "2023-09-18",
-      "averageND": 23475.7
+      "windAverage": 2603.96
     },
     {
       "weekStart": "2023-09-25",
-      "averageND": 23596.09
+      "windAverage": 2443.18
     },
     {
       "weekStart": "2023-10-02",
-      "averageND": 23775.17
+      "windAverage": 2122.01
     },
     {
       "weekStart": "2023-10-09",
-      "averageND": 24565.79
+      "windAverage": 1886.43
     },
     {
       "weekStart": "2023-10-16",
-      "averageND": 26127.04
+      "windAverage": 2342.95
     },
     {
       "weekStart": "2023-10-23",
-      "averageND": 27107.84
+      "windAverage": 1540.16
     },
     {
       "weekStart": "2023-10-30",
-      "averageND": 27963.06
+      "windAverage": 1969.82
     },
     {
       "weekStart": "2023-11-06",
-      "averageND": 29321.1
+      "windAverage": 1594.19
     },
     {
       "weekStart": "2023-11-13",
-      "averageND": 28968.6
+      "windAverage": 2181.1
     },
     {
       "weekStart": "2023-11-20",
-      "averageND": 29750.9
+      "windAverage": 2139.29
     },
     {
       "weekStart": "2023-11-27",
-      "averageND": 34149.03
+      "windAverage": 890.36
     },
     {
       "weekStart": "2023-12-04",
-      "averageND": 32564.6
+      "windAverage": 2478.79
     },
     {
       "weekStart": "2023-12-11",
-      "averageND": 30989.46
+      "windAverage": 2322.2
     },
     {
       "weekStart": "2023-12-18",
-      "averageND": 27449.53
+      "windAverage": 4066.13
     },
     {
       "weekStart": "2023-12-25",
-      "averageND": 25073.28
+      "windAverage": 3185.82
     },
     {
       "weekStart": "2024-01-01",
-      "averageND": 30005.35
+      "windAverage": 1511.97
     },
     {
       "weekStart": "2024-01-08",
-      "averageND": 33725.27
+      "windAverage": 1472.46
     },
     {
       "weekStart": "2024-01-15",
-      "averageND": 33949.95
+      "windAverage": 2536.16
     },
     {
       "weekStart": "2024-01-22",
-      "averageND": 29613.25
+      "windAverage": 3737.21
     },
     {
       "weekStart": "2024-01-29",
-      "averageND": 29466.44
+      "windAverage": 2956.44
     },
     {
       "weekStart": "2024-02-05",
-      "averageND": 30234
+      "windAverage": 2373.84
     },
     {
       "weekStart": "2024-02-12",
-      "averageND": 28937.39
+      "windAverage": 1750.97
     },
     {
       "weekStart": "2024-02-19",
-      "averageND": 29338.93
+      "windAverage": 2121.78
     },
     {
       "weekStart": "2024-02-26",
-      "averageND": 30708.47
+      "windAverage": 1937.9
     },
     {
       "weekStart": "2024-03-04",
-      "averageND": 29498.76
+      "windAverage": 2324.01
     },
     {
       "weekStart": "2024-03-11",
-      "averageND": 28558.47
+      "windAverage": 2109.03
     },
     {
       "weekStart": "2024-03-18",
-      "averageND": 26222.21
+      "windAverage": 2515.98
     },
     {
       "weekStart": "2024-03-25",
-      "averageND": 26490.19
+      "windAverage": 2010.08
     },
     {
       "weekStart": "2024-04-01",
-      "averageND": 24582.98
+      "windAverage": 2860.3
     },
     {
       "weekStart": "2024-04-08",
-      "averageND": 24428.76
+      "windAverage": 2925.35
     },
     {
       "weekStart": "2024-04-15",
-      "averageND": 24988.88
+      "windAverage": 2401.26
     },
     {
       "weekStart": "2024-04-22",
-      "averageND": 27071.87
+      "windAverage": 1086.65
     },
     {
       "weekStart": "2024-04-29",
-      "averageND": 24343.16
+      "windAverage": 1641.76
     },
     {
       "weekStart": "2024-05-06",
-      "averageND": 22493.22
+      "windAverage": 731.58
     },
     {
       "weekStart": "2024-05-13",
-      "averageND": 23143.39
+      "windAverage": 945.35
     },
     {
       "weekStart": "2024-05-20",
-      "averageND": 23241.73
+      "windAverage": 1155.26
     },
     {
       "weekStart": "2024-05-27",
-      "averageND": 21753.91
+      "windAverage": 1673.06
     },
     {
       "weekStart": "2024-06-03",
-      "averageND": 21801.52
+      "windAverage": 2178.24
     },
     {
       "weekStart": "2024-06-10",
-      "averageND": 22972.01
+      "windAverage": 1518.26
     },
     {
       "weekStart": "2024-06-17",
-      "averageND": 22143.76
+      "windAverage": 974.33
     },
     {
       "weekStart": "2024-06-24",
-      "averageND": 22201.53
+      "windAverage": 1554.39
     },
     {
       "weekStart": "2024-07-01",
-      "averageND": 22210.63
+      "windAverage": 1897.41
     },
     {
       "weekStart": "2024-07-08",
-      "averageND": 23293.77
+      "windAverage": 1139.1
     },
     {
       "weekStart": "2024-07-15",
-      "averageND": 23147.69
+      "windAverage": 962.97
     },
     {
       "weekStart": "2024-07-22",
-      "averageND": 22569.96
+      "windAverage": 972.04
     },
     {
       "weekStart": "2024-07-29",
-      "averageND": 22327.23
+      "windAverage": 1017.26
     },
     {
       "weekStart": "2024-08-05",
-      "averageND": 21555.57
+      "windAverage": 2240.03
     },
     {
       "weekStart": "2024-08-12",
-      "averageND": 21995.07
+      "windAverage": 1785.2
     },
     {
       "weekStart": "2024-08-19",
-      "averageND": 21091.3
+      "windAverage": 3089.71
     },
     {
       "weekStart": "2024-08-26",
-      "averageND": 22058.44
+      "windAverage": 1639.25
     },
     {
       "weekStart": "2024-09-02",
-      "averageND": 24653.29
+      "windAverage": 1118.81
     },
     {
       "weekStart": "2024-09-09",
-      "averageND": 23145.78
+      "windAverage": 2210.23
     },
     {
       "weekStart": "2024-09-16",
-      "averageND": 23845.56
+      "windAverage": 1098.2
     },
     {
       "weekStart": "2024-09-23",
-      "averageND": 25532.83
+      "windAverage": 1727.74
     },
     {
       "weekStart": "2024-09-30",
-      "averageND": 25991.18
+      "windAverage": 2102.66
     },
     {
       "weekStart": "2024-10-07",
-      "averageND": 26579.51
+      "windAverage": 1728.06
     },
     {
       "weekStart": "2024-10-14",
-      "averageND": 26622.8
+      "windAverage": 2067.47
     },
     {
       "weekStart": "2024-10-21",
-      "averageND": 26603.27
+      "windAverage": 2008.62
     },
     {
       "weekStart": "2024-10-28",
-      "averageND": 28104.29
+      "windAverage": 965.05
     },
     {
       "weekStart": "2024-11-04",
-      "averageND": 29977.94
+      "windAverage": 748.24
     },
     {
       "weekStart": "2024-11-11",
-      "averageND": 29943.61
+      "windAverage": 1378.9
     },
     {
       "weekStart": "2024-11-18",
-      "averageND": 32367.58
+      "windAverage": 2805.59
     },
     {
       "weekStart": "2024-11-25",
-      "averageND": 30886.85
+      "windAverage": 2694.89
     },
     {
       "weekStart": "2024-12-02",
-      "averageND": 32321.99
+      "windAverage": 2488.39
     }
   ]
 }

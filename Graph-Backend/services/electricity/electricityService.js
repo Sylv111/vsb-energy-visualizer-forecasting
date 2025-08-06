@@ -212,6 +212,251 @@ class ElectricityService {
     };
   }
 
+  // Get wind data for charts (weekly averages)
+  async getWindData() {
+    const jsonPath = path.join(__dirname, 'data', 'wind_data.json');
+    
+    // Try to read from JSON file first
+    try {
+      if (fs.existsSync(jsonPath)) {
+        const jsonData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+        console.log(`📁 Wind data loaded from JSON cache: ${jsonPath}`);
+        return jsonData;
+      }
+    } catch (error) {
+      console.log('❌ Could not read wind data from JSON cache, will recalculate...');
+    }
+
+    console.log('🔄 Calculating wind weekly averages from CSV...');
+    
+    if (!this.processedData) {
+      const result = await this.processCSVData();
+      this.processedData = result.data;
+    }
+
+    // Group data by week and calculate weekly averages
+    const weeklyAverages = {};
+    
+    this.processedData.forEach(item => {
+      const date = new Date(item.date);
+      // Get the start of the week (Monday)
+      const weekStart = new Date(date);
+      weekStart.setDate(date.getDate() - date.getDay() + (date.getDay() === 0 ? -6 : 1));
+      const weekKey = weekStart.toISOString().split('T')[0];
+      
+      if (!weeklyAverages[weekKey]) {
+        weeklyAverages[weekKey] = {
+          weekStart: weekKey,
+          windTotal: 0,
+          count: 0
+        };
+      }
+      
+      weeklyAverages[weekKey].windTotal += item.windGeneration || 0;
+      weeklyAverages[weekKey].count++;
+    });
+
+    // Calculate averages and format data
+    const windData = Object.values(weeklyAverages).map(week => {
+      const avgWind = week.count > 0 ? week.windTotal / week.count : 0;
+      return {
+        weekStart: week.weekStart,
+        windAverage: Math.round(avgWind * 100) / 100
+      };
+    }).sort((a, b) => a.weekStart.localeCompare(b.weekStart));
+
+    const dataToSave = {
+      generatedAt: new Date().toISOString(),
+      totalWeeks: windData.length,
+      data: windData
+    };
+
+    try {
+      fs.writeFileSync(jsonPath, JSON.stringify(dataToSave, null, 2));
+      console.log(`💾 Wind weekly data saved to: ${jsonPath}`);
+      console.log(`📊 Calculated ${windData.length} weekly averages`);
+    } catch (error) {
+      console.error('❌ Error saving wind data to JSON:', error);
+    }
+
+    return dataToSave;
+  }
+
+  // Get solar data for charts (weekly averages)
+  async getSolarData() {
+    const jsonPath = path.join(__dirname, 'data', 'solar_data.json');
+    
+    // Try to read from JSON file first
+    try {
+      if (fs.existsSync(jsonPath)) {
+        const jsonData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+        console.log(`📁 Solar data loaded from JSON cache: ${jsonPath}`);
+        return jsonData;
+      }
+    } catch (error) {
+      console.log('❌ Could not read solar data from JSON cache, will recalculate...');
+    }
+
+    console.log('🔄 Calculating solar weekly averages from CSV...');
+    
+    if (!this.processedData) {
+      const result = await this.processCSVData();
+      this.processedData = result.data;
+    }
+
+    // Group data by week and calculate weekly averages
+    const weeklyAverages = {};
+    
+    this.processedData.forEach(item => {
+      const date = new Date(item.date);
+      // Get the start of the week (Monday)
+      const weekStart = new Date(date);
+      weekStart.setDate(date.getDate() - date.getDay() + (date.getDay() === 0 ? -6 : 1));
+      const weekKey = weekStart.toISOString().split('T')[0];
+      
+      if (!weeklyAverages[weekKey]) {
+        weeklyAverages[weekKey] = {
+          weekStart: weekKey,
+          solarTotal: 0,
+          count: 0
+        };
+      }
+      
+      weeklyAverages[weekKey].solarTotal += item.solarGeneration || 0;
+      weeklyAverages[weekKey].count++;
+    });
+
+    // Calculate averages and format data
+    const solarData = Object.values(weeklyAverages).map(week => {
+      const avgSolar = week.count > 0 ? week.solarTotal / week.count : 0;
+      return {
+        weekStart: week.weekStart,
+        solarAverage: Math.round(avgSolar * 100) / 100
+      };
+    }).sort((a, b) => a.weekStart.localeCompare(b.weekStart));
+
+    const dataToSave = {
+      generatedAt: new Date().toISOString(),
+      totalWeeks: solarData.length,
+      data: solarData
+    };
+
+    try {
+      fs.writeFileSync(jsonPath, JSON.stringify(dataToSave, null, 2));
+      console.log(`💾 Solar weekly data saved to: ${jsonPath}`);
+      console.log(`📊 Calculated ${solarData.length} weekly averages`);
+    } catch (error) {
+      console.error('❌ Error saving solar data to JSON:', error);
+    }
+
+    return dataToSave;
+  }
+
+  // Get statistics with JSON caching
+  async getStatsData() {
+    const jsonPath = path.join(__dirname, 'data', 'stats_data.json');
+    
+    // Try to read from JSON file first
+    try {
+      if (fs.existsSync(jsonPath)) {
+        const jsonData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+        console.log(`📁 Stats data loaded from JSON cache: ${jsonPath}`);
+        return jsonData;
+      }
+    } catch (error) {
+      console.log('❌ Could not read stats data from JSON cache, will recalculate...');
+    }
+
+    console.log('🔄 Calculating statistics from CSV...');
+    
+    if (!this.processedData) {
+      const result = await this.processCSVData();
+      this.processedData = result.data;
+    }
+
+    // Calculate statistics
+    const stats = {
+      totalRecords: this.processedData.length,
+      dateRange: { start: null, end: null },
+      maxDemand: 0,
+      minDemand: Infinity,
+      avgDemand: 0,
+      totalDemand: 0,
+      maxWind: 0,
+      minWind: Infinity,
+      avgWind: 0,
+      totalWind: 0,
+      maxSolar: 0,
+      minSolar: Infinity,
+      avgSolar: 0,
+      totalSolar: 0
+    };
+
+    this.processedData.forEach(item => {
+      // Demand statistics
+      if (item.demand > stats.maxDemand) {
+        stats.maxDemand = item.demand;
+      }
+      if (item.demand < stats.minDemand) {
+        stats.minDemand = item.demand;
+      }
+      stats.totalDemand += item.demand;
+
+      // Wind statistics
+      if (item.windGeneration > stats.maxWind) {
+        stats.maxWind = item.windGeneration;
+      }
+      if (item.windGeneration < stats.minWind) {
+        stats.minWind = item.windGeneration;
+      }
+      stats.totalWind += item.windGeneration;
+
+      // Solar statistics
+      if (item.solarGeneration > stats.maxSolar) {
+        stats.maxSolar = item.solarGeneration;
+      }
+      if (item.solarGeneration < stats.minSolar) {
+        stats.minSolar = item.solarGeneration;
+      }
+      stats.totalSolar += item.solarGeneration;
+
+      // Date range
+      const date = new Date(item.date);
+      if (!stats.dateRange.start || date < stats.dateRange.start) {
+        stats.dateRange.start = date;
+      }
+      if (!stats.dateRange.end || date > stats.dateRange.end) {
+        stats.dateRange.end = date;
+      }
+    });
+
+    // Calculate averages
+    stats.avgDemand = stats.totalDemand / stats.totalRecords;
+    stats.avgWind = stats.totalWind / stats.totalRecords;
+    stats.avgSolar = stats.totalSolar / stats.totalRecords;
+
+    // Round values
+    const roundedStats = {
+      generatedAt: new Date().toISOString(),
+      maxDemand: Math.round(stats.maxDemand),
+      minDemand: Math.round(stats.minDemand),
+      avgDemand: Math.round(stats.avgDemand * 100) / 100,
+      totalDemand: Math.round(stats.totalDemand),
+      totalRecords: stats.totalRecords,
+      dateRangeStart: stats.dateRange.start.toISOString().split('T')[0],
+      dateRangeEnd: stats.dateRange.end.toISOString().split('T')[0]
+    };
+
+    try {
+      fs.writeFileSync(jsonPath, JSON.stringify(roundedStats, null, 2));
+      console.log(`💾 Stats data saved to: ${jsonPath}`);
+    } catch (error) {
+      console.error('❌ Error saving stats data to JSON:', error);
+    }
+
+    return roundedStats;
+  }
+
   // Get National Demand (ND) data in optimized format
   async getNationalDemandData() {
     const jsonPath = path.join(__dirname, 'data', 'nd_weekly_averages.json');
@@ -284,9 +529,7 @@ class ElectricityService {
       week.averageND = week.totalND / week.count;
       return {
         weekStart: week.weekStart,
-        averageND: Math.round(week.averageND * 100) / 100, // Round to 2 decimal places
-        totalND: Math.round(week.totalND * 100) / 100,
-        count: week.count
+        averageND: Math.round(week.averageND * 100) / 100 // Round to 2 decimal places
       };
     });
 

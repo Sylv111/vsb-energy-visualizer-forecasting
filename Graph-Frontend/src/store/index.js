@@ -13,7 +13,9 @@ export default createStore({
     selectedYear: null,
     selectedPrecision: 2,
     ifaFlowData: [],
-    ndData: []
+    ndData: [],
+    windData: [],
+    solarData: []
   },
   
   mutations: {
@@ -48,6 +50,12 @@ export default createStore({
     },
     SET_ND_DATA(state, data) {
       state.ndData = data
+    },
+    SET_WIND_DATA(state, data) {
+      state.windData = data
+    },
+    SET_SOLAR_DATA(state, data) {
+      state.solarData = data
     }
   },
   
@@ -62,6 +70,51 @@ export default createStore({
         commit('SET_STATS', response.data.stats)
       } catch (error) {
         commit('SET_ERROR', 'Error loading data')
+        console.error('API Error:', error)
+      } finally {
+        commit('SET_LOADING', false)
+      }
+    },
+    
+    async fetchMonthlyData({ commit }) {
+      commit('SET_LOADING', true)
+      commit('SET_ERROR', null)
+      
+      try {
+        const response = await axios.get('/api/electricity/monthly', electricityApi)
+        commit('SET_MONTHLY_DATA', response.data.data)
+      } catch (error) {
+        commit('SET_ERROR', 'Error loading monthly data')
+        console.error('API Error:', error)
+      } finally {
+        commit('SET_LOADING', false)
+      }
+    },
+    
+    async fetchWindData({ commit }) {
+      commit('SET_LOADING', true)
+      commit('SET_ERROR', null)
+      
+      try {
+        const response = await axios.get('/api/electricity/wind', electricityApi)
+        commit('SET_WIND_DATA', response.data.data)
+      } catch (error) {
+        commit('SET_ERROR', 'Error loading wind data')
+        console.error('API Error:', error)
+      } finally {
+        commit('SET_LOADING', false)
+      }
+    },
+    
+    async fetchSolarData({ commit }) {
+      commit('SET_LOADING', true)
+      commit('SET_ERROR', null)
+      
+      try {
+        const response = await axios.get('/api/electricity/solar', electricityApi)
+        commit('SET_SOLAR_DATA', response.data.data)
+      } catch (error) {
+        commit('SET_ERROR', 'Error loading solar data')
         console.error('API Error:', error)
       } finally {
         commit('SET_LOADING', false)
@@ -118,8 +171,8 @@ export default createStore({
       commit('SET_ERROR', null)
       
       try {
-        const response = await axios.get('/api/electricity/stats', electricityApi)
-        commit('SET_STATS', response.data)
+        const response = await axios.get('/api/electricity/stats-optimized', electricityApi)
+        commit('SET_STATS', response.data.data)
       } catch (error) {
         commit('SET_ERROR', 'Error loading statistics')
         console.error('API Error:', error)
@@ -188,45 +241,7 @@ export default createStore({
       })).filter(item => !isNaN(item.y))
     },
     
-    windSolarData: (state) => {
-      const data = state.electricityData
-      if (!Array.isArray(data) || !data.length) return { wind: [], solar: [] }
-      
-      // Agrégation mensuelle pour les énergies renouvelables
-      const monthlyData = {}
-      
-      data.forEach(item => {
-        const date = new Date(item.date)
-        const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`
-        
-        if (!monthlyData[monthKey]) {
-          monthlyData[monthKey] = {
-            wind: { total: 0, count: 0 },
-            solar: { total: 0, count: 0 }
-          }
-        }
-        
-        monthlyData[monthKey].wind.total += parseFloat(item.windGeneration) || 0
-        monthlyData[monthKey].wind.count++
-        monthlyData[monthKey].solar.total += parseFloat(item.solarGeneration) || 0
-        monthlyData[monthKey].solar.count++
-      })
-      
-      // Convertir en format pour les graphiques avec formatage des nombres
-      const windData = Object.keys(monthlyData).sort().map(month => ({
-        x: new Date(month + '-01').getTime(),
-        y: monthlyData[month].wind.count > 0 ? 
-           Number((monthlyData[month].wind.total / monthlyData[month].wind.count).toFixed(state.selectedPrecision)) : 0
-      }))
-      
-      const solarData = Object.keys(monthlyData).sort().map(month => ({
-        x: new Date(month + '-01').getTime(),
-        y: monthlyData[month].solar.count > 0 ? 
-           Number((monthlyData[month].solar.total / monthlyData[month].solar.count).toFixed(state.selectedPrecision)) : 0
-      }))
-      
-      return { wind: windData, solar: solarData }
-    },
+
 
     // Renewable energy percentages and totals for the selected month
     renewablePercentages: (state) => (selectedMonth = null) => {
@@ -317,6 +332,30 @@ export default createStore({
          x: new Date(item.weekStart || item.date).getTime(),
          y: Number((parseFloat(item.averageND) || 0).toFixed(state.selectedPrecision))
        })).filter(item => !isNaN(item.y))
-     }
+     },
+
+         // Wind Data getter
+    windData: (state) => {
+      const data = state.windData
+      if (!Array.isArray(data) || !data.length) return []
+      
+      // Convert to chart format (x: timestamp, y: value)
+      return data.map(item => ({
+        x: new Date(item.weekStart).getTime(),
+        y: Number((parseFloat(item.windAverage) || 0).toFixed(state.selectedPrecision))
+      })).filter(item => !isNaN(item.y))
+    },
+
+    // Solar Data getter
+    solarData: (state) => {
+      const data = state.solarData
+      if (!Array.isArray(data) || !data.length) return []
+      
+      // Convert to chart format (x: timestamp, y: value)
+      return data.map(item => ({
+        x: new Date(item.weekStart).getTime(),
+        y: Number((parseFloat(item.solarAverage) || 0).toFixed(state.selectedPrecision))
+      })).filter(item => !isNaN(item.y))
+    }
   }
 }) 

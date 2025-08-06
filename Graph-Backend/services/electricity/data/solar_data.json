@@ -1,3334 +1,3334 @@
 {
-  "generatedAt": "2025-08-06T15:03:04.869Z",
+  "generatedAt": "2025-08-06T15:03:09.420Z",
   "totalWeeks": 832,
   "data": [
     {
       "weekStart": "2008-12-29",
-      "averageND": 39162.19
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-01-05",
-      "averageND": 44782.02
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-01-12",
-      "averageND": 41905
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-01-19",
-      "averageND": 42372.53
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-01-26",
-      "averageND": 42400.21
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-02-02",
-      "averageND": 44185.54
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-02-09",
-      "averageND": 43347.21
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-02-16",
-      "averageND": 39759.57
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-02-23",
-      "averageND": 38965.56
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-03-02",
-      "averageND": 39510.39
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-03-09",
-      "averageND": 38465.82
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-03-16",
-      "averageND": 37003.8
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-03-23",
-      "averageND": 37426.99
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-03-30",
-      "averageND": 36277.91
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-04-06",
-      "averageND": 33900.12
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-04-13",
-      "averageND": 33364.38
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-04-20",
-      "averageND": 33703.49
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-04-27",
-      "averageND": 33864.62
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-05-04",
-      "averageND": 32800.02
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-05-11",
-      "averageND": 33745.96
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-05-18",
-      "averageND": 33144.04
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-05-25",
-      "averageND": 31145.69
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-06-01",
-      "averageND": 32465.24
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-06-08",
-      "averageND": 32583.92
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-06-15",
-      "averageND": 32084.65
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-06-22",
-      "averageND": 32598.08
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-06-29",
-      "averageND": 33202.67
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-07-06",
-      "averageND": 31953.72
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-07-13",
-      "averageND": 32072.79
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-07-20",
-      "averageND": 31618.73
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-07-27",
-      "averageND": 31167.24
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-08-03",
-      "averageND": 31649.63
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-08-10",
-      "averageND": 31939.13
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-08-17",
-      "averageND": 31997.54
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-08-24",
-      "averageND": 31573.32
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-08-31",
-      "averageND": 31339.49
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-09-07",
-      "averageND": 32802.16
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-09-14",
-      "averageND": 33133.65
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-09-21",
-      "averageND": 33044.03
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-09-28",
-      "averageND": 33459.53
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-10-05",
-      "averageND": 34816.07
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-10-12",
-      "averageND": 35389.83
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-10-19",
-      "averageND": 35780.75
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-10-26",
-      "averageND": 35077
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-11-02",
-      "averageND": 36921.57
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-11-09",
-      "averageND": 38321.09
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-11-16",
-      "averageND": 36913.08
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-11-23",
-      "averageND": 38424.51
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-11-30",
-      "averageND": 40389.36
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-12-07",
-      "averageND": 40614.68
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-12-14",
-      "averageND": 43246.11
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-12-21",
-      "averageND": 39693.1
+      "solarAverage": 0
     },
     {
       "weekStart": "2009-12-28",
-      "averageND": 38414.15
+      "solarAverage": 0
     },
     {
       "weekStart": "2010-01-04",
-      "averageND": 45382.27
+      "solarAverage": 0
     },
     {
       "weekStart": "2010-01-11",
-      "averageND": 44205.53
+      "solarAverage": 0
     },
     {
       "weekStart": "2010-01-18",
-      "averageND": 42278.05
+      "solarAverage": 0
     },
     {
       "weekStart": "2010-01-25",
-      "averageND": 42882.09
+      "solarAverage": 0
     },
     {
       "weekStart": "2010-02-01",
-      "averageND": 42233.03
+      "solarAverage": 0
     },
     {
       "weekStart": "2010-02-08",
-      "averageND": 43037.77
+      "solarAverage": 0
     },
     {
       "weekStart": "2010-02-15",
-      "averageND": 42312.99
+      "solarAverage": 0
     },
     {
       "weekStart": "2010-02-22",
-      "averageND": 41496.14
+      "solarAverage": 0
     },
     {
       "weekStart": "2010-03-01",
-      "averageND": 40784.2
+      "solarAverage": 0
     },
     {
       "weekStart": "2010-03-08",
-      "averageND": 40103.56
+      "solarAverage": 0
     },
     {
       "weekStart": "2010-03-15",
-      "averageND": 37385.06
+      "solarAverage": 0
     },
     {
       "weekStart": "2010-03-22",
-      "averageND": 36926.03
+      "solarAverage": 0
     },
     {
       "weekStart": "2010-03-29",
-      "averageND": 36659.36
+      "solarAverage": 0.04
     },
     {
       "weekStart": "2010-04-05",
-      "averageND": 34080.56
+      "solarAverage": 0.14
     },
     {
       "weekStart": "2010-04-12",
-      "averageND": 34799.22
+      "solarAverage": 0.2
     },
     {
       "weekStart": "2010-04-19",
-      "averageND": 34644.02
+      "solarAverage": 0.22
     },
     {
       "weekStart": "2010-04-26",
-      "averageND": 33663.69
+      "solarAverage": 0.33
     },
     {
       "weekStart": "2010-05-03",
-      "averageND": 34035.96
+      "solarAverage": 0.35
     },
     {
       "weekStart": "2010-05-10",
-      "averageND": 34596.87
+      "solarAverage": 0.41
     },
     {
       "weekStart": "2010-05-17",
-      "averageND": 33120.89
+      "solarAverage": 0.8
     },
     {
       "weekStart": "2010-05-24",
-      "averageND": 32078.09
+      "solarAverage": 0.98
     },
     {
       "weekStart": "2010-05-31",
-      "averageND": 31306.2
+      "solarAverage": 0.95
     },
     {
       "weekStart": "2010-06-07",
-      "averageND": 32347.87
+      "solarAverage": 0.93
     },
     {
       "weekStart": "2010-06-14",
-      "averageND": 31900.02
+      "solarAverage": 1.63
     },
     {
       "weekStart": "2010-06-21",
-      "averageND": 32261.05
+      "solarAverage": 1.86
     },
     {
       "weekStart": "2010-06-28",
-      "averageND": 32222.78
+      "solarAverage": 1.88
     },
     {
       "weekStart": "2010-07-05",
-      "averageND": 32033.07
+      "solarAverage": 2.03
     },
     {
       "weekStart": "2010-07-12",
-      "averageND": 31798.74
+      "solarAverage": 1.65
     },
     {
       "weekStart": "2010-07-19",
-      "averageND": 32154.97
+      "solarAverage": 2.13
     },
     {
       "weekStart": "2010-07-26",
-      "averageND": 31398.9
+      "solarAverage": 1.96
     },
     {
       "weekStart": "2010-08-02",
-      "averageND": 30888.12
+      "solarAverage": 2.15
     },
     {
       "weekStart": "2010-08-09",
-      "averageND": 31190.78
+      "solarAverage": 2.43
     },
     {
       "weekStart": "2010-08-16",
-      "averageND": 31502.38
+      "solarAverage": 2.3
     },
     {
       "weekStart": "2010-08-23",
-      "averageND": 31236.17
+      "solarAverage": 2.57
     },
     {
       "weekStart": "2010-08-30",
-      "averageND": 31276.96
+      "solarAverage": 3.59
     },
     {
       "weekStart": "2010-09-06",
-      "averageND": 32427.78
+      "solarAverage": 3.25
     },
     {
       "weekStart": "2010-09-13",
-      "averageND": 32507.55
+      "solarAverage": 2.88
     },
     {
       "weekStart": "2010-09-20",
-      "averageND": 33358.29
+      "solarAverage": 3.06
     },
     {
       "weekStart": "2010-09-27",
-      "averageND": 34744.69
+      "solarAverage": 1.71
     },
     {
       "weekStart": "2010-10-04",
-      "averageND": 33928.92
+      "solarAverage": 2.62
     },
     {
       "weekStart": "2010-10-11",
-      "averageND": 35217.77
+      "solarAverage": 2.5
     },
     {
       "weekStart": "2010-10-18",
-      "averageND": 36491.52
+      "solarAverage": 2.6
     },
     {
       "weekStart": "2010-10-25",
-      "averageND": 36228.04
+      "solarAverage": 1.93
     },
     {
       "weekStart": "2010-11-01",
-      "averageND": 36412.11
+      "solarAverage": 1.68
     },
     {
       "weekStart": "2010-11-08",
-      "averageND": 38804.44
+      "solarAverage": 1.33
     },
     {
       "weekStart": "2010-11-15",
-      "averageND": 39858.16
+      "solarAverage": 1.31
     },
     {
       "weekStart": "2010-11-22",
-      "averageND": 42005.99
+      "solarAverage": 1.59
     },
     {
       "weekStart": "2010-11-29",
-      "averageND": 44913.78
+      "solarAverage": 1.32
     },
     {
       "weekStart": "2010-12-06",
-      "averageND": 44818.42
+      "solarAverage": 1.43
     },
     {
       "weekStart": "2010-12-13",
-      "averageND": 45036.25
+      "solarAverage": 0.96
     },
     {
       "weekStart": "2010-12-20",
-      "averageND": 43996.47
+      "solarAverage": 1.29
     },
     {
       "weekStart": "2010-12-27",
-      "averageND": 38051.08
+      "solarAverage": 0.68
     },
     {
       "weekStart": "2011-01-03",
-      "averageND": 41709.36
+      "solarAverage": 1.1
     },
     {
       "weekStart": "2011-01-10",
-      "averageND": 40599.38
+      "solarAverage": 1.28
     },
     {
       "weekStart": "2011-01-17",
-      "averageND": 42260.76
+      "solarAverage": 2.06
     },
     {
       "weekStart": "2011-01-24",
-      "averageND": 42731.93
+      "solarAverage": 1.88
     },
     {
       "weekStart": "2011-01-31",
-      "averageND": 40940.88
+      "solarAverage": 2.17
     },
     {
       "weekStart": "2011-02-07",
-      "averageND": 39595.43
+      "solarAverage": 2.64
     },
     {
       "weekStart": "2011-02-14",
-      "averageND": 40376.28
+      "solarAverage": 2.78
     },
     {
       "weekStart": "2011-02-21",
-      "averageND": 39156.2
+      "solarAverage": 3.36
     },
     {
       "weekStart": "2011-02-28",
-      "averageND": 40799.17
+      "solarAverage": 5.05
     },
     {
       "weekStart": "2011-03-07",
-      "averageND": 39004.06
+      "solarAverage": 7.76
     },
     {
       "weekStart": "2011-03-14",
-      "averageND": 38760.93
+      "solarAverage": 8.11
     },
     {
       "weekStart": "2011-03-21",
-      "averageND": 36523.13
+      "solarAverage": 11.4
     },
     {
       "weekStart": "2011-03-28",
-      "averageND": 35834.87
+      "solarAverage": 10.1
     },
     {
       "weekStart": "2011-04-04",
-      "averageND": 34198.01
+      "solarAverage": 15.23
     },
     {
       "weekStart": "2011-04-11",
-      "averageND": 34217.82
+      "solarAverage": 13.64
     },
     {
       "weekStart": "2011-04-18",
-      "averageND": 31831.46
+      "solarAverage": 20.9
     },
     {
       "weekStart": "2011-04-25",
-      "averageND": 30340.57
+      "solarAverage": 21.67
     },
     {
       "weekStart": "2011-05-02",
-      "averageND": 31831.16
+      "solarAverage": 21.54
     },
     {
       "weekStart": "2011-05-09",
-      "averageND": 32491.13
+      "solarAverage": 20.88
     },
     {
       "weekStart": "2011-05-16",
-      "averageND": 32489.52
+      "solarAverage": 21.04
     },
     {
       "weekStart": "2011-05-23",
-      "averageND": 32054.02
+      "solarAverage": 20.96
     },
     {
       "weekStart": "2011-05-30",
-      "averageND": 31376.02
+      "solarAverage": 26.76
     },
     {
       "weekStart": "2011-06-06",
-      "averageND": 32349.31
+      "solarAverage": 24.24
     },
     {
       "weekStart": "2011-06-13",
-      "averageND": 32095.54
+      "solarAverage": 24.58
     },
     {
       "weekStart": "2011-06-20",
-      "averageND": 32144.74
+      "solarAverage": 25.84
     },
     {
       "weekStart": "2011-06-27",
-      "averageND": 31955.09
+      "solarAverage": 30.57
     },
     {
       "weekStart": "2011-07-04",
-      "averageND": 31800.52
+      "solarAverage": 28.5
     },
     {
       "weekStart": "2011-07-11",
-      "averageND": 31711.71
+      "solarAverage": 27.32
     },
     {
       "weekStart": "2011-07-18",
-      "averageND": 31570.9
+      "solarAverage": 27.37
     },
     {
       "weekStart": "2011-07-25",
-      "averageND": 31021.02
+      "solarAverage": 30.52
     },
     {
       "weekStart": "2011-08-01",
-      "averageND": 31096.17
+      "solarAverage": 29.27
     },
     {
       "weekStart": "2011-08-08",
-      "averageND": 31216.9
+      "solarAverage": 27.7
     },
     {
       "weekStart": "2011-08-15",
-      "averageND": 31739.12
+      "solarAverage": 29.1
     },
     {
       "weekStart": "2011-08-22",
-      "averageND": 31891.52
+      "solarAverage": 27.31
     },
     {
       "weekStart": "2011-08-29",
-      "averageND": 31532.46
+      "solarAverage": 27.59
     },
     {
       "weekStart": "2011-09-05",
-      "averageND": 32432.21
+      "solarAverage": 23.66
     },
     {
       "weekStart": "2011-09-12",
-      "averageND": 32419.49
+      "solarAverage": 31.39
     },
     {
       "weekStart": "2011-09-19",
-      "averageND": 32767.4
+      "solarAverage": 26.27
     },
     {
       "weekStart": "2011-09-26",
-      "averageND": 32917.08
+      "solarAverage": 37.78
     },
     {
       "weekStart": "2011-10-03",
-      "averageND": 32811.18
+      "solarAverage": 24.88
     },
     {
       "weekStart": "2011-10-10",
-      "averageND": 33812.88
+      "solarAverage": 24.51
     },
     {
       "weekStart": "2011-10-17",
-      "averageND": 34994.11
+      "solarAverage": 26.64
     },
     {
       "weekStart": "2011-10-24",
-      "averageND": 34829.54
+      "solarAverage": 19.73
     },
     {
       "weekStart": "2011-10-31",
-      "averageND": 35572.69
+      "solarAverage": 16.5
     },
     {
       "weekStart": "2011-11-07",
-      "averageND": 36921.79
+      "solarAverage": 10.35
     },
     {
       "weekStart": "2011-11-14",
-      "averageND": 37426.05
+      "solarAverage": 13.07
     },
     {
       "weekStart": "2011-11-21",
-      "averageND": 37491.79
+      "solarAverage": 13.39
     },
     {
       "weekStart": "2011-11-28",
-      "averageND": 38168.72
+      "solarAverage": 12.32
     },
     {
       "weekStart": "2011-12-05",
-      "averageND": 40385.65
+      "solarAverage": 13.25
     },
     {
       "weekStart": "2011-12-12",
-      "averageND": 41352.62
+      "solarAverage": 14.74
     },
     {
       "weekStart": "2011-12-19",
-      "averageND": 38248.35
+      "solarAverage": 9.63
     },
     {
       "weekStart": "2011-12-26",
-      "averageND": 33191.22
+      "solarAverage": 10.55
     },
     {
       "weekStart": "2012-01-02",
-      "averageND": 37804.82
+      "solarAverage": 17.34
     },
     {
       "weekStart": "2012-01-09",
-      "averageND": 39410.21
+      "solarAverage": 24.97
     },
     {
       "weekStart": "2012-01-16",
-      "averageND": 40119.52
+      "solarAverage": 24.16
     },
     {
       "weekStart": "2012-01-23",
-      "averageND": 40057.96
+      "solarAverage": 27.5
     },
     {
       "weekStart": "2012-01-30",
-      "averageND": 43038.58
+      "solarAverage": 40.82
     },
     {
       "weekStart": "2012-02-06",
-      "averageND": 43596.82
+      "solarAverage": 41.88
     },
     {
       "weekStart": "2012-02-13",
-      "averageND": 39607.4
+      "solarAverage": 48.36
     },
     {
       "weekStart": "2012-02-20",
-      "averageND": 37991.31
+      "solarAverage": 64.23
     },
     {
       "weekStart": "2012-02-27",
-      "averageND": 37424.07
+      "solarAverage": 63.93
     },
     {
       "weekStart": "2012-03-05",
-      "averageND": 37808.19
+      "solarAverage": 98.76
     },
     {
       "weekStart": "2012-03-12",
-      "averageND": 37303.42
+      "solarAverage": 78.58
     },
     {
       "weekStart": "2012-03-19",
-      "averageND": 35846.87
+      "solarAverage": 159.85
     },
     {
       "weekStart": "2012-03-26",
-      "averageND": 34019.17
+      "solarAverage": 194.65
     },
     {
       "weekStart": "2012-04-02",
-      "averageND": 34805.09
+      "solarAverage": 123.49
     },
     {
       "weekStart": "2012-04-09",
-      "averageND": 34016.68
+      "solarAverage": 183.15
     },
     {
       "weekStart": "2012-04-16",
-      "averageND": 35669.27
+      "solarAverage": 174.7
     },
     {
       "weekStart": "2012-04-23",
-      "averageND": 35890.43
+      "solarAverage": 132.65
     },
     {
       "weekStart": "2012-04-30",
-      "averageND": 35242.35
+      "solarAverage": 168.01
     },
     {
       "weekStart": "2012-05-07",
-      "averageND": 33339.35
+      "solarAverage": 211.76
     },
     {
       "weekStart": "2012-05-14",
-      "averageND": 33859.15
+      "solarAverage": 204.85
     },
     {
       "weekStart": "2012-05-21",
-      "averageND": 31953.87
+      "solarAverage": 340.52
     },
     {
       "weekStart": "2012-05-28",
-      "averageND": 31769.33
+      "solarAverage": 219.33
     },
     {
       "weekStart": "2012-06-04",
-      "averageND": 30277.64
+      "solarAverage": 192.78
     },
     {
       "weekStart": "2012-06-11",
-      "averageND": 32237.89
+      "solarAverage": 207.66
     },
     {
       "weekStart": "2012-06-18",
-      "averageND": 31584.86
+      "solarAverage": 248.57
     },
     {
       "weekStart": "2012-06-25",
-      "averageND": 31511.5
+      "solarAverage": 250.27
     },
     {
       "weekStart": "2012-07-02",
-      "averageND": 31931.72
+      "solarAverage": 178.21
     },
     {
       "weekStart": "2012-07-09",
-      "averageND": 31616.11
+      "solarAverage": 225.83
     },
     {
       "weekStart": "2012-07-16",
-      "averageND": 31202.89
+      "solarAverage": 229.07
     },
     {
       "weekStart": "2012-07-23",
-      "averageND": 30864.19
+      "solarAverage": 326.32
     },
     {
       "weekStart": "2012-07-30",
-      "averageND": 30481.2
+      "solarAverage": 228.18
     },
     {
       "weekStart": "2012-08-06",
-      "averageND": 30802.78
+      "solarAverage": 264.37
     },
     {
       "weekStart": "2012-08-13",
-      "averageND": 31367.33
+      "solarAverage": 206.95
     },
     {
       "weekStart": "2012-08-20",
-      "averageND": 31180.03
+      "solarAverage": 209.55
     },
     {
       "weekStart": "2012-08-27",
-      "averageND": 30618.77
+      "solarAverage": 189.14
     },
     {
       "weekStart": "2012-09-03",
-      "averageND": 31420.79
+      "solarAverage": 264.16
     },
     {
       "weekStart": "2012-09-10",
-      "averageND": 31454.09
+      "solarAverage": 189.31
     },
     {
       "weekStart": "2012-09-17",
-      "averageND": 32500.54
+      "solarAverage": 177.31
     },
     {
       "weekStart": "2012-09-24",
-      "averageND": 33262.77
+      "solarAverage": 132.21
     },
     {
       "weekStart": "2012-10-01",
-      "averageND": 33545.58
+      "solarAverage": 149.84
     },
     {
       "weekStart": "2012-10-08",
-      "averageND": 34750.17
+      "solarAverage": 114.88
     },
     {
       "weekStart": "2012-10-15",
-      "averageND": 34941.16
+      "solarAverage": 108.39
     },
     {
       "weekStart": "2012-10-22",
-      "averageND": 35762.35
+      "solarAverage": 57.95
     },
     {
       "weekStart": "2012-10-29",
-      "averageND": 37084.6
+      "solarAverage": 79.49
     },
     {
       "weekStart": "2012-11-05",
-      "averageND": 37536.51
+      "solarAverage": 77.1
     },
     {
       "weekStart": "2012-11-12",
-      "averageND": 37518.61
+      "solarAverage": 49.63
     },
     {
       "weekStart": "2012-11-19",
-      "averageND": 37960.01
+      "solarAverage": 37.88
     },
     {
       "weekStart": "2012-11-26",
-      "averageND": 40346.9
+      "solarAverage": 52.06
     },
     {
       "weekStart": "2012-12-03",
-      "averageND": 41124.37
+      "solarAverage": 49.36
     },
     {
       "weekStart": "2012-12-10",
-      "averageND": 42243.21
+      "solarAverage": 43.18
     },
     {
       "weekStart": "2012-12-17",
-      "averageND": 39262.85
+      "solarAverage": 27.55
     },
     {
       "weekStart": "2012-12-24",
-      "averageND": 33289.28
+      "solarAverage": 25.99
     },
     {
       "weekStart": "2012-12-31",
-      "averageND": 35432.47
+      "solarAverage": 32.66
     },
     {
       "weekStart": "2013-01-07",
-      "averageND": 39828.02
+      "solarAverage": 40.56
     },
     {
       "weekStart": "2013-01-14",
-      "averageND": 43068.26
+      "solarAverage": 40.53
     },
     {
       "weekStart": "2013-01-21",
-      "averageND": 42416.12
+      "solarAverage": 56.92
     },
     {
       "weekStart": "2013-01-28",
-      "averageND": 39032.3
+      "solarAverage": 68.15
     },
     {
       "weekStart": "2013-02-04",
-      "averageND": 40123.04
+      "solarAverage": 74.68
     },
     {
       "weekStart": "2013-02-11",
-      "averageND": 40389.35
+      "solarAverage": 96.73
     },
     {
       "weekStart": "2013-02-18",
-      "averageND": 40763.24
+      "solarAverage": 104.77
     },
     {
       "weekStart": "2013-02-25",
-      "averageND": 40562.55
+      "solarAverage": 103.86
     },
     {
       "weekStart": "2013-03-04",
-      "averageND": 38736.24
+      "solarAverage": 105.64
     },
     {
       "weekStart": "2013-03-11",
-      "averageND": 40401.03
+      "solarAverage": 172.69
     },
     {
       "weekStart": "2013-03-18",
-      "averageND": 40334.4
+      "solarAverage": 126.62
     },
     {
       "weekStart": "2013-03-25",
-      "averageND": 39815.54
+      "solarAverage": 240.08
     },
     {
       "weekStart": "2013-04-01",
-      "averageND": 37492.16
+      "solarAverage": 441.54
     },
     {
       "weekStart": "2013-04-08",
-      "averageND": 36824.04
+      "solarAverage": 327.84
     },
     {
       "weekStart": "2013-04-15",
-      "averageND": 33770.06
+      "solarAverage": 510.6
     },
     {
       "weekStart": "2013-04-22",
-      "averageND": 33498.72
+      "solarAverage": 561.04
     },
     {
       "weekStart": "2013-04-29",
-      "averageND": 32391.24
+      "solarAverage": 736.21
     },
     {
       "weekStart": "2013-05-06",
-      "averageND": 31069.79
+      "solarAverage": 565.52
     },
     {
       "weekStart": "2013-05-13",
-      "averageND": 32656.56
+      "solarAverage": 518.89
     },
     {
       "weekStart": "2013-05-20",
-      "averageND": 31938.36
+      "solarAverage": 572.1
     },
     {
       "weekStart": "2013-05-27",
-      "averageND": 30455.46
+      "solarAverage": 547.9
     },
     {
       "weekStart": "2013-06-03",
-      "averageND": 30413.76
+      "solarAverage": 806.74
     },
     {
       "weekStart": "2013-06-10",
-      "averageND": 30610.64
+      "solarAverage": 519.58
     },
     {
       "weekStart": "2013-06-17",
-      "averageND": 30929.8
+      "solarAverage": 509.84
     },
     {
       "weekStart": "2013-06-24",
-      "averageND": 30620.08
+      "solarAverage": 616.17
     },
     {
       "weekStart": "2013-07-01",
-      "averageND": 30518.95
+      "solarAverage": 690.07
     },
     {
       "weekStart": "2013-07-08",
-      "averageND": 31003.84
+      "solarAverage": 841.04
     },
     {
       "weekStart": "2013-07-15",
-      "averageND": 31391.36
+      "solarAverage": 767.43
     },
     {
       "weekStart": "2013-07-22",
-      "averageND": 31127.34
+      "solarAverage": 632.71
     },
     {
       "weekStart": "2013-07-29",
-      "averageND": 30004.66
+      "solarAverage": 603.45
     },
     {
       "weekStart": "2013-08-05",
-      "averageND": 29820.6
+      "solarAverage": 577.94
     },
     {
       "weekStart": "2013-08-12",
-      "averageND": 30144.17
+      "solarAverage": 516.43
     },
     {
       "weekStart": "2013-08-19",
-      "averageND": 30889.01
+      "solarAverage": 512.24
     },
     {
       "weekStart": "2013-08-26",
-      "averageND": 29973.48
+      "solarAverage": 599.24
     },
     {
       "weekStart": "2013-09-02",
-      "averageND": 31428.67
+      "solarAverage": 537.95
     },
     {
       "weekStart": "2013-09-09",
-      "averageND": 32267.11
+      "solarAverage": 330.97
     },
     {
       "weekStart": "2013-09-16",
-      "averageND": 32603.24
+      "solarAverage": 388.68
     },
     {
       "weekStart": "2013-09-23",
-      "averageND": 32501.37
+      "solarAverage": 390.83
     },
     {
       "weekStart": "2013-09-30",
-      "averageND": 32456.06
+      "solarAverage": 274.52
     },
     {
       "weekStart": "2013-10-07",
-      "averageND": 32858.09
+      "solarAverage": 284.37
     },
     {
       "weekStart": "2013-10-14",
-      "averageND": 34191.97
+      "solarAverage": 213.88
     },
     {
       "weekStart": "2013-10-21",
-      "averageND": 33118.78
+      "solarAverage": 216.91
     },
     {
       "weekStart": "2013-10-28",
-      "averageND": 34234.24
+      "solarAverage": 237.22
     },
     {
       "weekStart": "2013-11-04",
-      "averageND": 36690.19
+      "solarAverage": 208.64
     },
     {
       "weekStart": "2013-11-11",
-      "averageND": 37183.57
+      "solarAverage": 181.2
     },
     {
       "weekStart": "2013-11-18",
-      "averageND": 38922.51
+      "solarAverage": 171.87
     },
     {
       "weekStart": "2013-11-25",
-      "averageND": 39000.76
+      "solarAverage": 122.27
     },
     {
       "weekStart": "2013-12-02",
-      "averageND": 39057.07
+      "solarAverage": 103.22
     },
     {
       "weekStart": "2013-12-09",
-      "averageND": 38302.17
+      "solarAverage": 96.58
     },
     {
       "weekStart": "2013-12-16",
-      "averageND": 37563.89
+      "solarAverage": 113.83
     },
     {
       "weekStart": "2013-12-23",
-      "averageND": 33225.86
+      "solarAverage": 140.82
     },
     {
       "weekStart": "2013-12-30",
-      "averageND": 34739.1
+      "solarAverage": 83.29
     },
     {
       "weekStart": "2014-01-06",
-      "averageND": 38044.15
+      "solarAverage": 160.41
     },
     {
       "weekStart": "2014-01-13",
-      "averageND": 38607.05
+      "solarAverage": 154.67
     },
     {
       "weekStart": "2014-01-20",
-      "averageND": 38894.47
+      "solarAverage": 146.97
     },
     {
       "weekStart": "2014-01-27",
-      "averageND": 38809.81
+      "solarAverage": 160.19
     },
     {
       "weekStart": "2014-02-03",
-      "averageND": 37844.78
+      "solarAverage": 215.29
     },
     {
       "weekStart": "2014-02-10",
-      "averageND": 38535.83
+      "solarAverage": 253.91
     },
     {
       "weekStart": "2014-02-17",
-      "averageND": 36781.18
+      "solarAverage": 276.76
     },
     {
       "weekStart": "2014-02-24",
-      "averageND": 36805.63
+      "solarAverage": 368.55
     },
     {
       "weekStart": "2014-03-03",
-      "averageND": 36149.54
+      "solarAverage": 470.18
     },
     {
       "weekStart": "2014-03-10",
-      "averageND": 35061.34
+      "solarAverage": 585.37
     },
     {
       "weekStart": "2014-03-17",
-      "averageND": 34160.07
+      "solarAverage": 532.65
     },
     {
       "weekStart": "2014-03-24",
-      "averageND": 35617.7
+      "solarAverage": 564.06
     },
     {
       "weekStart": "2014-03-31",
-      "averageND": 33770.96
+      "solarAverage": 451.71
     },
     {
       "weekStart": "2014-04-07",
-      "averageND": 32465.36
+      "solarAverage": 759.5
     },
     {
       "weekStart": "2014-04-14",
-      "averageND": 30868.2
+      "solarAverage": 961.21
     },
     {
       "weekStart": "2014-04-21",
-      "averageND": 31547.2
+      "solarAverage": 657.36
     },
     {
       "weekStart": "2014-04-28",
-      "averageND": 32299.83
+      "solarAverage": 760.29
     },
     {
       "weekStart": "2014-05-05",
-      "averageND": 30410.3
+      "solarAverage": 806.07
     },
     {
       "weekStart": "2014-05-12",
-      "averageND": 30684.86
+      "solarAverage": 1098.38
     },
     {
       "weekStart": "2014-05-19",
-      "averageND": 30497.71
+      "solarAverage": 838.26
     },
     {
       "weekStart": "2014-05-26",
-      "averageND": 30127.92
+      "solarAverage": 670.18
     },
     {
       "weekStart": "2014-06-02",
-      "averageND": 30176.56
+      "solarAverage": 908.38
     },
     {
       "weekStart": "2014-06-09",
-      "averageND": 30094.77
+      "solarAverage": 996.73
     },
     {
       "weekStart": "2014-06-16",
-      "averageND": 29717.98
+      "solarAverage": 1044.93
     },
     {
       "weekStart": "2014-06-23",
-      "averageND": 29959.23
+      "solarAverage": 927.64
     },
     {
       "weekStart": "2014-06-30",
-      "averageND": 29632.14
+      "solarAverage": 1042.72
     },
     {
       "weekStart": "2014-07-07",
-      "averageND": 29786.88
+      "solarAverage": 956.84
     },
     {
       "weekStart": "2014-07-14",
-      "averageND": 30163.76
+      "solarAverage": 964.17
     },
     {
       "weekStart": "2014-07-21",
-      "averageND": 30239.18
+      "solarAverage": 1159.91
     },
     {
       "weekStart": "2014-07-28",
-      "averageND": 29149.1
+      "solarAverage": 955.03
     },
     {
       "weekStart": "2014-08-04",
-      "averageND": 29095.14
+      "solarAverage": 911.41
     },
     {
       "weekStart": "2014-08-11",
-      "averageND": 28377.81
+      "solarAverage": 869.91
     },
     {
       "weekStart": "2014-08-18",
-      "averageND": 29398.26
+      "solarAverage": 881.65
     },
     {
       "weekStart": "2014-08-25",
-      "averageND": 29098.24
+      "solarAverage": 675.81
     },
     {
       "weekStart": "2014-09-01",
-      "averageND": 30989.22
+      "solarAverage": 667.83
     },
     {
       "weekStart": "2014-09-08",
-      "averageND": 30733.16
+      "solarAverage": 805.91
     },
     {
       "weekStart": "2014-09-15",
-      "averageND": 31339.26
+      "solarAverage": 559.08
     },
     {
       "weekStart": "2014-09-22",
-      "averageND": 30974.6
+      "solarAverage": 650.48
     },
     {
       "weekStart": "2014-09-29",
-      "averageND": 31213.93
+      "solarAverage": 578.43
     },
     {
       "weekStart": "2014-10-06",
-      "averageND": 32582.36
+      "solarAverage": 492.13
     },
     {
       "weekStart": "2014-10-13",
-      "averageND": 32470.16
+      "solarAverage": 336.9
     },
     {
       "weekStart": "2014-10-20",
-      "averageND": 32359.62
+      "solarAverage": 327.93
     },
     {
       "weekStart": "2014-10-27",
-      "averageND": 32210.5
+      "solarAverage": 347.88
     },
     {
       "weekStart": "2014-11-03",
-      "averageND": 35082.12
+      "solarAverage": 327.9
     },
     {
       "weekStart": "2014-11-10",
-      "averageND": 35292.12
+      "solarAverage": 202.36
     },
     {
       "weekStart": "2014-11-17",
-      "averageND": 36612.07
+      "solarAverage": 162.57
     },
     {
       "weekStart": "2014-11-24",
-      "averageND": 37704.91
+      "solarAverage": 175.94
     },
     {
       "weekStart": "2014-12-01",
-      "averageND": 38418.74
+      "solarAverage": 189.57
     },
     {
       "weekStart": "2014-12-08",
-      "averageND": 38563.36
+      "solarAverage": 221.65
     },
     {
       "weekStart": "2014-12-15",
-      "averageND": 36732.94
+      "solarAverage": 182.74
     },
     {
       "weekStart": "2014-12-22",
-      "averageND": 33068.57
+      "solarAverage": 202.15
     },
     {
       "weekStart": "2014-12-29",
-      "averageND": 34326.74
+      "solarAverage": 236.5
     },
     {
       "weekStart": "2015-01-05",
-      "averageND": 37010.51
+      "solarAverage": 197.64
     },
     {
       "weekStart": "2015-01-12",
-      "averageND": 38302.18
+      "solarAverage": 284.09
     },
     {
       "weekStart": "2015-01-19",
-      "averageND": 40354.01
+      "solarAverage": 304.86
     },
     {
       "weekStart": "2015-01-26",
-      "averageND": 38672.65
+      "solarAverage": 300.5
     },
     {
       "weekStart": "2015-02-02",
-      "averageND": 40488.38
+      "solarAverage": 457.26
     },
     {
       "weekStart": "2015-02-09",
-      "averageND": 39100.26
+      "solarAverage": 271.92
     },
     {
       "weekStart": "2015-02-16",
-      "averageND": 37432.92
+      "solarAverage": 464.51
     },
     {
       "weekStart": "2015-02-23",
-      "averageND": 36408.85
+      "solarAverage": 580.84
     },
     {
       "weekStart": "2015-03-02",
-      "averageND": 35473.15
+      "solarAverage": 833.07
     },
     {
       "weekStart": "2015-03-09",
-      "averageND": 35908.83
+      "solarAverage": 587.59
     },
     {
       "weekStart": "2015-03-16",
-      "averageND": 36263.5
+      "solarAverage": 759.22
     },
     {
       "weekStart": "2015-03-23",
-      "averageND": 34626.06
+      "solarAverage": 856.24
     },
     {
       "weekStart": "2015-03-30",
-      "averageND": 32816.97
+      "solarAverage": 990.97
     },
     {
       "weekStart": "2015-04-06",
-      "averageND": 30097.03
+      "solarAverage": 1753.68
     },
     {
       "weekStart": "2015-04-13",
-      "averageND": 30928.5
+      "solarAverage": 1708.14
     },
     {
       "weekStart": "2015-04-20",
-      "averageND": 30646.78
+      "solarAverage": 1795.22
     },
     {
       "weekStart": "2015-04-27",
-      "averageND": 30813.32
+      "solarAverage": 1516.35
     },
     {
       "weekStart": "2015-05-04",
-      "averageND": 29770.89
+      "solarAverage": 1413.83
     },
     {
       "weekStart": "2015-05-11",
-      "averageND": 29258.51
+      "solarAverage": 1709.88
     },
     {
       "weekStart": "2015-05-18",
-      "averageND": 29549.8
+      "solarAverage": 1596.83
     },
     {
       "weekStart": "2015-05-25",
-      "averageND": 28018.25
+      "solarAverage": 1616.18
     },
     {
       "weekStart": "2015-06-01",
-      "averageND": 28171.1
+      "solarAverage": 1909.41
     },
     {
       "weekStart": "2015-06-08",
-      "averageND": 29094.08
+      "solarAverage": 1662.21
     },
     {
       "weekStart": "2015-06-15",
-      "averageND": 28490.29
+      "solarAverage": 1657.37
     },
     {
       "weekStart": "2015-06-22",
-      "averageND": 28724.68
+      "solarAverage": 1657.66
     },
     {
       "weekStart": "2015-06-29",
-      "averageND": 28996.06
+      "solarAverage": 1910.75
     },
     {
       "weekStart": "2015-07-06",
-      "averageND": 28008.47
+      "solarAverage": 1686.93
     },
     {
       "weekStart": "2015-07-13",
-      "averageND": 28427.3
+      "solarAverage": 1497.58
     },
     {
       "weekStart": "2015-07-20",
-      "averageND": 28480.09
+      "solarAverage": 1218.78
     },
     {
       "weekStart": "2015-07-27",
-      "averageND": 27525.8
+      "solarAverage": 1553.88
     },
     {
       "weekStart": "2015-08-03",
-      "averageND": 27360.99
+      "solarAverage": 1524.12
     },
     {
       "weekStart": "2015-08-10",
-      "averageND": 28915.58
+      "solarAverage": 1161.11
     },
     {
       "weekStart": "2015-08-17",
-      "averageND": 28946.54
+      "solarAverage": 1181.36
     },
     {
       "weekStart": "2015-08-24",
-      "averageND": 28553.02
+      "solarAverage": 1127.12
     },
     {
       "weekStart": "2015-08-31",
-      "averageND": 28815.99
+      "solarAverage": 1120.1
     },
     {
       "weekStart": "2015-09-07",
-      "averageND": 29486.96
+      "solarAverage": 1280.66
     },
     {
       "weekStart": "2015-09-14",
-      "averageND": 30608.28
+      "solarAverage": 1042.63
     },
     {
       "weekStart": "2015-09-21",
-      "averageND": 30202.83
+      "solarAverage": 1165.33
     },
     {
       "weekStart": "2015-09-28",
-      "averageND": 30568.51
+      "solarAverage": 1359.06
     },
     {
       "weekStart": "2015-10-05",
-      "averageND": 31735.4
+      "solarAverage": 727.04
     },
     {
       "weekStart": "2015-10-12",
-      "averageND": 33102.27
+      "solarAverage": 629.14
     },
     {
       "weekStart": "2015-10-19",
-      "averageND": 32799.7
+      "solarAverage": 508.13
     },
     {
       "weekStart": "2015-10-26",
-      "averageND": 33290.55
+      "solarAverage": 490.99
     },
     {
       "weekStart": "2015-11-02",
-      "averageND": 34025.88
+      "solarAverage": 199.16
     },
     {
       "weekStart": "2015-11-09",
-      "averageND": 32561.9
+      "solarAverage": 288.93
     },
     {
       "weekStart": "2015-11-16",
-      "averageND": 34478.2
+      "solarAverage": 338.3
     },
     {
       "weekStart": "2015-11-23",
-      "averageND": 35851.82
+      "solarAverage": 241.35
     },
     {
       "weekStart": "2015-11-30",
-      "averageND": 35033.23
+      "solarAverage": 191.1
     },
     {
       "weekStart": "2015-12-07",
-      "averageND": 35563.6
+      "solarAverage": 224.45
     },
     {
       "weekStart": "2015-12-14",
-      "averageND": 34288.2
+      "solarAverage": 143.63
     },
     {
       "weekStart": "2015-12-21",
-      "averageND": 30387.93
+      "solarAverage": 186.43
     },
     {
       "weekStart": "2015-12-28",
-      "averageND": 29806.76
+      "solarAverage": 222.21
     },
     {
       "weekStart": "2016-01-04",
-      "averageND": 35792.62
+      "solarAverage": 256.1
     },
     {
       "weekStart": "2016-01-11",
-      "averageND": 38300.68
+      "solarAverage": 385.44
     },
     {
       "weekStart": "2016-01-18",
-      "averageND": 37996.48
+      "solarAverage": 345.67
     },
     {
       "weekStart": "2016-01-25",
-      "averageND": 34541.3
+      "solarAverage": 328.27
     },
     {
       "weekStart": "2016-02-01",
-      "averageND": 34633.4
+      "solarAverage": 419.18
     },
     {
       "weekStart": "2016-02-08",
-      "averageND": 36396.71
+      "solarAverage": 609.96
     },
     {
       "weekStart": "2016-02-15",
-      "averageND": 35885.89
+      "solarAverage": 711.4
     },
     {
       "weekStart": "2016-02-22",
-      "averageND": 36625.95
+      "solarAverage": 868.66
     },
     {
       "weekStart": "2016-02-29",
-      "averageND": 35896.69
+      "solarAverage": 814.88
     },
     {
       "weekStart": "2016-03-07",
-      "averageND": 36170.85
+      "solarAverage": 961.32
     },
     {
       "weekStart": "2016-03-14",
-      "averageND": 35006.04
+      "solarAverage": 952.49
     },
     {
       "weekStart": "2016-03-21",
-      "averageND": 32149.18
+      "solarAverage": 922.27
     },
     {
       "weekStart": "2016-03-28",
-      "averageND": 31280.69
+      "solarAverage": 1348.37
     },
     {
       "weekStart": "2016-04-04",
-      "averageND": 31448.85
+      "solarAverage": 1249.45
     },
     {
       "weekStart": "2016-04-11",
-      "averageND": 31690.17
+      "solarAverage": 1269.64
     },
     {
       "weekStart": "2016-04-18",
-      "averageND": 30812.08
+      "solarAverage": 1578.55
     },
     {
       "weekStart": "2016-04-25",
-      "averageND": 31116.73
+      "solarAverage": 1627.06
     },
     {
       "weekStart": "2016-05-02",
-      "averageND": 27969.47
+      "solarAverage": 1983.34
     },
     {
       "weekStart": "2016-05-09",
-      "averageND": 28003.62
+      "solarAverage": 1833.48
     },
     {
       "weekStart": "2016-05-16",
-      "averageND": 28261.24
+      "solarAverage": 1616.65
     },
     {
       "weekStart": "2016-05-23",
-      "averageND": 27939.51
+      "solarAverage": 1888.15
     },
     {
       "weekStart": "2016-05-30",
-      "averageND": 27080.68
+      "solarAverage": 1419.11
     },
     {
       "weekStart": "2016-06-06",
-      "averageND": 28487.55
+      "solarAverage": 1782.51
     },
     {
       "weekStart": "2016-06-13",
-      "averageND": 28485.82
+      "solarAverage": 1302.12
     },
     {
       "weekStart": "2016-06-20",
-      "averageND": 27958.01
+      "solarAverage": 1551.48
     },
     {
       "weekStart": "2016-06-27",
-      "averageND": 27060.22
+      "solarAverage": 1668.83
     },
     {
       "weekStart": "2016-07-04",
-      "averageND": 27094.19
+      "solarAverage": 1638.34
     },
     {
       "weekStart": "2016-07-11",
-      "averageND": 27146.3
+      "solarAverage": 1649.37
     },
     {
       "weekStart": "2016-07-18",
-      "averageND": 28022.73
+      "solarAverage": 1967.75
     },
     {
       "weekStart": "2016-07-25",
-      "averageND": 26899.18
+      "solarAverage": 1487.14
     },
     {
       "weekStart": "2016-08-01",
-      "averageND": 26067.85
+      "solarAverage": 1662.26
     },
     {
       "weekStart": "2016-08-08",
-      "averageND": 26132.76
+      "solarAverage": 1760.74
     },
     {
       "weekStart": "2016-08-15",
-      "averageND": 26784.29
+      "solarAverage": 1724.34
     },
     {
       "weekStart": "2016-08-22",
-      "averageND": 27936.01
+      "solarAverage": 1595.83
     },
     {
       "weekStart": "2016-08-29",
-      "averageND": 26772.6
+      "solarAverage": 1491.22
     },
     {
       "weekStart": "2016-09-05",
-      "averageND": 28103.55
+      "solarAverage": 1290.86
     },
     {
       "weekStart": "2016-09-12",
-      "averageND": 28589
+      "solarAverage": 1307.81
     },
     {
       "weekStart": "2016-09-19",
-      "averageND": 28204.63
+      "solarAverage": 1240.26
     },
     {
       "weekStart": "2016-09-26",
-      "averageND": 28480.95
+      "solarAverage": 1118.56
     },
     {
       "weekStart": "2016-10-03",
-      "averageND": 29712.17
+      "solarAverage": 1175.23
     },
     {
       "weekStart": "2016-10-10",
-      "averageND": 30931.6
+      "solarAverage": 939.4
     },
     {
       "weekStart": "2016-10-17",
-      "averageND": 31321.54
+      "solarAverage": 891.81
     },
     {
       "weekStart": "2016-10-24",
-      "averageND": 32099.88
+      "solarAverage": 481.6
     },
     {
       "weekStart": "2016-10-31",
-      "averageND": 33311.79
+      "solarAverage": 680.93
     },
     {
       "weekStart": "2016-11-07",
-      "averageND": 35585.5
+      "solarAverage": 591.92
     },
     {
       "weekStart": "2016-11-14",
-      "averageND": 34748.66
+      "solarAverage": 403.59
     },
     {
       "weekStart": "2016-11-21",
-      "averageND": 36480.76
+      "solarAverage": 373.11
     },
     {
       "weekStart": "2016-11-28",
-      "averageND": 37720.17
+      "solarAverage": 628.25
     },
     {
       "weekStart": "2016-12-05",
-      "averageND": 35928.06
+      "solarAverage": 265.83
     },
     {
       "weekStart": "2016-12-12",
-      "averageND": 36067.79
+      "solarAverage": 219.62
     },
     {
       "weekStart": "2016-12-19",
-      "averageND": 33289.05
+      "solarAverage": 254.27
     },
     {
       "weekStart": "2016-12-26",
-      "averageND": 31377.72
+      "solarAverage": 433.17
     },
     {
       "weekStart": "2017-01-02",
-      "averageND": 36165.76
+      "solarAverage": 400.66
     },
     {
       "weekStart": "2017-01-09",
-      "averageND": 36186.28
+      "solarAverage": 312.97
     },
     {
       "weekStart": "2017-01-16",
-      "averageND": 38252.79
+      "solarAverage": 528.54
     },
     {
       "weekStart": "2017-01-23",
-      "averageND": 38327.19
+      "solarAverage": 457.39
     },
     {
       "weekStart": "2017-01-30",
-      "averageND": 35753
+      "solarAverage": 377.47
     },
     {
       "weekStart": "2017-02-06",
-      "averageND": 37933.65
+      "solarAverage": 332.31
     },
     {
       "weekStart": "2017-02-13",
-      "averageND": 34635.83
+      "solarAverage": 698.15
     },
     {
       "weekStart": "2017-02-20",
-      "averageND": 32606.61
+      "solarAverage": 612.88
     },
     {
       "weekStart": "2017-02-27",
-      "averageND": 34422.19
+      "solarAverage": 844.02
     },
     {
       "weekStart": "2017-03-06",
-      "averageND": 33078.04
+      "solarAverage": 1010.51
     },
     {
       "weekStart": "2017-03-13",
-      "averageND": 30932.78
+      "solarAverage": 1046.94
     },
     {
       "weekStart": "2017-03-20",
-      "averageND": 31442.34
+      "solarAverage": 1524.56
     },
     {
       "weekStart": "2017-03-27",
-      "averageND": 30239.32
+      "solarAverage": 1368.72
     },
     {
       "weekStart": "2017-04-03",
-      "averageND": 28675.99
+      "solarAverage": 1983.9
     },
     {
       "weekStart": "2017-04-10",
-      "averageND": 27513.82
+      "solarAverage": 1568.62
     },
     {
       "weekStart": "2017-04-17",
-      "averageND": 28509.79
+      "solarAverage": 1780.26
     },
     {
       "weekStart": "2017-04-24",
-      "averageND": 29532.38
+      "solarAverage": 1627.7
     },
     {
       "weekStart": "2017-05-01",
-      "averageND": 27750.29
+      "solarAverage": 1799.37
     },
     {
       "weekStart": "2017-05-08",
-      "averageND": 28052.97
+      "solarAverage": 2020.49
     },
     {
       "weekStart": "2017-05-15",
-      "averageND": 28239.26
+      "solarAverage": 1478.58
     },
     {
       "weekStart": "2017-05-22",
-      "averageND": 26612.93
+      "solarAverage": 2365.32
     },
     {
       "weekStart": "2017-05-29",
-      "averageND": 26044.65
+      "solarAverage": 1905.99
     },
     {
       "weekStart": "2017-06-05",
-      "averageND": 25797.65
+      "solarAverage": 1737.38
     },
     {
       "weekStart": "2017-06-12",
-      "averageND": 25870.63
+      "solarAverage": 2411.71
     },
     {
       "weekStart": "2017-06-19",
-      "averageND": 26750.23
+      "solarAverage": 1983.07
     },
     {
       "weekStart": "2017-06-26",
-      "averageND": 26774.29
+      "solarAverage": 1557.55
     },
     {
       "weekStart": "2017-07-03",
-      "averageND": 27027.84
+      "solarAverage": 2222.97
     },
     {
       "weekStart": "2017-07-10",
-      "averageND": 26853.99
+      "solarAverage": 1642.17
     },
     {
       "weekStart": "2017-07-17",
-      "averageND": 26491.04
+      "solarAverage": 1845.86
     },
     {
       "weekStart": "2017-07-24",
-      "averageND": 25774.48
+      "solarAverage": 1588.18
     },
     {
       "weekStart": "2017-07-31",
-      "averageND": 25232.5
+      "solarAverage": 1804.92
     },
     {
       "weekStart": "2017-08-07",
-      "averageND": 26147.98
+      "solarAverage": 1617.95
     },
     {
       "weekStart": "2017-08-14",
-      "averageND": 25603.2
+      "solarAverage": 1916.27
     },
     {
       "weekStart": "2017-08-21",
-      "averageND": 26924.46
+      "solarAverage": 1646.32
     },
     {
       "weekStart": "2017-08-28",
-      "averageND": 26366.22
+      "solarAverage": 1652.99
     },
     {
       "weekStart": "2017-09-04",
-      "averageND": 27519.79
+      "solarAverage": 1100.18
     },
     {
       "weekStart": "2017-09-11",
-      "averageND": 27459.86
+      "solarAverage": 1476.75
     },
     {
       "weekStart": "2017-09-18",
-      "averageND": 28732.27
+      "solarAverage": 1307.4
     },
     {
       "weekStart": "2017-09-25",
-      "averageND": 29005.08
+      "solarAverage": 912.99
     },
     {
       "weekStart": "2017-10-02",
-      "averageND": 28337.08
+      "solarAverage": 1121.88
     },
     {
       "weekStart": "2017-10-09",
-      "averageND": 28631.2
+      "solarAverage": 744.6
     },
     {
       "weekStart": "2017-10-16",
-      "averageND": 29419.14
+      "solarAverage": 624.06
     },
     {
       "weekStart": "2017-10-23",
-      "averageND": 29733.75
+      "solarAverage": 743.72
     },
     {
       "weekStart": "2017-10-30",
-      "averageND": 32114.22
+      "solarAverage": 679.9
     },
     {
       "weekStart": "2017-11-06",
-      "averageND": 32974.49
+      "solarAverage": 684.29
     },
     {
       "weekStart": "2017-11-13",
-      "averageND": 34407.89
+      "solarAverage": 519.93
     },
     {
       "weekStart": "2017-11-20",
-      "averageND": 33650.7
+      "solarAverage": 505.75
     },
     {
       "weekStart": "2017-11-27",
-      "averageND": 36077.19
+      "solarAverage": 528.93
     },
     {
       "weekStart": "2017-12-04",
-      "averageND": 35797.54
+      "solarAverage": 336.43
     },
     {
       "weekStart": "2017-12-11",
-      "averageND": 38220.96
+      "solarAverage": 412.01
     },
     {
       "weekStart": "2017-12-18",
-      "averageND": 34619.49
+      "solarAverage": 291.68
     },
     {
       "weekStart": "2017-12-25",
-      "averageND": 30323.78
+      "solarAverage": 384.64
     },
     {
       "weekStart": "2018-01-01",
-      "averageND": 34123.4
+      "solarAverage": 386.59
     },
     {
       "weekStart": "2018-01-08",
-      "averageND": 37109.27
+      "solarAverage": 239.71
     },
     {
       "weekStart": "2018-01-15",
-      "averageND": 36275.29
+      "solarAverage": 491.03
     },
     {
       "weekStart": "2018-01-22",
-      "averageND": 34145.15
+      "solarAverage": 453.91
     },
     {
       "weekStart": "2018-01-29",
-      "averageND": 35050.3
+      "solarAverage": 657.99
     },
     {
       "weekStart": "2018-02-05",
-      "averageND": 36481.4
+      "solarAverage": 741.62
     },
     {
       "weekStart": "2018-02-12",
-      "averageND": 35144.74
+      "solarAverage": 964.54
     },
     {
       "weekStart": "2018-02-19",
-      "averageND": 35159.69
+      "solarAverage": 1154.72
     },
     {
       "weekStart": "2018-02-26",
-      "averageND": 38588.04
+      "solarAverage": 642.93
     },
     {
       "weekStart": "2018-03-05",
-      "averageND": 35430.01
+      "solarAverage": 936.78
     },
     {
       "weekStart": "2018-03-12",
-      "averageND": 33983.91
+      "solarAverage": 832.26
     },
     {
       "weekStart": "2018-03-19",
-      "averageND": 34162.59
+      "solarAverage": 1453.95
     },
     {
       "weekStart": "2018-03-26",
-      "averageND": 32812.54
+      "solarAverage": 1041.14
     },
     {
       "weekStart": "2018-04-02",
-      "averageND": 30938.97
+      "solarAverage": 1218.87
     },
     {
       "weekStart": "2018-04-09",
-      "averageND": 32003.65
+      "solarAverage": 920.8
     },
     {
       "weekStart": "2018-04-16",
-      "averageND": 27408.23
+      "solarAverage": 2158.01
     },
     {
       "weekStart": "2018-04-23",
-      "averageND": 28794.57
+      "solarAverage": 1370.38
     },
     {
       "weekStart": "2018-04-30",
-      "averageND": 27858.05
+      "solarAverage": 2262.1
     },
     {
       "weekStart": "2018-05-07",
-      "averageND": 26211.59
+      "solarAverage": 2275.35
     },
     {
       "weekStart": "2018-05-14",
-      "averageND": 26165.53
+      "solarAverage": 2795.3
     },
     {
       "weekStart": "2018-05-21",
-      "averageND": 25961.43
+      "solarAverage": 2270.13
     },
     {
       "weekStart": "2018-05-28",
-      "averageND": 26561.4
+      "solarAverage": 1792.14
     },
     {
       "weekStart": "2018-06-04",
-      "averageND": 26771.58
+      "solarAverage": 2101.54
     },
     {
       "weekStart": "2018-06-11",
-      "averageND": 25759.95
+      "solarAverage": 2134.93
     },
     {
       "weekStart": "2018-06-18",
-      "averageND": 25288.63
+      "solarAverage": 2639.38
     },
     {
       "weekStart": "2018-06-25",
-      "averageND": 25991.72
+      "solarAverage": 3150.27
     },
     {
       "weekStart": "2018-07-02",
-      "averageND": 26466.3
+      "solarAverage": 2940.47
     },
     {
       "weekStart": "2018-07-09",
-      "averageND": 26939.31
+      "solarAverage": 2431.79
     },
     {
       "weekStart": "2018-07-16",
-      "averageND": 26993.91
+      "solarAverage": 2100.4
     },
     {
       "weekStart": "2018-07-23",
-      "averageND": 26287.28
+      "solarAverage": 2127.01
     },
     {
       "weekStart": "2018-07-30",
-      "averageND": 25675.49
+      "solarAverage": 2347.1
     },
     {
       "weekStart": "2018-08-06",
-      "averageND": 26211.6
+      "solarAverage": 1840
     },
     {
       "weekStart": "2018-08-13",
-      "averageND": 25927.5
+      "solarAverage": 1404.85
     },
     {
       "weekStart": "2018-08-20",
-      "averageND": 26461.43
+      "solarAverage": 1473.46
     },
     {
       "weekStart": "2018-08-27",
-      "averageND": 26016.47
+      "solarAverage": 1722.32
     },
     {
       "weekStart": "2018-09-03",
-      "averageND": 27185.24
+      "solarAverage": 1402.46
     },
     {
       "weekStart": "2018-09-10",
-      "averageND": 26706.46
+      "solarAverage": 1329.95
     },
     {
       "weekStart": "2018-09-17",
-      "averageND": 26980.68
+      "solarAverage": 1086.02
     },
     {
       "weekStart": "2018-09-24",
-      "averageND": 27465.32
+      "solarAverage": 1785.98
     },
     {
       "weekStart": "2018-10-01",
-      "averageND": 28708.2
+      "solarAverage": 1034.25
     },
     {
       "weekStart": "2018-10-08",
-      "averageND": 27898.08
+      "solarAverage": 917.39
     },
     {
       "weekStart": "2018-10-15",
-      "averageND": 29665.06
+      "solarAverage": 965.83
     },
     {
       "weekStart": "2018-10-22",
-      "averageND": 29559.76
+      "solarAverage": 1163.62
     },
     {
       "weekStart": "2018-10-29",
-      "averageND": 32657.81
+      "solarAverage": 823.85
     },
     {
       "weekStart": "2018-11-05",
-      "averageND": 31545.49
+      "solarAverage": 481.41
     },
     {
       "weekStart": "2018-11-12",
-      "averageND": 31568.09
+      "solarAverage": 645.59
     },
     {
       "weekStart": "2018-11-19",
-      "averageND": 35389.4
+      "solarAverage": 272.47
     },
     {
       "weekStart": "2018-11-26",
-      "averageND": 33596.26
+      "solarAverage": 257.75
     },
     {
       "weekStart": "2018-12-03",
-      "averageND": 33558.21
+      "solarAverage": 293.76
     },
     {
       "weekStart": "2018-12-10",
-      "averageND": 35748.46
+      "solarAverage": 302.83
     },
     {
       "weekStart": "2018-12-17",
-      "averageND": 33805.6
+      "solarAverage": 294.19
     },
     {
       "weekStart": "2018-12-24",
-      "averageND": 29850.45
+      "solarAverage": 230.69
     },
     {
       "weekStart": "2018-12-31",
-      "averageND": 33338.87
+      "solarAverage": 218.21
     },
     {
       "weekStart": "2019-01-07",
-      "averageND": 34252.04
+      "solarAverage": 306.97
     },
     {
       "weekStart": "2019-01-14",
-      "averageND": 35532.44
+      "solarAverage": 387.95
     },
     {
       "weekStart": "2019-01-21",
-      "averageND": 35866.69
+      "solarAverage": 429.79
     },
     {
       "weekStart": "2019-01-28",
-      "averageND": 37367.89
+      "solarAverage": 717.09
     },
     {
       "weekStart": "2019-02-04",
-      "averageND": 34270.82
+      "solarAverage": 581.21
     },
     {
       "weekStart": "2019-02-11",
-      "averageND": 32784.47
+      "solarAverage": 1011.7
     },
     {
       "weekStart": "2019-02-18",
-      "averageND": 31355.75
+      "solarAverage": 1129.99
     },
     {
       "weekStart": "2019-02-25",
-      "averageND": 31511.9
+      "solarAverage": 1146.35
     },
     {
       "weekStart": "2019-03-04",
-      "averageND": 31293.79
+      "solarAverage": 1109.04
     },
     {
       "weekStart": "2019-03-11",
-      "averageND": 30502.49
+      "solarAverage": 1216.34
     },
     {
       "weekStart": "2019-03-18",
-      "averageND": 30969.66
+      "solarAverage": 1243.51
     },
     {
       "weekStart": "2019-03-25",
-      "averageND": 29870.19
+      "solarAverage": 2039.13
     },
     {
       "weekStart": "2019-04-01",
-      "averageND": 30972.17
+      "solarAverage": 1494.36
     },
     {
       "weekStart": "2019-04-08",
-      "averageND": 29873.06
+      "solarAverage": 1912.16
     },
     {
       "weekStart": "2019-04-15",
-      "averageND": 26665.74
+      "solarAverage": 2371.93
     },
     {
       "weekStart": "2019-04-22",
-      "averageND": 26317.81
+      "solarAverage": 1770.74
     },
     {
       "weekStart": "2019-04-29",
-      "averageND": 28285.84
+      "solarAverage": 1868.63
     },
     {
       "weekStart": "2019-05-06",
-      "averageND": 28164.3
+      "solarAverage": 1929.82
     },
     {
       "weekStart": "2019-05-13",
-      "averageND": 26598.39
+      "solarAverage": 2408.64
     },
     {
       "weekStart": "2019-05-20",
-      "averageND": 25435.67
+      "solarAverage": 2516.79
     },
     {
       "weekStart": "2019-05-27",
-      "averageND": 24709.59
+      "solarAverage": 1915.74
     },
     {
       "weekStart": "2019-06-03",
-      "averageND": 25557.48
+      "solarAverage": 1961.65
     },
     {
       "weekStart": "2019-06-10",
-      "averageND": 26828.01
+      "solarAverage": 1406.44
     },
     {
       "weekStart": "2019-06-17",
-      "averageND": 25637.18
+      "solarAverage": 2137.3
     },
     {
       "weekStart": "2019-06-24",
-      "averageND": 25489.63
+      "solarAverage": 2238.04
     },
     {
       "weekStart": "2019-07-01",
-      "averageND": 25122.99
+      "solarAverage": 2491.56
     },
     {
       "weekStart": "2019-07-08",
-      "averageND": 26075.1
+      "solarAverage": 1998.84
     },
     {
       "weekStart": "2019-07-15",
-      "averageND": 25517.95
+      "solarAverage": 1974.07
     },
     {
       "weekStart": "2019-07-22",
-      "averageND": 26142.92
+      "solarAverage": 2056.66
     },
     {
       "weekStart": "2019-07-29",
-      "averageND": 25323.55
+      "solarAverage": 1872.97
     },
     {
       "weekStart": "2019-08-05",
-      "averageND": 24406.82
+      "solarAverage": 1887.47
     },
     {
       "weekStart": "2019-08-12",
-      "averageND": 24581.87
+      "solarAverage": 1743
     },
     {
       "weekStart": "2019-08-19",
-      "averageND": 24695.12
+      "solarAverage": 2300.86
     },
     {
       "weekStart": "2019-08-26",
-      "averageND": 24664.26
+      "solarAverage": 1985.74
     },
     {
       "weekStart": "2019-09-02",
-      "averageND": 25072.35
+      "solarAverage": 1750.34
     },
     {
       "weekStart": "2019-09-09",
-      "averageND": 26105.4
+      "solarAverage": 1560.21
     },
     {
       "weekStart": "2019-09-16",
-      "averageND": 26545.44
+      "solarAverage": 1888.76
     },
     {
       "weekStart": "2019-09-23",
-      "averageND": 26779.15
+      "solarAverage": 1044.67
     },
     {
       "weekStart": "2019-09-30",
-      "averageND": 28468.9
+      "solarAverage": 1004.95
     },
     {
       "weekStart": "2019-10-07",
-      "averageND": 28219.53
+      "solarAverage": 712.39
     },
     {
       "weekStart": "2019-10-14",
-      "averageND": 29793.35
+      "solarAverage": 857.07
     },
     {
       "weekStart": "2019-10-21",
-      "averageND": 30533.64
+      "solarAverage": 705.97
     },
     {
       "weekStart": "2019-10-28",
-      "averageND": 31821.4
+      "solarAverage": 656.74
     },
     {
       "weekStart": "2019-11-04",
-      "averageND": 33184.36
+      "solarAverage": 625.7
     },
     {
       "weekStart": "2019-11-11",
-      "averageND": 33949.64
+      "solarAverage": 466.55
     },
     {
       "weekStart": "2019-11-18",
-      "averageND": 34771.22
+      "solarAverage": 380.58
     },
     {
       "weekStart": "2019-11-25",
-      "averageND": 34379.55
+      "solarAverage": 410.18
     },
     {
       "weekStart": "2019-12-02",
-      "averageND": 33642.12
+      "solarAverage": 505.13
     },
     {
       "weekStart": "2019-12-09",
-      "averageND": 33810.66
+      "solarAverage": 397.38
     },
     {
       "weekStart": "2019-12-16",
-      "averageND": 34016.78
+      "solarAverage": 253.36
     },
     {
       "weekStart": "2019-12-23",
-      "averageND": 29054.39
+      "solarAverage": 300.43
     },
     {
       "weekStart": "2019-12-30",
-      "averageND": 30302.73
+      "solarAverage": 344.95
     },
     {
       "weekStart": "2020-01-06",
-      "averageND": 32155.94
+      "solarAverage": 320.73
     },
     {
       "weekStart": "2020-01-13",
-      "averageND": 32879.54
+      "solarAverage": 516.37
     },
     {
       "weekStart": "2020-01-20",
-      "averageND": 34796.34
+      "solarAverage": 384.61
     },
     {
       "weekStart": "2020-01-27",
-      "averageND": 32000.31
+      "solarAverage": 539.06
     },
     {
       "weekStart": "2020-02-03",
-      "averageND": 32274.78
+      "solarAverage": 790.89
     },
     {
       "weekStart": "2020-02-10",
-      "averageND": 32157.96
+      "solarAverage": 710.22
     },
     {
       "weekStart": "2020-02-17",
-      "averageND": 31281
+      "solarAverage": 672.24
     },
     {
       "weekStart": "2020-02-24",
-      "averageND": 32379.62
+      "solarAverage": 1035.49
     },
     {
       "weekStart": "2020-03-02",
-      "averageND": 32840.94
+      "solarAverage": 1163.98
     },
     {
       "weekStart": "2020-03-09",
-      "averageND": 30256.81
+      "solarAverage": 1099.92
     },
     {
       "weekStart": "2020-03-16",
-      "averageND": 30038.85
+      "solarAverage": 1518.28
     },
     {
       "weekStart": "2020-03-23",
-      "averageND": 26158.71
+      "solarAverage": 2306.43
     },
     {
       "weekStart": "2020-03-30",
-      "averageND": 25862.72
+      "solarAverage": 1694.01
     },
     {
       "weekStart": "2020-04-06",
-      "averageND": 22543.04
+      "solarAverage": 2373.36
     },
     {
       "weekStart": "2020-04-13",
-      "averageND": 22448.18
+      "solarAverage": 2321.05
     },
     {
       "weekStart": "2020-04-20",
-      "averageND": 21573.55
+      "solarAverage": 2889.4
     },
     {
       "weekStart": "2020-04-27",
-      "averageND": 24188.08
+      "solarAverage": 1608.75
     },
     {
       "weekStart": "2020-05-04",
-      "averageND": 21798.4
+      "solarAverage": 2518.44
     },
     {
       "weekStart": "2020-05-11",
-      "averageND": 22619.62
+      "solarAverage": 2533.51
     },
     {
       "weekStart": "2020-05-18",
-      "averageND": 20775.57
+      "solarAverage": 2697.81
     },
     {
       "weekStart": "2020-05-25",
-      "averageND": 20681.94
+      "solarAverage": 3142.18
     },
     {
       "weekStart": "2020-06-01",
-      "averageND": 22240.6
+      "solarAverage": 2060.99
     },
     {
       "weekStart": "2020-06-08",
-      "averageND": 23354.73
+      "solarAverage": 1761.4
     },
     {
       "weekStart": "2020-06-15",
-      "averageND": 23099.6
+      "solarAverage": 1984.19
     },
     {
       "weekStart": "2020-06-22",
-      "averageND": 21925.6
+      "solarAverage": 2654.72
     },
     {
       "weekStart": "2020-06-29",
-      "averageND": 22660.62
+      "solarAverage": 1626.57
     },
     {
       "weekStart": "2020-07-06",
-      "averageND": 23615.9
+      "solarAverage": 1908.6
     },
     {
       "weekStart": "2020-07-13",
-      "averageND": 23787.13
+      "solarAverage": 1834.32
     },
     {
       "weekStart": "2020-07-20",
-      "averageND": 23226.53
+      "solarAverage": 2066.39
     },
     {
       "weekStart": "2020-07-27",
-      "averageND": 22833.52
+      "solarAverage": 2221.92
     },
     {
       "weekStart": "2020-08-03",
-      "averageND": 23949.46
+      "solarAverage": 2029.42
     },
     {
       "weekStart": "2020-08-10",
-      "averageND": 25851.69
+      "solarAverage": 1546.41
     },
     {
       "weekStart": "2020-08-17",
-      "averageND": 23855.17
+      "solarAverage": 1629.95
     },
     {
       "weekStart": "2020-08-24",
-      "averageND": 24416.53
+      "solarAverage": 1390.77
     },
     {
       "weekStart": "2020-08-31",
-      "averageND": 24367.99
+      "solarAverage": 1607.3
     },
     {
       "weekStart": "2020-09-07",
-      "averageND": 24618.94
+      "solarAverage": 1619.76
     },
     {
       "weekStart": "2020-09-14",
-      "averageND": 25248.08
+      "solarAverage": 2005.9
     },
     {
       "weekStart": "2020-09-21",
-      "averageND": 26181.8
+      "solarAverage": 1443.06
     },
     {
       "weekStart": "2020-09-28",
-      "averageND": 28215.8
+      "solarAverage": 764.27
     },
     {
       "weekStart": "2020-10-05",
-      "averageND": 28035.13
+      "solarAverage": 1059.77
     },
     {
       "weekStart": "2020-10-12",
-      "averageND": 29857.49
+      "solarAverage": 761.13
     },
     {
       "weekStart": "2020-10-19",
-      "averageND": 28571.57
+      "solarAverage": 677.23
     },
     {
       "weekStart": "2020-10-26",
-      "averageND": 28587.13
+      "solarAverage": 453.43
     },
     {
       "weekStart": "2020-11-02",
-      "averageND": 30649.3
+      "solarAverage": 875.06
     },
     {
       "weekStart": "2020-11-09",
-      "averageND": 28830.48
+      "solarAverage": 504.17
     },
     {
       "weekStart": "2020-11-16",
-      "averageND": 29223.14
+      "solarAverage": 378.64
     },
     {
       "weekStart": "2020-11-23",
-      "averageND": 32097.12
+      "solarAverage": 371.12
     },
     {
       "weekStart": "2020-11-30",
-      "averageND": 33835.46
+      "solarAverage": 308.42
     },
     {
       "weekStart": "2020-12-07",
-      "averageND": 34438.01
+      "solarAverage": 220.49
     },
     {
       "weekStart": "2020-12-14",
-      "averageND": 30973.24
+      "solarAverage": 414.28
     },
     {
       "weekStart": "2020-12-21",
-      "averageND": 29579.29
+      "solarAverage": 334.36
     },
     {
       "weekStart": "2020-12-28",
-      "averageND": 31861.93
+      "solarAverage": 320.22
     },
     {
       "weekStart": "2021-01-04",
-      "averageND": 35704.46
+      "solarAverage": 324.44
     },
     {
       "weekStart": "2021-01-11",
-      "averageND": 33873.74
+      "solarAverage": 304.78
     },
     {
       "weekStart": "2021-01-18",
-      "averageND": 33106.77
+      "solarAverage": 431.65
     },
     {
       "weekStart": "2021-01-25",
-      "averageND": 33575.4
+      "solarAverage": 406.17
     },
     {
       "weekStart": "2021-02-01",
-      "averageND": 32897.71
+      "solarAverage": 454.9
     },
     {
       "weekStart": "2021-02-08",
-      "averageND": 35302.52
+      "solarAverage": 738.85
     },
     {
       "weekStart": "2021-02-15",
-      "averageND": 29946.76
+      "solarAverage": 581.49
     },
     {
       "weekStart": "2021-02-22",
-      "averageND": 29211.43
+      "solarAverage": 1272.93
     },
     {
       "weekStart": "2021-03-01",
-      "averageND": 32584.57
+      "solarAverage": 864.9
     },
     {
       "weekStart": "2021-03-08",
-      "averageND": 29207.4
+      "solarAverage": 1180.52
     },
     {
       "weekStart": "2021-03-15",
-      "averageND": 30117.34
+      "solarAverage": 1098.89
     },
     {
       "weekStart": "2021-03-22",
-      "averageND": 27673.96
+      "solarAverage": 1405.36
     },
     {
       "weekStart": "2021-03-29",
-      "averageND": 25634.4
+      "solarAverage": 1955
     },
     {
       "weekStart": "2021-04-05",
-      "averageND": 27952.34
+      "solarAverage": 1795.44
     },
     {
       "weekStart": "2021-04-12",
-      "averageND": 28861.49
+      "solarAverage": 2365.71
     },
     {
       "weekStart": "2021-04-19",
-      "averageND": 26377.49
+      "solarAverage": 2771.64
     },
     {
       "weekStart": "2021-04-26",
-      "averageND": 27766.48
+      "solarAverage": 1973.08
     },
     {
       "weekStart": "2021-05-03",
-      "averageND": 26963.55
+      "solarAverage": 1757.18
     },
     {
       "weekStart": "2021-05-10",
-      "averageND": 26890.32
+      "solarAverage": 1769.83
     },
     {
       "weekStart": "2021-05-17",
-      "averageND": 26718.58
+      "solarAverage": 1655.11
     },
     {
       "weekStart": "2021-05-24",
-      "averageND": 26044.25
+      "solarAverage": 2270.46
     },
     {
       "weekStart": "2021-05-31",
-      "averageND": 23890.78
+      "solarAverage": 2624.69
     },
     {
       "weekStart": "2021-06-07",
-      "averageND": 24277.78
+      "solarAverage": 2474.41
     },
     {
       "weekStart": "2021-06-14",
-      "averageND": 25400.52
+      "solarAverage": 1952.83
     },
     {
       "weekStart": "2021-06-21",
-      "averageND": 25172.35
+      "solarAverage": 1829.05
     },
     {
       "weekStart": "2021-06-28",
-      "averageND": 25687.03
+      "solarAverage": 1761.8
     },
     {
       "weekStart": "2021-07-05",
-      "averageND": 25401.67
+      "solarAverage": 1775.15
     },
     {
       "weekStart": "2021-07-12",
-      "averageND": 24762.31
+      "solarAverage": 2453.4
     },
     {
       "weekStart": "2021-07-19",
-      "averageND": 25456.47
+      "solarAverage": 2326.96
     },
     {
       "weekStart": "2021-07-26",
-      "averageND": 24399.91
+      "solarAverage": 1732.84
     },
     {
       "weekStart": "2021-08-02",
-      "averageND": 23885.53
+      "solarAverage": 1823.29
     },
     {
       "weekStart": "2021-08-09",
-      "averageND": 24158.12
+      "solarAverage": 1861.85
     },
     {
       "weekStart": "2021-08-16",
-      "averageND": 25643.04
+      "solarAverage": 1249.49
     },
     {
       "weekStart": "2021-08-23",
-      "averageND": 25355.33
+      "solarAverage": 1738.69
     },
     {
       "weekStart": "2021-08-30",
-      "averageND": 25620.83
+      "solarAverage": 1181.66
     },
     {
       "weekStart": "2021-09-06",
-      "averageND": 26307.86
+      "solarAverage": 1605.82
     },
     {
       "weekStart": "2021-09-13",
-      "averageND": 26345.35
+      "solarAverage": 1328.64
     },
     {
       "weekStart": "2021-09-20",
-      "averageND": 25290.32
+      "solarAverage": 1437.57
     },
     {
       "weekStart": "2021-09-27",
-      "averageND": 25713.3
+      "solarAverage": 1127.1
     },
     {
       "weekStart": "2021-10-04",
-      "averageND": 27116.36
+      "solarAverage": 1094.34
     },
     {
       "weekStart": "2021-10-11",
-      "averageND": 28012.82
+      "solarAverage": 950.47
     },
     {
       "weekStart": "2021-10-18",
-      "averageND": 27639.75
+      "solarAverage": 773.67
     },
     {
       "weekStart": "2021-10-25",
-      "averageND": 27311.59
+      "solarAverage": 667.51
     },
     {
       "weekStart": "2021-11-01",
-      "averageND": 29975.04
+      "solarAverage": 820.07
     },
     {
       "weekStart": "2021-11-08",
-      "averageND": 30318.21
+      "solarAverage": 417.43
     },
     {
       "weekStart": "2021-11-15",
-      "averageND": 30300.21
+      "solarAverage": 478.91
     },
     {
       "weekStart": "2021-11-22",
-      "averageND": 33068.39
+      "solarAverage": 602.41
     },
     {
       "weekStart": "2021-11-29",
-      "averageND": 33360.9
+      "solarAverage": 428.09
     },
     {
       "weekStart": "2021-12-06",
-      "averageND": 33742.3
+      "solarAverage": 301.83
     },
     {
       "weekStart": "2021-12-13",
-      "averageND": 32854.91
+      "solarAverage": 208.89
     },
     {
       "weekStart": "2021-12-20",
-      "averageND": 31854.89
+      "solarAverage": 124.85
     },
     {
       "weekStart": "2021-12-27",
-      "averageND": 26749.46
+      "solarAverage": 215.54
     },
     {
       "weekStart": "2022-01-03",
-      "averageND": 32184.35
+      "solarAverage": 429.95
     },
     {
       "weekStart": "2022-01-10",
-      "averageND": 34124.34
+      "solarAverage": 543.92
     },
     {
       "weekStart": "2022-01-17",
-      "averageND": 34378.19
+      "solarAverage": 584.14
     },
     {
       "weekStart": "2022-01-24",
-      "averageND": 32991.38
+      "solarAverage": 528.06
     },
     {
       "weekStart": "2022-01-31",
-      "averageND": 30593.13
+      "solarAverage": 705.23
     },
     {
       "weekStart": "2022-02-07",
-      "averageND": 31239.16
+      "solarAverage": 710.24
     },
     {
       "weekStart": "2022-02-14",
-      "averageND": 30364.63
+      "solarAverage": 580.53
     },
     {
       "weekStart": "2022-02-21",
-      "averageND": 29542.6
+      "solarAverage": 1391.32
     },
     {
       "weekStart": "2022-02-28",
-      "averageND": 31740.88
+      "solarAverage": 738.92
     },
     {
       "weekStart": "2022-03-07",
-      "averageND": 29022.33
+      "solarAverage": 1338.37
     },
     {
       "weekStart": "2022-03-14",
-      "averageND": 28617.46
+      "solarAverage": 1916.55
     },
     {
       "weekStart": "2022-03-21",
-      "averageND": 27506.9
+      "solarAverage": 2241.86
     },
     {
       "weekStart": "2022-03-28",
-      "averageND": 29410.12
+      "solarAverage": 1681.45
     },
     {
       "weekStart": "2022-04-04",
-      "averageND": 27135.48
+      "solarAverage": 1782.85
     },
     {
       "weekStart": "2022-04-11",
-      "averageND": 25190.48
+      "solarAverage": 1990.59
     },
     {
       "weekStart": "2022-04-18",
-      "averageND": 23733.86
+      "solarAverage": 2337.97
     },
     {
       "weekStart": "2022-04-25",
-      "averageND": 26578.08
+      "solarAverage": 1929.04
     },
     {
       "weekStart": "2022-05-02",
-      "averageND": 25001.32
+      "solarAverage": 1946.28
     },
     {
       "weekStart": "2022-05-09",
-      "averageND": 23166.73
+      "solarAverage": 2184.74
     },
     {
       "weekStart": "2022-05-16",
-      "averageND": 23583.6
+      "solarAverage": 2311.76
     },
     {
       "weekStart": "2022-05-23",
-      "averageND": 23170.28
+      "solarAverage": 2163.86
     },
     {
       "weekStart": "2022-05-30",
-      "averageND": 22965.43
+      "solarAverage": 2059.07
     },
     {
       "weekStart": "2022-06-06",
-      "averageND": 22872.34
+      "solarAverage": 2363.26
     },
     {
       "weekStart": "2022-06-13",
-      "averageND": 23364.32
+      "solarAverage": 2530.3
     },
     {
       "weekStart": "2022-06-20",
-      "averageND": 22438.38
+      "solarAverage": 2672.47
     },
     {
       "weekStart": "2022-06-27",
-      "averageND": 22762.92
+      "solarAverage": 2138.02
     },
     {
       "weekStart": "2022-07-04",
-      "averageND": 22673.68
+      "solarAverage": 2582.57
     },
     {
       "weekStart": "2022-07-11",
-      "averageND": 23552.14
+      "solarAverage": 2652.08
     },
     {
       "weekStart": "2022-07-18",
-      "averageND": 24327.95
+      "solarAverage": 2045.77
     },
     {
       "weekStart": "2022-07-25",
-      "averageND": 23294.34
+      "solarAverage": 1811.14
     },
     {
       "weekStart": "2022-08-01",
-      "averageND": 22187.33
+      "solarAverage": 2452.76
     },
     {
       "weekStart": "2022-08-08",
-      "averageND": 23690.21
+      "solarAverage": 2890.41
     },
     {
       "weekStart": "2022-08-15",
-      "averageND": 23636.68
+      "solarAverage": 1715.92
     },
     {
       "weekStart": "2022-08-22",
-      "averageND": 23861.34
+      "solarAverage": 1698.74
     },
     {
       "weekStart": "2022-08-29",
-      "averageND": 23098.48
+      "solarAverage": 1658.25
     },
     {
       "weekStart": "2022-09-05",
-      "averageND": 24167.7
+      "solarAverage": 1464.73
     },
     {
       "weekStart": "2022-09-12",
-      "averageND": 23900.49
+      "solarAverage": 1685.75
     },
     {
       "weekStart": "2022-09-19",
-      "averageND": 23786.63
+      "solarAverage": 1391.46
     },
     {
       "weekStart": "2022-09-26",
-      "averageND": 24464.68
+      "solarAverage": 1318.62
     },
     {
       "weekStart": "2022-10-03",
-      "averageND": 23817.03
+      "solarAverage": 1239.56
     },
     {
       "weekStart": "2022-10-10",
-      "averageND": 25379.29
+      "solarAverage": 1302.55
     },
     {
       "weekStart": "2022-10-17",
-      "averageND": 25482.55
+      "solarAverage": 964.38
     },
     {
       "weekStart": "2022-10-24",
-      "averageND": 24804.85
+      "solarAverage": 823.59
     },
     {
       "weekStart": "2022-10-31",
-      "averageND": 26645.35
+      "solarAverage": 636.13
     },
     {
       "weekStart": "2022-11-07",
-      "averageND": 26202.62
+      "solarAverage": 545.84
     },
     {
       "weekStart": "2022-11-14",
-      "averageND": 28297.05
+      "solarAverage": 459.06
     },
     {
       "weekStart": "2022-11-21",
-      "averageND": 28928.12
+      "solarAverage": 436.55
     },
     {
       "weekStart": "2022-11-28",
-      "averageND": 31244.75
+      "solarAverage": 272.57
     },
     {
       "weekStart": "2022-12-05",
-      "averageND": 33892.14
+      "solarAverage": 486.67
     },
     {
       "weekStart": "2022-12-12",
-      "averageND": 35770.11
+      "solarAverage": 372.42
     },
     {
       "weekStart": "2022-12-19",
-      "averageND": 28706.03
+      "solarAverage": 254.21
     },
     {
       "weekStart": "2022-12-26",
-      "averageND": 25317.47
+      "solarAverage": 248.32
     },
     {
       "weekStart": "2023-01-02",
-      "averageND": 27748.29
+      "solarAverage": 316.8
     },
     {
       "weekStart": "2023-01-09",
-      "averageND": 29309.88
+      "solarAverage": 372.23
     },
     {
       "weekStart": "2023-01-16",
-      "averageND": 33658.03
+      "solarAverage": 812.99
     },
     {
       "weekStart": "2023-01-23",
-      "averageND": 33183.76
+      "solarAverage": 502.71
     },
     {
       "weekStart": "2023-01-30",
-      "averageND": 29386.38
+      "solarAverage": 688.46
     },
     {
       "weekStart": "2023-02-06",
-      "averageND": 30752.76
+      "solarAverage": 930.08
     },
     {
       "weekStart": "2023-02-13",
-      "averageND": 28394.21
+      "solarAverage": 896.89
     },
     {
       "weekStart": "2023-02-20",
-      "averageND": 29187.29
+      "solarAverage": 869.44
     },
     {
       "weekStart": "2023-02-27",
-      "averageND": 31417.84
+      "solarAverage": 728.97
     },
     {
       "weekStart": "2023-03-06",
-      "averageND": 31526.84
+      "solarAverage": 888.74
     },
     {
       "weekStart": "2023-03-13",
-      "averageND": 28311.85
+      "solarAverage": 1104.3
     },
     {
       "weekStart": "2023-03-20",
-      "averageND": 26330.57
+      "solarAverage": 1284.48
     },
     {
       "weekStart": "2023-03-27",
-      "averageND": 27476.41
+      "solarAverage": 1135.16
     },
     {
       "weekStart": "2023-04-03",
-      "averageND": 25089.23
+      "solarAverage": 2204.55
     },
     {
       "weekStart": "2023-04-10",
-      "averageND": 25231.49
+      "solarAverage": 1669.02
     },
     {
       "weekStart": "2023-04-17",
-      "averageND": 25393.81
+      "solarAverage": 1928.58
     },
     {
       "weekStart": "2023-04-24",
-      "averageND": 26481.44
+      "solarAverage": 1717.58
     },
     {
       "weekStart": "2023-05-01",
-      "averageND": 23849.51
+      "solarAverage": 1997.19
     },
     {
       "weekStart": "2023-05-08",
-      "averageND": 23805.55
+      "solarAverage": 1870.56
     },
     {
       "weekStart": "2023-05-15",
-      "averageND": 22938.11
+      "solarAverage": 2672.32
     },
     {
       "weekStart": "2023-05-22",
-      "averageND": 21749.54
+      "solarAverage": 2915.07
     },
     {
       "weekStart": "2023-05-29",
-      "averageND": 20958.8
+      "solarAverage": 2852.4
     },
     {
       "weekStart": "2023-06-05",
-      "averageND": 21960.55
+      "solarAverage": 2660.32
     },
     {
       "weekStart": "2023-06-12",
-      "averageND": 22698.14
+      "solarAverage": 2855.67
     },
     {
       "weekStart": "2023-06-19",
-      "averageND": 22777.55
+      "solarAverage": 2561.72
     },
     {
       "weekStart": "2023-06-26",
-      "averageND": 22108.35
+      "solarAverage": 1916.39
     },
     {
       "weekStart": "2023-07-03",
-      "averageND": 21975.77
+      "solarAverage": 2191.24
     },
     {
       "weekStart": "2023-07-10",
-      "averageND": 21842.03
+      "solarAverage": 1929.47
     },
     {
       "weekStart": "2023-07-17",
-      "averageND": 22479.06
+      "solarAverage": 1985.73
     },
     {
       "weekStart": "2023-07-24",
-      "averageND": 21928.53
+      "solarAverage": 1839.4
     },
     {
       "weekStart": "2023-07-31",
-      "averageND": 22119.84
+      "solarAverage": 1565.29
     },
     {
       "weekStart": "2023-08-07",
-      "averageND": 21865.59
+      "solarAverage": 2108.43
     },
     {
       "weekStart": "2023-08-14",
-      "averageND": 22253.54
+      "solarAverage": 1956.18
     },
     {
       "weekStart": "2023-08-21",
-      "averageND": 22414.93
+      "solarAverage": 1933.15
     },
     {
       "weekStart": "2023-08-28",
-      "averageND": 22628.24
+      "solarAverage": 1892.77
     },
     {
       "weekStart": "2023-09-04",
-      "averageND": 24646.09
+      "solarAverage": 2341.33
     },
     {
       "weekStart": "2023-09-11",
-      "averageND": 24195.14
+      "solarAverage": 1508.43
     },
     {
       "weekStart": "2023-09-18",
-      "averageND": 23475.7
+      "solarAverage": 1333
     },
     {
       "weekStart": "2023-09-25",
-      "averageND": 23596.09
+      "solarAverage": 1324.58
     },
     {
       "weekStart": "2023-10-02",
-      "averageND": 23775.17
+      "solarAverage": 1311.85
     },
     {
       "weekStart": "2023-10-09",
-      "averageND": 24565.79
+      "solarAverage": 1247.29
     },
     {
       "weekStart": "2023-10-16",
-      "averageND": 26127.04
+      "solarAverage": 931.8
     },
     {
       "weekStart": "2023-10-23",
-      "averageND": 27107.84
+      "solarAverage": 827.93
     },
     {
       "weekStart": "2023-10-30",
-      "averageND": 27963.06
+      "solarAverage": 725.67
     },
     {
       "weekStart": "2023-11-06",
-      "averageND": 29321.1
+      "solarAverage": 816.16
     },
     {
       "weekStart": "2023-11-13",
-      "averageND": 28968.6
+      "solarAverage": 519.39
     },
     {
       "weekStart": "2023-11-20",
-      "averageND": 29750.9
+      "solarAverage": 550.82
     },
     {
       "weekStart": "2023-11-27",
-      "averageND": 34149.03
+      "solarAverage": 547.01
     },
     {
       "weekStart": "2023-12-04",
-      "averageND": 32564.6
+      "solarAverage": 286.22
     },
     {
       "weekStart": "2023-12-11",
-      "averageND": 30989.46
+      "solarAverage": 307.65
     },
     {
       "weekStart": "2023-12-18",
-      "averageND": 27449.53
+      "solarAverage": 210.21
     },
     {
       "weekStart": "2023-12-25",
-      "averageND": 25073.28
+      "solarAverage": 239.25
     },
     {
       "weekStart": "2024-01-01",
-      "averageND": 30005.35
+      "solarAverage": 402.92
     },
     {
       "weekStart": "2024-01-08",
-      "averageND": 33725.27
+      "solarAverage": 528.97
     },
     {
       "weekStart": "2024-01-15",
-      "averageND": 33949.95
+      "solarAverage": 844.16
     },
     {
       "weekStart": "2024-01-22",
-      "averageND": 29613.25
+      "solarAverage": 717.14
     },
     {
       "weekStart": "2024-01-29",
-      "averageND": 29466.44
+      "solarAverage": 557.65
     },
     {
       "weekStart": "2024-02-05",
-      "averageND": 30234
+      "solarAverage": 515.35
     },
     {
       "weekStart": "2024-02-12",
-      "averageND": 28937.39
+      "solarAverage": 784.69
     },
     {
       "weekStart": "2024-02-19",
-      "averageND": 29338.93
+      "solarAverage": 946.72
     },
     {
       "weekStart": "2024-02-26",
-      "averageND": 30708.47
+      "solarAverage": 1033.37
     },
     {
       "weekStart": "2024-03-04",
-      "averageND": 29498.76
+      "solarAverage": 1275.08
     },
     {
       "weekStart": "2024-03-11",
-      "averageND": 28558.47
+      "solarAverage": 931.64
     },
     {
       "weekStart": "2024-03-18",
-      "averageND": 26222.21
+      "solarAverage": 1668.49
     },
     {
       "weekStart": "2024-03-25",
-      "averageND": 26490.19
+      "solarAverage": 1766.25
     },
     {
       "weekStart": "2024-04-01",
-      "averageND": 24582.98
+      "solarAverage": 1703.91
     },
     {
       "weekStart": "2024-04-08",
-      "averageND": 24428.76
+      "solarAverage": 1924.59
     },
     {
       "weekStart": "2024-04-15",
-      "averageND": 24988.88
+      "solarAverage": 2591.81
     },
     {
       "weekStart": "2024-04-22",
-      "averageND": 27071.87
+      "solarAverage": 1879.84
     },
     {
       "weekStart": "2024-04-29",
-      "averageND": 24343.16
+      "solarAverage": 2197.97
     },
     {
       "weekStart": "2024-05-06",
-      "averageND": 22493.22
+      "solarAverage": 3109.18
     },
     {
       "weekStart": "2024-05-13",
-      "averageND": 23143.39
+      "solarAverage": 2416.94
     },
     {
       "weekStart": "2024-05-20",
-      "averageND": 23241.73
+      "solarAverage": 2208.27
     },
     {
       "weekStart": "2024-05-27",
-      "averageND": 21753.91
+      "solarAverage": 2438.18
     },
     {
       "weekStart": "2024-06-03",
-      "averageND": 21801.52
+      "solarAverage": 2664.98
     },
     {
       "weekStart": "2024-06-10",
-      "averageND": 22972.01
+      "solarAverage": 2553.68
     },
     {
       "weekStart": "2024-06-17",
-      "averageND": 22143.76
+      "solarAverage": 3201.64
     },
     {
       "weekStart": "2024-06-24",
-      "averageND": 22201.53
+      "solarAverage": 2957.91
     },
     {
       "weekStart": "2024-07-01",
-      "averageND": 22210.63
+      "solarAverage": 2392.87
     },
     {
       "weekStart": "2024-07-08",
-      "averageND": 23293.77
+      "solarAverage": 2019.93
     },
     {
       "weekStart": "2024-07-15",
-      "averageND": 23147.69
+      "solarAverage": 2588.4
     },
     {
       "weekStart": "2024-07-22",
-      "averageND": 22569.96
+      "solarAverage": 2516.58
     },
     {
       "weekStart": "2024-07-29",
-      "averageND": 22327.23
+      "solarAverage": 2963.49
     },
     {
       "weekStart": "2024-08-05",
-      "averageND": 21555.57
+      "solarAverage": 2266.46
     },
     {
       "weekStart": "2024-08-12",
-      "averageND": 21995.07
+      "solarAverage": 2525.08
     },
     {
       "weekStart": "2024-08-19",
-      "averageND": 21091.3
+      "solarAverage": 2045.14
     },
     {
       "weekStart": "2024-08-26",
-      "averageND": 22058.44
+      "solarAverage": 2200.49
     },
     {
       "weekStart": "2024-09-02",
-      "averageND": 24653.29
+      "solarAverage": 1236.06
     },
     {
       "weekStart": "2024-09-09",
-      "averageND": 23145.78
+      "solarAverage": 2110.82
     },
     {
       "weekStart": "2024-09-16",
-      "averageND": 23845.56
+      "solarAverage": 1994.97
     },
     {
       "weekStart": "2024-09-23",
-      "averageND": 25532.83
+      "solarAverage": 1270.22
     },
     {
       "weekStart": "2024-09-30",
-      "averageND": 25991.18
+      "solarAverage": 1261.78
     },
     {
       "weekStart": "2024-10-07",
-      "averageND": 26579.51
+      "solarAverage": 1326.26
     },
     {
       "weekStart": "2024-10-14",
-      "averageND": 26622.8
+      "solarAverage": 1015.77
     },
     {
       "weekStart": "2024-10-21",
-      "averageND": 26603.27
+      "solarAverage": 1110.74
     },
     {
       "weekStart": "2024-10-28",
-      "averageND": 28104.29
+      "solarAverage": 453.38
     },
     {
       "weekStart": "2024-11-04",
-      "averageND": 29977.94
+      "solarAverage": 235.52
     },
     {
       "weekStart": "2024-11-11",
-      "averageND": 29943.61
+      "solarAverage": 757.13
     },
     {
       "weekStart": "2024-11-18",
-      "averageND": 32367.58
+      "solarAverage": 562.11
     },
     {
       "weekStart": "2024-11-25",
-      "averageND": 30886.85
+      "solarAverage": 674.8
     },
     {
       "weekStart": "2024-12-02",
-      "averageND": 32321.99
+      "solarAverage": 392.27
     }
   ]
 }
