@@ -1,0 +1,4998 @@
+{
+  "generatedAt": "2025-08-06T10:59:01.580Z",
+  "totalWeeks": 832,
+  "data": [
+    {
+      "weekStart": "2008-12-29",
+      "averageND": 39162.19,
+      "totalND": 7519140,
+      "count": 192
+    },
+    {
+      "weekStart": "2009-01-05",
+      "averageND": 44782.02,
+      "totalND": 15046759,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-01-12",
+      "averageND": 41905,
+      "totalND": 14080079,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-01-19",
+      "averageND": 42372.53,
+      "totalND": 14237170,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-01-26",
+      "averageND": 42400.21,
+      "totalND": 14246472,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-02-02",
+      "averageND": 44185.54,
+      "totalND": 14846340,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-02-09",
+      "averageND": 43347.21,
+      "totalND": 14564662,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-02-16",
+      "averageND": 39759.57,
+      "totalND": 13359216,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-02-23",
+      "averageND": 38965.56,
+      "totalND": 13092428,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-03-02",
+      "averageND": 39510.39,
+      "totalND": 13275492,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-03-09",
+      "averageND": 38465.82,
+      "totalND": 12924514,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-03-16",
+      "averageND": 37003.8,
+      "totalND": 12433276,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-03-23",
+      "averageND": 37426.99,
+      "totalND": 12500613,
+      "count": 334
+    },
+    {
+      "weekStart": "2009-03-30",
+      "averageND": 36277.91,
+      "totalND": 12189378,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-04-06",
+      "averageND": 33900.12,
+      "totalND": 11390441,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-04-13",
+      "averageND": 33364.38,
+      "totalND": 11210430,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-04-20",
+      "averageND": 33703.49,
+      "totalND": 11324372,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-04-27",
+      "averageND": 33864.62,
+      "totalND": 11378513,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-05-04",
+      "averageND": 32800.02,
+      "totalND": 11020808,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-05-11",
+      "averageND": 33745.96,
+      "totalND": 11338641,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-05-18",
+      "averageND": 33144.04,
+      "totalND": 11136398,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-05-25",
+      "averageND": 31145.69,
+      "totalND": 10464953,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-06-01",
+      "averageND": 32465.24,
+      "totalND": 10908321,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-06-08",
+      "averageND": 32583.92,
+      "totalND": 10948196,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-06-15",
+      "averageND": 32084.65,
+      "totalND": 10780441,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-06-22",
+      "averageND": 32598.08,
+      "totalND": 10952955,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-06-29",
+      "averageND": 33202.67,
+      "totalND": 11156097,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-07-06",
+      "averageND": 31953.72,
+      "totalND": 10736449,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-07-13",
+      "averageND": 32072.79,
+      "totalND": 10776456,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-07-20",
+      "averageND": 31618.73,
+      "totalND": 10623893,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-07-27",
+      "averageND": 31167.24,
+      "totalND": 10472194,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-08-03",
+      "averageND": 31649.63,
+      "totalND": 10634274,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-08-10",
+      "averageND": 31939.13,
+      "totalND": 10731548,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-08-17",
+      "averageND": 31997.54,
+      "totalND": 10751174,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-08-24",
+      "averageND": 31573.32,
+      "totalND": 10608637,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-08-31",
+      "averageND": 31339.49,
+      "totalND": 10530069,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-09-07",
+      "averageND": 32802.16,
+      "totalND": 11021526,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-09-14",
+      "averageND": 33133.65,
+      "totalND": 11132908,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-09-21",
+      "averageND": 33044.03,
+      "totalND": 11102795,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-09-28",
+      "averageND": 33459.53,
+      "totalND": 11242403,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-10-05",
+      "averageND": 34816.07,
+      "totalND": 11698200,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-10-12",
+      "averageND": 35389.83,
+      "totalND": 11890984,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-10-19",
+      "averageND": 35780.75,
+      "totalND": 12093895,
+      "count": 338
+    },
+    {
+      "weekStart": "2009-10-26",
+      "averageND": 35077,
+      "totalND": 11785873,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-11-02",
+      "averageND": 36921.57,
+      "totalND": 12405648,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-11-09",
+      "averageND": 38321.09,
+      "totalND": 12875886,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-11-16",
+      "averageND": 36913.08,
+      "totalND": 12402794,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-11-23",
+      "averageND": 38424.51,
+      "totalND": 12910634,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-11-30",
+      "averageND": 40389.36,
+      "totalND": 13570826,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-12-07",
+      "averageND": 40614.68,
+      "totalND": 13646532,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-12-14",
+      "averageND": 43246.11,
+      "totalND": 14530694,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-12-21",
+      "averageND": 39693.1,
+      "totalND": 13336882,
+      "count": 336
+    },
+    {
+      "weekStart": "2009-12-28",
+      "averageND": 38414.15,
+      "totalND": 12907153,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-01-04",
+      "averageND": 45382.27,
+      "totalND": 15248444,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-01-11",
+      "averageND": 44205.53,
+      "totalND": 14853058,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-01-18",
+      "averageND": 42278.05,
+      "totalND": 14205424,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-01-25",
+      "averageND": 42882.09,
+      "totalND": 14408381,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-02-01",
+      "averageND": 42233.03,
+      "totalND": 14190299,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-02-08",
+      "averageND": 43037.77,
+      "totalND": 14460690,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-02-15",
+      "averageND": 42312.99,
+      "totalND": 14217166,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-02-22",
+      "averageND": 41496.14,
+      "totalND": 13942704,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-03-01",
+      "averageND": 40784.2,
+      "totalND": 13703490,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-03-08",
+      "averageND": 40103.56,
+      "totalND": 13474797,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-03-15",
+      "averageND": 37385.06,
+      "totalND": 12561380,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-03-22",
+      "averageND": 36926.03,
+      "totalND": 12333295,
+      "count": 334
+    },
+    {
+      "weekStart": "2010-03-29",
+      "averageND": 36659.36,
+      "totalND": 12317545,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-04-05",
+      "averageND": 34080.56,
+      "totalND": 11451067,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-04-12",
+      "averageND": 34799.22,
+      "totalND": 11692538,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-04-19",
+      "averageND": 34644.02,
+      "totalND": 11640390,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-04-26",
+      "averageND": 33663.69,
+      "totalND": 11310999,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-05-03",
+      "averageND": 34035.96,
+      "totalND": 11436081,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-05-10",
+      "averageND": 34596.87,
+      "totalND": 11624548,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-05-17",
+      "averageND": 33120.89,
+      "totalND": 11128618,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-05-24",
+      "averageND": 32078.09,
+      "totalND": 10778238,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-05-31",
+      "averageND": 31306.2,
+      "totalND": 10518882,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-06-07",
+      "averageND": 32347.87,
+      "totalND": 10868883,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-06-14",
+      "averageND": 31900.02,
+      "totalND": 10718407,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-06-21",
+      "averageND": 32261.05,
+      "totalND": 10839712,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-06-28",
+      "averageND": 32222.78,
+      "totalND": 10826855,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-07-05",
+      "averageND": 32033.07,
+      "totalND": 10763112,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-07-12",
+      "averageND": 31798.74,
+      "totalND": 10684377,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-07-19",
+      "averageND": 32154.97,
+      "totalND": 10804071,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-07-26",
+      "averageND": 31398.9,
+      "totalND": 10550030,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-08-02",
+      "averageND": 30888.12,
+      "totalND": 10378407,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-08-09",
+      "averageND": 31190.78,
+      "totalND": 10480102,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-08-16",
+      "averageND": 31502.38,
+      "totalND": 10584801,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-08-23",
+      "averageND": 31236.17,
+      "totalND": 10495353,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-08-30",
+      "averageND": 31276.96,
+      "totalND": 10509058,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-09-06",
+      "averageND": 32427.78,
+      "totalND": 10895733,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-09-13",
+      "averageND": 32507.55,
+      "totalND": 10922537,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-09-20",
+      "averageND": 33358.29,
+      "totalND": 11208385,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-09-27",
+      "averageND": 34744.69,
+      "totalND": 11674215,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-10-04",
+      "averageND": 33928.92,
+      "totalND": 11400116,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-10-11",
+      "averageND": 35217.77,
+      "totalND": 11833172,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-10-18",
+      "averageND": 36491.52,
+      "totalND": 12261152,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-10-25",
+      "averageND": 36228.04,
+      "totalND": 12245078,
+      "count": 338
+    },
+    {
+      "weekStart": "2010-11-01",
+      "averageND": 36412.11,
+      "totalND": 12234468,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-11-08",
+      "averageND": 38804.44,
+      "totalND": 13038293,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-11-15",
+      "averageND": 39858.16,
+      "totalND": 13392341,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-11-22",
+      "averageND": 42005.99,
+      "totalND": 14114013,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-11-29",
+      "averageND": 44913.78,
+      "totalND": 15091030,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-12-06",
+      "averageND": 44818.42,
+      "totalND": 15058989,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-12-13",
+      "averageND": 45036.25,
+      "totalND": 15132181,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-12-20",
+      "averageND": 43996.47,
+      "totalND": 14782814,
+      "count": 336
+    },
+    {
+      "weekStart": "2010-12-27",
+      "averageND": 38051.08,
+      "totalND": 12785162,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-01-03",
+      "averageND": 41709.36,
+      "totalND": 14014345,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-01-10",
+      "averageND": 40599.38,
+      "totalND": 13641391,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-01-17",
+      "averageND": 42260.76,
+      "totalND": 14199614,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-01-24",
+      "averageND": 42731.93,
+      "totalND": 14357927,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-01-31",
+      "averageND": 40940.88,
+      "totalND": 13756135,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-02-07",
+      "averageND": 39595.43,
+      "totalND": 13304065,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-02-14",
+      "averageND": 40376.28,
+      "totalND": 13566431,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-02-21",
+      "averageND": 39156.2,
+      "totalND": 13156483,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-02-28",
+      "averageND": 40799.17,
+      "totalND": 13708522,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-03-07",
+      "averageND": 39004.06,
+      "totalND": 13105365,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-03-14",
+      "averageND": 38760.93,
+      "totalND": 13023673,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-03-21",
+      "averageND": 36523.13,
+      "totalND": 12198726,
+      "count": 334
+    },
+    {
+      "weekStart": "2011-03-28",
+      "averageND": 35834.87,
+      "totalND": 12040515,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-04-04",
+      "averageND": 34198.01,
+      "totalND": 11490532,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-04-11",
+      "averageND": 34217.82,
+      "totalND": 11497189,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-04-18",
+      "averageND": 31831.46,
+      "totalND": 10695370,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-04-25",
+      "averageND": 30340.57,
+      "totalND": 10164090,
+      "count": 335
+    },
+    {
+      "weekStart": "2011-05-02",
+      "averageND": 31831.16,
+      "totalND": 10695271,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-05-09",
+      "averageND": 32491.13,
+      "totalND": 10917019,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-05-16",
+      "averageND": 32489.52,
+      "totalND": 10916480,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-05-23",
+      "averageND": 32054.02,
+      "totalND": 10770150,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-05-30",
+      "averageND": 31376.02,
+      "totalND": 10542344,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-06-06",
+      "averageND": 32349.31,
+      "totalND": 10869368,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-06-13",
+      "averageND": 32095.54,
+      "totalND": 10784101,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-06-20",
+      "averageND": 32144.74,
+      "totalND": 10800631,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-06-27",
+      "averageND": 31955.09,
+      "totalND": 10736909,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-07-04",
+      "averageND": 31800.52,
+      "totalND": 10684975,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-07-11",
+      "averageND": 31711.71,
+      "totalND": 10655136,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-07-18",
+      "averageND": 31570.9,
+      "totalND": 10607822,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-07-25",
+      "averageND": 31021.02,
+      "totalND": 10423063,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-08-01",
+      "averageND": 31096.17,
+      "totalND": 10448314,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-08-08",
+      "averageND": 31216.9,
+      "totalND": 10488877,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-08-15",
+      "averageND": 31739.12,
+      "totalND": 10664343,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-08-22",
+      "averageND": 31891.52,
+      "totalND": 10715552,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-08-29",
+      "averageND": 31532.46,
+      "totalND": 10594905,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-09-05",
+      "averageND": 32432.21,
+      "totalND": 10897224,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-09-12",
+      "averageND": 32419.49,
+      "totalND": 10892950,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-09-19",
+      "averageND": 32767.4,
+      "totalND": 11009847,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-09-26",
+      "averageND": 32917.08,
+      "totalND": 11060138,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-10-03",
+      "averageND": 32811.18,
+      "totalND": 11024555,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-10-10",
+      "averageND": 33812.88,
+      "totalND": 11361127,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-10-17",
+      "averageND": 34994.11,
+      "totalND": 11758020,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-10-24",
+      "averageND": 34829.54,
+      "totalND": 11772385,
+      "count": 338
+    },
+    {
+      "weekStart": "2011-10-31",
+      "averageND": 35572.69,
+      "totalND": 11952425,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-11-07",
+      "averageND": 36921.79,
+      "totalND": 12405722,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-11-14",
+      "averageND": 37426.05,
+      "totalND": 12575154,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-11-21",
+      "averageND": 37491.79,
+      "totalND": 12597243,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-11-28",
+      "averageND": 38168.72,
+      "totalND": 12824691,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-12-05",
+      "averageND": 40385.65,
+      "totalND": 13569579,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-12-12",
+      "averageND": 41352.62,
+      "totalND": 13894479,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-12-19",
+      "averageND": 38248.35,
+      "totalND": 12851444,
+      "count": 336
+    },
+    {
+      "weekStart": "2011-12-26",
+      "averageND": 33191.22,
+      "totalND": 11152249,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-01-02",
+      "averageND": 37804.82,
+      "totalND": 12702420,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-01-09",
+      "averageND": 39410.21,
+      "totalND": 13241830,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-01-16",
+      "averageND": 40119.52,
+      "totalND": 13480160,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-01-23",
+      "averageND": 40057.96,
+      "totalND": 13459476,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-01-30",
+      "averageND": 43038.58,
+      "totalND": 14460963,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-02-06",
+      "averageND": 43596.82,
+      "totalND": 14648532,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-02-13",
+      "averageND": 39607.4,
+      "totalND": 13308087,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-02-20",
+      "averageND": 37991.31,
+      "totalND": 12765080,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-02-27",
+      "averageND": 37424.07,
+      "totalND": 12574487,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-03-05",
+      "averageND": 37808.19,
+      "totalND": 12703551,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-03-12",
+      "averageND": 37303.42,
+      "totalND": 12533950,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-03-19",
+      "averageND": 35846.87,
+      "totalND": 11972853,
+      "count": 334
+    },
+    {
+      "weekStart": "2012-03-26",
+      "averageND": 34019.17,
+      "totalND": 11430440,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-04-02",
+      "averageND": 34805.09,
+      "totalND": 11694509,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-04-09",
+      "averageND": 34016.68,
+      "totalND": 11429603,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-04-16",
+      "averageND": 35669.27,
+      "totalND": 11984876,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-04-23",
+      "averageND": 35890.43,
+      "totalND": 12059185,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-04-30",
+      "averageND": 35242.35,
+      "totalND": 11841429,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-05-07",
+      "averageND": 33339.35,
+      "totalND": 11202021,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-05-14",
+      "averageND": 33859.15,
+      "totalND": 11376676,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-05-21",
+      "averageND": 31953.87,
+      "totalND": 10736501,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-05-28",
+      "averageND": 31769.33,
+      "totalND": 10674494,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-06-04",
+      "averageND": 30277.64,
+      "totalND": 10173287,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-06-11",
+      "averageND": 32237.89,
+      "totalND": 10831931,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-06-18",
+      "averageND": 31584.86,
+      "totalND": 10612512,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-06-25",
+      "averageND": 31511.5,
+      "totalND": 10587863,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-07-02",
+      "averageND": 31931.72,
+      "totalND": 10729059,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-07-09",
+      "averageND": 31616.11,
+      "totalND": 10623013,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-07-16",
+      "averageND": 31202.89,
+      "totalND": 10484170,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-07-23",
+      "averageND": 30864.19,
+      "totalND": 10370367,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-07-30",
+      "averageND": 30481.2,
+      "totalND": 10241682,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-08-06",
+      "averageND": 30802.78,
+      "totalND": 10349735,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-08-13",
+      "averageND": 31367.33,
+      "totalND": 10539422,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-08-20",
+      "averageND": 31180.03,
+      "totalND": 10476490,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-08-27",
+      "averageND": 30618.77,
+      "totalND": 10287908,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-09-03",
+      "averageND": 31420.79,
+      "totalND": 10557387,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-09-10",
+      "averageND": 31454.09,
+      "totalND": 10568574,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-09-17",
+      "averageND": 32500.54,
+      "totalND": 10920180,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-09-24",
+      "averageND": 33262.77,
+      "totalND": 11176291,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-10-01",
+      "averageND": 33545.58,
+      "totalND": 11271316,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-10-08",
+      "averageND": 34750.17,
+      "totalND": 11676056,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-10-15",
+      "averageND": 34941.16,
+      "totalND": 11740230,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-10-22",
+      "averageND": 35762.35,
+      "totalND": 12087673,
+      "count": 338
+    },
+    {
+      "weekStart": "2012-10-29",
+      "averageND": 37084.6,
+      "totalND": 12460424,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-11-05",
+      "averageND": 37536.51,
+      "totalND": 12612268,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-11-12",
+      "averageND": 37518.61,
+      "totalND": 12606254,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-11-19",
+      "averageND": 37960.01,
+      "totalND": 12754563,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-11-26",
+      "averageND": 40346.9,
+      "totalND": 13556557,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-12-03",
+      "averageND": 41124.37,
+      "totalND": 13817788,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-12-10",
+      "averageND": 42243.21,
+      "totalND": 14193720,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-12-17",
+      "averageND": 39262.85,
+      "totalND": 13192318,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-12-24",
+      "averageND": 33289.28,
+      "totalND": 11185199,
+      "count": 336
+    },
+    {
+      "weekStart": "2012-12-31",
+      "averageND": 35432.47,
+      "totalND": 11905310,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-01-07",
+      "averageND": 39828.02,
+      "totalND": 13382214,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-01-14",
+      "averageND": 43068.26,
+      "totalND": 14470937,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-01-21",
+      "averageND": 42416.12,
+      "totalND": 14251817,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-01-28",
+      "averageND": 39032.3,
+      "totalND": 13114852,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-02-04",
+      "averageND": 40123.04,
+      "totalND": 13481340,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-02-11",
+      "averageND": 40389.35,
+      "totalND": 13570823,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-02-18",
+      "averageND": 40763.24,
+      "totalND": 13696450,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-02-25",
+      "averageND": 40562.55,
+      "totalND": 13629018,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-03-04",
+      "averageND": 38736.24,
+      "totalND": 13015377,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-03-11",
+      "averageND": 40401.03,
+      "totalND": 13574746,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-03-18",
+      "averageND": 40334.4,
+      "totalND": 13552360,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-03-25",
+      "averageND": 39815.54,
+      "totalND": 13298391,
+      "count": 334
+    },
+    {
+      "weekStart": "2013-04-01",
+      "averageND": 37492.16,
+      "totalND": 12597366,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-04-08",
+      "averageND": 36824.04,
+      "totalND": 12372879,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-04-15",
+      "averageND": 33770.06,
+      "totalND": 11346740,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-04-22",
+      "averageND": 33498.72,
+      "totalND": 11255571,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-04-29",
+      "averageND": 32391.24,
+      "totalND": 10883458,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-05-06",
+      "averageND": 31069.79,
+      "totalND": 10439449,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-05-13",
+      "averageND": 32656.56,
+      "totalND": 10972605,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-05-20",
+      "averageND": 31938.36,
+      "totalND": 10731288,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-05-27",
+      "averageND": 30455.46,
+      "totalND": 10233034,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-06-03",
+      "averageND": 30413.76,
+      "totalND": 10219022,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-06-10",
+      "averageND": 30610.64,
+      "totalND": 10285175,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-06-17",
+      "averageND": 30929.8,
+      "totalND": 10392414,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-06-24",
+      "averageND": 30620.08,
+      "totalND": 10288348,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-07-01",
+      "averageND": 30518.95,
+      "totalND": 10254366,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-07-08",
+      "averageND": 31003.84,
+      "totalND": 10417291,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-07-15",
+      "averageND": 31391.36,
+      "totalND": 10547497,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-07-22",
+      "averageND": 31127.34,
+      "totalND": 10458785,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-07-29",
+      "averageND": 30004.66,
+      "totalND": 10081566,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-08-05",
+      "averageND": 29820.6,
+      "totalND": 10019720,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-08-12",
+      "averageND": 30144.17,
+      "totalND": 10128441,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-08-19",
+      "averageND": 30889.01,
+      "totalND": 10378706,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-08-26",
+      "averageND": 29973.48,
+      "totalND": 10071088,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-09-02",
+      "averageND": 31428.67,
+      "totalND": 10560034,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-09-09",
+      "averageND": 32267.11,
+      "totalND": 10841748,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-09-16",
+      "averageND": 32603.24,
+      "totalND": 10954687,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-09-23",
+      "averageND": 32501.37,
+      "totalND": 10920461,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-09-30",
+      "averageND": 32456.06,
+      "totalND": 10905237,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-10-07",
+      "averageND": 32858.09,
+      "totalND": 11040318,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-10-14",
+      "averageND": 34191.97,
+      "totalND": 11488502,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-10-21",
+      "averageND": 33118.78,
+      "totalND": 11194149,
+      "count": 338
+    },
+    {
+      "weekStart": "2013-10-28",
+      "averageND": 34234.24,
+      "totalND": 11502705,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-11-04",
+      "averageND": 36690.19,
+      "totalND": 12327903,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-11-11",
+      "averageND": 37183.57,
+      "totalND": 12493678,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-11-18",
+      "averageND": 38922.51,
+      "totalND": 13077962,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-11-25",
+      "averageND": 39000.76,
+      "totalND": 13104255,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-12-02",
+      "averageND": 39057.07,
+      "totalND": 13123176,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-12-09",
+      "averageND": 38302.17,
+      "totalND": 12869530,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-12-16",
+      "averageND": 37563.89,
+      "totalND": 12621466,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-12-23",
+      "averageND": 33225.86,
+      "totalND": 11163889,
+      "count": 336
+    },
+    {
+      "weekStart": "2013-12-30",
+      "averageND": 34739.1,
+      "totalND": 11672339,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-01-06",
+      "averageND": 38044.15,
+      "totalND": 12782834,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-01-13",
+      "averageND": 38607.05,
+      "totalND": 12971969,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-01-20",
+      "averageND": 38894.47,
+      "totalND": 13068543,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-01-27",
+      "averageND": 38809.81,
+      "totalND": 13040097,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-02-03",
+      "averageND": 37844.78,
+      "totalND": 12715845,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-02-10",
+      "averageND": 38535.83,
+      "totalND": 12948040,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-02-17",
+      "averageND": 36781.18,
+      "totalND": 12358478,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-02-24",
+      "averageND": 36805.63,
+      "totalND": 12366690,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-03-03",
+      "averageND": 36149.54,
+      "totalND": 12146247,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-03-10",
+      "averageND": 35061.34,
+      "totalND": 11780611,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-03-17",
+      "averageND": 34160.07,
+      "totalND": 11477782,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-03-24",
+      "averageND": 35617.7,
+      "totalND": 11896313,
+      "count": 334
+    },
+    {
+      "weekStart": "2014-03-31",
+      "averageND": 33770.96,
+      "totalND": 11347042,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-04-07",
+      "averageND": 32465.36,
+      "totalND": 10908361,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-04-14",
+      "averageND": 30868.2,
+      "totalND": 10371716,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-04-21",
+      "averageND": 31547.2,
+      "totalND": 10599859,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-04-28",
+      "averageND": 32299.83,
+      "totalND": 10852743,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-05-05",
+      "averageND": 30410.3,
+      "totalND": 10217861,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-05-12",
+      "averageND": 30684.86,
+      "totalND": 10310114,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-05-19",
+      "averageND": 30497.71,
+      "totalND": 10247231,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-05-26",
+      "averageND": 30127.92,
+      "totalND": 10092854,
+      "count": 335
+    },
+    {
+      "weekStart": "2014-06-02",
+      "averageND": 30176.56,
+      "totalND": 10139325,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-06-09",
+      "averageND": 30094.77,
+      "totalND": 10111843,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-06-16",
+      "averageND": 29717.98,
+      "totalND": 9985242,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-06-23",
+      "averageND": 29959.23,
+      "totalND": 10066302,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-06-30",
+      "averageND": 29632.14,
+      "totalND": 9926766,
+      "count": 335
+    },
+    {
+      "weekStart": "2014-07-07",
+      "averageND": 29786.88,
+      "totalND": 10008392,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-07-14",
+      "averageND": 30163.76,
+      "totalND": 10135023,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-07-21",
+      "averageND": 30239.18,
+      "totalND": 10160364,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-07-28",
+      "averageND": 29149.1,
+      "totalND": 9794099,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-08-04",
+      "averageND": 29095.14,
+      "totalND": 9775968,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-08-11",
+      "averageND": 28377.81,
+      "totalND": 9534943,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-08-18",
+      "averageND": 29398.26,
+      "totalND": 9877815,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-08-25",
+      "averageND": 29098.24,
+      "totalND": 9777010,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-09-01",
+      "averageND": 30989.22,
+      "totalND": 10412378,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-09-08",
+      "averageND": 30733.16,
+      "totalND": 10326343,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-09-15",
+      "averageND": 31339.26,
+      "totalND": 10529993,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-09-22",
+      "averageND": 30974.6,
+      "totalND": 10407465,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-09-29",
+      "averageND": 31213.93,
+      "totalND": 10487880,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-10-06",
+      "averageND": 32582.36,
+      "totalND": 10947674,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-10-13",
+      "averageND": 32470.16,
+      "totalND": 10909975,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-10-20",
+      "averageND": 32359.62,
+      "totalND": 10937550,
+      "count": 338
+    },
+    {
+      "weekStart": "2014-10-27",
+      "averageND": 32210.5,
+      "totalND": 10822729,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-11-03",
+      "averageND": 35082.12,
+      "totalND": 11787591,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-11-10",
+      "averageND": 35292.12,
+      "totalND": 11858151,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-11-17",
+      "averageND": 36612.07,
+      "totalND": 12301655,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-11-24",
+      "averageND": 37704.91,
+      "totalND": 12668850,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-12-01",
+      "averageND": 38418.74,
+      "totalND": 12908698,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-12-08",
+      "averageND": 38563.36,
+      "totalND": 12957290,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-12-15",
+      "averageND": 36732.94,
+      "totalND": 12342267,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-12-22",
+      "averageND": 33068.57,
+      "totalND": 11111041,
+      "count": 336
+    },
+    {
+      "weekStart": "2014-12-29",
+      "averageND": 34326.74,
+      "totalND": 11533786,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-01-05",
+      "averageND": 37010.51,
+      "totalND": 12435532,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-01-12",
+      "averageND": 38302.18,
+      "totalND": 12869532,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-01-19",
+      "averageND": 40354.01,
+      "totalND": 13558946,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-01-26",
+      "averageND": 38672.65,
+      "totalND": 12994012,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-02-02",
+      "averageND": 40488.38,
+      "totalND": 13604094,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-02-09",
+      "averageND": 39100.26,
+      "totalND": 13137687,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-02-16",
+      "averageND": 37432.92,
+      "totalND": 12577462,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-02-23",
+      "averageND": 36408.85,
+      "totalND": 12233372,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-03-02",
+      "averageND": 35473.15,
+      "totalND": 11918977,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-03-09",
+      "averageND": 35908.83,
+      "totalND": 12065367,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-03-16",
+      "averageND": 36263.5,
+      "totalND": 12184536,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-03-23",
+      "averageND": 34626.06,
+      "totalND": 11565104,
+      "count": 334
+    },
+    {
+      "weekStart": "2015-03-30",
+      "averageND": 32816.97,
+      "totalND": 11026502,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-04-06",
+      "averageND": 30097.03,
+      "totalND": 10112601,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-04-13",
+      "averageND": 30928.5,
+      "totalND": 10391977,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-04-20",
+      "averageND": 30646.78,
+      "totalND": 10297319,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-04-27",
+      "averageND": 30813.32,
+      "totalND": 10353276,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-05-04",
+      "averageND": 29770.89,
+      "totalND": 10003020,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-05-11",
+      "averageND": 29258.51,
+      "totalND": 9830860,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-05-18",
+      "averageND": 29549.8,
+      "totalND": 9928732,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-05-25",
+      "averageND": 28018.25,
+      "totalND": 9414133,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-06-01",
+      "averageND": 28171.1,
+      "totalND": 9465491,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-06-08",
+      "averageND": 29094.08,
+      "totalND": 9775611,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-06-15",
+      "averageND": 28490.29,
+      "totalND": 9572739,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-06-22",
+      "averageND": 28724.68,
+      "totalND": 9651493,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-06-29",
+      "averageND": 28996.06,
+      "totalND": 9713679,
+      "count": 335
+    },
+    {
+      "weekStart": "2015-07-06",
+      "averageND": 28008.47,
+      "totalND": 9410847,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-07-13",
+      "averageND": 28427.3,
+      "totalND": 9551574,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-07-20",
+      "averageND": 28480.09,
+      "totalND": 9569310,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-07-27",
+      "averageND": 27525.8,
+      "totalND": 9248668,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-08-03",
+      "averageND": 27360.99,
+      "totalND": 9193294,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-08-10",
+      "averageND": 28915.58,
+      "totalND": 9715634,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-08-17",
+      "averageND": 28946.54,
+      "totalND": 9726036,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-08-24",
+      "averageND": 28553.02,
+      "totalND": 9593814,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-08-31",
+      "averageND": 28815.99,
+      "totalND": 9682173,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-09-07",
+      "averageND": 29486.96,
+      "totalND": 9907620,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-09-14",
+      "averageND": 30608.28,
+      "totalND": 10284383,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-09-21",
+      "averageND": 30202.83,
+      "totalND": 10148152,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-09-28",
+      "averageND": 30568.51,
+      "totalND": 10271021,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-10-05",
+      "averageND": 31735.4,
+      "totalND": 10663096,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-10-12",
+      "averageND": 33102.27,
+      "totalND": 11122364,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-10-19",
+      "averageND": 32799.7,
+      "totalND": 11086300,
+      "count": 338
+    },
+    {
+      "weekStart": "2015-10-26",
+      "averageND": 33290.55,
+      "totalND": 11185626,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-11-02",
+      "averageND": 34025.88,
+      "totalND": 11398671,
+      "count": 335
+    },
+    {
+      "weekStart": "2015-11-09",
+      "averageND": 32561.9,
+      "totalND": 10940798,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-11-16",
+      "averageND": 34478.2,
+      "totalND": 11584674,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-11-23",
+      "averageND": 35851.82,
+      "totalND": 12046213,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-11-30",
+      "averageND": 35033.23,
+      "totalND": 11771165,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-12-07",
+      "averageND": 35563.6,
+      "totalND": 11949368,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-12-14",
+      "averageND": 34288.2,
+      "totalND": 11520834,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-12-21",
+      "averageND": 30387.93,
+      "totalND": 10210343,
+      "count": 336
+    },
+    {
+      "weekStart": "2015-12-28",
+      "averageND": 29806.76,
+      "totalND": 10015072,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-01-04",
+      "averageND": 35792.62,
+      "totalND": 12026320,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-01-11",
+      "averageND": 38300.68,
+      "totalND": 12869030,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-01-18",
+      "averageND": 37996.48,
+      "totalND": 12766817,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-01-25",
+      "averageND": 34541.3,
+      "totalND": 11605876,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-02-01",
+      "averageND": 34633.4,
+      "totalND": 11636822,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-02-08",
+      "averageND": 36396.71,
+      "totalND": 12229296,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-02-15",
+      "averageND": 35885.89,
+      "totalND": 12057658,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-02-22",
+      "averageND": 36625.95,
+      "totalND": 12306319,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-02-29",
+      "averageND": 35896.69,
+      "totalND": 12061288,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-03-07",
+      "averageND": 36170.85,
+      "totalND": 12153407,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-03-14",
+      "averageND": 35006.04,
+      "totalND": 11762031,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-03-21",
+      "averageND": 32149.18,
+      "totalND": 10737825,
+      "count": 334
+    },
+    {
+      "weekStart": "2016-03-28",
+      "averageND": 31280.69,
+      "totalND": 10510313,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-04-04",
+      "averageND": 31448.85,
+      "totalND": 10566814,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-04-11",
+      "averageND": 31690.17,
+      "totalND": 10647896,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-04-18",
+      "averageND": 30812.08,
+      "totalND": 10352859,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-04-25",
+      "averageND": 31116.73,
+      "totalND": 10455222,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-05-02",
+      "averageND": 27969.47,
+      "totalND": 9397741,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-05-09",
+      "averageND": 28003.62,
+      "totalND": 9409216,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-05-16",
+      "averageND": 28261.24,
+      "totalND": 9495778,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-05-23",
+      "averageND": 27939.51,
+      "totalND": 9387677,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-05-30",
+      "averageND": 27080.68,
+      "totalND": 9099107,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-06-06",
+      "averageND": 28487.55,
+      "totalND": 9571816,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-06-13",
+      "averageND": 28485.82,
+      "totalND": 9571234,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-06-20",
+      "averageND": 27958.01,
+      "totalND": 9393890,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-06-27",
+      "averageND": 27060.22,
+      "totalND": 9092235,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-07-04",
+      "averageND": 27094.19,
+      "totalND": 9103647,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-07-11",
+      "averageND": 27146.3,
+      "totalND": 9121158,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-07-18",
+      "averageND": 28022.73,
+      "totalND": 9415637,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-07-25",
+      "averageND": 26899.18,
+      "totalND": 9038124,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-08-01",
+      "averageND": 26067.85,
+      "totalND": 8758798,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-08-08",
+      "averageND": 26132.76,
+      "totalND": 8780608,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-08-15",
+      "averageND": 26784.29,
+      "totalND": 8999520,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-08-22",
+      "averageND": 27936.01,
+      "totalND": 9386498,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-08-29",
+      "averageND": 26772.6,
+      "totalND": 8995594,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-09-05",
+      "averageND": 28103.55,
+      "totalND": 9414690,
+      "count": 335
+    },
+    {
+      "weekStart": "2016-09-12",
+      "averageND": 28589,
+      "totalND": 9605903,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-09-19",
+      "averageND": 28204.63,
+      "totalND": 9448552,
+      "count": 335
+    },
+    {
+      "weekStart": "2016-09-26",
+      "averageND": 28480.95,
+      "totalND": 9569600,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-10-03",
+      "averageND": 29712.17,
+      "totalND": 9983288,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-10-10",
+      "averageND": 30931.6,
+      "totalND": 10393017,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-10-17",
+      "averageND": 31321.54,
+      "totalND": 10524036,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-10-24",
+      "averageND": 32099.88,
+      "totalND": 10849760,
+      "count": 338
+    },
+    {
+      "weekStart": "2016-10-31",
+      "averageND": 33311.79,
+      "totalND": 11192760,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-11-07",
+      "averageND": 35585.5,
+      "totalND": 11956728,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-11-14",
+      "averageND": 34748.66,
+      "totalND": 11675551,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-11-21",
+      "averageND": 36480.76,
+      "totalND": 12257535,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-11-28",
+      "averageND": 37720.17,
+      "totalND": 12673977,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-12-05",
+      "averageND": 35928.06,
+      "totalND": 12071828,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-12-12",
+      "averageND": 36067.79,
+      "totalND": 12118779,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-12-19",
+      "averageND": 33289.05,
+      "totalND": 11185121,
+      "count": 336
+    },
+    {
+      "weekStart": "2016-12-26",
+      "averageND": 31377.72,
+      "totalND": 10542915,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-01-02",
+      "averageND": 36165.76,
+      "totalND": 12151696,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-01-09",
+      "averageND": 36186.28,
+      "totalND": 12158591,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-01-16",
+      "averageND": 38252.79,
+      "totalND": 12852938,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-01-23",
+      "averageND": 38327.19,
+      "totalND": 12877935,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-01-30",
+      "averageND": 35753,
+      "totalND": 12013007,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-02-06",
+      "averageND": 37933.65,
+      "totalND": 12745705,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-02-13",
+      "averageND": 34635.83,
+      "totalND": 11637638,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-02-20",
+      "averageND": 32606.61,
+      "totalND": 10955820,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-02-27",
+      "averageND": 34422.19,
+      "totalND": 11565855,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-03-06",
+      "averageND": 33078.04,
+      "totalND": 11114222,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-03-13",
+      "averageND": 30932.78,
+      "totalND": 10393413,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-03-20",
+      "averageND": 31442.34,
+      "totalND": 10501741,
+      "count": 334
+    },
+    {
+      "weekStart": "2017-03-27",
+      "averageND": 30239.32,
+      "totalND": 10160413,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-04-03",
+      "averageND": 28675.99,
+      "totalND": 9635133,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-04-10",
+      "averageND": 27513.82,
+      "totalND": 9244645,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-04-17",
+      "averageND": 28509.79,
+      "totalND": 9579291,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-04-24",
+      "averageND": 29532.38,
+      "totalND": 9922880,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-05-01",
+      "averageND": 27750.29,
+      "totalND": 9324096,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-05-08",
+      "averageND": 28052.97,
+      "totalND": 9425799,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-05-15",
+      "averageND": 28239.26,
+      "totalND": 9488390,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-05-22",
+      "averageND": 26612.93,
+      "totalND": 8941943,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-05-29",
+      "averageND": 26044.65,
+      "totalND": 8751002,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-06-05",
+      "averageND": 25797.65,
+      "totalND": 8668009,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-06-12",
+      "averageND": 25870.63,
+      "totalND": 8692532,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-06-19",
+      "averageND": 26750.23,
+      "totalND": 8988076,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-06-26",
+      "averageND": 26774.29,
+      "totalND": 8996163,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-07-03",
+      "averageND": 27027.84,
+      "totalND": 9081355,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-07-10",
+      "averageND": 26853.99,
+      "totalND": 9022942,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-07-17",
+      "averageND": 26491.04,
+      "totalND": 8900991,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-07-24",
+      "averageND": 25774.48,
+      "totalND": 8660226,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-07-31",
+      "averageND": 25232.5,
+      "totalND": 8478120,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-08-07",
+      "averageND": 26147.98,
+      "totalND": 8785720,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-08-14",
+      "averageND": 25603.2,
+      "totalND": 8602674,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-08-21",
+      "averageND": 26924.46,
+      "totalND": 9046618,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-08-28",
+      "averageND": 26366.22,
+      "totalND": 8859050,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-09-04",
+      "averageND": 27519.79,
+      "totalND": 9246650,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-09-11",
+      "averageND": 27459.86,
+      "totalND": 9226512,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-09-18",
+      "averageND": 28732.27,
+      "totalND": 9654042,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-09-25",
+      "averageND": 29005.08,
+      "totalND": 9745708,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-10-02",
+      "averageND": 28337.08,
+      "totalND": 9521260,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-10-09",
+      "averageND": 28631.2,
+      "totalND": 9620083,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-10-16",
+      "averageND": 29419.14,
+      "totalND": 9884831,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-10-23",
+      "averageND": 29733.75,
+      "totalND": 10020274,
+      "count": 337
+    },
+    {
+      "weekStart": "2017-10-30",
+      "averageND": 32114.22,
+      "totalND": 10790377,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-11-06",
+      "averageND": 32974.49,
+      "totalND": 11079429,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-11-13",
+      "averageND": 34407.89,
+      "totalND": 11561050,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-11-20",
+      "averageND": 33650.7,
+      "totalND": 11306636,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-11-27",
+      "averageND": 36077.19,
+      "totalND": 12121936,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-12-04",
+      "averageND": 35797.54,
+      "totalND": 12027974,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-12-11",
+      "averageND": 38220.96,
+      "totalND": 12842243,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-12-18",
+      "averageND": 34619.49,
+      "totalND": 11632150,
+      "count": 336
+    },
+    {
+      "weekStart": "2017-12-25",
+      "averageND": 30323.78,
+      "totalND": 10188790,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-01-01",
+      "averageND": 34123.4,
+      "totalND": 11465461,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-01-08",
+      "averageND": 37109.27,
+      "totalND": 12468715,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-01-15",
+      "averageND": 36275.29,
+      "totalND": 12188498,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-01-22",
+      "averageND": 34145.15,
+      "totalND": 11472771,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-01-29",
+      "averageND": 35050.3,
+      "totalND": 11776901,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-02-05",
+      "averageND": 36481.4,
+      "totalND": 12257752,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-02-12",
+      "averageND": 35144.74,
+      "totalND": 11808632,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-02-19",
+      "averageND": 35159.69,
+      "totalND": 11813655,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-02-26",
+      "averageND": 38588.04,
+      "totalND": 12965581,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-03-05",
+      "averageND": 35430.01,
+      "totalND": 11904482,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-03-12",
+      "averageND": 33983.91,
+      "totalND": 11418593,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-03-19",
+      "averageND": 34162.59,
+      "totalND": 11410306,
+      "count": 334
+    },
+    {
+      "weekStart": "2018-03-26",
+      "averageND": 32812.54,
+      "totalND": 11025015,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-04-02",
+      "averageND": 30938.97,
+      "totalND": 10395494,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-04-09",
+      "averageND": 32003.65,
+      "totalND": 10753227,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-04-16",
+      "averageND": 27408.23,
+      "totalND": 9181757,
+      "count": 335
+    },
+    {
+      "weekStart": "2018-04-23",
+      "averageND": 28794.57,
+      "totalND": 9674976,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-04-30",
+      "averageND": 27858.05,
+      "totalND": 9360304,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-05-07",
+      "averageND": 26211.59,
+      "totalND": 8807093,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-05-14",
+      "averageND": 26165.53,
+      "totalND": 8791618,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-05-21",
+      "averageND": 25961.43,
+      "totalND": 8723042,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-05-28",
+      "averageND": 26561.4,
+      "totalND": 8924631,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-06-04",
+      "averageND": 26771.58,
+      "totalND": 8968478,
+      "count": 335
+    },
+    {
+      "weekStart": "2018-06-11",
+      "averageND": 25759.95,
+      "totalND": 8655342,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-06-18",
+      "averageND": 25288.63,
+      "totalND": 8496981,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-06-25",
+      "averageND": 25991.72,
+      "totalND": 8733217,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-07-02",
+      "averageND": 26466.3,
+      "totalND": 8892678,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-07-09",
+      "averageND": 26939.31,
+      "totalND": 9051608,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-07-16",
+      "averageND": 26993.91,
+      "totalND": 9069953,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-07-23",
+      "averageND": 26287.28,
+      "totalND": 8832525,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-07-30",
+      "averageND": 25675.49,
+      "totalND": 8626963,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-08-06",
+      "averageND": 26211.6,
+      "totalND": 8807096,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-08-13",
+      "averageND": 25927.5,
+      "totalND": 8711640,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-08-20",
+      "averageND": 26461.43,
+      "totalND": 8891041,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-08-27",
+      "averageND": 26016.47,
+      "totalND": 8741535,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-09-03",
+      "averageND": 27185.24,
+      "totalND": 9134239,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-09-10",
+      "averageND": 26706.46,
+      "totalND": 8973372,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-09-17",
+      "averageND": 26980.68,
+      "totalND": 9065509,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-09-24",
+      "averageND": 27465.32,
+      "totalND": 9228348,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-10-01",
+      "averageND": 28708.2,
+      "totalND": 9617246,
+      "count": 335
+    },
+    {
+      "weekStart": "2018-10-08",
+      "averageND": 27898.08,
+      "totalND": 9373755,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-10-15",
+      "averageND": 29665.06,
+      "totalND": 9967461,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-10-22",
+      "averageND": 29559.76,
+      "totalND": 9991200,
+      "count": 338
+    },
+    {
+      "weekStart": "2018-10-29",
+      "averageND": 32657.81,
+      "totalND": 10973025,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-11-05",
+      "averageND": 31545.49,
+      "totalND": 10599286,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-11-12",
+      "averageND": 31568.09,
+      "totalND": 10606877,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-11-19",
+      "averageND": 35389.4,
+      "totalND": 11890838,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-11-26",
+      "averageND": 33596.26,
+      "totalND": 11288344,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-12-03",
+      "averageND": 33558.21,
+      "totalND": 11275557,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-12-10",
+      "averageND": 35748.46,
+      "totalND": 12011482,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-12-17",
+      "averageND": 33805.6,
+      "totalND": 11358683,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-12-24",
+      "averageND": 29850.45,
+      "totalND": 10029751,
+      "count": 336
+    },
+    {
+      "weekStart": "2018-12-31",
+      "averageND": 33338.87,
+      "totalND": 11201861,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-01-07",
+      "averageND": 34252.04,
+      "totalND": 11508686,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-01-14",
+      "averageND": 35532.44,
+      "totalND": 11938901,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-01-21",
+      "averageND": 35866.69,
+      "totalND": 12051209,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-01-28",
+      "averageND": 37367.89,
+      "totalND": 12555611,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-02-04",
+      "averageND": 34270.82,
+      "totalND": 11514994,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-02-11",
+      "averageND": 32784.47,
+      "totalND": 10950014,
+      "count": 334
+    },
+    {
+      "weekStart": "2019-02-18",
+      "averageND": 31355.75,
+      "totalND": 10535533,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-02-25",
+      "averageND": 31511.9,
+      "totalND": 10587999,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-03-04",
+      "averageND": 31293.79,
+      "totalND": 10514713,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-03-11",
+      "averageND": 30502.49,
+      "totalND": 10248838,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-03-18",
+      "averageND": 30969.66,
+      "totalND": 10405806,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-03-25",
+      "averageND": 29870.19,
+      "totalND": 9976645,
+      "count": 334
+    },
+    {
+      "weekStart": "2019-04-01",
+      "averageND": 30972.17,
+      "totalND": 10406650,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-04-08",
+      "averageND": 29873.06,
+      "totalND": 10037347,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-04-15",
+      "averageND": 26665.74,
+      "totalND": 8959690,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-04-22",
+      "averageND": 26317.81,
+      "totalND": 8842785,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-04-29",
+      "averageND": 28285.84,
+      "totalND": 9504041,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-05-06",
+      "averageND": 28164.3,
+      "totalND": 9463205,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-05-13",
+      "averageND": 26598.39,
+      "totalND": 8937059,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-05-20",
+      "averageND": 25435.67,
+      "totalND": 8546386,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-05-27",
+      "averageND": 24709.59,
+      "totalND": 8302423,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-06-03",
+      "averageND": 25557.48,
+      "totalND": 8587312,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-06-10",
+      "averageND": 26828.01,
+      "totalND": 9014212,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-06-17",
+      "averageND": 25637.18,
+      "totalND": 8562819,
+      "count": 334
+    },
+    {
+      "weekStart": "2019-06-24",
+      "averageND": 25489.63,
+      "totalND": 8564515,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-07-01",
+      "averageND": 25122.99,
+      "totalND": 8441325,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-07-08",
+      "averageND": 26075.1,
+      "totalND": 8761232,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-07-15",
+      "averageND": 25517.95,
+      "totalND": 8574032,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-07-22",
+      "averageND": 26142.92,
+      "totalND": 8784022,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-07-29",
+      "averageND": 25323.55,
+      "totalND": 8483388,
+      "count": 335
+    },
+    {
+      "weekStart": "2019-08-05",
+      "averageND": 24406.82,
+      "totalND": 8200693,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-08-12",
+      "averageND": 24581.87,
+      "totalND": 8259509,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-08-19",
+      "averageND": 24695.12,
+      "totalND": 8297560,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-08-26",
+      "averageND": 24664.26,
+      "totalND": 8287193,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-09-02",
+      "averageND": 25072.35,
+      "totalND": 8424309,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-09-09",
+      "averageND": 26105.4,
+      "totalND": 8771415,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-09-16",
+      "averageND": 26545.44,
+      "totalND": 8919269,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-09-23",
+      "averageND": 26779.15,
+      "totalND": 8997794,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-09-30",
+      "averageND": 28468.9,
+      "totalND": 9537080,
+      "count": 335
+    },
+    {
+      "weekStart": "2019-10-07",
+      "averageND": 28219.53,
+      "totalND": 9481763,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-10-14",
+      "averageND": 29793.35,
+      "totalND": 9980773,
+      "count": 335
+    },
+    {
+      "weekStart": "2019-10-21",
+      "averageND": 30533.64,
+      "totalND": 10320371,
+      "count": 338
+    },
+    {
+      "weekStart": "2019-10-28",
+      "averageND": 31821.4,
+      "totalND": 10691989,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-11-04",
+      "averageND": 33184.36,
+      "totalND": 11149945,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-11-11",
+      "averageND": 33949.64,
+      "totalND": 11407078,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-11-18",
+      "averageND": 34771.22,
+      "totalND": 11683131,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-11-25",
+      "averageND": 34379.55,
+      "totalND": 11551530,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-12-02",
+      "averageND": 33642.12,
+      "totalND": 11303752,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-12-09",
+      "averageND": 33810.66,
+      "totalND": 11360381,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-12-16",
+      "averageND": 34016.78,
+      "totalND": 11429639,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-12-23",
+      "averageND": 29054.39,
+      "totalND": 9762275,
+      "count": 336
+    },
+    {
+      "weekStart": "2019-12-30",
+      "averageND": 30302.73,
+      "totalND": 10181717,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-01-06",
+      "averageND": 32155.94,
+      "totalND": 10740084,
+      "count": 334
+    },
+    {
+      "weekStart": "2020-01-13",
+      "averageND": 32879.54,
+      "totalND": 11047526,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-01-20",
+      "averageND": 34796.34,
+      "totalND": 11691569,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-01-27",
+      "averageND": 32000.31,
+      "totalND": 10752104,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-02-03",
+      "averageND": 32274.78,
+      "totalND": 10844326,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-02-10",
+      "averageND": 32157.96,
+      "totalND": 10805076,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-02-17",
+      "averageND": 31281,
+      "totalND": 10510417,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-02-24",
+      "averageND": 32379.62,
+      "totalND": 10879552,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-03-02",
+      "averageND": 32840.94,
+      "totalND": 11034555,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-03-09",
+      "averageND": 30256.81,
+      "totalND": 10166289,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-03-16",
+      "averageND": 30038.85,
+      "totalND": 10093054,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-03-23",
+      "averageND": 26158.71,
+      "totalND": 8737009,
+      "count": 334
+    },
+    {
+      "weekStart": "2020-03-30",
+      "averageND": 25862.72,
+      "totalND": 8689873,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-04-06",
+      "averageND": 22543.04,
+      "totalND": 7574461,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-04-13",
+      "averageND": 22448.18,
+      "totalND": 7542587,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-04-20",
+      "averageND": 21573.55,
+      "totalND": 7248714,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-04-27",
+      "averageND": 24188.08,
+      "totalND": 8127195,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-05-04",
+      "averageND": 21798.4,
+      "totalND": 7324263,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-05-11",
+      "averageND": 22619.62,
+      "totalND": 7600191,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-05-18",
+      "averageND": 20775.57,
+      "totalND": 6980592,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-05-25",
+      "averageND": 20681.94,
+      "totalND": 6949133,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-06-01",
+      "averageND": 22240.6,
+      "totalND": 7472843,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-06-08",
+      "averageND": 23354.73,
+      "totalND": 7847189,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-06-15",
+      "averageND": 23099.6,
+      "totalND": 7761467,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-06-22",
+      "averageND": 21925.6,
+      "totalND": 7367001,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-06-29",
+      "averageND": 22660.62,
+      "totalND": 7613969,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-07-06",
+      "averageND": 23615.9,
+      "totalND": 7934942,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-07-13",
+      "averageND": 23787.13,
+      "totalND": 7992476,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-07-20",
+      "averageND": 23226.53,
+      "totalND": 7804115,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-07-27",
+      "averageND": 22833.52,
+      "totalND": 7672062,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-08-03",
+      "averageND": 23949.46,
+      "totalND": 8047020,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-08-10",
+      "averageND": 25851.69,
+      "totalND": 8686169,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-08-17",
+      "averageND": 23855.17,
+      "totalND": 8015336,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-08-24",
+      "averageND": 24416.53,
+      "totalND": 8203953,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-08-31",
+      "averageND": 24367.99,
+      "totalND": 8187646,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-09-07",
+      "averageND": 24618.94,
+      "totalND": 8271964,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-09-14",
+      "averageND": 25248.08,
+      "totalND": 8483354,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-09-21",
+      "averageND": 26181.8,
+      "totalND": 8797086,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-09-28",
+      "averageND": 28215.8,
+      "totalND": 9480508,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-10-05",
+      "averageND": 28035.13,
+      "totalND": 9419802,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-10-12",
+      "averageND": 29857.49,
+      "totalND": 10032115,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-10-19",
+      "averageND": 28571.57,
+      "totalND": 9657191,
+      "count": 338
+    },
+    {
+      "weekStart": "2020-10-26",
+      "averageND": 28587.13,
+      "totalND": 9605277,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-11-02",
+      "averageND": 30649.3,
+      "totalND": 10298165,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-11-09",
+      "averageND": 28830.48,
+      "totalND": 9687042,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-11-16",
+      "averageND": 29223.14,
+      "totalND": 9818975,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-11-23",
+      "averageND": 32097.12,
+      "totalND": 10784632,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-11-30",
+      "averageND": 33835.46,
+      "totalND": 11368714,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-12-07",
+      "averageND": 34438.01,
+      "totalND": 11571171,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-12-14",
+      "averageND": 30973.24,
+      "totalND": 10407007,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-12-21",
+      "averageND": 29579.29,
+      "totalND": 9938641,
+      "count": 336
+    },
+    {
+      "weekStart": "2020-12-28",
+      "averageND": 31861.93,
+      "totalND": 10705610,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-01-04",
+      "averageND": 35704.46,
+      "totalND": 11996699,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-01-11",
+      "averageND": 33873.74,
+      "totalND": 11381575,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-01-18",
+      "averageND": 33106.77,
+      "totalND": 11123874,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-01-25",
+      "averageND": 33575.4,
+      "totalND": 11281333,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-02-01",
+      "averageND": 32897.71,
+      "totalND": 11053631,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-02-08",
+      "averageND": 35302.52,
+      "totalND": 11861648,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-02-15",
+      "averageND": 29946.76,
+      "totalND": 10062112,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-02-22",
+      "averageND": 29211.43,
+      "totalND": 9815040,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-03-01",
+      "averageND": 32584.57,
+      "totalND": 10948416,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-03-08",
+      "averageND": 29207.4,
+      "totalND": 9813688,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-03-15",
+      "averageND": 30117.34,
+      "totalND": 10119425,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-03-22",
+      "averageND": 27673.96,
+      "totalND": 9243104,
+      "count": 334
+    },
+    {
+      "weekStart": "2021-03-29",
+      "averageND": 25634.4,
+      "totalND": 8613159,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-04-05",
+      "averageND": 27952.34,
+      "totalND": 9391986,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-04-12",
+      "averageND": 28861.49,
+      "totalND": 9697462,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-04-19",
+      "averageND": 26377.49,
+      "totalND": 8862837,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-04-26",
+      "averageND": 27766.48,
+      "totalND": 9329537,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-05-03",
+      "averageND": 26963.55,
+      "totalND": 9059754,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-05-10",
+      "averageND": 26890.32,
+      "totalND": 9035149,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-05-17",
+      "averageND": 26718.58,
+      "totalND": 8977443,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-05-24",
+      "averageND": 26044.25,
+      "totalND": 8750868,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-05-31",
+      "averageND": 23890.78,
+      "totalND": 8027301,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-06-07",
+      "averageND": 24277.78,
+      "totalND": 8157335,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-06-14",
+      "averageND": 25400.52,
+      "totalND": 8534576,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-06-21",
+      "averageND": 25172.35,
+      "totalND": 8457909,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-06-28",
+      "averageND": 25687.03,
+      "totalND": 8630842,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-07-05",
+      "averageND": 25401.67,
+      "totalND": 8534960,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-07-12",
+      "averageND": 24762.31,
+      "totalND": 8320136,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-07-19",
+      "averageND": 25456.47,
+      "totalND": 8553375,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-07-26",
+      "averageND": 24399.91,
+      "totalND": 8198371,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-08-02",
+      "averageND": 23885.53,
+      "totalND": 8025539,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-08-09",
+      "averageND": 24158.12,
+      "totalND": 8117127,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-08-16",
+      "averageND": 25643.04,
+      "totalND": 8616060,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-08-23",
+      "averageND": 25355.33,
+      "totalND": 8519390,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-08-30",
+      "averageND": 25620.83,
+      "totalND": 8608598,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-09-06",
+      "averageND": 26307.86,
+      "totalND": 8839442,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-09-13",
+      "averageND": 26345.35,
+      "totalND": 8852036,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-09-20",
+      "averageND": 25290.32,
+      "totalND": 8497546,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-09-27",
+      "averageND": 25713.3,
+      "totalND": 8639668,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-10-04",
+      "averageND": 27116.36,
+      "totalND": 9111096,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-10-11",
+      "averageND": 28012.82,
+      "totalND": 9412309,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-10-18",
+      "averageND": 27639.75,
+      "totalND": 9286955,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-10-25",
+      "averageND": 27311.59,
+      "totalND": 9231316,
+      "count": 338
+    },
+    {
+      "weekStart": "2021-11-01",
+      "averageND": 29975.04,
+      "totalND": 10071612,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-11-08",
+      "averageND": 30318.21,
+      "totalND": 10186918,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-11-15",
+      "averageND": 30300.21,
+      "totalND": 10180870,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-11-22",
+      "averageND": 33068.39,
+      "totalND": 11110980,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-11-29",
+      "averageND": 33360.9,
+      "totalND": 11209261,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-12-06",
+      "averageND": 33742.3,
+      "totalND": 11337413,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-12-13",
+      "averageND": 32854.91,
+      "totalND": 11039250,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-12-20",
+      "averageND": 31854.89,
+      "totalND": 10703244,
+      "count": 336
+    },
+    {
+      "weekStart": "2021-12-27",
+      "averageND": 26749.46,
+      "totalND": 8987818,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-01-03",
+      "averageND": 32184.35,
+      "totalND": 10813943,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-01-10",
+      "averageND": 34124.34,
+      "totalND": 11465778,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-01-17",
+      "averageND": 34378.19,
+      "totalND": 11551071,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-01-24",
+      "averageND": 32991.38,
+      "totalND": 11085102,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-01-31",
+      "averageND": 30593.13,
+      "totalND": 10279293,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-02-07",
+      "averageND": 31239.16,
+      "totalND": 10496358,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-02-14",
+      "averageND": 30364.63,
+      "totalND": 10202516,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-02-21",
+      "averageND": 29542.6,
+      "totalND": 9926315,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-02-28",
+      "averageND": 31740.88,
+      "totalND": 10664936,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-03-07",
+      "averageND": 29022.33,
+      "totalND": 9751504,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-03-14",
+      "averageND": 28617.46,
+      "totalND": 9615466,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-03-21",
+      "averageND": 27506.9,
+      "totalND": 9187303,
+      "count": 334
+    },
+    {
+      "weekStart": "2022-03-28",
+      "averageND": 29410.12,
+      "totalND": 9881799,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-04-04",
+      "averageND": 27135.48,
+      "totalND": 9117520,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-04-11",
+      "averageND": 25190.48,
+      "totalND": 8464000,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-04-18",
+      "averageND": 23733.86,
+      "totalND": 7974577,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-04-25",
+      "averageND": 26578.08,
+      "totalND": 8930234,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-05-02",
+      "averageND": 25001.32,
+      "totalND": 8400444,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-05-09",
+      "averageND": 23166.73,
+      "totalND": 7784021,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-05-16",
+      "averageND": 23583.6,
+      "totalND": 7924088,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-05-23",
+      "averageND": 23170.28,
+      "totalND": 7785215,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-05-30",
+      "averageND": 22965.43,
+      "totalND": 7716384,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-06-06",
+      "averageND": 22872.34,
+      "totalND": 7685105,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-06-13",
+      "averageND": 23364.32,
+      "totalND": 7850412,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-06-20",
+      "averageND": 22438.38,
+      "totalND": 7539294,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-06-27",
+      "averageND": 22762.92,
+      "totalND": 7648341,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-07-04",
+      "averageND": 22673.68,
+      "totalND": 7618358,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-07-11",
+      "averageND": 23552.14,
+      "totalND": 7913519,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-07-18",
+      "averageND": 24327.95,
+      "totalND": 8174190,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-07-25",
+      "averageND": 23294.34,
+      "totalND": 7826898,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-08-01",
+      "averageND": 22187.33,
+      "totalND": 7454943,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-08-08",
+      "averageND": 23690.21,
+      "totalND": 7959909,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-08-15",
+      "averageND": 23636.68,
+      "totalND": 7941926,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-08-22",
+      "averageND": 23861.34,
+      "totalND": 8017411,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-08-29",
+      "averageND": 23098.48,
+      "totalND": 7761090,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-09-05",
+      "averageND": 24167.7,
+      "totalND": 8120348,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-09-12",
+      "averageND": 23900.49,
+      "totalND": 8030565,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-09-19",
+      "averageND": 23786.63,
+      "totalND": 7992308,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-09-26",
+      "averageND": 24464.68,
+      "totalND": 8220134,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-10-03",
+      "averageND": 23817.03,
+      "totalND": 8002523,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-10-10",
+      "averageND": 25379.29,
+      "totalND": 8527440,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-10-17",
+      "averageND": 25482.55,
+      "totalND": 8536654,
+      "count": 335
+    },
+    {
+      "weekStart": "2022-10-24",
+      "averageND": 24804.85,
+      "totalND": 8384039,
+      "count": 338
+    },
+    {
+      "weekStart": "2022-10-31",
+      "averageND": 26645.35,
+      "totalND": 8952838,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-11-07",
+      "averageND": 26202.62,
+      "totalND": 8804079,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-11-14",
+      "averageND": 28297.05,
+      "totalND": 9507810,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-11-21",
+      "averageND": 28928.12,
+      "totalND": 9719847,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-11-28",
+      "averageND": 31244.75,
+      "totalND": 10498236,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-12-05",
+      "averageND": 33892.14,
+      "totalND": 11387760,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-12-12",
+      "averageND": 35770.11,
+      "totalND": 12018758,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-12-19",
+      "averageND": 28706.03,
+      "totalND": 9645227,
+      "count": 336
+    },
+    {
+      "weekStart": "2022-12-26",
+      "averageND": 25317.47,
+      "totalND": 8506669,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-01-02",
+      "averageND": 27748.29,
+      "totalND": 9323425,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-01-09",
+      "averageND": 29309.88,
+      "totalND": 9848121,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-01-16",
+      "averageND": 33658.03,
+      "totalND": 11309099,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-01-23",
+      "averageND": 33183.76,
+      "totalND": 11149745,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-01-30",
+      "averageND": 29386.38,
+      "totalND": 9873822,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-02-06",
+      "averageND": 30752.76,
+      "totalND": 10332928,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-02-13",
+      "averageND": 28394.21,
+      "totalND": 9540455,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-02-20",
+      "averageND": 29187.29,
+      "totalND": 9806929,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-02-27",
+      "averageND": 31417.84,
+      "totalND": 10556393,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-03-06",
+      "averageND": 31526.84,
+      "totalND": 10593017,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-03-13",
+      "averageND": 28311.85,
+      "totalND": 9512783,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-03-20",
+      "averageND": 26330.57,
+      "totalND": 8794411,
+      "count": 334
+    },
+    {
+      "weekStart": "2023-03-27",
+      "averageND": 27476.41,
+      "totalND": 9232074,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-04-03",
+      "averageND": 25089.23,
+      "totalND": 8429980,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-04-10",
+      "averageND": 25231.49,
+      "totalND": 8477780,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-04-17",
+      "averageND": 25393.81,
+      "totalND": 8532321,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-04-24",
+      "averageND": 26481.44,
+      "totalND": 8897765,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-05-01",
+      "averageND": 23849.51,
+      "totalND": 8013434,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-05-08",
+      "averageND": 23805.55,
+      "totalND": 7998666,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-05-15",
+      "averageND": 22938.11,
+      "totalND": 7707204,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-05-22",
+      "averageND": 21749.54,
+      "totalND": 7307847,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-05-29",
+      "averageND": 20958.8,
+      "totalND": 7042157,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-06-05",
+      "averageND": 21960.55,
+      "totalND": 7378745,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-06-12",
+      "averageND": 22698.14,
+      "totalND": 7626576,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-06-19",
+      "averageND": 22777.55,
+      "totalND": 7653257,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-06-26",
+      "averageND": 22108.35,
+      "totalND": 7428404,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-07-03",
+      "averageND": 21975.77,
+      "totalND": 7383858,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-07-10",
+      "averageND": 21842.03,
+      "totalND": 7338922,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-07-17",
+      "averageND": 22479.06,
+      "totalND": 7552963,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-07-24",
+      "averageND": 21928.53,
+      "totalND": 7367986,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-07-31",
+      "averageND": 22119.84,
+      "totalND": 7432266,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-08-07",
+      "averageND": 21865.59,
+      "totalND": 7346838,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-08-14",
+      "averageND": 22253.54,
+      "totalND": 7477191,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-08-21",
+      "averageND": 22414.93,
+      "totalND": 7531415,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-08-28",
+      "averageND": 22628.24,
+      "totalND": 7603089,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-09-04",
+      "averageND": 24646.09,
+      "totalND": 8281087,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-09-11",
+      "averageND": 24195.14,
+      "totalND": 8129567,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-09-18",
+      "averageND": 23475.7,
+      "totalND": 7887834,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-09-25",
+      "averageND": 23596.09,
+      "totalND": 7928285,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-10-02",
+      "averageND": 23775.17,
+      "totalND": 7988456,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-10-09",
+      "averageND": 24565.79,
+      "totalND": 8254106,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-10-16",
+      "averageND": 26127.04,
+      "totalND": 8778686,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-10-23",
+      "averageND": 27107.84,
+      "totalND": 9162450,
+      "count": 338
+    },
+    {
+      "weekStart": "2023-10-30",
+      "averageND": 27963.06,
+      "totalND": 9395589,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-11-06",
+      "averageND": 29321.1,
+      "totalND": 9851889,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-11-13",
+      "averageND": 28968.6,
+      "totalND": 9733451,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-11-20",
+      "averageND": 29750.9,
+      "totalND": 9996301,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-11-27",
+      "averageND": 34149.03,
+      "totalND": 11474075,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-12-04",
+      "averageND": 32564.6,
+      "totalND": 10941705,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-12-11",
+      "averageND": 30989.46,
+      "totalND": 10412458,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-12-18",
+      "averageND": 27449.53,
+      "totalND": 9223042,
+      "count": 336
+    },
+    {
+      "weekStart": "2023-12-25",
+      "averageND": 25073.28,
+      "totalND": 8424623,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-01-01",
+      "averageND": 30005.35,
+      "totalND": 10081797,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-01-08",
+      "averageND": 33725.27,
+      "totalND": 11331690,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-01-15",
+      "averageND": 33949.95,
+      "totalND": 11407184,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-01-22",
+      "averageND": 29613.25,
+      "totalND": 9950053,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-01-29",
+      "averageND": 29466.44,
+      "totalND": 9900724,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-02-05",
+      "averageND": 30234,
+      "totalND": 10158625,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-02-12",
+      "averageND": 28937.39,
+      "totalND": 9722963,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-02-19",
+      "averageND": 29338.93,
+      "totalND": 9857882,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-02-26",
+      "averageND": 30708.47,
+      "totalND": 10318046,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-03-04",
+      "averageND": 29498.76,
+      "totalND": 9911583,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-03-11",
+      "averageND": 28558.47,
+      "totalND": 9595647,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-03-18",
+      "averageND": 26222.21,
+      "totalND": 8810664,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-03-25",
+      "averageND": 26490.19,
+      "totalND": 8847725,
+      "count": 334
+    },
+    {
+      "weekStart": "2024-04-01",
+      "averageND": 24582.98,
+      "totalND": 8259882,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-04-08",
+      "averageND": 24428.76,
+      "totalND": 8208064,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-04-15",
+      "averageND": 24988.88,
+      "totalND": 8396265,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-04-22",
+      "averageND": 27071.87,
+      "totalND": 9096147,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-04-29",
+      "averageND": 24343.16,
+      "totalND": 8179301,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-05-06",
+      "averageND": 22493.22,
+      "totalND": 7557723,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-05-13",
+      "averageND": 23143.39,
+      "totalND": 7776180,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-05-20",
+      "averageND": 23241.73,
+      "totalND": 7809222,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-05-27",
+      "averageND": 21753.91,
+      "totalND": 7309314,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-06-03",
+      "averageND": 21801.52,
+      "totalND": 7325311,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-06-10",
+      "averageND": 22972.01,
+      "totalND": 7718595,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-06-17",
+      "averageND": 22143.76,
+      "totalND": 7440302,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-06-24",
+      "averageND": 22201.53,
+      "totalND": 7459713,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-07-01",
+      "averageND": 22210.63,
+      "totalND": 7462772,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-07-08",
+      "averageND": 23293.77,
+      "totalND": 7826707,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-07-15",
+      "averageND": 23147.69,
+      "totalND": 7777624,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-07-22",
+      "averageND": 22569.96,
+      "totalND": 7583508,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-07-29",
+      "averageND": 22327.23,
+      "totalND": 7501950,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-08-05",
+      "averageND": 21555.57,
+      "totalND": 7242671,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-08-12",
+      "averageND": 21995.07,
+      "totalND": 7390345,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-08-19",
+      "averageND": 21091.3,
+      "totalND": 7086677,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-08-26",
+      "averageND": 22058.44,
+      "totalND": 7411637,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-09-02",
+      "averageND": 24653.29,
+      "totalND": 8283505,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-09-09",
+      "averageND": 23145.78,
+      "totalND": 7776981,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-09-16",
+      "averageND": 23845.56,
+      "totalND": 8012108,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-09-23",
+      "averageND": 25532.83,
+      "totalND": 8579032,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-09-30",
+      "averageND": 25991.18,
+      "totalND": 8733035,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-10-07",
+      "averageND": 26579.51,
+      "totalND": 8930715,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-10-14",
+      "averageND": 26622.8,
+      "totalND": 8945261,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-10-21",
+      "averageND": 26603.27,
+      "totalND": 8991906,
+      "count": 338
+    },
+    {
+      "weekStart": "2024-10-28",
+      "averageND": 28104.29,
+      "totalND": 9443043,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-11-04",
+      "averageND": 29977.94,
+      "totalND": 10072587,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-11-11",
+      "averageND": 29943.61,
+      "totalND": 10061054,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-11-18",
+      "averageND": 32367.58,
+      "totalND": 10875506,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-11-25",
+      "averageND": 30886.85,
+      "totalND": 10377981,
+      "count": 336
+    },
+    {
+      "weekStart": "2024-12-02",
+      "averageND": 32321.99,
+      "totalND": 6205823,
+      "count": 192
+    }
+  ]
+}

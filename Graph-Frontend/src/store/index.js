@@ -12,7 +12,8 @@ export default createStore({
     selectedPeriod: 'month',
     selectedYear: null,
     selectedPrecision: 2,
-    ifaFlowData: []
+    ifaFlowData: [],
+    ndData: []
   },
   
   mutations: {
@@ -44,6 +45,9 @@ export default createStore({
     
     SET_IFA_FLOW_DATA(state, data) {
       state.ifaFlowData = data
+    },
+    SET_ND_DATA(state, data) {
+      state.ndData = data
     }
   },
   
@@ -58,6 +62,21 @@ export default createStore({
         commit('SET_STATS', response.data.stats)
       } catch (error) {
         commit('SET_ERROR', 'Error loading data')
+        console.error('API Error:', error)
+      } finally {
+        commit('SET_LOADING', false)
+      }
+    },
+    
+    async fetchNDData({ commit }) {
+      commit('SET_LOADING', true)
+      commit('SET_ERROR', null)
+      
+      try {
+        const response = await axios.get('/api/electricity/nd', electricityApi)
+        commit('SET_ND_DATA', response.data.data)
+      } catch (error) {
+        commit('SET_ERROR', 'Error loading ND data')
         console.error('API Error:', error)
       } finally {
         commit('SET_LOADING', false)
@@ -282,6 +301,22 @@ export default createStore({
     // IFA Flow data getter
     ifaFlowData: (state) => {
       return state.ifaFlowData
-    }
+    },
+
+    // ND Data getter
+    ndData: (state) => {
+      return state.ndData
+    },
+
+         // ND Chart data getter
+     ndChartData: (state) => {
+       const data = state.ndData
+       if (!Array.isArray(data) || !data.length) return []
+
+       return data.map(item => ({
+         x: new Date(item.weekStart || item.date).getTime(),
+         y: Number((parseFloat(item.averageND) || 0).toFixed(state.selectedPrecision))
+       })).filter(item => !isNaN(item.y))
+     }
   }
 }) 

@@ -29,6 +29,7 @@ class ElectricityService {
           const cleanData = {
             date: data.settlement_date,
             period: parseInt(data.settlement_period) || 0,
+            nd: parseFloat(data.nd) || 0,
             demand: parseFloat(data.england_wales_demand) || 0,
             windGeneration: parseFloat(data.embedded_wind_generation) || 0,
             windCapacity: parseFloat(data.embedded_wind_capacity) || 0,
@@ -207,6 +208,71 @@ class ElectricityService {
       flowType,
       data: formattedData,
       count: formattedData.length
+    };
+  }
+
+  // Get National Demand (ND) data in optimized format
+  async getNationalDemandData() {
+    if (!this.processedData) {
+      const result = await this.processCSVData();
+      this.processedData = result.data;
+    }
+
+    // Group data by week and calculate weekly averages
+    const weeklyAverages = {};
+    
+    this.processedData.forEach(item => {
+      const date = new Date(item.date);
+      // Get the start of the week (Monday)
+      const weekStart = new Date(date);
+      weekStart.setDate(date.getDate() - date.getDay() + (date.getDay() === 0 ? -6 : 1));
+      const weekKey = weekStart.toISOString().split('T')[0];
+      
+      if (!weeklyAverages[weekKey]) {
+        weeklyAverages[weekKey] = {
+          weekStart: weekKey,
+          totalND: 0,
+          count: 0,
+          averageND: 0
+        };
+      }
+      
+      weeklyAverages[weekKey].totalND += item.nd || 0;
+      weeklyAverages[weekKey].count++;
+    });
+
+    // Calculate averages and format data
+    const ndData = Object.values(weeklyAverages).map(week => {
+      week.averageND = week.totalND / week.count;
+      return {
+        weekStart: week.weekStart,
+        averageND: Math.round(week.averageND * 100) / 100, // Round to 2 decimal places
+        totalND: Math.round(week.totalND * 100) / 100,
+        count: week.count
+      };
+    });
+
+    // Sort by week start date
+    ndData.sort((a, b) => a.weekStart.localeCompare(b.weekStart));
+
+    // Save to JSON file
+    const jsonPath = path.join(__dirname, 'data', 'nd_weekly_averages.json');
+    try {
+      fs.writeFileSync(jsonPath, JSON.stringify({
+        generatedAt: new Date().toISOString(),
+        totalWeeks: ndData.length,
+        data: ndData
+      }, null, 2));
+      console.log(`ND weekly averages saved to: ${jsonPath}`);
+    } catch (error) {
+      console.error('Error saving ND data to JSON:', error);
+    }
+
+    return {
+      data: ndData,
+      count: ndData.length,
+      totalRecords: ndData.length,
+      savedToFile: jsonPath
     };
   }
 

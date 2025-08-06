@@ -201,7 +201,7 @@ export default {
   
   computed: {
          ...mapState(['electricityData', 'stats', 'loading', 'error']),
-     ...mapGetters(['isLoading', 'hasError', 'errorMessage', 'aggregatedChartData', 'windSolarData', 'renewablePercentages', 'ifaFlowData']),
+     ...mapGetters(['isLoading', 'hasError', 'errorMessage', 'aggregatedChartData', 'windSolarData', 'renewablePercentages', 'ifaFlowData', 'ndChartData']),
      
      availableMonths() {
        if (!this.electricityData || this.electricityData.length === 0) return []
@@ -281,7 +281,7 @@ export default {
             count: 36
           },
          title: {
-           text: 'Real-time Electricity Demand',
+           text: 'National Demand (ND) - Weekly Averages',
            align: 'left'
          },
          xaxis: {
@@ -323,12 +323,12 @@ export default {
      },
     
          demandChartSeries() {
-       const data = this.aggregatedChartData
+       const data = this.ndChartData
        
        // Protection against invalid data
        if (!Array.isArray(data) || data.length === 0) {
          return [{
-           name: 'Electricity Demand',
+           name: 'National Demand (ND)',
            data: []
          }]
        }
@@ -337,7 +337,7 @@ export default {
         const forecastData = this.generateForecastData(data, 36)
        
        return [{
-         name: 'Electricity Demand',
+         name: 'National Demand (ND)',
          data: [...data, ...forecastData]
        }]
      },
@@ -573,7 +573,7 @@ export default {
    },
   
   methods: {
-    ...mapActions(['fetchElectricityData', 'fetchAggregatedData', 'fetchStats']),
+    ...mapActions(['fetchElectricityData', 'fetchAggregatedData', 'fetchStats', 'fetchNDData']),
     
          formatNumber(value) {
        return new Intl.NumberFormat('en-US').format(Math.round(value))
@@ -651,7 +651,7 @@ export default {
         try {
           await this.fetchElectricityData()
           await this.fetchStats()
-          await this.fetchAggregatedData(this.selectedPeriod)
+          await this.fetchNDData()
           
           // Set the first available month as default if no month is selected
           if (!this.selectedMonth && this.availableMonths.length > 0) {

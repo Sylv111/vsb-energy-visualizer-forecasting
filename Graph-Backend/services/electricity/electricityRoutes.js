@@ -91,4 +91,25 @@ router.get('/flow/:date/:flowType', async (req, res) => {
   }
 });
 
+// Route to get National Demand (ND) data in optimized format
+router.get('/nd', async (req, res) => {
+  try {
+    const result = await electricityService.getNationalDemandData();
+    res.json({
+      success: true,
+      data: result.data,
+      count: result.count,
+      totalRecords: result.totalRecords,
+      savedToFile: result.savedToFile
+    });
+  } catch (error) {
+    console.error('Error getting National Demand data:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error getting National Demand data',
+      error: error.message
+    });
+  }
+});
+
 module.exports = router; 
