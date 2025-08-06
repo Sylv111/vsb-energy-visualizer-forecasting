@@ -306,7 +306,7 @@ export default {
          },
          tooltip: {
            x: {
-             format: 'dd/MM/yyyy HH:mm'
+             format: 'dd/MM/yyyy'
            },
            y: {
              formatter: (value) => {
@@ -383,6 +383,9 @@ export default {
           }
         },
         tooltip: {
+          x: {
+            format: 'dd/MM/yyyy'
+          },
           y: {
             formatter: (value) => {
               return `${value.toFixed(2)} MW`
@@ -451,6 +454,9 @@ export default {
           }
         },
         tooltip: {
+          x: {
+            format: 'dd/MM/yyyy'
+          },
           y: {
             formatter: (value) => {
               return `${value.toFixed(2)} MW`
