@@ -152,6 +152,26 @@ router.get('/solar', async (req, res) => {
   }
 });
 
+// Route to get renewable energy percentages by month
+router.get('/renewable-percentages', async (req, res) => {
+  try {
+    const result = await electricityService.getRenewablePercentages();
+    res.json({
+      success: true,
+      data: result.data,
+      totalMonths: result.totalMonths,
+      generatedAt: result.generatedAt
+    });
+  } catch (error) {
+    console.error('Error getting renewable percentages:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error getting renewable percentages',
+      error: error.message
+    });
+  }
+});
+
 // Route to get optimized statistics data
 router.get('/stats-optimized', async (req, res) => {
   try {

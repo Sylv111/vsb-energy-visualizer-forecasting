@@ -1,0 +1,1734 @@
+{
+  "generatedAt": "2025-08-06T15:15:29.392Z",
+  "totalMonths": 192,
+  "data": [
+    {
+      "month": "2009-01",
+      "solar": 0,
+      "wind": 100,
+      "total": 100,
+      "totalSolarMW": 0,
+      "totalWindMW": 884444,
+      "totalDemandMW": 57084786
+    },
+    {
+      "month": "2009-02",
+      "solar": 0,
+      "wind": 100,
+      "total": 100,
+      "totalSolarMW": 0,
+      "totalWindMW": 605475,
+      "totalDemandMW": 50568667
+    },
+    {
+      "month": "2009-03",
+      "solar": 0,
+      "wind": 100,
+      "total": 100,
+      "totalSolarMW": 0,
+      "totalWindMW": 1006838,
+      "totalDemandMW": 50990231
+    },
+    {
+      "month": "2009-04",
+      "solar": 0,
+      "wind": 100,
+      "total": 100,
+      "totalSolarMW": 0,
+      "totalWindMW": 661797,
+      "totalDemandMW": 44476006
+    },
+    {
+      "month": "2009-05",
+      "solar": 0,
+      "wind": 100,
+      "total": 100,
+      "totalSolarMW": 0,
+      "totalWindMW": 1096316,
+      "totalDemandMW": 43757738
+    },
+    {
+      "month": "2009-06",
+      "solar": 0,
+      "wind": 100,
+      "total": 100,
+      "totalSolarMW": 0,
+      "totalWindMW": 489049,
+      "totalDemandMW": 42585305
+    },
+    {
+      "month": "2009-07",
+      "solar": 0,
+      "wind": 100,
+      "total": 100,
+      "totalSolarMW": 0,
+      "totalWindMW": 925299,
+      "totalDemandMW": 43489054
+    },
+    {
+      "month": "2009-08",
+      "solar": 0,
+      "wind": 100,
+      "total": 100,
+      "totalSolarMW": 0,
+      "totalWindMW": 968417,
+      "totalDemandMW": 42518617
+    },
+    {
+      "month": "2009-09",
+      "solar": 0,
+      "wind": 100,
+      "total": 100,
+      "totalSolarMW": 0,
+      "totalWindMW": 886632,
+      "totalDemandMW": 43055421
+    },
+    {
+      "month": "2009-10",
+      "solar": 0,
+      "wind": 100,
+      "total": 100,
+      "totalSolarMW": 0,
+      "totalWindMW": 930354,
+      "totalDemandMW": 47165169
+    },
+    {
+      "month": "2009-11",
+      "solar": 0,
+      "wind": 100,
+      "total": 100,
+      "totalSolarMW": 0,
+      "totalWindMW": 1465723,
+      "totalDemandMW": 48770880
+    },
+    {
+      "month": "2009-12",
+      "solar": 0,
+      "wind": 100,
+      "total": 100,
+      "totalSolarMW": 0,
+      "totalWindMW": 1243624,
+      "totalDemandMW": 54439493
+    },
+    {
+      "month": "2010-01",
+      "solar": 0,
+      "wind": 100,
+      "total": 100,
+      "totalSolarMW": 0,
+      "totalWindMW": 1170468,
+      "totalDemandMW": 57816166
+    },
+    {
+      "month": "2010-02",
+      "solar": 0,
+      "wind": 100,
+      "total": 100,
+      "totalSolarMW": 0,
+      "totalWindMW": 811584,
+      "totalDemandMW": 51209630
+    },
+    {
+      "month": "2010-03",
+      "solar": 0,
+      "wind": 100,
+      "total": 100,
+      "totalSolarMW": 0,
+      "totalWindMW": 1112315,
+      "totalDemandMW": 52182929
+    },
+    {
+      "month": "2010-04",
+      "solar": 0.03,
+      "wind": 99.97,
+      "total": 100,
+      "totalSolarMW": 287,
+      "totalWindMW": 919007,
+      "totalDemandMW": 44965702
+    },
+    {
+      "month": "2010-05",
+      "solar": 0.13,
+      "wind": 99.87,
+      "total": 100,
+      "totalSolarMW": 921,
+      "totalWindMW": 711720,
+      "totalDemandMW": 44554353
+    },
+    {
+      "month": "2010-06",
+      "solar": 0.32,
+      "wind": 99.68,
+      "total": 100,
+      "totalSolarMW": 2051,
+      "totalWindMW": 631980,
+      "totalDemandMW": 42186928
+    },
+    {
+      "month": "2010-07",
+      "solar": 0.26,
+      "wind": 99.74,
+      "total": 100,
+      "totalSolarMW": 2866,
+      "totalWindMW": 1109945,
+      "totalDemandMW": 43278929
+    },
+    {
+      "month": "2010-08",
+      "solar": 0.33,
+      "wind": 99.67,
+      "total": 100,
+      "totalSolarMW": 3663,
+      "totalWindMW": 1094759,
+      "totalDemandMW": 41859632
+    },
+    {
+      "month": "2010-09",
+      "solar": 0.35,
+      "wind": 99.65,
+      "total": 100,
+      "totalSolarMW": 4243,
+      "totalWindMW": 1215309,
+      "totalDemandMW": 43157720
+    },
+    {
+      "month": "2010-10",
+      "solar": 0.22,
+      "wind": 99.78,
+      "total": 100,
+      "totalSolarMW": 3470,
+      "totalWindMW": 1576915,
+      "totalDemandMW": 47473697
+    },
+    {
+      "month": "2010-11",
+      "solar": 0.15,
+      "wind": 99.85,
+      "total": 100,
+      "totalSolarMW": 2113,
+      "totalWindMW": 1429336,
+      "totalDemandMW": 51707989
+    },
+    {
+      "month": "2010-12",
+      "solar": 0.16,
+      "wind": 99.84,
+      "total": 100,
+      "totalSolarMW": 1698,
+      "totalWindMW": 1092932,
+      "totalDemandMW": 58457975
+    },
+    {
+      "month": "2011-01",
+      "solar": 0.17,
+      "wind": 99.83,
+      "total": 100,
+      "totalSolarMW": 2360,
+      "totalWindMW": 1379839,
+      "totalDemandMW": 55750630
+    },
+    {
+      "month": "2011-02",
+      "solar": 0.27,
+      "wind": 99.73,
+      "total": 100,
+      "totalSolarMW": 3680,
+      "totalWindMW": 1347379,
+      "totalDemandMW": 48456433
+    },
+    {
+      "month": "2011-03",
+      "solar": 1.95,
+      "wind": 98.05,
+      "total": 100,
+      "totalSolarMW": 12556,
+      "totalWindMW": 632883,
+      "totalDemandMW": 51748443
+    },
+    {
+      "month": "2011-04",
+      "solar": 3.55,
+      "wind": 96.45,
+      "total": 100,
+      "totalSolarMW": 24349,
+      "totalWindMW": 660952,
+      "totalDemandMW": 42632393
+    },
+    {
+      "month": "2011-05",
+      "solar": 2.63,
+      "wind": 97.37,
+      "total": 100,
+      "totalSolarMW": 31674,
+      "totalWindMW": 1173931,
+      "totalDemandMW": 43049140
+    },
+    {
+      "month": "2011-06",
+      "solar": 5.73,
+      "wind": 94.27,
+      "total": 100,
+      "totalSolarMW": 37266,
+      "totalWindMW": 613229,
+      "totalDemandMW": 41977238
+    },
+    {
+      "month": "2011-07",
+      "solar": 8.88,
+      "wind": 91.12,
+      "total": 100,
+      "totalSolarMW": 43130,
+      "totalWindMW": 442415,
+      "totalDemandMW": 42287492
+    },
+    {
+      "month": "2011-08",
+      "solar": 7.63,
+      "wind": 92.37,
+      "total": 100,
+      "totalSolarMW": 41544,
+      "totalWindMW": 503136,
+      "totalDemandMW": 42390076
+    },
+    {
+      "month": "2011-09",
+      "solar": 4.25,
+      "wind": 95.75,
+      "total": 100,
+      "totalSolarMW": 42459,
+      "totalWindMW": 956392,
+      "totalDemandMW": 42601195
+    },
+    {
+      "month": "2011-10",
+      "solar": 3.26,
+      "wind": 96.74,
+      "total": 100,
+      "totalSolarMW": 36071,
+      "totalWindMW": 1071182,
+      "totalDemandMW": 45658902
+    },
+    {
+      "month": "2011-11",
+      "solar": 2.1,
+      "wind": 97.9,
+      "total": 100,
+      "totalSolarMW": 19120,
+      "totalWindMW": 893111,
+      "totalDemandMW": 48441556
+    },
+    {
+      "month": "2011-12",
+      "solar": 1.27,
+      "wind": 98.73,
+      "total": 100,
+      "totalSolarMW": 18226,
+      "totalWindMW": 1412487,
+      "totalDemandMW": 51583673
+    },
+    {
+      "month": "2012-01",
+      "solar": 2.84,
+      "wind": 97.16,
+      "total": 100,
+      "totalSolarMW": 34331,
+      "totalWindMW": 1176598,
+      "totalDemandMW": 52957689
+    },
+    {
+      "month": "2012-02",
+      "solar": 7.72,
+      "wind": 92.28,
+      "total": 100,
+      "totalSolarMW": 70015,
+      "totalWindMW": 836462,
+      "totalDemandMW": 51411106
+    },
+    {
+      "month": "2012-03",
+      "solar": 23.04,
+      "wind": 76.96,
+      "total": 100,
+      "totalSolarMW": 182409,
+      "totalWindMW": 609296,
+      "totalDemandMW": 49068865
+    },
+    {
+      "month": "2012-04",
+      "solar": 22.77,
+      "wind": 77.23,
+      "total": 100,
+      "totalSolarMW": 229038,
+      "totalWindMW": 776628,
+      "totalDemandMW": 45522200
+    },
+    {
+      "month": "2012-05",
+      "solar": 36.24,
+      "wind": 63.76,
+      "total": 100,
+      "totalSolarMW": 350379,
+      "totalWindMW": 616526,
+      "totalDemandMW": 45136508
+    },
+    {
+      "month": "2012-06",
+      "solar": 29.18,
+      "wind": 70.82,
+      "total": 100,
+      "totalSolarMW": 312245,
+      "totalWindMW": 757669,
+      "totalDemandMW": 41042915
+    },
+    {
+      "month": "2012-07",
+      "solar": 38.81,
+      "wind": 61.19,
+      "total": 100,
+      "totalSolarMW": 355617,
+      "totalWindMW": 560788,
+      "totalDemandMW": 42421316
+    },
+    {
+      "month": "2012-08",
+      "solar": 33.46,
+      "wind": 66.54,
+      "total": 100,
+      "totalSolarMW": 331172,
+      "totalWindMW": 658639,
+      "totalDemandMW": 42059433
+    },
+    {
+      "month": "2012-09",
+      "solar": 21.2,
+      "wind": 78.8,
+      "total": 100,
+      "totalSolarMW": 272985,
+      "totalWindMW": 1014749,
+      "totalDemandMW": 41903592
+    },
+    {
+      "month": "2012-10",
+      "solar": 16.74,
+      "wind": 83.26,
+      "total": 100,
+      "totalSolarMW": 155896,
+      "totalWindMW": 775110,
+      "totalDemandMW": 47327096
+    },
+    {
+      "month": "2012-11",
+      "solar": 8.24,
+      "wind": 91.76,
+      "total": 100,
+      "totalSolarMW": 82996,
+      "totalWindMW": 924584,
+      "totalDemandMW": 49715764
+    },
+    {
+      "month": "2012-12",
+      "solar": 4.45,
+      "wind": 95.55,
+      "total": 100,
+      "totalSolarMW": 55390,
+      "totalWindMW": 1188415,
+      "totalDemandMW": 52172045
+    },
+    {
+      "month": "2013-01",
+      "solar": 5.77,
+      "wind": 94.23,
+      "total": 100,
+      "totalSolarMW": 68963,
+      "totalWindMW": 1125263,
+      "totalDemandMW": 54584468
+    },
+    {
+      "month": "2013-02",
+      "solar": 11.9,
+      "wind": 88.1,
+      "total": 100,
+      "totalSolarMW": 121373,
+      "totalWindMW": 898673,
+      "totalDemandMW": 49305255
+    },
+    {
+      "month": "2013-03",
+      "solar": 18.24,
+      "wind": 81.76,
+      "total": 100,
+      "totalSolarMW": 233117,
+      "totalWindMW": 1045003,
+      "totalDemandMW": 53414145
+    },
+    {
+      "month": "2013-04",
+      "solar": 37.77,
+      "wind": 62.23,
+      "total": 100,
+      "totalSolarMW": 691934,
+      "totalWindMW": 1139870,
+      "totalDemandMW": 46117211
+    },
+    {
+      "month": "2013-05",
+      "solar": 44.62,
+      "wind": 55.38,
+      "total": 100,
+      "totalSolarMW": 845467,
+      "totalWindMW": 1049374,
+      "totalDemandMW": 43009142
+    },
+    {
+      "month": "2013-06",
+      "solar": 53.9,
+      "wind": 46.1,
+      "total": 100,
+      "totalSolarMW": 893216,
+      "totalWindMW": 763997,
+      "totalDemandMW": 39867542
+    },
+    {
+      "month": "2013-07",
+      "solar": 67.08,
+      "wind": 32.92,
+      "total": 100,
+      "totalSolarMW": 1057078,
+      "totalWindMW": 518669,
+      "totalDemandMW": 42139038
+    },
+    {
+      "month": "2013-08",
+      "solar": 54.88,
+      "wind": 45.12,
+      "total": 100,
+      "totalSolarMW": 849049,
+      "totalWindMW": 697922,
+      "totalDemandMW": 40898461
+    },
+    {
+      "month": "2013-09",
+      "solar": 42.07,
+      "wind": 57.93,
+      "total": 100,
+      "totalSolarMW": 592323,
+      "totalWindMW": 815470,
+      "totalDemandMW": 41949532
+    },
+    {
+      "month": "2013-10",
+      "solar": 23.41,
+      "wind": 76.59,
+      "total": 100,
+      "totalSolarMW": 367582,
+      "totalWindMW": 1202504,
+      "totalDemandMW": 45349553
+    },
+    {
+      "month": "2013-11",
+      "solar": 20.97,
+      "wind": 79.03,
+      "total": 100,
+      "totalSolarMW": 253372,
+      "totalWindMW": 954821,
+      "totalDemandMW": 49023837
+    },
+    {
+      "month": "2013-12",
+      "solar": 9.65,
+      "wind": 90.35,
+      "total": 100,
+      "totalSolarMW": 163821,
+      "totalWindMW": 1533079,
+      "totalDemandMW": 49844621
+    },
+    {
+      "month": "2014-01",
+      "solar": 12.83,
+      "wind": 87.17,
+      "total": 100,
+      "totalSolarMW": 201626,
+      "totalWindMW": 1370234,
+      "totalDemandMW": 51709155
+    },
+    {
+      "month": "2014-02",
+      "solar": 19.17,
+      "wind": 80.83,
+      "total": 100,
+      "totalSolarMW": 372999,
+      "totalWindMW": 1572649,
+      "totalDemandMW": 45831229
+    },
+    {
+      "month": "2014-03",
+      "solar": 38.69,
+      "wind": 61.31,
+      "total": 100,
+      "totalSolarMW": 774182,
+      "totalWindMW": 1226860,
+      "totalDemandMW": 47571306
+    },
+    {
+      "month": "2014-04",
+      "solar": 53.16,
+      "wind": 46.84,
+      "total": 100,
+      "totalSolarMW": 1036256,
+      "totalWindMW": 913045,
+      "totalDemandMW": 42105466
+    },
+    {
+      "month": "2014-05",
+      "solar": 64.12,
+      "wind": 35.88,
+      "total": 100,
+      "totalSolarMW": 1242940,
+      "totalWindMW": 695498,
+      "totalDemandMW": 41339550
+    },
+    {
+      "month": "2014-06",
+      "solar": 69.14,
+      "wind": 30.86,
+      "total": 100,
+      "totalSolarMW": 1406344,
+      "totalWindMW": 627796,
+      "totalDemandMW": 39099215
+    },
+    {
+      "month": "2014-07",
+      "solar": 64.51,
+      "wind": 35.49,
+      "total": 100,
+      "totalSolarMW": 1525422,
+      "totalWindMW": 839029,
+      "totalDemandMW": 40646384
+    },
+    {
+      "month": "2014-08",
+      "solar": 48.12,
+      "wind": 51.88,
+      "total": 100,
+      "totalSolarMW": 1250903,
+      "totalWindMW": 1348833,
+      "totalDemandMW": 39113626
+    },
+    {
+      "month": "2014-09",
+      "solar": 59.51,
+      "wind": 40.49,
+      "total": 100,
+      "totalSolarMW": 953151,
+      "totalWindMW": 648602,
+      "totalDemandMW": 40718013
+    },
+    {
+      "month": "2014-10",
+      "solar": 25.37,
+      "wind": 74.63,
+      "total": 100,
+      "totalSolarMW": 614762,
+      "totalWindMW": 1808060,
+      "totalDemandMW": 43936039
+    },
+    {
+      "month": "2014-11",
+      "solar": 20,
+      "wind": 80,
+      "total": 100,
+      "totalSolarMW": 326220,
+      "totalWindMW": 1304854,
+      "totalDemandMW": 46700500
+    },
+    {
+      "month": "2014-12",
+      "solar": 12.98,
+      "wind": 87.02,
+      "total": 100,
+      "totalSolarMW": 311779,
+      "totalWindMW": 2090096,
+      "totalDemandMW": 49548255
+    },
+    {
+      "month": "2015-01",
+      "solar": 11.91,
+      "wind": 88.09,
+      "total": 100,
+      "totalSolarMW": 381552,
+      "totalWindMW": 2821265,
+      "totalDemandMW": 51538235
+    },
+    {
+      "month": "2015-02",
+      "solar": 24.51,
+      "wind": 75.49,
+      "total": 100,
+      "totalSolarMW": 581078,
+      "totalWindMW": 1789585,
+      "totalDemandMW": 47184879
+    },
+    {
+      "month": "2015-03",
+      "solar": 34,
+      "wind": 66,
+      "total": 100,
+      "totalSolarMW": 1159587,
+      "totalWindMW": 2251053,
+      "totalDemandMW": 47805166
+    },
+    {
+      "month": "2015-04",
+      "solar": 62.3,
+      "wind": 37.7,
+      "total": 100,
+      "totalSolarMW": 2330969,
+      "totalWindMW": 1410683,
+      "totalDemandMW": 40532454
+    },
+    {
+      "month": "2015-05",
+      "solar": 53.61,
+      "wind": 46.39,
+      "total": 100,
+      "totalSolarMW": 2299881,
+      "totalWindMW": 1990313,
+      "totalDemandMW": 39476015
+    },
+    {
+      "month": "2015-06",
+      "solar": 63.5,
+      "wind": 36.5,
+      "total": 100,
+      "totalSolarMW": 2531611,
+      "totalWindMW": 1455313,
+      "totalDemandMW": 37526660
+    },
+    {
+      "month": "2015-07",
+      "solar": 58.91,
+      "wind": 41.09,
+      "total": 100,
+      "totalSolarMW": 2255083,
+      "totalWindMW": 1572832,
+      "totalDemandMW": 38579247
+    },
+    {
+      "month": "2015-08",
+      "solar": 55.73,
+      "wind": 44.27,
+      "total": 100,
+      "totalSolarMW": 1868826,
+      "totalWindMW": 1484406,
+      "totalDemandMW": 38152263
+    },
+    {
+      "month": "2015-09",
+      "solar": 58.32,
+      "wind": 41.68,
+      "total": 100,
+      "totalSolarMW": 1745098,
+      "totalWindMW": 1247065,
+      "totalDemandMW": 39196013
+    },
+    {
+      "month": "2015-10",
+      "solar": 42.33,
+      "wind": 57.67,
+      "total": 100,
+      "totalSolarMW": 997279,
+      "totalWindMW": 1358513,
+      "totalDemandMW": 43890919
+    },
+    {
+      "month": "2015-11",
+      "solar": 12.96,
+      "wind": 87.04,
+      "total": 100,
+      "totalSolarMW": 396780,
+      "totalWindMW": 2665467,
+      "totalDemandMW": 44865559
+    },
+    {
+      "month": "2015-12",
+      "solar": 8.15,
+      "wind": 91.85,
+      "total": 100,
+      "totalSolarMW": 305081,
+      "totalWindMW": 3439509,
+      "totalDemandMW": 44996400
+    },
+    {
+      "month": "2016-01",
+      "solar": 14.98,
+      "wind": 85.02,
+      "total": 100,
+      "totalSolarMW": 457070,
+      "totalWindMW": 2595018,
+      "totalDemandMW": 48876678
+    },
+    {
+      "month": "2016-02",
+      "solar": 29.44,
+      "wind": 70.56,
+      "total": 100,
+      "totalSolarMW": 921955,
+      "totalWindMW": 2209575,
+      "totalDemandMW": 45445931
+    },
+    {
+      "month": "2016-03",
+      "solar": 46.61,
+      "wind": 53.39,
+      "total": 100,
+      "totalSolarMW": 1455417,
+      "totalWindMW": 1667246,
+      "totalDemandMW": 46424489
+    },
+    {
+      "month": "2016-04",
+      "solar": 55.61,
+      "wind": 44.39,
+      "total": 100,
+      "totalSolarMW": 2025311,
+      "totalWindMW": 1616961,
+      "totalDemandMW": 40919491
+    },
+    {
+      "month": "2016-05",
+      "solar": 61.73,
+      "wind": 38.27,
+      "total": 100,
+      "totalSolarMW": 2653642,
+      "totalWindMW": 1645346,
+      "totalDemandMW": 37593510
+    },
+    {
+      "month": "2016-06",
+      "solar": 66.05,
+      "wind": 33.95,
+      "total": 100,
+      "totalSolarMW": 2196452,
+      "totalWindMW": 1128898,
+      "totalDemandMW": 36846113
+    },
+    {
+      "month": "2016-07",
+      "solar": 62.87,
+      "wind": 37.13,
+      "total": 100,
+      "totalSolarMW": 2546201,
+      "totalWindMW": 1503916,
+      "totalDemandMW": 36495554
+    },
+    {
+      "month": "2016-08",
+      "solar": 59.88,
+      "wind": 40.12,
+      "total": 100,
+      "totalSolarMW": 2544790,
+      "totalWindMW": 1705244,
+      "totalDemandMW": 36067816
+    },
+    {
+      "month": "2016-09",
+      "solar": 49.41,
+      "wind": 50.59,
+      "total": 100,
+      "totalSolarMW": 1761381,
+      "totalWindMW": 1803511,
+      "totalDemandMW": 37125594
+    },
+    {
+      "month": "2016-10",
+      "solar": 46.35,
+      "wind": 53.65,
+      "total": 100,
+      "totalSolarMW": 1339222,
+      "totalWindMW": 1550059,
+      "totalDemandMW": 41716012
+    },
+    {
+      "month": "2016-11",
+      "solar": 30.09,
+      "wind": 69.91,
+      "total": 100,
+      "totalSolarMW": 765821,
+      "totalWindMW": 1778994,
+      "totalDemandMW": 46375880
+    },
+    {
+      "month": "2016-12",
+      "solar": 17.86,
+      "wind": 82.14,
+      "total": 100,
+      "totalSolarMW": 480081,
+      "totalWindMW": 2208652,
+      "totalDemandMW": 47242934
+    },
+    {
+      "month": "2017-01",
+      "solar": 21.66,
+      "wind": 78.34,
+      "total": 100,
+      "totalSolarMW": 591529,
+      "totalWindMW": 2138848,
+      "totalDemandMW": 50540936
+    },
+    {
+      "month": "2017-02",
+      "solar": 22.72,
+      "wind": 77.28,
+      "total": 100,
+      "totalSolarMW": 735142,
+      "totalWindMW": 2500335,
+      "totalDemandMW": 43140317
+    },
+    {
+      "month": "2017-03",
+      "solar": 42.03,
+      "wind": 57.97,
+      "total": 100,
+      "totalSolarMW": 1713383,
+      "totalWindMW": 2363664,
+      "totalDemandMW": 43358765
+    },
+    {
+      "month": "2017-04",
+      "solar": 55.6,
+      "wind": 44.4,
+      "total": 100,
+      "totalSolarMW": 2498115,
+      "totalWindMW": 1994579,
+      "totalDemandMW": 37346458
+    },
+    {
+      "month": "2017-05",
+      "solar": 60.28,
+      "wind": 39.72,
+      "total": 100,
+      "totalSolarMW": 2796395,
+      "totalWindMW": 1842498,
+      "totalDemandMW": 37310522
+    },
+    {
+      "month": "2017-06",
+      "solar": 55.91,
+      "wind": 44.09,
+      "total": 100,
+      "totalSolarMW": 2758042,
+      "totalWindMW": 2174903,
+      "totalDemandMW": 34756806
+    },
+    {
+      "month": "2017-07",
+      "solar": 60.63,
+      "wind": 39.37,
+      "total": 100,
+      "totalSolarMW": 2797394,
+      "totalWindMW": 1816322,
+      "totalDemandMW": 35624405
+    },
+    {
+      "month": "2017-08",
+      "solar": 58.56,
+      "wind": 41.44,
+      "total": 100,
+      "totalSolarMW": 2559602,
+      "totalWindMW": 1811611,
+      "totalDemandMW": 35338984
+    },
+    {
+      "month": "2017-09",
+      "solar": 47.91,
+      "wind": 52.09,
+      "total": 100,
+      "totalSolarMW": 1835382,
+      "totalWindMW": 1995684,
+      "totalDemandMW": 36750498
+    },
+    {
+      "month": "2017-10",
+      "solar": 28.31,
+      "wind": 71.69,
+      "total": 100,
+      "totalSolarMW": 1179255,
+      "totalWindMW": 2986746,
+      "totalDemandMW": 40005349
+    },
+    {
+      "month": "2017-11",
+      "solar": 24.88,
+      "wind": 75.12,
+      "total": 100,
+      "totalSolarMW": 846384,
+      "totalWindMW": 2554866,
+      "totalDemandMW": 44455901
+    },
+    {
+      "month": "2017-12",
+      "solar": 15.29,
+      "wind": 84.71,
+      "total": 100,
+      "totalSolarMW": 540558,
+      "totalWindMW": 2995192,
+      "totalDemandMW": 47272244
+    },
+    {
+      "month": "2018-01",
+      "solar": 15.1,
+      "wind": 84.9,
+      "total": 100,
+      "totalSolarMW": 617847,
+      "totalWindMW": 3474798,
+      "totalDemandMW": 48109301
+    },
+    {
+      "month": "2018-02",
+      "solar": 32.51,
+      "wind": 67.49,
+      "total": 100,
+      "totalSolarMW": 1237293,
+      "totalWindMW": 2568700,
+      "totalDemandMW": 44083140
+    },
+    {
+      "month": "2018-03",
+      "solar": 32.72,
+      "wind": 67.28,
+      "total": 100,
+      "totalSolarMW": 1455100,
+      "totalWindMW": 2991949,
+      "totalDemandMW": 47136572
+    },
+    {
+      "month": "2018-04",
+      "solar": 45.78,
+      "wind": 54.22,
+      "total": 100,
+      "totalSolarMW": 2030654,
+      "totalWindMW": 2405089,
+      "totalDemandMW": 39159662
+    },
+    {
+      "month": "2018-05",
+      "solar": 64.95,
+      "wind": 35.05,
+      "total": 100,
+      "totalSolarMW": 3438082,
+      "totalWindMW": 1855741,
+      "totalDemandMW": 35802668
+    },
+    {
+      "month": "2018-06",
+      "solar": 69.66,
+      "wind": 30.34,
+      "total": 100,
+      "totalSolarMW": 3545060,
+      "totalWindMW": 1544360,
+      "totalDemandMW": 33923252
+    },
+    {
+      "month": "2018-07",
+      "solar": 72.88,
+      "wind": 27.12,
+      "total": 100,
+      "totalSolarMW": 3552235,
+      "totalWindMW": 1321534,
+      "totalDemandMW": 35891667
+    },
+    {
+      "month": "2018-08",
+      "solar": 57.77,
+      "wind": 42.23,
+      "total": 100,
+      "totalSolarMW": 2569939,
+      "totalWindMW": 1878708,
+      "totalDemandMW": 35464426
+    },
+    {
+      "month": "2018-09",
+      "solar": 44.24,
+      "wind": 55.76,
+      "total": 100,
+      "totalSolarMW": 2068888,
+      "totalWindMW": 2607633,
+      "totalDemandMW": 35469972
+    },
+    {
+      "month": "2018-10",
+      "solar": 35.08,
+      "wind": 64.92,
+      "total": 100,
+      "totalSolarMW": 1517610,
+      "totalWindMW": 2808225,
+      "totalDemandMW": 40264508
+    },
+    {
+      "month": "2018-11",
+      "solar": 18.28,
+      "wind": 81.72,
+      "total": 100,
+      "totalSolarMW": 673507,
+      "totalWindMW": 3010900,
+      "totalDemandMW": 43398225
+    },
+    {
+      "month": "2018-12",
+      "solar": 12.49,
+      "wind": 87.51,
+      "total": 100,
+      "totalSolarMW": 396427,
+      "totalWindMW": 2778390,
+      "totalDemandMW": 44689302
+    },
+    {
+      "month": "2019-01",
+      "solar": 18.92,
+      "wind": 81.08,
+      "total": 100,
+      "totalSolarMW": 580198,
+      "totalWindMW": 2485883,
+      "totalDemandMW": 48082709
+    },
+    {
+      "month": "2019-02",
+      "solar": 32.71,
+      "wind": 67.29,
+      "total": 100,
+      "totalSolarMW": 1324383,
+      "totalWindMW": 2724859,
+      "totalDemandMW": 40621871
+    },
+    {
+      "month": "2019-03",
+      "solar": 35.24,
+      "wind": 64.76,
+      "total": 100,
+      "totalSolarMW": 1961302,
+      "totalWindMW": 3603851,
+      "totalDemandMW": 41507522
+    },
+    {
+      "month": "2019-04",
+      "solar": 53.28,
+      "wind": 46.72,
+      "total": 100,
+      "totalSolarMW": 2734311,
+      "totalWindMW": 2397529,
+      "totalDemandMW": 37211384
+    },
+    {
+      "month": "2019-05",
+      "solar": 64.37,
+      "wind": 35.63,
+      "total": 100,
+      "totalSolarMW": 3170470,
+      "totalWindMW": 1755217,
+      "totalDemandMW": 35883734
+    },
+    {
+      "month": "2019-06",
+      "solar": 56.36,
+      "wind": 43.64,
+      "total": 100,
+      "totalSolarMW": 2804176,
+      "totalWindMW": 2171219,
+      "totalDemandMW": 33601087
+    },
+    {
+      "month": "2019-07",
+      "solar": 63.45,
+      "wind": 36.55,
+      "total": 100,
+      "totalSolarMW": 3129507,
+      "totalWindMW": 1802438,
+      "totalDemandMW": 34831563
+    },
+    {
+      "month": "2019-08",
+      "solar": 53.93,
+      "wind": 46.07,
+      "total": 100,
+      "totalSolarMW": 2912107,
+      "totalWindMW": 2487282,
+      "totalDemandMW": 33461325
+    },
+    {
+      "month": "2019-09",
+      "solar": 48.2,
+      "wind": 51.8,
+      "total": 100,
+      "totalSolarMW": 2249704,
+      "totalWindMW": 2417434,
+      "totalDemandMW": 34275568
+    },
+    {
+      "month": "2019-10",
+      "solar": 30.85,
+      "wind": 69.15,
+      "total": 100,
+      "totalSolarMW": 1224004,
+      "totalWindMW": 2743305,
+      "totalDemandMW": 40490648
+    },
+    {
+      "month": "2019-11",
+      "solar": 21.77,
+      "wind": 78.23,
+      "total": 100,
+      "totalSolarMW": 657048,
+      "totalWindMW": 2361203,
+      "totalDemandMW": 44048245
+    },
+    {
+      "month": "2019-12",
+      "solar": 14.25,
+      "wind": 85.75,
+      "total": 100,
+      "totalSolarMW": 567071,
+      "totalWindMW": 3412530,
+      "totalDemandMW": 44317374
+    },
+    {
+      "month": "2020-01",
+      "solar": 13.73,
+      "wind": 86.27,
+      "total": 100,
+      "totalSolarMW": 597560,
+      "totalWindMW": 3753740,
+      "totalDemandMW": 45017465
+    },
+    {
+      "month": "2020-02",
+      "solar": 18.1,
+      "wind": 81.9,
+      "total": 100,
+      "totalSolarMW": 1060355,
+      "totalWindMW": 4798065,
+      "totalDemandMW": 40821193
+    },
+    {
+      "month": "2020-03",
+      "solar": 38.82,
+      "wind": 61.18,
+      "total": 100,
+      "totalSolarMW": 2273724,
+      "totalWindMW": 3582785,
+      "totalDemandMW": 40300324
+    },
+    {
+      "month": "2020-04",
+      "solar": 59.37,
+      "wind": 40.63,
+      "total": 100,
+      "totalSolarMW": 3221652,
+      "totalWindMW": 2204615,
+      "totalDemandMW": 30121800
+    },
+    {
+      "month": "2020-05",
+      "solar": 63.13,
+      "wind": 36.87,
+      "total": 100,
+      "totalSolarMW": 3944149,
+      "totalWindMW": 2303424,
+      "totalDemandMW": 29164464
+    },
+    {
+      "month": "2020-06",
+      "solar": 56.54,
+      "wind": 43.46,
+      "total": 100,
+      "totalSolarMW": 2976246,
+      "totalWindMW": 2287528,
+      "totalDemandMW": 29779398
+    },
+    {
+      "month": "2020-07",
+      "solar": 55.79,
+      "wind": 44.21,
+      "total": 100,
+      "totalSolarMW": 2898286,
+      "totalWindMW": 2296714,
+      "totalDemandMW": 31737241
+    },
+    {
+      "month": "2020-08",
+      "solar": 57.5,
+      "wind": 42.5,
+      "total": 100,
+      "totalSolarMW": 2519368,
+      "totalWindMW": 1862194,
+      "totalDemandMW": 32880622
+    },
+    {
+      "month": "2020-09",
+      "solar": 52.71,
+      "wind": 47.29,
+      "total": 100,
+      "totalSolarMW": 2293544,
+      "totalWindMW": 2057409,
+      "totalDemandMW": 33610027
+    },
+    {
+      "month": "2020-10",
+      "solar": 31.21,
+      "wind": 68.79,
+      "total": 100,
+      "totalSolarMW": 1093202,
+      "totalWindMW": 2409653,
+      "totalDemandMW": 39362636
+    },
+    {
+      "month": "2020-11",
+      "solar": 22.72,
+      "wind": 77.28,
+      "total": 100,
+      "totalSolarMW": 737490,
+      "totalWindMW": 2508562,
+      "totalDemandMW": 39885558
+    },
+    {
+      "month": "2020-12",
+      "solar": 16.62,
+      "wind": 83.38,
+      "total": 100,
+      "totalSolarMW": 485536,
+      "totalWindMW": 2436042,
+      "totalDemandMW": 44068230
+    },
+    {
+      "month": "2021-01",
+      "solar": 20.24,
+      "wind": 79.76,
+      "total": 100,
+      "totalSolarMW": 538915,
+      "totalWindMW": 2123456,
+      "totalDemandMW": 45868990
+    },
+    {
+      "month": "2021-02",
+      "solar": 26.5,
+      "wind": 73.5,
+      "total": 100,
+      "totalSolarMW": 1024184,
+      "totalWindMW": 2840164,
+      "totalDemandMW": 39441592
+    },
+    {
+      "month": "2021-03",
+      "solar": 39.69,
+      "wind": 60.31,
+      "total": 100,
+      "totalSolarMW": 1818733,
+      "totalWindMW": 2763916,
+      "totalDemandMW": 40412613
+    },
+    {
+      "month": "2021-04",
+      "solar": 63.14,
+      "wind": 36.86,
+      "total": 100,
+      "totalSolarMW": 3154780,
+      "totalWindMW": 1841713,
+      "totalDemandMW": 35974151
+    },
+    {
+      "month": "2021-05",
+      "solar": 57.95,
+      "wind": 42.05,
+      "total": 100,
+      "totalSolarMW": 2857758,
+      "totalWindMW": 2073463,
+      "totalDemandMW": 35685861
+    },
+    {
+      "month": "2021-06",
+      "solar": 64.49,
+      "wind": 35.51,
+      "total": 100,
+      "totalSolarMW": 3048359,
+      "totalWindMW": 1678831,
+      "totalDemandMW": 32825852
+    },
+    {
+      "month": "2021-07",
+      "solar": 72.46,
+      "wind": 27.54,
+      "total": 100,
+      "totalSolarMW": 3088018,
+      "totalWindMW": 1173696,
+      "totalDemandMW": 33832488
+    },
+    {
+      "month": "2021-08",
+      "solar": 57.61,
+      "wind": 42.39,
+      "total": 100,
+      "totalSolarMW": 2390036,
+      "totalWindMW": 1758639,
+      "totalDemandMW": 33362188
+    },
+    {
+      "month": "2021-09",
+      "solar": 54.25,
+      "wind": 45.75,
+      "total": 100,
+      "totalSolarMW": 2020941,
+      "totalWindMW": 1704591,
+      "totalDemandMW": 34023922
+    },
+    {
+      "month": "2021-10",
+      "solar": 30.32,
+      "wind": 69.68,
+      "total": 100,
+      "totalSolarMW": 1321040,
+      "totalWindMW": 3035260,
+      "totalDemandMW": 37397266
+    },
+    {
+      "month": "2021-11",
+      "solar": 21.93,
+      "wind": 78.07,
+      "total": 100,
+      "totalSolarMW": 809743,
+      "totalWindMW": 2883062,
+      "totalDemandMW": 41458762
+    },
+    {
+      "month": "2021-12",
+      "solar": 11.47,
+      "wind": 88.53,
+      "total": 100,
+      "totalSolarMW": 369767,
+      "totalWindMW": 2855143,
+      "totalDemandMW": 43485576
+    },
+    {
+      "month": "2022-01",
+      "solar": 20.35,
+      "wind": 79.65,
+      "total": 100,
+      "totalSolarMW": 775833,
+      "totalWindMW": 3036468,
+      "totalDemandMW": 45059462
+    },
+    {
+      "month": "2022-02",
+      "solar": 20.42,
+      "wind": 79.58,
+      "total": 100,
+      "totalSolarMW": 1115417,
+      "totalWindMW": 4348239,
+      "totalDemandMW": 37828010
+    },
+    {
+      "month": "2022-03",
+      "solar": 48.55,
+      "wind": 51.45,
+      "total": 100,
+      "totalSolarMW": 2337841,
+      "totalWindMW": 2477433,
+      "totalDemandMW": 39591853
+    },
+    {
+      "month": "2022-04",
+      "solar": 56.45,
+      "wind": 43.55,
+      "total": 100,
+      "totalSolarMW": 2945564,
+      "totalWindMW": 2272693,
+      "totalDemandMW": 34005168
+    },
+    {
+      "month": "2022-05",
+      "solar": 56.13,
+      "wind": 43.87,
+      "total": 100,
+      "totalSolarMW": 3127177,
+      "totalWindMW": 2444501,
+      "totalDemandMW": 32541563
+    },
+    {
+      "month": "2022-06",
+      "solar": 61.54,
+      "wind": 38.46,
+      "total": 100,
+      "totalSolarMW": 3457560,
+      "totalWindMW": 2160734,
+      "totalDemandMW": 30086228
+    },
+    {
+      "month": "2022-07",
+      "solar": 63.71,
+      "wind": 36.29,
+      "total": 100,
+      "totalSolarMW": 3365364,
+      "totalWindMW": 1917063,
+      "totalDemandMW": 31695229
+    },
+    {
+      "month": "2022-08",
+      "solar": 66.72,
+      "wind": 33.28,
+      "total": 100,
+      "totalSolarMW": 3217752,
+      "totalWindMW": 1605331,
+      "totalDemandMW": 31589021
+    },
+    {
+      "month": "2022-09",
+      "solar": 50.11,
+      "wind": 49.89,
+      "total": 100,
+      "totalSolarMW": 2093435,
+      "totalWindMW": 2084475,
+      "totalDemandMW": 31746688
+    },
+    {
+      "month": "2022-10",
+      "solar": 34.65,
+      "wind": 65.35,
+      "total": 100,
+      "totalSolarMW": 1647687,
+      "totalWindMW": 3106991,
+      "totalDemandMW": 33926371
+    },
+    {
+      "month": "2022-11",
+      "solar": 18.68,
+      "wind": 81.32,
+      "total": 100,
+      "totalSolarMW": 712421,
+      "totalWindMW": 3101410,
+      "totalDemandMW": 37239628
+    },
+    {
+      "month": "2022-12",
+      "solar": 15.55,
+      "wind": 84.45,
+      "total": 100,
+      "totalSolarMW": 489608,
+      "totalWindMW": 2658832,
+      "totalDemandMW": 42422496
+    },
+    {
+      "month": "2023-01",
+      "solar": 17.96,
+      "wind": 82.04,
+      "total": 100,
+      "totalSolarMW": 774066,
+      "totalWindMW": 3534958,
+      "totalDemandMW": 42209946
+    },
+    {
+      "month": "2023-02",
+      "solar": 29.93,
+      "wind": 70.07,
+      "total": 100,
+      "totalSolarMW": 1121712,
+      "totalWindMW": 2625784,
+      "totalDemandMW": 36587998
+    },
+    {
+      "month": "2023-03",
+      "solar": 36.36,
+      "wind": 63.64,
+      "total": 100,
+      "totalSolarMW": 1527176,
+      "totalWindMW": 2672593,
+      "totalDemandMW": 39338437
+    },
+    {
+      "month": "2023-04",
+      "solar": 54.98,
+      "wind": 45.02,
+      "total": 100,
+      "totalSolarMW": 2650403,
+      "totalWindMW": 2170031,
+      "totalDemandMW": 33519472
+    },
+    {
+      "month": "2023-05",
+      "solar": 68.45,
+      "wind": 31.55,
+      "total": 100,
+      "totalSolarMW": 3545954,
+      "totalWindMW": 1634708,
+      "totalDemandMW": 30869575
+    },
+    {
+      "month": "2023-06",
+      "solar": 69.64,
+      "wind": 30.36,
+      "total": 100,
+      "totalSolarMW": 3734572,
+      "totalWindMW": 1627823,
+      "totalDemandMW": 29441178
+    },
+    {
+      "month": "2023-07",
+      "solar": 52.3,
+      "wind": 47.7,
+      "total": 100,
+      "totalSolarMW": 2925630,
+      "totalWindMW": 2668268,
+      "totalDemandMW": 29862492
+    },
+    {
+      "month": "2023-08",
+      "solar": 56.84,
+      "wind": 43.16,
+      "total": 100,
+      "totalSolarMW": 2823339,
+      "totalWindMW": 2143535,
+      "totalDemandMW": 30223152
+    },
+    {
+      "month": "2023-09",
+      "solar": 51.46,
+      "wind": 48.54,
+      "total": 100,
+      "totalSolarMW": 2458368,
+      "totalWindMW": 2318580,
+      "totalDemandMW": 31443497
+    },
+    {
+      "month": "2023-10",
+      "solar": 35.21,
+      "wind": 64.79,
+      "total": 100,
+      "totalSolarMW": 1565244,
+      "totalWindMW": 2880538,
+      "totalDemandMW": 35026779
+    },
+    {
+      "month": "2023-11",
+      "solar": 25.33,
+      "wind": 74.67,
+      "total": 100,
+      "totalSolarMW": 923538,
+      "totalWindMW": 2721782,
+      "totalDemandMW": 39073678
+    },
+    {
+      "month": "2023-12",
+      "solar": 9.12,
+      "wind": 90.88,
+      "total": 100,
+      "totalSolarMW": 414928,
+      "totalWindMW": 4134665,
+      "totalDemandMW": 40394280
+    },
+    {
+      "month": "2024-01",
+      "solar": 20.65,
+      "wind": 79.35,
+      "total": 100,
+      "totalSolarMW": 892217,
+      "totalWindMW": 3429200,
+      "totalDemandMW": 43561870
+    },
+    {
+      "month": "2024-02",
+      "solar": 24.65,
+      "wind": 75.35,
+      "total": 100,
+      "totalSolarMW": 1055348,
+      "totalWindMW": 3225476,
+      "totalDemandMW": 37952422
+    },
+    {
+      "month": "2024-03",
+      "solar": 39.26,
+      "wind": 60.74,
+      "total": 100,
+      "totalSolarMW": 2071640,
+      "totalWindMW": 3205535,
+      "totalDemandMW": 38052049
+    },
+    {
+      "month": "2024-04",
+      "solar": 46.59,
+      "wind": 53.41,
+      "total": 100,
+      "totalSolarMW": 2966455,
+      "totalWindMW": 3400426,
+      "totalDemandMW": 33334235
+    },
+    {
+      "month": "2024-05",
+      "solar": 68.36,
+      "wind": 31.64,
+      "total": 100,
+      "totalSolarMW": 3595799,
+      "totalWindMW": 1664594,
+      "totalDemandMW": 31228449
+    },
+    {
+      "month": "2024-06",
+      "solar": 65.21,
+      "wind": 34.79,
+      "total": 100,
+      "totalSolarMW": 4138980,
+      "totalWindMW": 2207964,
+      "totalDemandMW": 29221966
+    },
+    {
+      "month": "2024-07",
+      "solar": 67.47,
+      "wind": 32.53,
+      "total": 100,
+      "totalSolarMW": 3700735,
+      "totalWindMW": 1784606,
+      "totalDemandMW": 31087352
+    },
+    {
+      "month": "2024-08",
+      "solar": 52.68,
+      "wind": 47.32,
+      "total": 100,
+      "totalSolarMW": 3447975,
+      "totalWindMW": 3096671,
+      "totalDemandMW": 29919562
+    },
+    {
+      "month": "2024-09",
+      "solar": 50.69,
+      "wind": 49.31,
+      "total": 100,
+      "totalSolarMW": 2328705,
+      "totalWindMW": 2265450,
+      "totalDemandMW": 32044364
+    },
+    {
+      "month": "2024-10",
+      "solar": 37.84,
+      "wind": 62.16,
+      "total": 100,
+      "totalSolarMW": 1672921,
+      "totalWindMW": 2747855,
+      "totalDemandMW": 36712387
+    },
+    {
+      "month": "2024-11",
+      "solar": 23.45,
+      "wind": 76.55,
+      "total": 100,
+      "totalSolarMW": 774578,
+      "totalWindMW": 2528398,
+      "totalDemandMW": 40384369
+    },
+    {
+      "month": "2024-12",
+      "solar": 12.6,
+      "wind": 87.4,
+      "total": 100,
+      "totalSolarMW": 90027,
+      "totalWindMW": 624350,
+      "totalDemandMW": 6896070
+    }
+  ]
+}

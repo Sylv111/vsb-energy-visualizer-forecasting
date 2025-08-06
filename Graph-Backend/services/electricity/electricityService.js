@@ -352,6 +352,86 @@ class ElectricityService {
     return dataToSave;
   }
 
+  // Get renewable energy percentages by month with JSON caching
+  async getRenewablePercentages() {
+    const jsonPath = path.join(__dirname, 'data', 'renewable_percentages.json');
+    
+    // Try to read from JSON file first
+    try {
+      if (fs.existsSync(jsonPath)) {
+        const jsonData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+        console.log(`📁 Renewable percentages loaded from JSON cache: ${jsonPath}`);
+        return jsonData;
+      }
+    } catch (error) {
+      console.log('❌ Could not read renewable percentages from JSON cache, will recalculate...');
+    }
+
+    console.log('🔄 Calculating renewable energy percentages by month...');
+    
+    if (!this.processedData) {
+      const result = await this.processCSVData();
+      this.processedData = result.data;
+    }
+
+    // Group data by month and calculate percentages
+    const monthlyData = {};
+    
+    this.processedData.forEach(item => {
+      const date = new Date(item.date);
+      const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+      
+      if (!monthlyData[monthKey]) {
+        monthlyData[monthKey] = {
+          month: monthKey,
+          totalDemand: 0,
+          totalSolar: 0,
+          totalWind: 0,
+          count: 0
+        };
+      }
+      
+      monthlyData[monthKey].totalDemand += item.demand || 0;
+      monthlyData[monthKey].totalSolar += item.solarGeneration || 0;
+      monthlyData[monthKey].totalWind += item.windGeneration || 0;
+      monthlyData[monthKey].count++;
+    });
+
+    // Calculate percentages for each month
+    const percentagesData = Object.values(monthlyData).map(month => {
+      const totalRenewable = month.totalSolar + month.totalWind;
+      const solarPercentage = totalRenewable > 0 ? (month.totalSolar / totalRenewable) * 100 : 0;
+      const windPercentage = totalRenewable > 0 ? (month.totalWind / totalRenewable) * 100 : 0;
+      const totalPercentage = solarPercentage + windPercentage;
+      
+      return {
+        month: month.month,
+        solar: Math.round(solarPercentage * 100) / 100,
+        wind: Math.round(windPercentage * 100) / 100,
+        total: Math.round(totalPercentage * 100) / 100,
+        totalSolarMW: Math.round(month.totalSolar),
+        totalWindMW: Math.round(month.totalWind),
+        totalDemandMW: Math.round(month.totalDemand)
+      };
+    }).sort((a, b) => a.month.localeCompare(b.month));
+
+    const dataToSave = {
+      generatedAt: new Date().toISOString(),
+      totalMonths: percentagesData.length,
+      data: percentagesData
+    };
+
+    try {
+      fs.writeFileSync(jsonPath, JSON.stringify(dataToSave, null, 2));
+      console.log(`💾 Renewable percentages saved to: ${jsonPath}`);
+      console.log(`📊 Calculated ${percentagesData.length} monthly percentages`);
+    } catch (error) {
+      console.error('❌ Error saving renewable percentages to JSON:', error);
+    }
+
+    return dataToSave;
+  }
+
   // Get statistics with JSON caching
   async getStatsData() {
     const jsonPath = path.join(__dirname, 'data', 'stats_data.json');

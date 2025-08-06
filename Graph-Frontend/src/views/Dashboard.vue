@@ -204,27 +204,23 @@ export default {
      ...mapGetters(['isLoading', 'hasError', 'errorMessage', 'aggregatedChartData', 'windData', 'solarData', 'renewablePercentages', 'ifaFlowData', 'ndChartData']),
      
      availableMonths() {
-       if (!this.electricityData || this.electricityData.length === 0) return []
+       // Get renewable percentages data from store
+       const renewableData = this.$store.state.renewablePercentages
        
-       // Get unique months from data
-       const months = new Set()
-       this.electricityData.forEach(item => {
-         const date = new Date(item.date)
-         const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`
-         months.add(monthKey)
-       })
+       if (!renewableData || renewableData.length === 0) return []
        
-       // Convert to array and sort (newest first)
-       return Array.from(months)
-         .sort((a, b) => b.localeCompare(a))
-         .map(monthKey => {
-           const [year, month] = monthKey.split('-')
+       // Get months from renewable percentages data
+       return renewableData
+         .slice() // Create a copy to avoid side effects
+         .sort((a, b) => b.month.localeCompare(a.month)) // Newest first
+         .map(item => {
+           const [year, month] = item.month.split('-')
            const date = new Date(parseInt(year), parseInt(month) - 1, 1)
            return {
-             value: monthKey,
+             value: item.month,
              label: date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' })
            }
-                  })
+         })
        },
      
            selectedMonthLabel() {
@@ -603,7 +599,7 @@ export default {
    },
   
   methods: {
-    ...mapActions(['fetchElectricityData', 'fetchAggregatedData', 'fetchStats', 'fetchNDData', 'fetchWindData', 'fetchSolarData']),
+    ...mapActions(['fetchElectricityData', 'fetchAggregatedData', 'fetchStats', 'fetchNDData', 'fetchWindData', 'fetchSolarData', 'fetchRenewablePercentages']),
     
          formatNumber(value) {
        return new Intl.NumberFormat('en-US').format(Math.round(value))
@@ -683,7 +679,11 @@ export default {
           await this.fetchNDData()
           await this.fetchWindData()
           await this.fetchSolarData()
+          await this.fetchRenewablePercentages()
           await this.fetchStats()
+          
+          // Wait a bit for data to be processed
+          await this.$nextTick()
           
           // Set the first available month as default if no month is selected
           if (!this.selectedMonth && this.availableMonths.length > 0) {
