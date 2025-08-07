@@ -5,12 +5,9 @@ import { electricityApi } from '@/config/api'
 export default createStore({
   state: {
     electricityData: [],
-    aggregatedData: {},
     stats: null,
     loading: false,
     error: null,
-    selectedPeriod: 'month',
-    selectedYear: null,
     selectedPrecision: 2,
     ifaFlowData: [],
     ndData: [],
@@ -29,23 +26,12 @@ export default createStore({
     SET_ELECTRICITY_DATA(state, data) {
       state.electricityData = data
     },
-    SET_AGGREGATED_DATA(state, { period, data }) {
-      state.aggregatedData[period] = data
-    },
     SET_STATS(state, stats) {
       state.stats = stats
     },
-    SET_SELECTED_PERIOD(state, period) {
-      state.selectedPeriod = period
-    },
-    SET_SELECTED_YEAR(state, year) {
-      state.selectedYear = year
-    },
-    
     SET_SELECTED_PRECISION(state, precision) {
       state.selectedPrecision = precision
     },
-    
     SET_IFA_FLOW_DATA(state, data) {
       state.ifaFlowData = data
     },
@@ -74,21 +60,6 @@ export default createStore({
         commit('SET_STATS', response.data.stats)
       } catch (error) {
         commit('SET_ERROR', 'Error loading data')
-        console.error('API Error:', error)
-      } finally {
-        commit('SET_LOADING', false)
-      }
-    },
-    
-    async fetchMonthlyData({ commit }) {
-      commit('SET_LOADING', true)
-      commit('SET_ERROR', null)
-      
-      try {
-        const response = await axios.get('/api/electricity/monthly', electricityApi)
-        commit('SET_MONTHLY_DATA', response.data.data)
-      } catch (error) {
-        commit('SET_ERROR', 'Error loading monthly data')
         console.error('API Error:', error)
       } finally {
         commit('SET_LOADING', false)
@@ -155,36 +126,6 @@ export default createStore({
       }
     },
     
-    async fetchAggregatedData({ commit }, period) {
-      commit('SET_LOADING', true)
-      commit('SET_ERROR', null)
-      
-      try {
-        const response = await axios.get(`/api/electricity/data/aggregated/${period}`, electricityApi)
-        commit('SET_AGGREGATED_DATA', { period, data: response.data.data })
-      } catch (error) {
-        commit('SET_ERROR', `Error loading ${period} data`)
-        console.error('API Error:', error)
-      } finally {
-        commit('SET_LOADING', false)
-      }
-    },
-    
-    async fetchYearData({ commit }, year) {
-      commit('SET_LOADING', true)
-      commit('SET_ERROR', null)
-      
-      try {
-        const response = await axios.get(`/api/electricity/data/year/${year}`, electricityApi)
-        commit('SET_ELECTRICITY_DATA', response.data.data)
-      } catch (error) {
-        commit('SET_ERROR', `Error loading ${year} data`)
-        console.error('API Error:', error)
-      } finally {
-        commit('SET_LOADING', false)
-      }
-    },
-    
     async fetchStats({ commit }) {
       commit('SET_LOADING', true)
       commit('SET_ERROR', null)
@@ -215,14 +156,6 @@ export default createStore({
       }
     },
     
-    setSelectedPeriod({ commit }, period) {
-      commit('SET_SELECTED_PERIOD', period)
-    },
-    
-    setSelectedYear({ commit }, year) {
-      commit('SET_SELECTED_YEAR', year)
-    },
-    
     setSelectedPrecision({ commit }, precision) {
       commit('SET_SELECTED_PRECISION', precision)
     }
@@ -233,34 +166,8 @@ export default createStore({
     hasError: state => !!state.error,
     errorMessage: state => state.error,
     electricityData: state => state.electricityData,
-    aggregatedData: state => period => state.aggregatedData[period] || [],
     stats: state => state.stats,
-    selectedPeriod: state => state.selectedPeriod,
-    selectedYear: state => state.selectedYear,
     selectedPrecision: state => state.selectedPrecision,
-    
-    // Getters for data formatted for charts
-    chartData: (state) => {
-      const data = state.electricityData
-      if (!Array.isArray(data) || !data.length) return []
-      
-      return data.map(item => ({
-        x: new Date(item.date).getTime(),
-        y: Number((parseFloat(item.demand) || 0).toFixed(state.selectedPrecision))
-      })).filter(item => !isNaN(item.y))
-    },
-    
-    aggregatedChartData: (state) => {
-      const data = state.aggregatedData[state.selectedPeriod] || []
-      if (!Array.isArray(data) || !data.length) return []
-      
-      return data.map(item => ({
-        x: new Date(item.date).getTime(),
-        y: Number((parseFloat(item.avgDemand) || 0).toFixed(state.selectedPrecision))
-      })).filter(item => !isNaN(item.y))
-    },
-    
-
 
     // Renewable energy percentages and totals for the selected month
     renewablePercentages: (state) => (selectedMonth = null) => {
@@ -322,18 +229,18 @@ export default createStore({
       return state.ndData
     },
 
-         // ND Chart data getter
-     ndChartData: (state) => {
-       const data = state.ndData
-       if (!Array.isArray(data) || !data.length) return []
+    // ND Chart data getter
+    ndChartData: (state) => {
+      const data = state.ndData
+      if (!Array.isArray(data) || !data.length) return []
 
-       return data.map(item => ({
-         x: new Date(item.weekStart || item.date).getTime(),
-         y: Number((parseFloat(item.averageND) || 0).toFixed(state.selectedPrecision))
-       })).filter(item => !isNaN(item.y))
-     },
+      return data.map(item => ({
+        x: new Date(item.weekStart || item.date).getTime(),
+        y: Number((parseFloat(item.averageND) || 0).toFixed(state.selectedPrecision))
+      })).filter(item => !isNaN(item.y))
+    },
 
-         // Wind Data getter
+    // Wind Data getter
     windData: (state) => {
       const data = state.windData
       if (!Array.isArray(data) || !data.length) return []

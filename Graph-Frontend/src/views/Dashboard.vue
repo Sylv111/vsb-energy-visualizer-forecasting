@@ -179,8 +179,6 @@
 
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex'
-import { format } from 'date-fns'
-import { enUS } from 'date-fns/locale'
 // import SafeChart from '@/components/SafeChart.vue'
 
 export default {
@@ -201,7 +199,7 @@ export default {
   
   computed: {
          ...mapState(['electricityData', 'stats', 'loading', 'error']),
-     ...mapGetters(['isLoading', 'hasError', 'errorMessage', 'aggregatedChartData', 'windData', 'solarData', 'renewablePercentages', 'ifaFlowData', 'ndChartData']),
+     ...mapGetters(['isLoading', 'hasError', 'errorMessage', 'windData', 'solarData', 'renewablePercentages', 'ifaFlowData', 'ndChartData']),
      
      availableMonths() {
        // Get renewable percentages data from store
@@ -599,7 +597,7 @@ export default {
    },
   
   methods: {
-    ...mapActions(['fetchElectricityData', 'fetchAggregatedData', 'fetchStats', 'fetchNDData', 'fetchWindData', 'fetchSolarData', 'fetchRenewablePercentages']),
+    ...mapActions(['fetchElectricityData', 'fetchStats', 'fetchNDData', 'fetchWindData', 'fetchSolarData', 'fetchRenewablePercentages']),
     
          formatNumber(value) {
        return new Intl.NumberFormat('en-US').format(Math.round(value))
@@ -616,17 +614,22 @@ export default {
     
          formatDate(date) {
        if (!date) return 'N/A'
-       return format(new Date(date), 'MM/dd/yyyy', { locale: enUS })
+       const d = new Date(date)
+       return d.toLocaleDateString('en-US', {
+         month: '2-digit',
+         day: '2-digit',
+         year: 'numeric'
+       })
      },
      
      formatYear(date) {
        if (!date) return 'N/A'
-       return format(new Date(date), 'yyyy', { locale: enUS })
+       const d = new Date(date)
+       return d.getFullYear().toString()
      },
     
          async reloadData() {
        await this.fetchElectricityData()
-       await this.fetchAggregatedData(this.selectedPeriod)
      },
      
      updateRenewableData() {

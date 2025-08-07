@@ -23,29 +23,7 @@ router.get('/data', async (req, res) => {
   }
 });
 
-// Route to get data by year
-router.get('/data/year/:year', async (req, res) => {
-  try {
-    const year = parseInt(req.params.year);
-    const result = await electricityService.getDataByYear(year);
-    res.json(result);
-  } catch (error) {
-    console.error('Error filtering electricity data by year:', error);
-    res.status(500).json({ error: 'Error filtering electricity data' });
-  }
-});
 
-// Route to get aggregated data by period
-router.get('/data/aggregated/:period', async (req, res) => {
-  try {
-    const period = req.params.period; // 'day', 'week', 'month'
-    const result = await electricityService.getAggregatedData(period);
-    res.json(result);
-  } catch (error) {
-    console.error('Error aggregating electricity data:', error);
-    res.status(500).json({ error: 'Error aggregating electricity data' });
-  }
-});
 
 // Route to get statistics
 router.get('/stats', async (req, res) => {
@@ -190,24 +168,6 @@ router.get('/stats-optimized', async (req, res) => {
   }
 });
 
-// Route to get wind and solar weekly data for charts
-router.get('/wind-solar', async (req, res) => {
-  try {
-    const result = await electricityService.getWindSolarData();
-    res.json({
-      success: true,
-      wind: result.wind,
-      solar: result.solar,
-      generatedAt: result.generatedAt
-    });
-  } catch (error) {
-    console.error('Error getting wind/solar data:', error);
-    res.status(500).json({
-      success: false,
-      message: 'Error getting wind/solar data',
-      error: error.message
-    });
-  }
-});
+
 
 module.exports = router; 
