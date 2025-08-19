@@ -230,13 +230,27 @@ export default {
       },
 
       lastAvailableDate() {
-        if (!this.electricityData || this.electricityData.length === 0) return ''
+        // Try to get from ND data first (which is loaded)
+        const ndData = this.$store.state.ndChartData
+        if (ndData && ndData.length > 0) {
+          // Get the last week start date and add 6 days to get the end of the week
+          const lastWeekStart = ndData[ndData.length - 1].x
+          if (lastWeekStart) {
+            const lastWeekDate = new Date(lastWeekStart)
+            lastWeekDate.setDate(lastWeekDate.getDate() + 6) // Add 6 days to get end of week
+            return lastWeekDate.toISOString().split('T')[0]
+          }
+        }
         
-        // Get all unique dates and sort them
-        const dates = [...new Set(this.electricityData.map(item => item.date))]
-          .sort((a, b) => new Date(b) - new Date(a))
+        // Fallback to electricity data if available
+        if (this.electricityData && this.electricityData.length > 0) {
+          const dates = [...new Set(this.electricityData.map(item => item.date))]
+            .sort((a, b) => new Date(b) - new Date(a))
+          return dates[0] || ''
+        }
         
-        return dates[0] || ''
+        // Hardcoded fallback to last known date
+        return '2024-12-02'
       },
 
       availableFlowTypes() {
@@ -696,10 +710,13 @@ export default {
           // Set the last available date as default for IFA Flow
           if (!this.selectedDate) {
             this.selectedDate = this.lastAvailableDate
+            console.log('Setting default date for Flow:', this.selectedDate)
           }
 
           // Load Flow data for the selected date
-          await this.fetchFlowData()
+          if (this.selectedDate) {
+            await this.fetchFlowData()
+          }
         } catch (error) {
           console.error('Error during initial loading:', error)
         }
