@@ -341,7 +341,7 @@ export default {
         showGrid: true
       },
       showDataPreview: false,
-      displayedDataCount: 10,
+      displayedDataCount: 100,
       isLoadingMore: false,
       showChartOptions: false,
       showFileSelector: false
@@ -780,8 +780,8 @@ export default {
       // Simulate loading delay for better UX
       await new Promise(resolve => setTimeout(resolve, 300))
       
-      // Load next 10 rows
-      const newCount = this.displayedDataCount + 10
+      // Load next 100 rows
+      const newCount = this.displayedDataCount + 100
       const totalRows = this.selectedFileData?.data?.length || 0
       
       this.displayedDataCount = Math.min(newCount, totalRows)
@@ -790,7 +790,7 @@ export default {
     },
 
     resetDataPreview() {
-      this.displayedDataCount = 10
+      this.displayedDataCount = 100
       this.isLoadingMore = false
     },
 
