@@ -13,14 +13,14 @@ const app = express();
 app.use(helmet);
 app.use(compression);
 app.use(cors);
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ limit: '30mb' }));
+app.use(express.urlencoded({ extended: true, limit: '30mb' }));
 
 // Configure multer for file upload
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: {
-    fileSize: 10 * 1024 * 1024 // 10MB limit
+    fileSize: 30 * 1024 * 1024 // 30MB limit
   },
   fileFilter: (req, file, cb) => {
     if (file.mimetype === 'text/csv' || file.originalname.endsWith('.csv')) {
@@ -321,6 +321,96 @@ app.get('/api/csv/data', async (req, res) => {
     res.status(500).json({
       success: false,
       message: 'Error retrieving data',
+      error: error.message
+    });
+  }
+});
+
+// Route to list available CSV files
+app.get('/api/csv/files', async (req, res) => {
+  try {
+    const dataDir = path.join(__dirname, 'data', 'processed');
+    if (!fs.existsSync(dataDir)) {
+      return res.json({
+        success: true,
+        files: []
+      });
+    }
+
+    const files = fs.readdirSync(dataDir)
+      .filter(file => file.endsWith('.csv'))
+      .map(file => {
+        const filePath = path.join(dataDir, file);
+        const stats = fs.statSync(filePath);
+        return {
+          name: file,
+          size: stats.size,
+          modified: stats.mtime,
+          path: filePath
+        };
+      })
+      .sort((a, b) => b.modified - a.modified); // Most recent first
+
+    res.json({
+      success: true,
+      files: files
+    });
+  } catch (error) {
+    console.error('Error listing CSV files:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error listing CSV files',
+      error: error.message
+    });
+  }
+});
+
+// Route to load a specific CSV file
+app.get('/api/csv/files/:filename', async (req, res) => {
+  try {
+    const filename = req.params.filename;
+    const dataDir = path.join(__dirname, 'data', 'processed');
+    const filePath = path.join(dataDir, filename);
+
+    if (!fs.existsSync(filePath)) {
+      return res.status(404).json({
+        success: false,
+        message: 'File not found'
+      });
+    }
+
+    const fileContent = fs.readFileSync(filePath, 'utf8');
+    const lines = fileContent.split('\n').filter(line => line.trim());
+    
+    if (lines.length === 0) {
+      return res.status(400).json({
+        success: false,
+        message: 'Empty file'
+      });
+    }
+
+    // Parse CSV content
+    const headers = lines[0].split(',');
+    const data = lines.slice(1).map(line => {
+      const values = line.split(',');
+      return values.slice(0, headers.length);
+    });
+
+    res.json({
+      success: true,
+      data: {
+        filename: filename,
+        headers: headers,
+        data: data,
+        totalRows: data.length,
+        totalColumns: headers.length
+      }
+    });
+  } catch (error) {
+    console.error('Error loading CSV file:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error loading CSV file',
       error: error.message
     });
   }

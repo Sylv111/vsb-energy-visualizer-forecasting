@@ -7,7 +7,10 @@ export default createStore({
     loading: false,
     error: null,
     fileName: null,
-    savedFileName: null
+    savedFileName: null,
+    availableFiles: [],
+    selectedFile: null,
+    selectedFileData: null
   },
   
   mutations: {
@@ -25,6 +28,15 @@ export default createStore({
     },
     SET_SAVED_FILE_NAME(state, savedFileName) {
       state.savedFileName = savedFileName
+    },
+    SET_AVAILABLE_FILES(state, files) {
+      state.availableFiles = files
+    },
+    SET_SELECTED_FILE(state, file) {
+      state.selectedFile = file
+    },
+    SET_SELECTED_FILE_DATA(state, data) {
+      state.selectedFileData = data
     }
   },
   
@@ -76,6 +88,41 @@ export default createStore({
       } finally {
         commit('SET_LOADING', false)
       }
+    },
+
+    async fetchAvailableFiles({ commit }) {
+      commit('SET_LOADING', true)
+      commit('SET_ERROR', null)
+      
+      try {
+        const response = await axios.get(`http://localhost:3000/api/csv/files`)
+        commit('SET_AVAILABLE_FILES', response.data.files)
+        return response.data
+      } catch (error) {
+        const errorMessage = error.response?.data?.message || 'Error fetching available files'
+        commit('SET_ERROR', errorMessage)
+        throw error
+      } finally {
+        commit('SET_LOADING', false)
+      }
+    },
+
+    async loadSelectedFile({ commit }, filename) {
+      commit('SET_LOADING', true)
+      commit('SET_ERROR', null)
+      
+      try {
+        const response = await axios.get(`http://localhost:3000/api/csv/files/${filename}`)
+        commit('SET_SELECTED_FILE', filename)
+        commit('SET_SELECTED_FILE_DATA', response.data.data)
+        return response.data
+      } catch (error) {
+        const errorMessage = error.response?.data?.message || 'Error loading selected file'
+        commit('SET_ERROR', errorMessage)
+        throw error
+      } finally {
+        commit('SET_LOADING', false)
+      }
     }
   },
   
@@ -89,6 +136,10 @@ export default createStore({
       totalRows: state => state.uploadedData?.totalRows || 0,
       totalColumns: state => state.uploadedData?.totalColumns || 0,
       fileName: state => state.fileName,
-      savedFileName: state => state.savedFileName
+      savedFileName: state => state.savedFileName,
+      availableFiles: state => state.availableFiles,
+      selectedFile: state => state.selectedFile,
+      selectedFileData: state => state.selectedFileData,
+      hasSelectedFile: state => !!state.selectedFileData
     }
 }) 
