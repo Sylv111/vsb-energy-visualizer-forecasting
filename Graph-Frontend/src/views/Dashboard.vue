@@ -1,767 +1,628 @@
 <template>
-      <div class="dashboard">
-      <div class="dashboard-header">
-        <h1>Overview - UK Electricity Consumption</h1>
-        <p class="subtitle">Data from 2009 to 2024 - Real-time analysis</p>
-      </div>
+  <div class="dashboard">
+    <div class="dashboard-header">
+      <h1>CSV Data Visualizer</h1>
+      <p class="subtitle">Import your CSV file and visualize the data</p>
+    </div>
 
-    <!-- Error message -->
+    <!-- Import Button -->
+    <div class="import-section">
+      <button @click="showImportModal = true" class="import-btn">
+        📁 Import CSV File
+      </button>
+      <p v-if="hasData" class="file-info">
+        📄 Loaded: {{ fileName }} ({{ totalRows }} rows, {{ totalColumns }} columns)
+        <br>
+        💾 Saved: {{ savedFileName }}
+      </p>
+    </div>
+
+    <!-- Error Message -->
     <div v-if="hasError" class="error-message">
       ❌ {{ errorMessage }}
-    </div>
-
-               <!-- Statistics -->
-     <div v-if="stats" class="stats-grid">
-             <div class="stat-card">
-         <div class="stat-icon"><span>📈</span></div>
-         <div class="stat-content">
-           <h3>Max Demand</h3>
-           <p class="stat-value">{{ formatNumber(stats.maxDemand) }} MW</p>
-         </div>
-       </div>
-       
-       <div class="stat-card">
-         <div class="stat-icon"><span>📉</span></div>
-         <div class="stat-content">
-           <h3>Min Demand</h3>
-           <p class="stat-value">{{ formatNumber(stats.minDemand) }} MW</p>
-         </div>
-       </div>
-       
-       <div class="stat-card">
-         <div class="stat-icon"><span>📊</span></div>
-         <div class="stat-content">
-           <h3>Average Demand</h3>
-           <p class="stat-value">{{ formatNumber(stats.avgDemand) }} MW</p>
-         </div>
-       </div>
-       
-       <div class="stat-card">
-         <div class="stat-icon"><span>📅</span></div>
-         <div class="stat-content">
-           <h3>Period</h3>
-           <p class="stat-value">{{ formatYear(stats.dateRangeStart) }} - {{ formatYear(stats.dateRangeEnd) }}</p>
-         </div>
-       </div>
-       
-       <div class="stat-card">
-         <div class="stat-icon"><span>📋</span></div>
-         <div class="stat-content">
-           <h3>Records</h3>
-           <p class="stat-value">{{ formatNumber(stats.totalRecords) }}</p>
-         </div>
-       </div>
-       
-       <div class="stat-card">
-         <div class="stat-icon"><span>⚡</span></div>
-         <div class="stat-content">
-           <h3>Total Demand</h3>
-           <p class="stat-value">{{ formatTW(stats.totalDemand) }} TW</p>
-         </div>
-       </div>
-    </div>
-
-         <!-- Charts -->
-     <div class="charts-section">
-       <h2>Electricity Demand Evolution</h2>
-      
-      <div class="chart-container">
-        <apexchart
-          type="line"
-          height="400"
-          :options="demandChartOptions"
-          :series="demandChartSeries"
-        />
+      <div v-if="error.response?.data?.error" class="error-details">
+        <strong>Details:</strong> {{ error.response.data.error }}
       </div>
     </div>
 
-                   <!-- Renewable Energy Charts -->
-      <div class="charts-section">
-        <h2>Renewable Energy</h2>
-       
-       <div class="renewable-charts">
-         <div class="chart-container">
-           <h3>🌪️ Wind Generation</h3>
-           <apexchart
-             type="area"
-             height="300"
-             :options="windChartOptions"
-             :series="windChartSeries"
-           />
-         </div>
-         
-         <div class="chart-container">
-           <h3>☀️ Solar Generation</h3>
-           <apexchart
-             type="area"
-             height="300"
-             :options="solarChartOptions"
-             :series="solarChartSeries"
-           />
-         </div>
-       </div>
-     </div>
+    <!-- Chart Section -->
+    <div class="chart-section">
+      <h2>Data Visualization</h2>
+      <div class="chart-container">
+        <div v-if="!hasData" class="empty-chart">
+          <p>No data loaded. Please import a CSV file to start visualizing.</p>
+        </div>
+        <div v-else class="chart-content">
+          <!-- Date Range Selector -->
+          <div class="date-selector">
+            <label for="start-date">Start Date:</label>
+            <input 
+              id="start-date" 
+              type="date" 
+              v-model="startDate" 
+              @change="updateChart"
+            />
+            <label for="end-date">End Date:</label>
+            <input 
+              id="end-date" 
+              type="date" 
+              v-model="endDate" 
+              @change="updateChart"
+            />
+          </div>
+          
+          <!-- Chart will be added here -->
+          <div class="chart-placeholder">
+            <p>Chart will be displayed here with data from {{ startDate }} to {{ endDate }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-                                                                                                                   <!-- Renewable Energy Percentages -->
-           <div class="charts-section">
-             <div class="chart-header">
-                             <h2>Renewable Energy Mix ({{ selectedMonthLabel }})</h2>
-              
-              <div class="month-selector">
-                <label for="month-selector">Select Month:</label>
-                                <select 
-                  id="month-selector" 
-                  v-model="selectedMonth" 
-                  class="select-control"
-                  @change="updateRenewableData"
-                >
-                  <option v-for="month in availableMonths" :key="month.value" :value="month.value">
-                    {{ month.label }}
-                  </option>
-                </select>
+    <!-- CSV Import Modal -->
+    <div v-if="showImportModal" class="modal-overlay" @click="closeModal">
+      <div class="modal-content" @click.stop>
+        <div class="modal-header">
+          <h2>Import CSV File</h2>
+          <button @click="closeModal" class="close-btn">×</button>
+        </div>
+
+        <div class="modal-body">
+          <!-- File Upload -->
+          <div class="upload-section">
+            <input 
+              type="file" 
+              ref="fileInput" 
+              @change="handleFileUpload" 
+              accept=".csv"
+              class="file-input"
+            />
+            <div class="upload-area" @click="$refs.fileInput.click()">
+              <p>📁 Click to select CSV file or drag and drop</p>
+              <p v-if="selectedFile" class="file-name">{{ selectedFile.name }}</p>
+            </div>
+          </div>
+
+          <!-- CSV Configuration -->
+          <div v-if="csvData.length > 0" class="config-section">
+            <h3>CSV Configuration</h3>
+            
+            <!-- Header Row -->
+            <div class="config-item">
+              <label class="checkbox-label">
+                <input type="checkbox" v-model="hasHeader" @change="updatePreview">
+                Has header row
+              </label>
+            </div>
+
+            <!-- Delimiter Selection -->
+            <div class="config-item">
+              <label>Delimiter:</label>
+              <div class="delimiter-options">
+                <label class="radio-label">
+                  <input type="radio" v-model="delimiter" value="," @change="updatePreview">
+                  Comma (,)
+                </label>
+                <label class="radio-label">
+                  <input type="radio" v-model="delimiter" value=";" @change="updatePreview">
+                  Semicolon (;)
+                </label>
+                <label class="radio-label">
+                  <input type="radio" v-model="delimiter" value="\t" @change="updatePreview">
+                  Tab
+                </label>
+                <label class="radio-label">
+                  <input type="radio" v-model="delimiter" value="|" @change="updatePreview">
+                  Pipe (|)
+                </label>
               </div>
             </div>
-         
-         <div class="chart-container">
-           <apexchart
-             type="radialBar"
-             height="400"
-             :options="renewablePercentagesOptions"
-             :series="renewablePercentagesSeries"
-           />
-         </div>
-       </div>
 
-                               <!-- Flow Chart -->
-         <div class="charts-section">
-           <div class="chart-header">
-             <h2>Flow - Daily Pattern</h2>
-            
-            <div class="flow-controls">
-              <div class="date-selector">
-                <label for="date-selector">Select Date:</label>
-                <input 
-                  id="date-selector" 
-                  type="date" 
-                  v-model="selectedDate" 
-                  class="date-control"
-                  @change="fetchFlowData"
-                />
+            <!-- Column Selection -->
+            <div class="config-item">
+              <label>Column Selection:</label>
+              <div class="column-selection">
+                <div class="column-selector">
+                  <label for="x-column">X-Axis Column:</label>
+                  <select id="x-column" v-model="selectedXColumn" class="select-control">
+                    <option value="">Select X column</option>
+                    <option v-for="(header, index) in previewHeaders" :key="index" :value="index">
+                      {{ header }}
+                    </option>
+                  </select>
+                </div>
+                <div class="column-selector">
+                  <label for="y-column">Y-Axis Column:</label>
+                  <select id="y-column" v-model="selectedYColumn" class="select-control">
+                    <option value="">Select Y column</option>
+                    <option v-for="(header, index) in previewHeaders" :key="index" :value="index">
+                      {{ header }}
+                    </option>
+                  </select>
+                </div>
               </div>
-              
-              <div class="flow-selector">
-                <label for="flow-selector">Select Flow Type:</label>
-                <select 
-                  id="flow-selector" 
-                  v-model="selectedFlowType" 
-                  class="select-control"
-                  @change="fetchFlowData"
-                >
-                  <option v-for="flow in availableFlowTypes" :key="flow.value" :value="flow.value">
-                    {{ flow.label }}
-                  </option>
-                </select>
+            </div>
+
+            <!-- Data Preview -->
+            <div class="preview-section">
+              <h4>Data Preview</h4>
+              <div class="preview-table">
+                <table>
+                  <thead v-if="hasHeader">
+                    <tr>
+                      <th v-for="(header, index) in previewHeaders" :key="index">
+                        {{ header }}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="(row, rowIndex) in previewRows" :key="rowIndex">
+                      <td v-for="(cell, cellIndex) in row" :key="cellIndex">
+                        {{ cell }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
-         
-         <div class="chart-container">
-           <apexchart
-             type="bar"
-             height="400"
-             :options="ifaFlowChartOptions"
-             :series="ifaFlowChartSeries"
-           />
-         </div>
-       </div>
+
+          <!-- Action Buttons -->
+          <div class="modal-actions">
+            <button @click="closeModal" class="btn-secondary">Cancel</button>
+            <button 
+              @click="importData" 
+              :disabled="!canImport || isLoading"
+              class="btn-primary"
+            >
+              <span v-if="isLoading">⏳ Uploading...</span>
+              <span v-else>Import Data</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex'
-// import SafeChart from '@/components/SafeChart.vue'
 
 export default {
   name: 'DashboardView',
-  components: {
-    // SafeChart
+  
+  data() {
+    return {
+      showImportModal: false,
+      selectedFile: null,
+      csvData: [],
+      hasHeader: true,
+      delimiter: ',',
+      selectedXColumn: '',
+      selectedYColumn: '',
+      startDate: '',
+      endDate: ''
+    }
   },
-  
-           data() {
-        return {
-          selectedPeriod: 'month',
-          selectedPrecision: this.$store.state.selectedPrecision || 2,
-          selectedMonth: '',
-          selectedDate: '', // Will be set to last available date in mounted
-          selectedFlowType: 'ifaFlow' // Default flow type
-        }
-      },
-  
+
   computed: {
-         ...mapState(['electricityData', 'stats', 'loading', 'error']),
-     ...mapGetters(['isLoading', 'hasError', 'errorMessage', 'windData', 'solarData', 'renewablePercentages', 'ifaFlowData', 'ndChartData']),
-     
-     availableMonths() {
-       // Get renewable percentages data from store
-       const renewableData = this.$store.state.renewablePercentages
-       
-       if (!renewableData || renewableData.length === 0) return []
-       
-       // Get months from renewable percentages data
-       return renewableData
-         .slice() // Create a copy to avoid side effects
-         .sort((a, b) => b.month.localeCompare(a.month)) // Newest first
-         .map(item => {
-           const [year, month] = item.month.split('-')
-           const date = new Date(parseInt(year), parseInt(month) - 1, 1)
-           return {
-             value: item.month,
-             label: date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' })
-           }
-         })
-       },
-     
-           selectedMonthLabel() {
-        if (!this.selectedMonth && this.availableMonths.length > 0) {
-          return this.availableMonths[0].label
-        }
-        const selectedMonthOption = this.availableMonths.find(month => month.value === this.selectedMonth)
-        return selectedMonthOption ? selectedMonthOption.label : 'Selected Month'
-      },
-
-      lastAvailableDate() {
-        // Try to get from ND data first (which is loaded)
-        const ndData = this.$store.state.ndChartData
-        if (ndData && ndData.length > 0) {
-          // Get the last week start date and add 6 days to get the end of the week
-          const lastWeekStart = ndData[ndData.length - 1].x
-          if (lastWeekStart) {
-            const lastWeekDate = new Date(lastWeekStart)
-            lastWeekDate.setDate(lastWeekDate.getDate() + 6) // Add 6 days to get end of week
-            return lastWeekDate.toISOString().split('T')[0]
-          }
-        }
-        
-        // Fallback to electricity data if available
-        if (this.electricityData && this.electricityData.length > 0) {
-          const dates = [...new Set(this.electricityData.map(item => item.date))]
-            .sort((a, b) => new Date(b) - new Date(a))
-          return dates[0] || ''
-        }
-        
-        // Hardcoded fallback to last known date
-        return '2024-12-02'
-      },
-
-      availableFlowTypes() {
-        return [
-          { value: 'ifaFlow', label: 'IFA Flow' },
-          { value: 'ifa2Flow', label: 'IFA2 Flow' },
-          { value: 'britnedFlow', label: 'BritNed Flow' },
-          { value: 'moyleFlow', label: 'Moyle Flow' },
-          { value: 'eastWestFlow', label: 'East-West Flow' },
-          { value: 'nemoFlow', label: 'NEMO Flow' },
-          { value: 'nslFlow', label: 'NSL Flow' }
-        ]
-      },
-     
-   
-          
-         demandChartOptions() {
-       return {
-         chart: {
-           type: 'line',
-           zoom: {
-             enabled: true
-           },
-           toolbar: {
-             show: true
-           }
-         },
-         dataLabels: {
-           enabled: false
-         },
-         stroke: {
-           curve: 'smooth',
-           width: 2
-         },
-                   forecastDataPoints: {
-            count: 36
-          },
-         title: {
-           text: 'National Demand (ND) - Weekly Averages',
-           align: 'left'
-         },
-         xaxis: {
-           type: 'datetime',
-           labels: {
-             format: 'dd/MM/yyyy'
-           }
-         },
-         yaxis: {
-           title: {
-             text: 'Demand (MW)'
-           },
-           labels: {
-             formatter: (value) => {
-               try {
-                 return this.formatNumber(value)
-               } catch (error) {
-                 return value
-               }
-             }
-           }
-         },
-         tooltip: {
-           x: {
-             format: 'dd/MM/yyyy'
-           },
-           y: {
-             formatter: (value) => {
-               try {
-                 return `${this.formatNumber(value)} MW`
-               } catch (error) {
-                 return `${value} MW`
-               }
-             }
-           }
-         },
-         colors: ['#667eea']
-       }
-     },
+    ...mapState(['loading', 'error']),
+    ...mapGetters(['isLoading', 'hasError', 'errorMessage', 'hasData', 'dataHeaders', 'dataRows', 'totalRows', 'totalColumns', 'fileName', 'savedFileName']),
     
-         demandChartSeries() {
-       const data = this.ndChartData
-       
-       // Protection against invalid data
-       if (!Array.isArray(data) || data.length === 0) {
-         return [{
-           name: 'National Demand (ND)',
-           data: []
-         }]
-       }
-       
-               // Generate forecast data (36 points with random values between 20,000 and 27,000)
-        const forecastData = this.generateForecastData(data, 36)
-       
-       return [{
-         name: 'National Demand (ND)',
-         data: [...data, ...forecastData]
-       }]
-     },
-    
-    windChartOptions() {
-      return {
-        chart: {
-          type: 'area',
-          zoom: {
-            enabled: true
-          }
-        },
-        dataLabels: {
-          enabled: false
-        },
-        stroke: {
-          curve: 'smooth',
-          width: 2
-        },
-        fill: {
-          type: 'gradient',
-          gradient: {
-            shadeIntensity: 1,
-            opacityFrom: 0.7,
-            opacityTo: 0.3,
-            stops: [0, 90, 100]
-          }
-        },
-        xaxis: {
-          type: 'datetime',
-          labels: {
-            format: 'dd/MM/yyyy'
-          }
-        },
-        yaxis: {
-          title: {
-            text: 'Generation (MW)'
-          },
-          labels: {
-            formatter: (value) => {
-              return `${value.toFixed(2)} MW`
-            }
-          }
-        },
-        tooltip: {
-          x: {
-            format: 'dd/MM/yyyy'
-          },
-          y: {
-            formatter: (value) => {
-              return `${value.toFixed(2)} MW`
-            }
-          }
-        },
-        colors: ['#00d4aa']
-      }
-    },
-    
-    windChartSeries() {
-      const data = this.windData
-      
-      // Protection against invalid data
-      if (!Array.isArray(data) || data.length === 0) {
-        return [{
-          name: 'Wind Generation',
-          data: []
-        }]
-      }
-      
-      return [{
-        name: 'Wind Generation',
-        data: data
-      }]
-    },
-    
-    solarChartOptions() {
-      return {
-        chart: {
-          type: 'area',
-          zoom: {
-            enabled: true
-          }
-        },
-        dataLabels: {
-          enabled: false
-        },
-        stroke: {
-          curve: 'smooth',
-          width: 2
-        },
-        fill: {
-          type: 'gradient',
-          gradient: {
-            shadeIntensity: 1,
-            opacityFrom: 0.7,
-            opacityTo: 0.3,
-            stops: [0, 90, 100]
-          }
-        },
-        xaxis: {
-          type: 'datetime',
-          labels: {
-            format: 'dd/MM/yyyy'
-          }
-        },
-        yaxis: {
-          title: {
-            text: 'Generation (MW)'
-          },
-          labels: {
-            formatter: (value) => {
-              return `${value.toFixed(2)} MW`
-            }
-          }
-        },
-        tooltip: {
-          x: {
-            format: 'dd/MM/yyyy'
-          },
-          y: {
-            formatter: (value) => {
-              return `${value.toFixed(2)} MW`
-            }
-          }
-        },
-        colors: ['#ffd700']
-      }
-    },
-    
-    solarChartSeries() {
-      const data = this.solarData
-      
-      // Protection against invalid data
-      if (!Array.isArray(data) || data.length === 0) {
-        return [{
-          name: 'Solar Generation',
-          data: []
-        }]
-      }
-      
-      return [{
-        name: 'Solar Generation',
-        data: data
-      }]
+    previewHeaders() {
+      if (this.csvData.length === 0) return []
+      const firstRow = this.csvData[0]
+      return this.hasHeader ? firstRow : firstRow.map((_, index) => `Column ${index + 1}`)
     },
 
-     renewablePercentagesOptions() {
-       return {
-         chart: {
-           type: 'radialBar',
-           height: 400,
-           offsetY: -20
-         },
-         plotOptions: {
-           radialBar: {
-             startAngle: -135,
-             endAngle: 135,
-             dataLabels: {
-               name: {
-                 fontSize: '16px',
-                 color: undefined,
-                 offsetY: 120
-               },
-               value: {
-                 offsetY: 76,
-                 fontSize: '22px',
-                 color: undefined,
-                 formatter: function (val) {
-                   return val + '%'
-                 }
-               }
-             }
-           }
-         },
-         fill: {
-           type: 'gradient',
-           gradient: {
-             shade: 'dark',
-             shadeIntensity: 0.15,
-             inverseColors: false,
-             opacityFrom: 1,
-             opacityTo: 1,
-             stops: [0, 50, 65, 91]
-           }
-         },
-                   stroke: {
-            dashArray: 0
-          },
-         labels: ['Solar Energy', 'Wind Energy', 'Total Renewable'],
-         colors: ['#ffd700', '#00d4aa', '#667eea']
-       }
-     },
+    previewRows() {
+      if (this.csvData.length === 0) return []
+      const startIndex = this.hasHeader ? 1 : 0
+      return this.csvData.slice(startIndex, startIndex + 5) // Show first 5 rows
+    },
 
-           renewablePercentagesSeries() {
-        const percentages = this.renewablePercentages(this.selectedMonth)
-        return [percentages.solar, percentages.wind, percentages.total]
-      },
-
-      ifaFlowChartOptions() {
-        return {
-          chart: {
-            type: 'bar',
-            height: 400,
-            toolbar: {
-              show: true
-            }
-          },
-          plotOptions: {
-            bar: {
-              horizontal: false,
-              columnWidth: '70%',
-              borderRadius: 4
-            }
-          },
-          dataLabels: {
-            enabled: false
-          },
-          stroke: {
-            show: true,
-            width: 2,
-            colors: ['transparent']
-          },
-          xaxis: {
-            categories: this.ifaFlowData.map(item => item.x),
-            title: {
-              text: 'Time (30-minute intervals)'
-            }
-          },
-          yaxis: {
-            title: {
-              text: 'IFA Flow (MW)'
-            },
-            labels: {
-              formatter: (value) => {
-                return this.formatNumber(value)
-              }
-            }
-          },
-          fill: {
-            opacity: 1,
-            colors: ['#667eea']
-          },
-          tooltip: {
-            y: {
-              formatter: (value) => {
-                return `${this.formatNumber(value)} MW`
-              }
-            }
-          },
-                     title: {
-             text: `${this.getFlowTypeLabel()} - 48 Half-Hour Periods`,
-             align: 'left'
-           }
-        }
-      },
-
-      ifaFlowChartSeries() {
-        return [{
-          name: 'IFA Flow',
-          data: this.ifaFlowData.map(item => item.y)
-        }]
-      }
-   },
-  
-  methods: {
-    ...mapActions(['fetchElectricityData', 'fetchStats', 'fetchNDData', 'fetchWindData', 'fetchSolarData', 'fetchRenewablePercentages']),
-    
-         formatNumber(value) {
-       return new Intl.NumberFormat('en-US').format(Math.round(value))
-     },
-     
-     formatTW(value) {
-       // Convert MW to TW (1 TW = 1,000,000 MW)
-       const twValue = value / 1000000
-       return new Intl.NumberFormat('en-US', { 
-         minimumFractionDigits: 2,
-         maximumFractionDigits: 2 
-       }).format(twValue)
-     },
-    
-         formatDate(date) {
-       if (!date) return 'N/A'
-       const d = new Date(date)
-       return d.toLocaleDateString('en-US', {
-         month: '2-digit',
-         day: '2-digit',
-         year: 'numeric'
-       })
-     },
-     
-     formatYear(date) {
-       if (!date) return 'N/A'
-       const d = new Date(date)
-       return d.getFullYear().toString()
-     },
-    
-         async reloadData() {
-       await this.fetchElectricityData()
-     },
-     
-     updateRenewableData() {
-       // Trigger reactive update of renewable percentages
-       this.$forceUpdate()
-     },
-
-           async fetchFlowData() {
-        if (this.selectedDate && this.selectedFlowType) {
-          await this.$store.dispatch('fetchFlowData', {
-            date: this.selectedDate,
-            flowType: this.selectedFlowType
-          })
-        }
-      },
-
-      getFlowTypeLabel() {
-        const flowType = this.availableFlowTypes.find(flow => flow.value === this.selectedFlowType)
-        return flowType ? flowType.label : 'Flow'
-      },
-
-      generateForecastData(historicalData, count) {
-        if (!historicalData || historicalData.length === 0) return []
-        
-        const forecastData = []
-        const lastDate = new Date(historicalData[historicalData.length - 1].x)
-        
-        for (let i = 1; i <= count; i++) {
-          const forecastDate = new Date(lastDate)
-          forecastDate.setMonth(lastDate.getMonth() + i)
-          
-          // Generate random value between 20,000 and 27,000 MW
-          const randomValue = Math.floor(Math.random() * (27000 - 20000 + 1)) + 20000
-          
-          forecastData.push({
-            x: forecastDate.getTime(),
-            y: randomValue
-          })
-        }
-        
-        return forecastData
-      },
-    
-
+    canImport() {
+      return this.selectedFile && this.csvData.length > 0 && this.selectedXColumn !== '' && this.selectedYColumn !== ''
+    }
   },
-  
-           async mounted() {
-        try {
-          // Use optimized endpoints instead of heavy /data endpoint
-          await this.fetchNDData()
-          await this.fetchWindData()
-          await this.fetchSolarData()
-          await this.fetchRenewablePercentages()
-          await this.fetchStats()
-          
-          // Wait a bit for data to be processed
-          await this.$nextTick()
-          
-          // Set the first available month as default if no month is selected
-          if (!this.selectedMonth && this.availableMonths.length > 0) {
-            this.selectedMonth = this.availableMonths[0].value
-          }
 
-          // Set the last available date as default for IFA Flow
-          if (!this.selectedDate) {
-            this.selectedDate = this.lastAvailableDate
-            console.log('Setting default date for Flow:', this.selectedDate)
-          }
+  methods: {
+    ...mapActions(['uploadCSV']),
+    
+    closeModal() {
+      this.showImportModal = false
+      this.selectedFile = null
+      this.csvData = []
+      this.selectedXColumn = ''
+      this.selectedYColumn = ''
+    },
 
-          // Load Flow data for the selected date
-          if (this.selectedDate) {
-            await this.fetchFlowData()
-          }
-        } catch (error) {
-          console.error('Error during initial loading:', error)
+    async handleFileUpload(event) {
+      const file = event.target.files[0]
+      if (!file) return
+
+      this.selectedFile = file
+      await this.parseCSV(file)
+    },
+
+    async parseCSV(file) {
+      const text = await file.text()
+      const lines = text.split('\n').filter(line => line.trim())
+      
+      // Try different delimiters to auto-detect
+      const delimiters = [',', ';', '\t', '|']
+      let bestDelimiter = ','
+      let maxColumns = 0
+
+      for (const delim of delimiters) {
+        const columns = lines[0].split(delim).length
+        if (columns > maxColumns) {
+          maxColumns = columns
+          bestDelimiter = delim
         }
       }
+
+      this.delimiter = bestDelimiter
+      this.csvData = lines.map(line => line.split(this.delimiter))
+      this.updatePreview()
+    },
+
+    updatePreview() {
+      // This method will be called when configuration changes
+      // For now, we'll just re-parse with current settings
+      if (this.selectedFile) {
+        this.parseCSV(this.selectedFile)
+      }
+    },
+
+    async importData() {
+      try {
+        await this.uploadCSV({
+          file: this.selectedFile,
+          hasHeader: this.hasHeader,
+          delimiter: this.delimiter,
+          xColumn: this.selectedXColumn,
+          yColumn: this.selectedYColumn
+        })
+
+        this.closeModal()
+        
+        // Set default date range if we have data
+        if (this.dataRows.length > 0) {
+          const firstRow = this.dataRows[0]
+          const lastRow = this.dataRows[this.dataRows.length - 1]
+          
+          // Try to find date columns
+          const dateColumns = this.findDateColumns()
+          if (dateColumns.length > 0) {
+            const dateCol = dateColumns[0]
+            this.startDate = this.parseDate(firstRow[dateCol])
+            this.endDate = this.parseDate(lastRow[dateCol])
+          }
+        }
+      } catch (error) {
+        console.error('Error importing data:', error)
+        console.error('Error details:', {
+          message: error.message,
+          response: error.response?.data,
+          status: error.response?.status,
+          statusText: error.response?.statusText
+        })
+      }
+    },
+
+    findDateColumns() {
+      // Simple heuristic to find date columns
+      const dateColumns = []
+      const sampleRow = this.dataRows[0] || []
+      
+      sampleRow.forEach((cell, index) => {
+        if (this.isDateString(cell)) {
+          dateColumns.push(index)
+        }
+      })
+      
+      return dateColumns
+    },
+
+    isDateString(str) {
+      if (!str) return false
+      const datePatterns = [
+        /^\d{4}-\d{2}-\d{2}$/, // YYYY-MM-DD
+        /^\d{2}\/\d{2}\/\d{4}$/, // MM/DD/YYYY
+        /^\d{2}-\d{2}-\d{4}$/, // MM-DD-YYYY
+        /^\d{1,2}\/\d{1,2}\/\d{2,4}$/ // Various date formats
+      ]
+      return datePatterns.some(pattern => pattern.test(str.trim()))
+    },
+
+    parseDate(dateStr) {
+      if (!dateStr) return ''
+      const date = new Date(dateStr)
+      return date.toISOString().split('T')[0]
+    },
+
+    updateChart() {
+      // TODO: Update chart with filtered data
+      console.log('Updating chart with date range:', this.startDate, 'to', this.endDate)
+    }
+  }
 }
 </script>
 
 <style scoped>
 .dashboard {
-  max-width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 .dashboard-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .dashboard-header h1 {
   color: #2c3e50;
   margin-bottom: 0.5rem;
+  font-size: 2.5rem;
 }
 
 .subtitle {
   color: #7f8c8d;
+  font-size: 1.2rem;
+}
+
+.import-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.import-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.import-btn:hover {
+  transform: translateY(-2px);
+}
+
+.file-info {
+  margin-top: 1rem;
+  color: #667eea;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.error-message {
+  background: #fee;
+  color: #c33;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border: 1px solid #fcc;
+  text-align: center;
+}
+
+.error-details {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #fcc;
+  font-size: 0.9rem;
+}
+
+.chart-section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.chart-section h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.chart-container {
+  min-height: 400px;
+}
+
+.empty-chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  background: #f8f9fa;
+  border: 2px dashed #dee2e6;
+  border-radius: 8px;
+  color: #6c757d;
   font-size: 1.1rem;
 }
 
-.controls {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2rem;
-  padding: 1rem;
-  background: #f8f9fa;
-  border-radius: 8px;
+.chart-content {
+  min-height: 400px;
 }
 
-.control-group {
+.date-selector {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.date-selector label {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.date-selector input {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.chart-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  color: #6c757d;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #6c757d;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  color: #2c3e50;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.upload-section {
+  margin-bottom: 2rem;
+}
+
+.file-input {
+  display: none;
+}
+
+.upload-area {
+  border: 2px dashed #dee2e6;
+  border-radius: 8px;
+  padding: 3rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.upload-area:hover {
+  border-color: #667eea;
+}
+
+.upload-area p {
+  margin: 0.5rem 0;
+  color: #6c757d;
+}
+
+.file-name {
+  color: #667eea !important;
+  font-weight: 600;
+}
+
+.config-section {
+  margin-bottom: 2rem;
+}
+
+.config-section h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.config-item {
+  margin-bottom: 1.5rem;
+}
+
+.config-item label {
+  display: block;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.checkbox-label, .radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.checkbox-label input, .radio-label input {
+  margin: 0;
+}
+
+.delimiter-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.column-selection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.column-selector {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.control-group label {
+.column-selector label {
   font-weight: 600;
   color: #2c3e50;
+  font-size: 0.9rem;
 }
 
 .select-control {
@@ -769,233 +630,111 @@ export default {
   border: 1px solid #ddd;
   border-radius: 4px;
   background: white;
+  font-size: 0.9rem;
   min-width: 150px;
 }
 
-.error-message {
-  background: #fee;
-  color: #c33;
-  padding: 1rem;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-  border: 1px solid #fcc;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 3rem;
-}
-
-.stat-card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  transition: transform 0.3s ease;
-}
-
-.stat-card:hover {
-  transform: translateY(-2px);
-}
-
- .stat-icon {
-   font-size: 1.8rem;
-   width: 60px;
-   height: 60px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-   color: white;
-   border-radius: 50%;
- }
-
- .stat-icon span {
-   color: white;
- }
-
-.stat-content h3 {
-  margin: 0 0 0.5rem 0;
-  color: #2c3e50;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.stat-value {
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #667eea;
-}
-
-.charts-section {
-  margin-bottom: 3rem;
-}
-
- .charts-section h2 {
-   color: #2c3e50;
-   margin-bottom: 1.5rem;
-   padding-bottom: 0.5rem;
-   border-bottom: 2px solid #667eea;
- }
-
- .chart-header {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   margin-bottom: 1.5rem;
-   padding-bottom: 0.5rem;
-   border-bottom: 2px solid #667eea;
- }
-
- .chart-header h2 {
-   margin: 0;
-   border: none;
-   padding: 0;
-   flex: 1;
- }
-
- .month-selector {
-   display: flex;
-   align-items: center;
-   gap: 0.5rem;
-   margin-left: 1rem;
- }
-
- .month-selector label {
-   font-weight: 600;
-   color: #2c3e50;
-   white-space: nowrap;
- }
-
-   .month-selector .select-control {
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background: white;
-    min-width: 150px;
-    font-size: 0.9rem;
-  }
-
-  .date-selector {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-left: 1rem;
-  }
-
-  .date-selector label {
-    font-weight: 600;
-    color: #2c3e50;
-    white-space: nowrap;
-  }
-
-     .date-selector .date-control {
-     padding: 0.5rem;
-     border: 1px solid #ddd;
-     border-radius: 4px;
-     background: white;
-     min-width: 150px;
-     font-size: 0.9rem;
-   }
-
-   .flow-controls {
-     display: flex;
-     align-items: center;
-     gap: 1rem;
-     margin-left: 1rem;
-   }
-
-   .flow-selector {
-     display: flex;
-     align-items: center;
-     gap: 0.5rem;
-   }
-
-   .flow-selector label {
-     font-weight: 600;
-     color: #2c3e50;
-     white-space: nowrap;
-   }
-
-.chart-container {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+.preview-section {
   margin-bottom: 2rem;
 }
 
-.renewable-charts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2rem;
+.preview-section h4 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
 }
 
-.renewable-charts .chart-container {
-  margin-bottom: 0;
+.preview-table {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
 }
 
+.preview-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
-  
-  .renewable-charts h3 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-    text-align: center;
+.preview-table th,
+.preview-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.preview-table th {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #2c3e50;
+  position: sticky;
+  top: 0;
+}
+
+.preview-table tr:hover {
+  background: #f8f9fa;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding-top: 1rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: #667eea;
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #5a6fd8;
+}
+
+.btn-primary:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #5a6268;
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 1rem;
   }
-
- @media (max-width: 768px) {
-   .stats-grid {
-     grid-template-columns: 1fr;
-   }
-   
-   .renewable-charts {
-     grid-template-columns: 1fr;
-   }
-
-   .chart-header {
-     flex-direction: column;
-     align-items: flex-start;
-     gap: 1rem;
-   }
-
-   .month-selector {
-     margin-left: 0;
-     width: 100%;
-   }
-
-       .month-selector .select-control {
-      flex: 1;
-    }
-
-    .date-selector {
-      margin-left: 0;
-      width: 100%;
-    }
-
-         .date-selector .date-control {
-       flex: 1;
-     }
-
-     .flow-controls {
-       margin-left: 0;
-       width: 100%;
-       flex-direction: column;
-       gap: 0.5rem;
-     }
-
-     .flow-selector {
-       width: 100%;
-     }
-
-     .flow-selector .select-control {
-       flex: 1;
-     }
-   }
+  
+  .modal-content {
+    width: 95%;
+    margin: 1rem;
+  }
+  
+  .date-selector {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .delimiter-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+  }
+}
 </style> 

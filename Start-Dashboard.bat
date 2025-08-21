@@ -1,14 +1,14 @@
 @echo off
-title UK Electricity Dashboard
+title Universal CSV Processor
 echo.
-echo    UK Electricity Dashboard
+echo    Universal CSV Processor
 echo ================================
 echo.
 
-echo Starting all backend services...
-start "Backend-Orchestrator" cmd /k "cd Graph-Backend && npm run start-all"
+echo Starting backend server...
+start "Backend-Server" cmd /k "cd Graph-Backend && npm run start-all"
 
-echo Waiting 5 seconds for backend services to start...
+echo Waiting 5 seconds for backend server to start...
 timeout /t 5 /nobreak > nul
 
 echo Starting frontend...
@@ -19,6 +19,6 @@ echo Servers started !
 echo.
 echo Open your browser at : http://localhost:8080
 echo.
-echo To stop : close the windows or type 'taskkill /f /im node.exe'
+echo To stop : close the cmd or type 'taskkill /f /im node.exe'
 echo.
 pause 
