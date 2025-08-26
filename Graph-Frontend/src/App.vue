@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <header class="app-header">
-      <h1>Dashboard</h1>
-      <p>Electricity consumption 2009-2024</p>
+      <h1>Universal CSV Processor</h1>
+      <p>Data visualization and analysis tool</p>
     </header>
 
     <main class="main-content">
@@ -10,7 +10,7 @@
     </main>
 
     <footer class="footer">
-      <p>&copy; 2024 UK Electricity Consumption Dashboard - Data 2009-2024</p>
+      <p>&copy; 2024 Universal CSV Processor - Data Visualization Tool</p>
     </footer>
   </div>
 </template>
