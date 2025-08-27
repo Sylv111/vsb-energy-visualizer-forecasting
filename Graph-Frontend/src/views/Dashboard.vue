@@ -63,23 +63,9 @@
             <div class="chart-wrapper">
               <!-- Action Buttons -->
               <div class="action-buttons">
-                <!-- Chart Options Button -->
-                <button @click="toggleChartOptions" class="action-btn chart-options-btn">
-                  <img src="@/assets/icons/chart-options.svg" alt="Chart Options" class="action-icon">
-                  <span>Chart Options</span>
-                </button>
-
-                <!-- Data Preview Button -->
-                <button @click="showDataPreview = true" class="action-btn data-preview-btn">
-                  <img src="@/assets/icons/data-preview.svg" alt="Data Preview" class="action-icon">
-                  <span>Data Preview</span>
-                </button>
-
-                <!-- Change File Button -->
-                <button @click="showFileSelector = true" class="action-btn change-file-btn">
-                  <img src="@/assets/icons/file-search.svg" alt="Change File" class="action-icon">
-                  <span>Change File</span>
-                </button>
+                <ButtonChartOptions @click="toggleChartOptions" />
+                <ButtonDataPreview @click="showDataPreview = true" />
+                <ButtonChangeFile @click="showFileSelector = true" />
               </div>
 
               <!-- Chart Options Panel -->
@@ -117,213 +103,68 @@
     </div>
 
     <!-- CSV Import Modal -->
-    <div v-if="showImportModal" class="modal-overlay" @click="closeModal">
-      <div class="modal-content" @click.stop>
-        <div class="modal-header">
-          <h2>Import CSV File</h2>
-          <button @click="closeModal" class="close-btn">×</button>
-        </div>
-
-        <div class="modal-body">
-          <!-- File Upload -->
-          <div class="upload-section">
-            <input 
-              type="file" 
-              ref="fileInput" 
-              @change="handleFileUpload" 
-              accept=".csv"
-              class="file-input"
-            />
-            <div class="upload-area" @click="$refs.fileInput.click()">
-              <p>📁 Click to select CSV file or drag and drop</p>
-              <p v-if="selectedFile" class="file-name">{{ selectedFile.name }}</p>
-            </div>
-          </div>
-
-          <!-- CSV Configuration -->
-          <div v-if="csvData.length > 0" class="config-section">
-            <h3>CSV Configuration</h3>
-            
-            <!-- Header Row -->
-            <div class="config-item">
-              <label class="checkbox-label">
-                <input type="checkbox" v-model="hasHeader" @change="updatePreview">
-                Has header row
-              </label>
-            </div>
-
-            <!-- Delimiter Selection -->
-            <div class="config-item">
-              <label>Delimiter:</label>
-              <div class="delimiter-options">
-                <label class="radio-label">
-                  <input type="radio" v-model="delimiter" value="," @change="updatePreview">
-                  Comma (,)
-                </label>
-                <label class="radio-label">
-                  <input type="radio" v-model="delimiter" value=";" @change="updatePreview">
-                  Semicolon (;)
-                </label>
-                <label class="radio-label">
-                  <input type="radio" v-model="delimiter" value="\t" @change="updatePreview">
-                  Tab
-                </label>
-                <label class="radio-label">
-                  <input type="radio" v-model="delimiter" value="|" @change="updatePreview">
-                  Pipe (|)
-                </label>
-              </div>
-            </div>
-
-            <!-- Column Selection -->
-            <div class="config-item">
-              <label>Column Selection:</label>
-              <div class="column-selection">
-                <div class="column-selector">
-                  <label for="x-column">X-Axis Column:</label>
-                  <select id="x-column" v-model="selectedXColumn" class="select-control">
-                    <option value="">Select X column</option>
-                    <option v-for="(header, index) in previewHeaders" :key="index" :value="index">
-                      {{ header }}
-                    </option>
-                  </select>
-                </div>
-                <div class="column-selector">
-                  <label for="y-column">Y-Axis Column:</label>
-                  <select id="y-column" v-model="selectedYColumn" class="select-control">
-                    <option value="">Select Y column</option>
-                    <option v-for="(header, index) in previewHeaders" :key="index" :value="index">
-                      {{ header }}
-                    </option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            <!-- Data Preview -->
-            <div class="preview-section">
-              <h4>Data Preview</h4>
-              <div class="preview-table">
-                <table>
-                  <thead v-if="hasHeader">
-                    <tr>
-                      <th v-for="(header, index) in previewHeaders" :key="index">
-                        {{ header }}
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr v-for="(row, rowIndex) in previewRows" :key="rowIndex">
-                      <td v-for="(cell, cellIndex) in row" :key="cellIndex">
-                        {{ cell }}
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-
-          <!-- Action Buttons -->
-          <div class="modal-actions">
-            <button @click="closeModal" class="btn-secondary">Cancel</button>
-            <button 
-              @click="importData" 
-              :disabled="!canImport || isLoading"
-              class="btn-primary"
-            >
-              <span v-if="isLoading">⏳ Uploading...</span>
-              <span v-else>Import Data</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <ModalCsvImport
+      :show="showImportModal"
+      :selected-file="selectedFile"
+      :csv-data="csvData"
+      v-model:has-header="hasHeader"
+      v-model:delimiter="delimiter"
+      v-model:selected-x-column="selectedXColumn"
+      v-model:selected-y-column="selectedYColumn"
+      :preview-headers="previewHeaders"
+      :preview-rows="previewRows"
+      :can-import="canImport"
+      :is-loading="isLoading"
+      @close="closeModal"
+      @file-upload="handleFileUpload"
+      @update-preview="updatePreview"
+      @import-data="importData"
+    />
 
     <!-- Data Preview Modal -->
-    <div v-if="showDataPreview" class="modal-overlay" @click="showDataPreview = false">
-      <div class="data-preview-modal" @click.stop>
-        <div class="modal-header">
-          <h2>📊 Data Preview - {{ selectedFile }}</h2>
-          <button @click="showDataPreview = false" class="close-btn">×</button>
-        </div>
-        
-        <div class="modal-body">
-          <div class="data-info-fixed">
-            <p><strong>Total Rows:</strong> {{ selectedFileData.totalRows }} | <strong>Columns:</strong> {{ selectedFileData.totalColumns }}</p>
-          </div>
-          
-          <div class="data-table-container" ref="dataTableContainer" @scroll="handleDataTableScroll">
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th v-for="header in selectedFileData.headers" :key="header">{{ header }}</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="(row, index) in displayedData" :key="index">
-                  <td v-for="(cell, cellIndex) in row" :key="cellIndex">{{ cell }}</td>
-                </tr>
-              </tbody>
-            </table>
-            
-            <!-- Loading indicator for infinite scroll -->
-            <div v-if="isLoadingMore" class="loading-more">
-              <p>Loading more data...</p>
-            </div>
-            
-            <!-- End of data indicator -->
-            <div v-if="hasReachedEnd" class="end-of-data">
-              <p>End of data</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <ModalDataPreview
+      :show="showDataPreview"
+      :file-name="selectedFile"
+      :total-rows="selectedFileData?.totalRows || 0"
+      :total-columns="selectedFileData?.totalColumns || 0"
+      :headers="selectedFileData?.headers || []"
+      :displayed-data="displayedData"
+      :is-loading-more="isLoadingMore"
+      :has-reached-end="hasReachedEnd"
+      @close="showDataPreview = false"
+      @scroll="handleDataTableScroll"
+    />
 
     <!-- File Selection Modal -->
-    <div v-if="showFileSelector" class="modal-overlay" @click="showFileSelector = false">
-      <div class="file-selector-modal" @click.stop>
-        <div class="modal-header">
-          <h2>📁 Select CSV File</h2>
-          <button @click="showFileSelector = false" class="close-btn">×</button>
-        </div>
-        
-        <div class="modal-body">
-          <div class="file-list">
-            <div class="file-items">
-              <div 
-                v-for="file in availableFiles" 
-                :key="file.name"
-                @click="selectFile(file.name)"
-                class="file-item"
-                :class="{ 'selected': file.name === selectedFileForChart }"
-              >
-                <div class="file-item-info">
-                  <span class="file-item-name">{{ file.name }}</span>
-                  <span class="file-item-size">{{ formatFileSize(file.size) }}</span>
-                </div>
-                <div v-if="file.name === selectedFileForChart" class="selected-indicator">
-                  ✓
-                </div>
-              </div>
-              
-              <div v-if="availableFiles.length === 0" class="no-files">
-                <p>No CSV files available. Please import a file first.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <ModalFileSelector
+      :show="showFileSelector"
+      :available-files="availableFiles"
+      :selected-file="selectedFileForChart"
+      @close="showFileSelector = false"
+      @select-file="selectFile"
+    />
   </div>
 </template>
 
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex'
+import ButtonChartOptions from '@/components/ButtonChartOptions.vue'
+import ButtonDataPreview from '@/components/ButtonDataPreview.vue'
+import ButtonChangeFile from '@/components/ButtonChangeFile.vue'
+import ModalCsvImport from '@/components/ModalCsvImport.vue'
+import ModalDataPreview from '@/components/ModalDataPreview.vue'
+import ModalFileSelector from '@/components/ModalFileSelector.vue'
 
 export default {
   name: 'DashboardView',
+  components: {
+    ButtonChartOptions,
+    ButtonDataPreview,
+    ButtonChangeFile,
+    ModalCsvImport,
+    ModalDataPreview,
+    ModalFileSelector
+  },
   
   data() {
     return {
@@ -409,24 +250,6 @@ export default {
             autoSelected: 'zoom'
           },
           background: 'transparent'
-        },
-        title: {
-          text: `Data Visualization: ${this.selectedFile}`,
-          align: 'left',
-          margin: 20,
-          style: {
-            fontSize: '18px',
-            fontWeight: 'bold',
-            color: '#2c3e50'
-          }
-        },
-        subtitle: {
-          text: `${this.selectedFileData.totalRows} data points`,
-          align: 'left',
-          style: {
-            fontSize: '12px',
-            color: '#7f8c8d'
-          }
         },
         xaxis: {
           title: {
@@ -1043,64 +866,15 @@ export default {
   border-bottom: 1px solid #e9ecef;
 }
 
-.action-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  background: white;
-  border: 2px solid #e9ecef;
-  color: #2c3e50;
+/* Responsive design for action buttons */
+@media (max-width: 768px) {
+  .action-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
 }
 
-.action-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
 
-.chart-options-btn:hover {
-  border-color: #667eea;
-  color: #667eea;
-}
-
-.data-preview-btn:hover {
-  border-color: #28a745;
-  color: #28a745;
-}
-
-.change-file-btn:hover {
-  border-color: #ff6b35;
-  color: #ff6b35;
-}
-
-.action-icon {
-  width: 18px;
-  height: 18px;
-  transition: transform 0.2s ease;
-  filter: brightness(0) saturate(100%) invert(30%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0.3) contrast(1);
-}
-
-.chart-options-btn:hover .action-icon {
-  filter: brightness(0) saturate(100%) invert(40%) sepia(100%) saturate(1000%) hue-rotate(220deg) brightness(0.8) contrast(1);
-}
-
-.data-preview-btn:hover .action-icon {
-  filter: brightness(0) saturate(100%) invert(40%) sepia(100%) saturate(1000%) hue-rotate(90deg) brightness(0.8) contrast(1);
-}
-
-.change-file-btn:hover .action-icon {
-  filter: brightness(0) saturate(100%) invert(40%) sepia(100%) saturate(1000%) hue-rotate(15deg) brightness(0.8) contrast(1);
-}
-
-.action-btn:hover .action-icon {
-  transform: scale(1.1);
-}
 
 .chart-options-panel {
   margin-bottom: 1.5rem;
