@@ -17,6 +17,11 @@
       </p>
     </div>
 
+    <!-- Success Message -->
+    <div v-if="showSuccess" class="success-message">
+      ✅ {{ successMessage }}
+    </div>
+
     <!-- Error Message -->
     <div v-if="hasError" class="error-message">
       ❌ {{ errorMessage }}
@@ -185,7 +190,9 @@ export default {
       displayedDataCount: 100,
       isLoadingMore: false,
       showChartOptions: false,
-      showFileSelector: false
+      showFileSelector: false,
+      successMessage: '',
+      showSuccess: false
     }
   },
 
@@ -496,6 +503,19 @@ export default {
 
         this.closeModal()
         
+        await this.refreshFileList()
+        
+        // Auto-select the newly uploaded file if available
+        if (this.savedFileName && this.availableFiles.length > 0) {
+          const newFile = this.availableFiles.find(file => file.name === this.savedFileName)
+          if (newFile) {
+            this.selectedFileForChart = newFile.name
+            await this.loadFileForChart()
+            
+            this.showSuccessMessage(`File "${this.savedFileName}" imported successfully and loaded for visualization!`)
+          }
+        }
+        
         // Set default date range if we have data
         if (this.dataRows.length > 0) {
           const firstRow = this.dataRows[0]
@@ -625,6 +645,17 @@ export default {
       this.selectedFileForChart = fileName
       this.showFileSelector = false
       this.loadFileForChart()
+    },
+
+    showSuccessMessage(message) {
+      this.successMessage = message
+      this.showSuccess = true
+      
+      // Auto-hide after 3 seconds
+      setTimeout(() => {
+        this.showSuccess = false
+        this.successMessage = ''
+      }, 3000)
     }
   }
 }
@@ -695,6 +726,28 @@ export default {
   padding-top: 0.5rem;
   border-top: 1px solid #fcc;
   font-size: 0.9rem;
+}
+
+.success-message {
+  background: #d4edda;
+  color: #155724;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border: 1px solid #c3e6cb;
+  text-align: center;
+  animation: slideInDown 0.3s ease;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .chart-section {
