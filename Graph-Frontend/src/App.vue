@@ -1,10 +1,5 @@
 <template>
   <div id="app">
-    <header class="app-header">
-      <h1>Universal CSV Processor</h1>
-      <p>Data visualization and analysis tool</p>
-    </header>
-
     <main class="main-content">
       <router-view />
     </main>
@@ -32,25 +27,7 @@ export default {
   flex-direction: column;
 }
 
-.app-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 2rem 0;
-  text-align: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
 
-.app-header h1 {
-  margin: 0 0 0.5rem 0;
-  font-size: 2rem;
-  font-weight: 600;
-}
-
-.app-header p {
-  margin: 0;
-  font-size: 1.1rem;
-  opacity: 0.9;
-}
 
 .main-content {
   flex: 1;
@@ -69,14 +46,6 @@ export default {
 }
 
 @media (max-width: 768px) {
-  .app-header h1 {
-    font-size: 1.5rem;
-  }
-  
-  .app-header p {
-    font-size: 1rem;
-  }
-  
   .main-content {
     padding: 1rem;
   }
