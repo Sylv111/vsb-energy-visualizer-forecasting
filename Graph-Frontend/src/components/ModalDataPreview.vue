@@ -2,7 +2,7 @@
   <div v-if="show" class="modal-overlay" @click="$emit('close')">
     <div class="data-preview-modal" @click.stop>
       <div class="modal-header">
-        <h2>📊 Data Preview - {{ fileName }}</h2>
+        <h2>Data Preview {{ fileName }}</h2>
         <button @click="$emit('close')" class="close-btn">×</button>
       </div>
       

@@ -145,17 +145,23 @@
       :show="showFileSelector"
       :available-files="availableFiles"
       :selected-file="selectedFileForChart"
-      @close="showFileSelector = false"
-      @select-file="selectFile"
-    />
-  </div>
-</template>
+              @close="showFileSelector = false"
+        @select-file="selectFile"
+      />
+    </div>
+
+    <!-- New Chart Section -->
+    <div class="new-chart-section">
+      <ButtonPlusCircle @click="handleAddNewChart" />
+    </div>
+  </template>
 
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex'
 import ButtonChartOptions from '@/components/ButtonChartOptions.vue'
 import ButtonDataPreview from '@/components/ButtonDataPreview.vue'
 import ButtonChangeFile from '@/components/ButtonChangeFile.vue'
+import ButtonPlusCircle from '@/components/ButtonPlusCircle.vue'
 import ModalCsvImport from '@/components/ModalCsvImport.vue'
 import ModalDataPreview from '@/components/ModalDataPreview.vue'
 import ModalFileSelector from '@/components/ModalFileSelector.vue'
@@ -163,12 +169,13 @@ import ModalFileSelector from '@/components/ModalFileSelector.vue'
 export default {
   name: 'DashboardView',
   components: {
-    ButtonChartOptions,
-    ButtonDataPreview,
-    ButtonChangeFile,
-    ModalCsvImport,
-    ModalDataPreview,
-    ModalFileSelector
+          ButtonChartOptions,
+      ButtonDataPreview,
+      ButtonChangeFile,
+      ButtonPlusCircle,
+      ModalCsvImport,
+      ModalDataPreview,
+      ModalFileSelector
   },
   
   data() {
@@ -656,6 +663,11 @@ export default {
         this.showSuccess = false
         this.successMessage = ''
       }, 3000)
+    },
+
+    handleAddNewChart() {
+      // For now, just show a simple alert
+      alert('Add New Chart functionality coming soon!')
     }
   }
 }
@@ -1445,5 +1457,14 @@ export default {
   padding: 2rem;
   color: #6c757d;
   font-style: italic;
+}
+
+.new-chart-section {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80px;
 }
 </style> 

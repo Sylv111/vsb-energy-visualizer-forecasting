@@ -5,7 +5,7 @@
     </main>
 
     <footer class="footer">
-      <p>&copy; 2024 Universal CSV Processor - Data Visualization Tool</p>
+      <p>&copy; 2025 Universal CSV Processor - Data Visualization Tool</p>
     </footer>
   </div>
 </template>

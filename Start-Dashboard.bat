@@ -1,9 +1,6 @@
 @echo off
 title Universal CSV Processor
 echo.
-echo    Universal CSV Processor
-echo ================================
-echo.
 
 echo Starting backend server...
 start "Backend-Server" cmd /k "cd Graph-Backend && npm run start-all"
