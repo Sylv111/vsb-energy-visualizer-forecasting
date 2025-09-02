@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'electricity-backend',
+      name: 'csv-processor-backend',
       script: 'server.js',
       cwd: './',
       instances: 1,
@@ -14,7 +14,7 @@ module.exports = {
       }
     },
     {
-      name: 'electricity-frontend',
+      name: 'csv-visualizer-frontend',
       script: 'node_modules/@vue/cli-service/bin/vue-cli-service.js',
       args: 'serve',
       cwd: './client',

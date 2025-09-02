@@ -1,7 +1,7 @@
 @echo off
-title UK Electricity Dashboard - PRODUCTION
+title Universal CSV Visualizer - PRODUCTION
 echo.
-echo    UK Electricity Dashboard - PRODUCTION
+echo    Universal CSV Visualizer - PRODUCTION
 echo ============================================
 echo.
 
@@ -16,22 +16,20 @@ if %errorlevel% neq 0 (
 cd ..
 
 echo.
-echo Starting all backend services...
-start "Backend-Orchestrator" cmd /k "cd Graph-Backend && npm run start-all"
+echo Starting backend service...
+start "CSV-Processor" cmd /k "cd Graph-Backend && npm run start-all"
 
-echo Waiting 5 seconds for backend services to start...
+echo Waiting 5 seconds for backend service to start...
 timeout /t 5 /nobreak > nul
 
 echo.
-echo Production servers started !
+echo Production server started!
 echo.
 echo Production Dashboard: http://localhost:3000
 echo API Health: http://localhost:3000/api/health
-echo Electricity API: http://localhost:3001
-echo Gas API: http://localhost:3002
 echo.
 echo Note: This is the PRODUCTION version (optimized)
 echo.
 echo To stop: close the windows or type 'taskkill /f /im node.exe'
 echo.
-pause 
+pause
