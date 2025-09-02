@@ -5,6 +5,7 @@
         <ButtonChartOptions @click="toggleChartOptions" />
         <ButtonDataPreview @click="$emit('open-data-preview')" />
         <ButtonChangeFile @click="$emit('open-file-selector', chartIndex)" />
+        <ButtonRemoveChart @click="$emit('remove-chart', chartIndex)" />
       </div>
 
       <div v-show="showChartOptions" class="chart-options-panel">
@@ -42,13 +43,16 @@
 import ButtonChartOptions from '@/components/ButtonChartOptions.vue'
 import ButtonDataPreview from '@/components/ButtonDataPreview.vue'
 import ButtonChangeFile from '@/components/ButtonChangeFile.vue'
+import ButtonRemoveChart from '@/components/ButtonRemoveChart.vue'
 
 export default {
   name: 'ChartBlock',
+  emits: ['open-data-preview', 'open-file-selector', 'remove-chart'],
   components: {
     ButtonChartOptions,
     ButtonDataPreview,
-    ButtonChangeFile
+    ButtonChangeFile,
+    ButtonRemoveChart
   },
   props: {
     fileData: {

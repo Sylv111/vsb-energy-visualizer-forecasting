@@ -38,6 +38,7 @@
         @select-file="(fileName) => selectFileForChart(fileName, index)"
         @open-data-preview="showDataPreview = true"
         @open-file-selector="(index) => { activeChartIndex = index; showFileSelector = true }"
+        @remove-chart="removeChart"
       />
     </div>
 
@@ -328,6 +329,12 @@ export default {
 
     handleAddNewChart() {
       this.charts.push({ fileData: null })
+    },
+
+    removeChart(index) {
+      if (this.charts.length > 1) {
+        this.charts.splice(index, 1)
+      }
     }
   }
 }

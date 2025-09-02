@@ -37,6 +37,7 @@
           :chart-index="chartIndex"
           @open-data-preview="$emit('open-data-preview')"
           @open-file-selector="$emit('open-file-selector', $event)"
+          @remove-chart="$emit('remove-chart', chartIndex)"
         />
       </div>
     </div>
