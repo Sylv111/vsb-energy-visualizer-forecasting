@@ -2,7 +2,7 @@
   <div class="chart-section">
     <div class="chart-container">
       <!-- Initial File Selection -->
-      <div v-if="!fileData" class="file-selection">
+      <div v-if="!fileData || !fileData.series.length" class="file-selection">
         <div class="file-selector">
           <label for="file-select">Choose a processed CSV file:</label>
           <select 
@@ -26,6 +26,8 @@
           <p>Loading file data...</p>
         </div>
       </div>
+      
+
       
       <!-- Chart Content -->
       <div v-if="!fileData" class="empty-chart">
@@ -195,4 +197,6 @@ export default {
 .chart-content {
   min-height: 400px;
 }
+
+
 </style>

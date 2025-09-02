@@ -14,14 +14,14 @@
               :key="file.name"
               @click="selectFile(file.name)"
               class="file-item"
-              :class="{ 'selected': file.name === selectedFile }"
+              :class="{ 'selected': selectedFiles.includes(file.name) }"
             >
               <div class="file-item-info">
                 <span class="file-item-name">{{ file.name }}</span>
                 <span class="file-item-size">{{ formatFileSize(file.size) }}</span>
               </div>
-              <div v-if="file.name === selectedFile" class="selected-indicator">
-                ✓
+              <div v-if="selectedFiles.includes(file.name)" class="selected-indicator">
+                {{ selectedFiles.indexOf(file.name) + 1 }}
               </div>
             </div>
             
@@ -30,6 +30,11 @@
             </div>
           </div>
         </div>
+      </div>
+      
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button @click="$emit('close')" class="btn-cancel">Cancel</button>
       </div>
     </div>
   </div>
@@ -47,9 +52,9 @@ export default {
       type: Array,
       default: () => []
     },
-    selectedFile: {
-      type: String,
-      default: ''
+    selectedFiles: {
+      type: Array,
+      default: () => []
     }
   },
   emits: ['close', 'select-file'],
@@ -214,6 +219,33 @@ export default {
 
 .no-files p {
   margin: 0;
+}
+
+.modal-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  justify-content: flex-end;
+  background: #f8f9fa;
+}
+
+.btn-cancel {
+  padding: 0.5rem 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 6px;
+  background: white;
+  color: #6c757d;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-cancel:hover {
+  border-color: #6c757d;
+  color: #495057;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 @media (max-width: 768px) {

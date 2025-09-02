@@ -84,9 +84,17 @@ export default {
     },
     
     chartOptions() {
-      if (!this.fileData || !this.fileData.headers || !this.fileData.data) {
+      console.log('fileData:', this.fileData)  // Debug
+      if (!this.fileData?.series?.length) {
         return null
       }
+      
+      // Utiliser les données de la première série pour les axes
+      const firstSerie = this.fileData.series[0]
+      console.log('firstSerie:', firstSerie)  // Debug
+      const headers = firstSerie.data.headers
+      const data = firstSerie.data.data
+      
       return {
         chart: {
           type: 'line',
@@ -116,11 +124,11 @@ export default {
         },
         xaxis: {
           title: {
-            text: this.fileData.headers[0] || 'X Axis',
+            text: headers[0] || 'X Axis',
             style: { fontSize: '14px', fontWeight: 'bold', color: '#2c3e50' }
           },
           type: 'category',
-          categories: this.fileData.data.map(row => row[0] || ''),
+          categories: data.map(row => row[0] || ''),
           labels: {
             style: { colors: '#7f8c8d', fontSize: '12px' },
             rotate: -45,
@@ -130,7 +138,7 @@ export default {
         },
         yaxis: {
           title: {
-            text: this.fileData.headers[1] || 'Y Axis',
+            text: headers[1] || 'Y Axis',
             style: { fontSize: '14px', fontWeight: 'bold', color: '#2c3e50' }
           },
           labels: {
@@ -186,17 +194,26 @@ export default {
       }
     },
     chartSeries() {
-      if (!this.fileData || !this.fileData.data) {
+      if (!this.fileData || !this.fileData.series || this.fileData.series.length === 0) {
         return []
       }
-      const seriesData = this.fileData.data.map(row => {
-        const xValue = row[0] || ''
-        const yValue = row[1] || 0
-        const numericValue = parseFloat(yValue)
-        const finalValue = isNaN(numericValue) ? 0 : numericValue
-        return { x: xValue, y: finalValue }
+
+      return this.fileData.series.map(serie => {
+        const seriesData = serie.data.data.map(row => {
+          const xValue = row[0] || ''
+          const yValue = row[1] || 0
+          const numericValue = parseFloat(yValue)
+          const finalValue = isNaN(numericValue) ? 0 : numericValue
+          return { x: xValue, y: finalValue }
+        })
+
+        return {
+          name: serie.name,
+          data: seriesData,
+          type: 'line',
+          color: serie.color
+        }
       })
-      return [{ name: this.fileData.headers[1] || 'Value', data: seriesData, type: 'line' }]
     }
   },
   methods: {

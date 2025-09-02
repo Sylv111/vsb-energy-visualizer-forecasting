@@ -33,7 +33,7 @@
         v-for="(chart, index) in charts"
         :key="index"
         :available-files="availableFiles"
-        :file-data="chart.fileData"
+        :file-data="chart"
         :chart-index="index"
         @select-file="(fileName) => selectFileForChart(fileName, index)"
         @open-data-preview="showDataPreview = true"
@@ -76,10 +76,10 @@
     />
 
     <!-- File Selection Modal -->
-    <ModalFileSelector
+          <ModalFileSelector
       :show="showFileSelector"
       :available-files="availableFiles"
-      :selected-file="null"
+      :selected-files="charts[activeChartIndex]?.selectedFiles || []"
       @close="showFileSelector = false"
       @select-file="(fileName) => selectFileForChart(fileName, activeChartIndex)"
     />
@@ -124,7 +124,10 @@ export default {
       showFileSelector: false,
 
       charts: [
-        { fileData: null }
+        {
+          series: [],  // Array pour stocker plusieurs séries de données
+          selectedFiles: [] // Array pour garder la trace des fichiers sélectionnés
+        }
       ],
       activeChartIndex: 0
     }
@@ -317,18 +320,54 @@ export default {
     async selectFileForChart(fileName, chartIndex) {
       try {
         await this.loadSelectedFile(fileName)
-        this.charts[chartIndex].fileData = this.selectedFileData
-        this.showFileSelector = false
-
+        
+        // Vérifier si le fichier est déjà dans les séries
+        const isFileAlreadySelected = this.charts[chartIndex].selectedFiles.includes(fileName)
+        
+        if (isFileAlreadySelected) {
+          // Si le fichier est déjà sélectionné, on le retire
+          const index = this.charts[chartIndex].selectedFiles.indexOf(fileName)
+          this.charts[chartIndex].selectedFiles.splice(index, 1)
+          this.charts[chartIndex].series.splice(index, 1)
+        } else {
+          // Ajouter la nouvelle série
+          const newSeries = {
+            name: fileName,
+            data: this.selectedFileData,
+            color: this.getSeriesColor(this.charts[chartIndex].series.length)
+          }
+          
+          // Utiliser Vue.set pour assurer la réactivité
+          this.charts[chartIndex].series.push(newSeries)
+          this.charts[chartIndex].selectedFiles.push(fileName)
+        }
       } catch (error) {
         console.error('Error loading file for chart:', error)
       }
     },
 
+    getSeriesColor(index) {
+      // Palette de couleurs pour les séries
+      const colors = [
+        '#667eea', // Bleu
+        '#f6ad55', // Orange
+        '#48bb78', // Vert
+        '#ed64a6', // Rose
+        '#9f7aea', // Violet
+        '#4299e1', // Bleu clair
+        '#ed8936', // Orange foncé
+        '#38b2ac', // Turquoise
+      ]
+      return colors[index % colors.length]
+    },
+
 
 
     handleAddNewChart() {
-      this.charts.push({ fileData: null })
+      this.charts.push({
+        series: [],  // Array pour stocker plusieurs séries de données
+        selectedFiles: [] // Array pour garder la trace des fichiers sélectionnés
+      })
     },
 
     removeChart(index) {
@@ -336,6 +375,12 @@ export default {
         this.charts.splice(index, 1)
         this.$store.commit('REMOVE_CHART_SETTINGS', index)
       }
+    },
+
+    removeSeries(chartIndex, seriesIndex) {
+      const chart = this.charts[chartIndex]
+      chart.series.splice(seriesIndex, 1)
+      chart.selectedFiles.splice(seriesIndex, 1)
     }
   }
 }
