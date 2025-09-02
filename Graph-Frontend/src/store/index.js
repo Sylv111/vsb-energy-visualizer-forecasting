@@ -10,7 +10,8 @@ export default createStore({
     savedFileName: null,
     availableFiles: [],
     selectedFile: null,
-    selectedFileData: null
+    selectedFileData: null,
+    chartSettings: {}  // Stockage des options par graphique
   },
   
   mutations: {
@@ -37,6 +38,40 @@ export default createStore({
     },
     SET_SELECTED_FILE_DATA(state, data) {
       state.selectedFileData = data
+    },
+    
+    INIT_CHART_SETTINGS(state, chartIndex) {
+      if (!state.chartSettings[chartIndex]) {
+        state.chartSettings[chartIndex] = {
+          showMarkers: true,
+          smoothCurve: true,
+          showGrid: true
+        }
+      }
+    },
+
+    UPDATE_CHART_SETTINGS(state, { chartIndex, settings }) {
+      state.chartSettings[chartIndex] = { ...state.chartSettings[chartIndex], ...settings }
+    },
+
+    REMOVE_CHART_SETTINGS(state, chartIndex) {
+      const newSettings = { ...state.chartSettings }
+      delete newSettings[chartIndex]
+      
+      // Réindexer les paramètres des graphiques restants
+      const finalSettings = {}
+      Object.keys(newSettings)
+        .filter(key => key > chartIndex)
+        .forEach(key => {
+          finalSettings[key - 1] = newSettings[key]
+        })
+      Object.keys(newSettings)
+        .filter(key => key < chartIndex)
+        .forEach(key => {
+          finalSettings[key] = newSettings[key]
+        })
+      
+      state.chartSettings = finalSettings
     }
   },
   

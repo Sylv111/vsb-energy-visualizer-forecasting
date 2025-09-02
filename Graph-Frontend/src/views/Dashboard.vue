@@ -334,6 +334,7 @@ export default {
     removeChart(index) {
       if (this.charts.length > 1) {
         this.charts.splice(index, 1)
+        this.$store.commit('REMOVE_CHART_SETTINGS', index)
       }
     }
   }

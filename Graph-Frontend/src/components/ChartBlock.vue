@@ -11,15 +11,15 @@
       <div v-show="showChartOptions" class="chart-options-panel">
         <div class="chart-options">
           <label class="checkbox-label">
-            <input type="checkbox" v-model="chartSettings.showMarkers" />
+            <input type="checkbox" :checked="chartSettings.showMarkers" @change="updateChartSetting('showMarkers', $event.target.checked)" />
             Show Markers
           </label>
           <label class="checkbox-label">
-            <input type="checkbox" v-model="chartSettings.smoothCurve" />
+            <input type="checkbox" :checked="chartSettings.smoothCurve" @change="updateChartSetting('smoothCurve', $event.target.checked)" />
             Smooth Curve
           </label>
           <label class="checkbox-label">
-            <input type="checkbox" v-model="chartSettings.showGrid" />
+            <input type="checkbox" :checked="chartSettings.showGrid" @change="updateChartSetting('showGrid', $event.target.checked)" />
             Show Grid
           </label>
         </div>
@@ -67,15 +67,22 @@ export default {
   },
   data() {
     return {
-      showChartOptions: false,
-      chartSettings: {
+      showChartOptions: false
+    }
+  },
+
+  created() {
+    this.$store.commit('INIT_CHART_SETTINGS', this.chartIndex)
+  },
+  computed: {
+    chartSettings() {
+      return this.$store.state.chartSettings[this.chartIndex] || {
         showMarkers: true,
         smoothCurve: true,
         showGrid: true
       }
-    }
-  },
-  computed: {
+    },
+    
     chartOptions() {
       if (!this.fileData || !this.fileData.headers || !this.fileData.data) {
         return null
@@ -195,6 +202,13 @@ export default {
   methods: {
     toggleChartOptions() {
       this.showChartOptions = !this.showChartOptions
+    },
+    
+    updateChartSetting(setting, value) {
+      this.$store.commit('UPDATE_CHART_SETTINGS', {
+        chartIndex: this.chartIndex,
+        settings: { [setting]: value }
+      })
     }
   }
 }
