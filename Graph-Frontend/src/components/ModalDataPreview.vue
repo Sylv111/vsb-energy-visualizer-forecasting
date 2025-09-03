@@ -78,6 +78,22 @@ export default {
     }
   },
   emits: ['close', 'scroll'],
+  watch: {
+    show: {
+      immediate: true,
+      handler(newVal) {
+        if (newVal) {
+          document.body.style.overflow = 'hidden'
+        } else {
+          document.body.style.overflow = ''
+        }
+      }
+    }
+  },
+  beforeUnmount() {
+    // Rétablir le scroll au cas où le composant est démonté pendant que la modale est ouverte
+    document.body.style.overflow = ''
+  },
   methods: {
     handleScroll(event) {
       this.$emit('scroll', event)
@@ -176,17 +192,20 @@ export default {
   overflow-y: auto;
   min-height: 400px;
   max-height: 60vh;
+  padding: 0 1.5rem;
 }
 
 .data-table {
   width: 100%;
-  border-collapse: collapse;
-  font-size: 0.85rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.9rem;
+  margin: 1rem 0;
 }
 
 .data-table th {
   background: #f8f9fa;
-  padding: 0.75rem 0.5rem;
+  padding: 1rem;
   text-align: left;
   font-weight: 600;
   color: #2c3e50;
@@ -194,16 +213,32 @@ export default {
   position: sticky;
   top: 0;
   z-index: 10;
+  white-space: nowrap;
 }
 
 .data-table td {
-  padding: 0.5rem;
-  border-bottom: 1px solid #f1f3f4;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e9ecef;
   color: #2c3e50;
+  background: white;
 }
 
-.data-table tr:hover {
+.data-table tr:hover td {
   background-color: #f8f9fa;
+}
+
+.data-table tr:first-child td {
+  border-top: none;
+}
+
+.data-table th:first-child,
+.data-table td:first-child {
+  padding-left: 1.5rem;
+}
+
+.data-table th:last-child,
+.data-table td:last-child {
+  padding-right: 1.5rem;
 }
 
 .loading-more {
