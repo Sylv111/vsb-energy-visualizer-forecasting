@@ -81,7 +81,7 @@
       :available-files="availableFiles"
       :selected-files="charts[activeChartIndex]?.selectedFiles || []"
       @close="showFileSelector = false"
-      @select-file="(fileName) => selectFileForChart(fileName, activeChartIndex)"
+      @select-columns="handleColumnSelection"
     />
 
     <!-- New Chart Section -->
@@ -125,8 +125,10 @@ export default {
 
       charts: [
         {
-          series: [],  // Array pour stocker plusieurs séries de données
-          selectedFiles: [] // Array pour garder la trace des fichiers sélectionnés
+          series: [],
+          selectedFiles: [],
+          yColumn: null,
+          xColumns: []
         }
       ],
       activeChartIndex: 0
@@ -317,32 +319,39 @@ export default {
       this.isLoadingMore = false
     },
 
-    async selectFileForChart(fileName, chartIndex) {
+    async handleColumnSelection({ fileName, yColumn, xColumns }) {
       try {
         await this.loadSelectedFile(fileName)
         
-        // Vérifier si le fichier est déjà dans les séries
-        const isFileAlreadySelected = this.charts[chartIndex].selectedFiles.includes(fileName)
-        
-        if (isFileAlreadySelected) {
-          // Si le fichier est déjà sélectionné, on le retire
-          const index = this.charts[chartIndex].selectedFiles.indexOf(fileName)
-          this.charts[chartIndex].selectedFiles.splice(index, 1)
-          this.charts[chartIndex].series.splice(index, 1)
-        } else {
-          // Ajouter la nouvelle série
-          const newSeries = {
-            name: fileName,
-            data: this.selectedFileData,
-            color: this.getSeriesColor(this.charts[chartIndex].series.length)
-          }
-          
-          // Utiliser Vue.set pour assurer la réactivité
-          this.charts[chartIndex].series.push(newSeries)
-          this.charts[chartIndex].selectedFiles.push(fileName)
+        if (!this.selectedFileData || !this.selectedFileData.data) {
+          throw new Error('No data loaded')
         }
+
+        // Créer les séries pour chaque colonne X
+        const newSeries = xColumns.map((xCol, index) => {
+          // Extraire les données pour cette paire X-Y
+          const seriesData = this.selectedFileData.data.map(row => ({
+            x: row[yColumn],  // La colonne Y devient l'abscisse (X)
+            y: row[xCol]      // La colonne X devient l'ordonnée (Y)
+          }))
+
+          return {
+            name: `${this.selectedFileData.headers[xCol]} en fonction de ${this.selectedFileData.headers[yColumn]}`,
+            data: seriesData,
+            color: this.getSeriesColor(index)
+          }
+        })
+
+        // Mettre à jour le graphique
+        this.charts[this.activeChartIndex] = {
+          series: newSeries,
+          selectedFiles: [fileName],
+          yColumn,
+          xColumns
+        }
+
       } catch (error) {
-        console.error('Error loading file for chart:', error)
+        console.error('Error handling column selection:', error)
       }
     },
 
@@ -365,8 +374,10 @@ export default {
 
     handleAddNewChart() {
       this.charts.push({
-        series: [],  // Array pour stocker plusieurs séries de données
-        selectedFiles: [] // Array pour garder la trace des fichiers sélectionnés
+        series: [],
+        selectedFiles: [],
+        yColumn: null,
+        xColumns: []
       })
     },
 

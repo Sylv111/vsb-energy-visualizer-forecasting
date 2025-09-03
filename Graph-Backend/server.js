@@ -110,7 +110,8 @@ class CSVService {
         analysis: analysis,
         xColumn: this.xColumn,
         yColumn: this.yColumn,
-        savedFileName: this.getSavedFileName()
+        savedFileName: this.getSavedFileName(),
+        fullFileName: `full_${this.fileName}`
       };
 
     } catch (error) {
@@ -191,26 +192,37 @@ class CSVService {
         fs.mkdirSync(dataDir, { recursive: true });
       }
 
+      // Save full CSV file
+      const fullFileName = `full_${this.fileName}`;
+      const fullFilePath = path.join(dataDir, fullFileName);
+      
+      // Save full data
+      const fullCsvLines = [
+        this.headers.join(','),
+        ...this.processedData.map(row => row.join(','))
+      ];
+      fs.writeFileSync(fullFilePath, fullCsvLines.join('\n'), 'utf8');
+
       // Create CSV content with selected columns
-      const csvLines = [];
+      const selectedCsvLines = [];
 
       // Add header
       const headerLine = `${this.headers[this.xColumn]},${this.headers[this.yColumn]}`;
-      csvLines.push(headerLine);
+      selectedCsvLines.push(headerLine);
 
       // Add data rows
       this.processedData.forEach(row => {
         const xValue = row[this.xColumn] || '';
         const yValue = row[this.yColumn] || '';
         const dataLine = `${xValue},${yValue}`;
-        csvLines.push(dataLine);
+        selectedCsvLines.push(dataLine);
       });
 
-      // Save to file
+      // Save selected columns to file
       const savedFileName = this.getSavedFileName();
       const filePath = path.join(dataDir, savedFileName);
 
-      fs.writeFileSync(filePath, csvLines.join('\n'), 'utf8');
+      fs.writeFileSync(filePath, selectedCsvLines.join('\n'), 'utf8');
 
       console.log(`CSV saved successfully: ${filePath}`);
       return filePath;
@@ -379,22 +391,34 @@ app.get('/api/csv/files/:filename', async (req, res) => {
       });
     }
 
+    console.log('Reading file:', filePath)
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const lines = fileContent.split('\n').filter(line => line.trim());
     
     if (lines.length === 0) {
+      console.log('Empty file detected')
       return res.status(400).json({
         success: false,
         message: 'Empty file'
       });
     }
 
-    // Parse CSV content
-    const headers = lines[0].split(',');
-    const data = lines.slice(1).map(line => {
-      const values = line.split(',');
-      return values.slice(0, headers.length);
-    });
+    console.log('Parsing CSV content, total lines:', lines.length)
+    
+    // Parse CSV content with better handling
+    const csvService = new CSVService();
+    const headers = csvService.parseCSVLine(lines[0], ',');
+    console.log('Headers parsed:', headers)
+    
+    const data = [];
+    for (let i = 1; i < lines.length; i++) {
+      const row = csvService.parseCSVLine(lines[i], ',');
+      if (row.length === headers.length) {
+        data.push(row);
+      }
+    }
+    
+    console.log('Data parsed successfully, rows:', data.length)
 
     res.json({
       success: true,
