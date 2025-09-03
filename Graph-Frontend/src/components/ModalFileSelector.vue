@@ -98,7 +98,7 @@
         >
           Apply Selection
         </button>
-        <button @click="$emit('close')" class="btn-cancel">Cancel</button>
+        <button @click="$emit('close')" class="btn-cancel">Close</button>
       </div>
     </div>
   </div>
