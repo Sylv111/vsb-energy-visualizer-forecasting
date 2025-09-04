@@ -145,7 +145,7 @@ export default {
         },
         xaxis: {
           title: {
-            text: firstSerie.name.split(' vs ')[0] || 'X Axis',
+            text: firstSerie.yColumnName || firstSerie.name.split(' vs ')[1] || 'X Axis',
             style: { fontSize: '14px', fontWeight: 'bold', color: '#2c3e50' }
           },
           type: 'category',
@@ -159,7 +159,7 @@ export default {
         },
         yaxis: {
           title: {
-            text: firstSerie.name.split(' vs ')[1] || 'Y Axis',
+            text: firstSerie.xColumnName || firstSerie.name.split(' vs ')[0] || 'Y Axis',
             style: { fontSize: '14px', fontWeight: 'bold', color: '#2c3e50' }
           },
           labels: {
@@ -203,8 +203,10 @@ export default {
           fontSize: '14px',
           fontFamily: 'Helvetica, Arial',
           fontWeight: 400,
-          markers: { width: 12, height: 12, strokeWidth: 0, strokeColor: '#fff', radius: 12 },
-          itemMargin: { horizontal: 10, vertical: 5 }
+          markers: { width: 12, height: 12, strokeWidth: 0, strokeColor: '#fff', radius: 12, offsetX: 0, offsetY: 0 },
+          itemMargin: { horizontal: 15, vertical: 5 },
+          offsetX: 0,
+          offsetY: 0
         },
         dataLabels: { enabled: false },
         theme: { mode: 'light', palette: 'palette1' },
@@ -342,6 +344,15 @@ export default {
   0% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.1); opacity: 0.7; }
   100% { transform: scale(1); opacity: 1; }
+}
+
+/* Espacement de la légende */
+:deep(.apexcharts-legend-series) {
+  margin-right: 20px !important;
+}
+
+:deep(.apexcharts-legend-marker) {
+  margin-right: 8px !important;
 }
 
 @media (max-width: 768px) { 

@@ -381,9 +381,11 @@ export default {
           }
 
           return {
-            name: `${headers[xCol]} en fonction de ${headers[yColumn]}${data.length > maxPoints ? ` (${points.length}/${data.length} points)` : ''}`,
+            name: ` ${headers[xCol]}${data.length > maxPoints ? ` (${points.length}/${data.length} points)` : ''}`,
             data: points,
-            color: this.getSeriesColor(index)
+            color: this.getSeriesColor(index),
+            xColumnName: headers[xCol],
+            yColumnName: headers[yColumn]
           }
         })
 
