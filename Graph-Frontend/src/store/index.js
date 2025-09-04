@@ -76,7 +76,7 @@ export default createStore({
   },
   
   actions: {
-    async uploadCSV({ commit }, { file, hasHeader, delimiter, xColumn, yColumn }) {
+    async uploadCSV({ commit }, { file, hasHeader, delimiter, selectedColumns }) {
       commit('SET_LOADING', true)
       commit('SET_ERROR', null)
       
@@ -85,8 +85,7 @@ export default createStore({
         formData.append('file', file)
         formData.append('hasHeader', hasHeader)
         formData.append('delimiter', delimiter)
-        formData.append('xColumn', xColumn)
-        formData.append('yColumn', yColumn)
+        formData.append('selectedColumns', selectedColumns)
 
         const response = await axios.post(`http://localhost:3000/api/csv/upload`, formData, {
           headers: {

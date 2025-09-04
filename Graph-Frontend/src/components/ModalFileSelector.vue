@@ -189,12 +189,13 @@ export default {
     },
     applySelection() {
       if (this.expandedFile && this.selectedYColumn !== null && this.selectedXColumns.length > 0) {
+        // Émettre l'événement avec les colonnes sélectionnées
         this.$emit('select-columns', {
           fileName: this.expandedFile,
           yColumn: this.selectedYColumn,
           xColumns: this.selectedXColumns
         })
-        this.$emit('close')  // Ferme la modale après avoir appliqué la sélection
+        this.$emit('close')
       }
     },
     formatFileSize(bytes) {

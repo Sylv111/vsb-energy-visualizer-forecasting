@@ -106,14 +106,12 @@ export default {
     },
     
     chartOptions() {
-      console.log('fileData:', this.fileData)  // Debug
       if (!this.fileData?.series?.length) {
         return null
       }
       
       // Utiliser les données de la première série pour les axes
       const firstSerie = this.fileData.series[0]
-      console.log('firstSerie:', firstSerie)  // Debug
       
       // Extraire les valeurs X pour les catégories
       const xValues = firstSerie.data.map(point => point.x)
@@ -217,25 +215,18 @@ export default {
       }
     },
     chartSeries() {
-      if (!this.fileData || !this.fileData.series || this.fileData.series.length === 0) {
+      if (!this.fileData?.series?.length) {
         return []
       }
 
-      return this.fileData.series.map(serie => {
-        const seriesData = serie.data.map(point => {
-          const yValue = point.y || 0
-          const numericValue = parseFloat(yValue)
-          const finalValue = isNaN(numericValue) ? 0 : numericValue
-          return { x: point.x, y: finalValue }
-        })
-
-        return {
-          name: serie.name,
-          data: seriesData,
-          type: 'line',
-          color: serie.color
-        }
-      })
+      // Retourner directement les séries sans transformation supplémentaire
+      // car les données sont déjà formatées dans handleColumnSelection
+      return this.fileData.series.map(serie => ({
+        name: serie.name,
+        data: serie.data,
+        type: 'line',
+        color: serie.color
+      }))
     }
   },
   methods: {

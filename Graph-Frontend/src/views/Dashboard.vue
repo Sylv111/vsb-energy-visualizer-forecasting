@@ -1,13 +1,13 @@
 <template>
   <!-- Dashboard Header -->
-  <div class="dashboard-header">
+      <div class="dashboard-header">
     <h1>CSV Data Visualizer</h1>
     <p class="subtitle">Import your CSV file and visualize the data</p>
   </div>
 
   <!-- Import Button -->
   <div class="import-section">
-    <button @click="showImportModal = true" class="import-btn">
+    <button @click="openImportModal" class="import-btn">
       📁 Import CSV File
     </button>
     <p v-if="hasData" class="file-info">
@@ -15,7 +15,7 @@
       <br>
       💾 Saved: {{ savedFileName }}
     </p>
-  </div>
+      </div>
 
   <div class="dashboard">
 
@@ -26,7 +26,7 @@
         <strong>Details:</strong> {{ error.response.data.error }}
       </div>
     </div>
-    
+
     <!-- Charts Section -->
     <div class="charts-container">
       <ChartCard
@@ -39,9 +39,9 @@
         @open-data-preview="showDataPreview = true"
         @open-file-selector="(index) => { activeChartIndex = index; showFileSelector = true }"
         @remove-chart="removeChart"
-      />
-    </div>
-
+           />
+         </div>
+         
     <!-- CSV Import Modal -->
     <ModalCsvImport
       :show="showImportModal"
@@ -49,22 +49,20 @@
       :csv-data="csvData"
       v-model:has-header="hasHeader"
       v-model:delimiter="delimiter"
-      v-model:selected-x-column="selectedXColumn"
-      v-model:selected-y-column="selectedYColumn"
+      v-model:selected-columns="selectedColumns"
       :preview-headers="previewHeaders"
       :preview-rows="previewRows"
       :can-import="canImport"
       :is-loading="isLoading"
       @close="closeModal"
       @file-upload="handleFileUpload"
-      @update-preview="updatePreview"
-      @import-data="importData"
+      @import-data="columns => importData(columns)"
     />
 
     <!-- Data Preview Modal -->
     <ModalDataPreview
       :show="showDataPreview"
-      :file-name="selectedFile"
+      :file-name="selectedFile?.name || ''"
       :total-rows="selectedFileData?.totalRows || 0"
       :total-columns="selectedFileData?.totalColumns || 0"
       :headers="selectedFileData?.headers || []"
@@ -87,7 +85,7 @@
     <!-- New Chart Section -->
     <div class="new-chart-section">
       <ButtonPlusCircle @click="handleAddNewChart" />
-    </div>
+       </div>
   </div>
 </template>
 
@@ -109,15 +107,15 @@ export default {
     ChartCard
   },
   
-  data() {
-    return {
+           data() {
+        return {
       showImportModal: false,
       selectedFile: null,
+      rawCsvContent: null,  // Stockage du contenu brut du CSV
       csvData: [],
       hasHeader: true,
       delimiter: ',',
-      selectedXColumn: '',
-      selectedYColumn: '',
+      selectedColumns: [],  // Nouvelle propriété pour stocker les colonnes sélectionnées
       showDataPreview: false,
       displayedDataCount: 100,
       isLoadingMore: false,
@@ -132,8 +130,8 @@ export default {
         }
       ],
       activeChartIndex: 0
-    }
-  },
+        }
+      },
   
   computed: {
     ...mapState(['loading', 'error']),
@@ -152,7 +150,10 @@ export default {
     },
 
     canImport() {
-      return this.selectedFile && this.csvData.length > 0 && this.selectedXColumn !== '' && this.selectedYColumn !== ''
+      return this.selectedFile && 
+             this.csvData.length > 0 && 
+             this.selectedColumns && 
+             this.selectedColumns.length > 0
     },
 
     displayedData() {
@@ -189,53 +190,85 @@ export default {
       this.showImportModal = false
       this.selectedFile = null
       this.csvData = []
-      this.selectedXColumn = ''
-      this.selectedYColumn = ''
+      this.selectedColumns = []
+    },
+
+    openImportModal() {
+      this.showImportModal = true
+      this.selectedColumns = []
     },
 
     async handleFileUpload(event) {
+      console.log('handleFileUpload called')
       const file = event.target.files[0]
-      if (!file) return
+      if (!file) {
+        console.log('No file selected')
+        return
+      }
 
+      console.log('Selected file:', file.name)
       this.selectedFile = file
       await this.parseCSV(file)
     },
 
     async parseCSV(file) {
-      const text = await file.text()
-      const lines = text.split('\n').filter(line => line.trim())
-      
-      const delimiters = [',', ';', '\t', '|']
-      let bestDelimiter = ','
-      let maxColumns = 0
-
-      for (const delim of delimiters) {
-        const columns = lines[0].split(delim).length
-        if (columns > maxColumns) {
-          maxColumns = columns
-          bestDelimiter = delim
-        }
-      }
-
-      this.delimiter = bestDelimiter
-      this.csvData = lines.map(line => line.split(this.delimiter))
-      this.updatePreview()
-    },
-
-    updatePreview() {
-      if (this.selectedFile) {
-        this.parseCSV(this.selectedFile)
-      }
-    },
-
-    async importData() {
+      console.log('parseCSV started for file:', file.name)
       try {
+        // Lire et stocker le contenu brut du fichier
+        const text = await file.text()
+        this.rawCsvContent = text
+        
+        // Découper en lignes
+        const lines = text.split('\n').filter(line => line.trim())
+        console.log('Number of lines:', lines.length)
+        
+        // Détecter automatiquement le délimiteur
+        const delimiters = [',', ';', '\t', '|']
+        let bestDelimiter = ','
+        let maxColumns = 0
+
+        for (const delim of delimiters) {
+          const columns = lines[0].split(delim).length
+          if (columns > maxColumns) {
+            maxColumns = columns
+            bestDelimiter = delim
+          }
+        }
+
+        console.log('Detected delimiter:', bestDelimiter, 'with', maxColumns, 'columns')
+        this.delimiter = bestDelimiter
+        
+        // Parser avec le délimiteur détecté
+        this.updateCsvData(lines)
+      } catch (error) {
+        console.error('Error parsing CSV:', error)
+      }
+    },
+
+    updateCsvData(lines = null) {
+      // Si pas de lignes fournies, utiliser le contenu brut stocké
+      if (!lines) {
+        if (!this.rawCsvContent) return
+        lines = this.rawCsvContent.split('\n').filter(line => line.trim())
+      }
+      
+      // Mettre à jour les données avec le délimiteur actuel
+      this.csvData = lines.map(line => line.split(this.delimiter))
+      console.log('CSV data updated, first row:', this.csvData[0])
+    },
+
+    async importData(selectedColumns) {
+      try {
+        console.log('Importing data with columns:', selectedColumns)
+        console.log('selectedColumns type:', typeof selectedColumns)
+        console.log('selectedColumns length:', selectedColumns?.length)
+        console.log('JSON.stringify(selectedColumns):', JSON.stringify(selectedColumns))
+        
         await this.uploadCSV({
           file: this.selectedFile,
           hasHeader: this.hasHeader,
           delimiter: this.delimiter,
-          xColumn: this.selectedXColumn,
-          yColumn: this.selectedYColumn
+          selectedColumns: JSON.stringify(selectedColumns)
         })
 
         this.closeModal()
@@ -320,6 +353,7 @@ export default {
     },
 
     async handleColumnSelection({ fileName, yColumn, xColumns }) {
+      console.log('handleColumnSelection:', { fileName, yColumn, xColumns })
       try {
         await this.loadSelectedFile(fileName)
         
@@ -327,22 +361,35 @@ export default {
           throw new Error('No data loaded')
         }
 
+        // Préparer les données une seule fois
+        const data = this.selectedFileData.data
+        const headers = this.selectedFileData.headers
+        
+        // Limiter le nombre de points pour éviter de faire planter le navigateur
+        const maxPoints = 10000; // Maximum 10,000 points par série
+        const step = Math.max(1, Math.floor(data.length / maxPoints));
+        
         // Créer les séries pour chaque colonne X
         const newSeries = xColumns.map((xCol, index) => {
-          // Extraire les données pour cette paire X-Y
-          const seriesData = this.selectedFileData.data.map(row => ({
-            x: row[yColumn],  // La colonne Y devient l'abscisse (X)
-            y: row[xCol]      // La colonne X devient l'ordonnée (Y)
-          }))
+          // Créer un tableau de points avec échantillonnage
+          const points = []
+          for (let i = 0; i < data.length; i += step) {
+            points.push({
+              x: data[i][yColumn],
+              y: data[i][xCol]
+            })
+          }
 
           return {
-            name: `${this.selectedFileData.headers[xCol]} en fonction de ${this.selectedFileData.headers[yColumn]}`,
-            data: seriesData,
+            name: `${headers[xCol]} en fonction de ${headers[yColumn]}${data.length > maxPoints ? ` (${points.length}/${data.length} points)` : ''}`,
+            data: points,
             color: this.getSeriesColor(index)
           }
         })
 
-        // Mettre à jour le graphique
+        console.log('Created series:', newSeries)
+
+        // Mettre à jour le graphique en une seule fois
         this.charts[this.activeChartIndex] = {
           series: newSeries,
           selectedFiles: [fileName],
@@ -383,8 +430,18 @@ export default {
 
     removeChart(index) {
       if (this.charts.length > 1) {
+        // S'il y a plusieurs graphiques, on supprime celui-ci
         this.charts.splice(index, 1)
         this.$store.commit('REMOVE_CHART_SETTINGS', index)
+      } else {
+        // Si c'est le dernier graphique, on le réinitialise
+        this.charts[index] = {
+          series: [],
+          selectedFiles: [],
+          yColumn: null,
+          xColumns: []
+        }
+        this.$store.commit('INIT_CHART_SETTINGS', index)
       }
     },
 
@@ -392,8 +449,8 @@ export default {
       const chart = this.charts[chartIndex]
       chart.series.splice(seriesIndex, 1)
       chart.selectedFiles.splice(seriesIndex, 1)
-    }
-  }
+        }
+      }
 }
 </script>
 
@@ -469,24 +526,24 @@ export default {
 .new-chart-section {
   margin-top: 3rem;
   margin-bottom: 3rem;
-  display: flex;
+   display: flex;
   justify-content: center;
-  align-items: center;
+   align-items: center;
   min-height: 40px;
 }
 
 .charts-container {
-  display: flex;
+   display: flex;
   flex-direction: column;
   gap: 2rem;
   margin-bottom: 2rem;
-  width: 100%;
-}
+     width: 100%;
+   }
 
 @media (max-width: 768px) {
   .dashboard {
     padding: 1rem;
   }
 
-}
-</style>
+   }
+</style> 

@@ -65,7 +65,7 @@ class CSVService {
 
   async processCSVUpload(csvContent, options) {
     try {
-      const { hasHeader, delimiter, fileName, xColumn, yColumn } = options;
+      const { hasHeader, delimiter, fileName, selectedColumns } = options;
       
       const lines = csvContent.split('\n').filter(line => line.trim());
       if (lines.length === 0) {
@@ -73,27 +73,50 @@ class CSVService {
       }
 
       let startIndex = 0;
+      let allHeaders = [];
       if (hasHeader) {
-        this.headers = this.parseCSVLine(lines[0], delimiter);
+        allHeaders = this.parseCSVLine(lines[0], delimiter);
         startIndex = 1;
       } else {
         // Generate headers if none provided
         const firstRow = this.parseCSVLine(lines[0], delimiter);
-        this.headers = firstRow.map((_, index) => `Column_${index + 1}`);
+        allHeaders = firstRow.map((_, index) => `Column_${index + 1}`);
         startIndex = 0;
       }
 
+      // Filter headers and data based on selected columns
+      const selectedCols = JSON.parse(selectedColumns || '[]');
+      if (!selectedCols || selectedCols.length === 0) {
+        throw new Error('No columns selected. Please select at least one column to import.');
+      }
+
+      // Set headers for selected columns
+      this.headers = selectedCols.map(index => allHeaders[index]);
+
+      // Process data in chunks to avoid stack overflow with large files
       this.processedData = [];
-      for (let i = startIndex; i < lines.length; i++) {
-        const row = this.parseCSVLine(lines[i], delimiter);
-        if (row.length === this.headers.length) {
-          this.processedData.push(row);
+      const chunkSize = 1000; // Process 1000 rows at a time
+      
+      for (let i = startIndex; i < lines.length; i += chunkSize) {
+        const chunk = lines.slice(i, i + chunkSize);
+        const chunkData = [];
+        
+        for (const line of chunk) {
+          const row = this.parseCSVLine(line, delimiter);
+          if (row.length === allHeaders.length) {
+            // Extract only selected columns
+            const selectedRow = [];
+            for (const colIndex of selectedCols) {
+              selectedRow.push(row[colIndex]);
+            }
+            chunkData.push(selectedRow);
+          }
         }
+        
+        this.processedData.push(...chunkData);
       }
 
       this.fileName = fileName;
-      this.xColumn = xColumn;
-      this.yColumn = yColumn;
 
       // Save the selected columns to a new CSV file
       await this.saveSelectedColumns();
@@ -108,10 +131,7 @@ class CSVService {
         headers: this.headers,
         sampleData: this.processedData.slice(0, 5),
         analysis: analysis,
-        xColumn: this.xColumn,
-        yColumn: this.yColumn,
-        savedFileName: this.getSavedFileName(),
-        fullFileName: `full_${this.fileName}`
+        savedFileName: this.getSavedFileName()
       };
 
     } catch (error) {
@@ -129,22 +149,51 @@ class CSVService {
     const numColumns = this.headers.length;
 
     for (let col = 0; col < numColumns; col++) {
-      const values = this.processedData.map(row => row[col]).filter(val => val !== '');
+      // Extract values without using map to avoid stack overflow
+      const values = [];
+      const uniqueValues = new Set();
+      
+      for (let i = 0; i < this.processedData.length; i++) {
+        const val = this.processedData[i][col];
+        if (val !== '') {
+          values.push(val);
+          uniqueValues.add(val);
+        }
+      }
+      
       if (values.length === 0) continue;
 
-      const type = this.detectColumnType(values);
+      // Sample only first 1000 values for type detection to avoid performance issues
+      const sampleValues = values.slice(0, 1000);
+      const type = this.detectColumnType(sampleValues);
+      
       analysis[this.headers[col]] = {
         type: type,
         count: values.length,
-        unique: new Set(values).size
+        unique: uniqueValues.size
       };
 
       if (type === 'numeric') {
-        const nums = values.map(v => parseFloat(v)).filter(n => !isNaN(n));
-        if (nums.length > 0) {
-          analysis[this.headers[col]].min = Math.min(...nums);
-          analysis[this.headers[col]].max = Math.max(...nums);
-          analysis[this.headers[col]].avg = nums.reduce((a, b) => a + b, 0) / nums.length;
+        // Calculate min/max/avg without using spread operator
+        let min = Infinity;
+        let max = -Infinity;
+        let sum = 0;
+        let validCount = 0;
+        
+        for (const val of values) {
+          const num = parseFloat(val);
+          if (!isNaN(num)) {
+            min = Math.min(min, num);
+            max = Math.max(max, num);
+            sum += num;
+            validCount++;
+          }
+        }
+        
+        if (validCount > 0) {
+          analysis[this.headers[col]].min = min;
+          analysis[this.headers[col]].max = max;
+          analysis[this.headers[col]].avg = sum / validCount;
         }
       }
     }
@@ -181,8 +230,8 @@ class CSVService {
   }
 
   async saveSelectedColumns() {
-    if (!this.processedData || this.xColumn === null || this.yColumn === null) {
-      throw new Error('No data or column selection not provided');
+    if (!this.processedData || !this.headers || this.headers.length === 0) {
+      throw new Error('No data or headers available');
     }
 
     try {
@@ -192,37 +241,24 @@ class CSVService {
         fs.mkdirSync(dataDir, { recursive: true });
       }
 
-      // Save full CSV file
-      const fullFileName = `full_${this.fileName}`;
-      const fullFilePath = path.join(dataDir, fullFileName);
-      
-      // Save full data
-      const fullCsvLines = [
-        this.headers.join(','),
-        ...this.processedData.map(row => row.join(','))
-      ];
-      fs.writeFileSync(fullFilePath, fullCsvLines.join('\n'), 'utf8');
-
       // Create CSV content with selected columns
-      const selectedCsvLines = [];
+      const csvLines = [];
 
       // Add header
-      const headerLine = `${this.headers[this.xColumn]},${this.headers[this.yColumn]}`;
-      selectedCsvLines.push(headerLine);
+      const headerLine = this.headers.join(',');
+      csvLines.push(headerLine);
 
       // Add data rows
       this.processedData.forEach(row => {
-        const xValue = row[this.xColumn] || '';
-        const yValue = row[this.yColumn] || '';
-        const dataLine = `${xValue},${yValue}`;
-        selectedCsvLines.push(dataLine);
+        const dataLine = row.join(',');
+        csvLines.push(dataLine);
       });
 
       // Save selected columns to file
       const savedFileName = this.getSavedFileName();
       const filePath = path.join(dataDir, savedFileName);
 
-      fs.writeFileSync(filePath, selectedCsvLines.join('\n'), 'utf8');
+      fs.writeFileSync(filePath, csvLines.join('\n'), 'utf8');
 
       console.log(`CSV saved successfully: ${filePath}`);
       return filePath;
@@ -236,17 +272,16 @@ class CSVService {
   getSavedFileName() {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-').split('T')[0];
     
-    if (!this.fileName) return `csv_processed_${timestamp}.csv`;
+    if (!this.fileName) return `csv_${timestamp}.csv`;
 
-    // Create a more descriptive name based on selected columns
-    if (this.xColumn !== null && this.yColumn !== null && this.headers.length > 0) {
-      const xColName = this.headers[this.xColumn] || 'X';
-      const yColName = this.headers[this.yColumn] || 'Y';
-      return `${xColName}_vs_${yColName}_${timestamp}.csv`;
-    }
-
+    // Garder le nom original avec les accents
     const baseName = path.basename(this.fileName, '.csv');
-    return `${baseName}_processed_${timestamp}.csv`;
+    // Remplacer seulement les caractères vraiment problématiques pour les noms de fichiers
+    const safeName = baseName
+      .replace(/[<>:"/\\|?*]/g, '_') // Remplacer les caractères interdits par des underscores
+      .replace(/\s+/g, '_'); // Remplacer les espaces par des underscores
+    
+    return `${safeName}_${timestamp}.csv`;
   }
 
   getProcessedData() {
@@ -288,9 +323,21 @@ app.post('/api/csv/upload', upload.single('file'), async (req, res) => {
       });
     }
 
-    const { hasHeader, delimiter, xColumn, yColumn } = req.body;
+    const { hasHeader, delimiter, selectedColumns } = req.body;
     const fileBuffer = req.file.buffer;
-    const fileName = req.file.originalname;
+    let fileName = req.file.originalname;
+
+    // Corriger l'encodage du nom de fichier si nécessaire
+    try {
+      // Essayer de décoder le nom de fichier en UTF-8
+      fileName = Buffer.from(fileName, 'latin1').toString('utf8');
+    } catch (error) {
+      console.log('Could not decode filename, using original:', fileName);
+    }
+
+    console.log('Upload request:', { hasHeader, delimiter, selectedColumns, fileName });
+    console.log('Original filename buffer:', req.file.originalname);
+    console.log('Decoded filename:', fileName);
 
     // Process the CSV file
     const result = await csvService.processCSVUpload(
@@ -299,8 +346,7 @@ app.post('/api/csv/upload', upload.single('file'), async (req, res) => {
         hasHeader: hasHeader === 'true',
         delimiter: delimiter || ',',
         fileName,
-        xColumn: parseInt(xColumn),
-        yColumn: parseInt(yColumn)
+        selectedColumns: selectedColumns
       }
     );
 
@@ -476,4 +522,5 @@ app.listen(MAIN_SERVER, () => {
   console.log(`Frontend: http://localhost:${MAIN_SERVER}`);
 });
 
+module.exports = app; 
 module.exports = app; 
