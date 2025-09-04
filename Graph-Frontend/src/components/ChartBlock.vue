@@ -170,7 +170,7 @@ export default {
           }
         },
         stroke: {
-          curve: this.chartSettings.smoothCurve ? 'smooth' : 'straight',
+          curve: this.chartSettings.smoothCurve ? 'monotoneCubic' : 'straight',
           width: 3,
           lineCap: 'round'
         },

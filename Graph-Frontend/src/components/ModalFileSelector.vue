@@ -194,6 +194,7 @@ export default {
           yColumn: this.selectedYColumn,
           xColumns: this.selectedXColumns
         })
+        this.$emit('close')  // Ferme la modale après avoir appliqué la sélection
       }
     },
     formatFileSize(bytes) {
