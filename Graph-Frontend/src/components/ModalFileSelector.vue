@@ -403,18 +403,25 @@ export default {
 .column-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 0.5rem;
+  gap: 1rem;
 }
 
 .column-name {
   font-weight: 500;
   color: #2c3e50;
+  flex: 1;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  min-width: 0;
 }
 
 .column-actions {
   display: flex;
   gap: 0.5rem;
+  flex-shrink: 0;
+  min-width: fit-content;
 }
 
 .btn-y, .btn-x {
