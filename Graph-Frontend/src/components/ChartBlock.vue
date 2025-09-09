@@ -96,6 +96,17 @@ export default {
   created() {
     this.$store.commit('INIT_CHART_SETTINGS', this.chartIndex)
   },
+
+  watch: {
+    fileData: {
+      handler(newData) {
+        if (newData?.series?.length) {
+          this.autoAdjustMarkers()
+        }
+      },
+      immediate: true
+    }
+  },
   computed: {
     chartSettings() {
       return this.$store.state.chartSettings[this.chartIndex] || {
@@ -241,6 +252,19 @@ export default {
         chartIndex: this.chartIndex,
         settings: { [setting]: value }
       })
+    },
+
+    autoAdjustMarkers() {
+      if (!this.fileData?.series?.length) return
+
+      const totalPoints = this.fileData.series.reduce((total, serie) => {
+        return total + (serie.data?.length || 0)
+      }, 0)
+
+      if (totalPoints > 100) {
+        this.updateChartSetting('showMarkers', false)
+        console.log(`Auto-disabled markers: ${totalPoints} points detected`)
+      }
     }
   }
 }
