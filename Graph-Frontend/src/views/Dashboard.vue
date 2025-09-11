@@ -45,7 +45,7 @@
     <!-- CSV Import Modal -->
     <ModalCsvImport
       :show="showImportModal"
-      :selected-file="selectedFile"
+      :selected-file="importFile"
       :csv-data="csvData"
       v-model:has-header="hasHeader"
       v-model:delimiter="delimiter"
@@ -63,7 +63,7 @@
     <!-- Data Preview Modal -->
     <ModalDataPreview
       :show="showDataPreview"
-      :file-name="selectedFile?.name || ''"
+      :file-name="importFile?.name || ''"
       :total-rows="selectedFileData?.totalRows || 0"
       :total-columns="selectedFileData?.totalColumns || 0"
       :headers="selectedFileData?.headers || []"
@@ -111,7 +111,7 @@ export default {
            data() {
         return {
       showImportModal: false,
-      selectedFile: null,
+      importFile: null,
       rawCsvContent: null,  // Stockage du contenu brut du CSV
       csvData: [],
       hasHeader: true,
@@ -151,7 +151,7 @@ export default {
     },
 
     canImport() {
-      return this.selectedFile && 
+      return this.importFile && 
              this.csvData.length > 0 && 
              this.selectedColumns && 
              this.selectedColumns.length > 0
@@ -189,7 +189,7 @@ export default {
     
     closeModal() {
       this.showImportModal = false
-      this.selectedFile = null
+      this.importFile = null
       this.csvData = []
       this.selectedColumns = []
     },
@@ -205,7 +205,7 @@ export default {
         return
       }
 
-      this.selectedFile = file
+      this.importFile = file
       await this.parseCSV(file)
     },
 
@@ -254,7 +254,7 @@ export default {
     async importData(selectedColumns) {
       try {
         await this.uploadCSV({
-          file: this.selectedFile,
+          file: this.importFile,
           hasHeader: this.hasHeader,
           delimiter: this.delimiter,
           selectedColumns: JSON.stringify(selectedColumns)
@@ -357,7 +357,7 @@ export default {
 
         // Temporarily update selectedFileData for preview
         this.$store.commit('SET_SELECTED_FILE_DATA', {
-          fileName: this.selectedFile?.name || 'Preview',
+          fileName: this.importFile?.name || 'Preview',
           totalRows: selectedData.length,
           totalColumns: this.selectedColumns.length,
           headers: this.selectedColumns.map(index => this.previewHeaders[index]),
