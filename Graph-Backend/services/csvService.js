@@ -229,7 +229,6 @@ class CSVService {
 
       fs.writeFileSync(filePath, csvLines.join('\n'), 'utf8');
 
-      console.log(`CSV saved successfully: ${filePath}`);
       return filePath;
 
     } catch (error) {
@@ -271,20 +270,15 @@ class CSVService {
         throw new Error('File not found');
       }
 
-      console.log('Reading file:', filePath);
       const fileContent = fs.readFileSync(filePath, 'utf8');
       const lines = fileContent.split('\n').filter(line => line.trim());
       
       if (lines.length === 0) {
-        console.log('Empty file detected');
         throw new Error('Empty file');
       }
-
-      console.log('Parsing CSV content, total lines:', lines.length);
       
       // Parse CSV content with better handling
       const headers = this.parseCSVLine(lines[0], ',');
-      console.log('Headers parsed:', headers);
       
       const data = [];
       for (let i = 1; i < lines.length; i++) {
@@ -293,8 +287,6 @@ class CSVService {
           data.push(row);
         }
       }
-      
-      console.log('Data parsed successfully, rows:', data.length);
 
       return {
         filename: filename,

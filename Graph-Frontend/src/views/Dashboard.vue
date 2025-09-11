@@ -200,20 +200,16 @@ export default {
     },
 
     async handleFileUpload(event) {
-      console.log('handleFileUpload called')
       const file = event.target.files[0]
       if (!file) {
-        console.log('No file selected')
         return
       }
 
-      console.log('Selected file:', file.name)
       this.selectedFile = file
       await this.parseCSV(file)
     },
 
     async parseCSV(file) {
-      console.log('parseCSV started for file:', file.name)
       try {
         // Lire et stocker le contenu brut du fichier
         const text = await file.text()
@@ -221,7 +217,6 @@ export default {
         
         // Découper en lignes
         const lines = text.split('\n').filter(line => line.trim())
-        console.log('Number of lines:', lines.length)
         
         // Détecter automatiquement le délimiteur
         const delimiters = [',', ';', '\t', '|']
@@ -236,7 +231,6 @@ export default {
           }
         }
 
-        console.log('Detected delimiter:', bestDelimiter, 'with', maxColumns, 'columns')
         this.delimiter = bestDelimiter
         
         // Parser avec le délimiteur détecté
@@ -255,16 +249,10 @@ export default {
       
       // Mettre à jour les données avec le délimiteur actuel
       this.csvData = lines.map(line => line.split(this.delimiter))
-      console.log('CSV data updated, first row:', this.csvData[0])
     },
 
     async importData(selectedColumns) {
       try {
-        console.log('Importing data with columns:', selectedColumns)
-        console.log('selectedColumns type:', typeof selectedColumns)
-        console.log('selectedColumns length:', selectedColumns?.length)
-        console.log('JSON.stringify(selectedColumns):', JSON.stringify(selectedColumns))
-        
         await this.uploadCSV({
           file: this.selectedFile,
           hasHeader: this.hasHeader,
@@ -381,7 +369,6 @@ export default {
     },
 
     async handleColumnSelection({ fileName, yColumn, xColumns }) {
-      console.log('handleColumnSelection:', { fileName, yColumn, xColumns })
       try {
         await this.loadSelectedFile(fileName)
         
@@ -417,7 +404,6 @@ export default {
           }
         })
 
-        console.log('Created series:', newSeries)
 
         // Mettre à jour le graphique en une seule fois
         this.charts[this.activeChartIndex] = {

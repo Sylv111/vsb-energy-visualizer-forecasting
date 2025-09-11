@@ -23,12 +23,8 @@ class CSVController {
         // Try to decode filename in UTF-8
         fileName = Buffer.from(fileName, 'latin1').toString('utf8');
       } catch (error) {
-        console.log('Could not decode filename, using original:', fileName);
+        // Could not decode filename, using original
       }
-
-      console.log('Upload request:', { hasHeader, delimiter, selectedColumns, fileName });
-      console.log('Original filename buffer:', req.file.originalname);
-      console.log('Decoded filename:', fileName);
 
       // Process the CSV file
       const result = await this.csvService.processCSVUpload(

@@ -134,7 +134,6 @@ export default {
   methods: {
     async loadFileData(fileName) {
       try {
-        console.log('Loading file data for:', fileName)
         this.loading = true
         const response = await fetch(`/api/csv/files/${fileName}`)
         
@@ -143,14 +142,12 @@ export default {
         }
         
         const data = await response.json()
-        console.log('Received data:', data)
         
         if (data.success) {
           this.fileData = data.data
           this.expandedFile = fileName
           this.selectedYColumn = null
           this.selectedXColumns = []
-          console.log('File data loaded successfully')
         } else {
           throw new Error(data.message || 'Failed to load file data')
         }

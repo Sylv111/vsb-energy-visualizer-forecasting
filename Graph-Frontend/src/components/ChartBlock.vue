@@ -263,7 +263,6 @@ export default {
 
       if (totalPoints > 100) {
         this.updateChartSetting('showMarkers', false)
-        console.log(`Auto-disabled markers: ${totalPoints} points detected`)
       }
     }
   }
