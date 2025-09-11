@@ -39,6 +39,7 @@
         @open-data-preview="showDataPreview = true"
         @open-file-selector="(index) => { activeChartIndex = index; showFileSelector = true }"
         @remove-chart="removeChart"
+        @ai-prediction="handleAIPrediction"
            />
          </div>
          
@@ -444,6 +445,11 @@ export default {
       })
     },
 
+    handleAIPrediction(chartIndex) {
+      // TODO: Implement AI prediction functionality
+      alert(`AI Prediction for chart ${chartIndex + 1} - Feature coming soon!`)
+    },
+
     removeChart(index) {
       if (this.charts.length > 1) {
         // S'il y a plusieurs graphiques, on supprime celui-ci
@@ -542,9 +548,10 @@ export default {
 .new-chart-section {
   margin-top: 3rem;
   margin-bottom: 3rem;
-   display: flex;
+  display: flex;
   justify-content: center;
-   align-items: center;
+  align-items: center;
+  gap: 1rem;
   min-height: 40px;
 }
 

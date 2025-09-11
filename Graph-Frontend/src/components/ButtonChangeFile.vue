@@ -43,11 +43,11 @@ export default {
   width: 18px;
   height: 18px;
   transition: transform 0.2s ease;
-  filter: brightness(0) saturate(100%) invert(30%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0.3) contrast(1);
+  filter: brightness(0) saturate(100%) invert(30%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(1) contrast(1);
 }
 
 .change-file-btn:hover .action-icon {
-  filter: brightness(0) saturate(100%) invert(40%) sepia(100%) saturate(1000%) hue-rotate(15deg) brightness(0.8) contrast(1);
+  filter: brightness(0) saturate(100%) invert(40%) sepia(100%) saturate(2000%) hue-rotate(15deg) brightness(1) contrast(1);
 }
 
 .action-btn:hover .action-icon {

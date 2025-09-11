@@ -6,6 +6,7 @@
         <template v-if="chartOptions">
           <ButtonChartOptions @click="toggleChartOptions" />
           <ButtonDataPreview @click="$emit('open-data-preview')" />
+          <ButtonAIPrediction @click="$emit('ai-prediction', chartIndex)" />
         </template>
         <ButtonChangeFile @click="$emit('open-file-selector', chartIndex)" />
         <ButtonRemoveChart @click="$emit('remove-chart', chartIndex)" />
@@ -64,15 +65,17 @@
 <script>
 import ButtonChartOptions from '@/components/ButtonChartOptions.vue'
 import ButtonDataPreview from '@/components/ButtonDataPreview.vue'
+import ButtonAIPrediction from '@/components/ButtonAIPrediction.vue'
 import ButtonChangeFile from '@/components/ButtonChangeFile.vue'
 import ButtonRemoveChart from '@/components/ButtonRemoveChart.vue'
 
 export default {
   name: 'ChartBlock',
-  emits: ['open-data-preview', 'open-file-selector', 'remove-chart'],
+  emits: ['open-data-preview', 'open-file-selector', 'remove-chart', 'ai-prediction'],
   components: {
     ButtonChartOptions,
     ButtonDataPreview,
+    ButtonAIPrediction,
     ButtonChangeFile,
     ButtonRemoveChart
   },

@@ -6,6 +6,7 @@
       @open-data-preview="$emit('open-data-preview')"
       @open-file-selector="$emit('open-file-selector', $event)"
       @remove-chart="$emit('remove-chart', chartIndex)"
+      @ai-prediction="$emit('ai-prediction', $event)"
     />
   </div>
 </template>
@@ -28,7 +29,7 @@ export default {
       required: true
     }
   },
-  emits: ['open-data-preview', 'open-file-selector', 'remove-chart']
+  emits: ['open-data-preview', 'open-file-selector', 'remove-chart', 'ai-prediction']
 }
 </script>
 
