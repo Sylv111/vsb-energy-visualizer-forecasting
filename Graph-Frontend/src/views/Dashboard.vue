@@ -57,6 +57,7 @@
       @close="closeModal"
       @file-upload="handleFileUpload"
       @import-data="columns => importData(columns)"
+      @open-data-preview="openDataPreview"
     />
 
     <!-- Data Preview Modal -->
@@ -350,6 +351,33 @@ export default {
     resetDataPreview() {
       this.displayedDataCount = 100
       this.isLoadingMore = false
+    },
+
+    openDataPreview() {
+      // Check if columns are selected
+      if (this.selectedColumns.length === 0) {
+        alert('Please select at least one column to preview the data.')
+        return
+      }
+      
+      // Prepare preview data from the CSV data in the import modal
+      if (this.csvData.length > 0 && this.selectedColumns.length > 0) {
+        const startIndex = this.hasHeader ? 1 : 0
+        const selectedData = this.csvData.slice(startIndex).map(row => {
+          return this.selectedColumns.map(colIndex => row[colIndex])
+        })
+
+        // Temporarily update selectedFileData for preview
+        this.$store.commit('SET_SELECTED_FILE_DATA', {
+          fileName: this.selectedFile?.name || 'Preview',
+          totalRows: selectedData.length,
+          totalColumns: this.selectedColumns.length,
+          headers: this.selectedColumns.map(index => this.previewHeaders[index]),
+          data: selectedData
+        })
+      }
+      this.showDataPreview = true
+      this.resetDataPreview()
     },
 
     async handleColumnSelection({ fileName, yColumn, xColumns }) {
