@@ -6,7 +6,11 @@
         <template v-if="chartOptions">
           <ButtonChartOptions @click="toggleChartOptions" />
           <ButtonDataPreview @click="$emit('open-data-preview')" />
-          <ButtonAIPrediction @click="$emit('ai-prediction', chartIndex)" />
+          <ButtonAIPrediction 
+            :available-columns="availableColumns"
+            :selected-columns="selectedColumns"
+            @run-prediction="handleAIPrediction"
+          />
         </template>
         <ButtonChangeFile @click="$emit('open-file-selector', chartIndex)" />
         <ButtonRemoveChart @click="$emit('remove-chart', chartIndex)" />
@@ -116,6 +120,25 @@ export default {
         showMarkers: true,
         smoothCurve: true,
         showGrid: true
+      }
+    },
+
+    availableColumns() {
+      // Les colonnes disponibles viennent du store (selectedFileData.headers)
+      return this.$store.getters.selectedFileData?.headers || []
+    },
+
+    selectedColumns() {
+      if (!this.fileData?.series?.length) {
+        return { x: null, y: null }
+      }
+      
+      // Les colonnes sont stockées comme des index numériques, on doit les convertir en noms
+      const headers = this.$store.getters.selectedFileData?.headers || []
+      
+      return {
+        x: this.fileData.xColumns?.[0] !== undefined ? headers[this.fileData.xColumns[0]] : null,
+        y: this.fileData.yColumn !== undefined ? headers[this.fileData.yColumn] : null
       }
     },
     
@@ -248,6 +271,13 @@ export default {
   methods: {
     toggleChartOptions() {
       this.showChartOptions = !this.showChartOptions
+    },
+
+    handleAIPrediction(config) {
+      this.$emit('ai-prediction', {
+        chartIndex: this.chartIndex,
+        config: config
+      })
     },
     
     updateChartSetting(setting, value) {

@@ -1,14 +1,55 @@
 <template>
-  <button @click="$emit('click')" class="action-btn ai-prediction-btn">
-    <img src="@/assets/icons/ai-neuron-network.svg" alt="AI Prediction" class="action-icon">
-    <span>AI Prediction</span>
-  </button>
+  <div>
+    <button @click="openModal" class="action-btn ai-prediction-btn">
+      <img src="@/assets/icons/ai-neuron-network.svg" alt="AI Prediction" class="action-icon">
+      <span>AI Prediction</span>
+    </button>
+    
+    <ModalAIPrediction
+      :is-visible="showModal"
+      :available-columns="availableColumns"
+      :selected-columns="selectedColumns"
+      @close="closeModal"
+      @run-prediction="handlePrediction"
+    />
+  </div>
 </template>
 
 <script>
+import ModalAIPrediction from './ModalAIPrediction.vue'
+
 export default {
   name: 'ButtonAIPrediction',
-  emits: ['click']
+  components: {
+    ModalAIPrediction
+  },
+  props: {
+    availableColumns: {
+      type: Array,
+      default: () => []
+    },
+    selectedColumns: {
+      type: Object,
+      default: () => ({ x: null, y: null })
+    }
+  },
+  emits: ['run-prediction'],
+  data() {
+    return {
+      showModal: false
+    }
+  },
+  methods: {
+    openModal() {
+      this.showModal = true
+    },
+    closeModal() {
+      this.showModal = false
+    },
+    handlePrediction(config) {
+      this.$emit('run-prediction', config)
+    }
+  }
 }
 </script>
 
