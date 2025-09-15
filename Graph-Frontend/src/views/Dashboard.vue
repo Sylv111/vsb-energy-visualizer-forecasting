@@ -445,9 +445,41 @@ export default {
       })
     },
 
-    handleAIPrediction(chartIndex) {
-      // TODO: Implement AI prediction functionality
-      alert(`AI Prediction for chart ${chartIndex + 1} - Feature coming soon!`)
+    async handleAIPrediction(predictionData) {
+      try {
+        const { chartIndex, config } = predictionData
+        
+        // Récupérer le nom du fichier CSV actuel
+        const currentFile = this.$store.getters.selectedFileData
+        if (!currentFile || !currentFile.filename) {
+          alert('No CSV file selected. Please select a file first.')
+          return
+        }
+
+        // Préparer les données pour l'API
+        const apiData = {
+          csvFile: currentFile.filename,
+          aiModel: config.aiModel,
+          xColumn: config.xColumn,
+          yColumn: config.yColumn,
+          nPredictions: config.nPredictions,
+          epochs: config.epochs,
+          batchSize: config.batchSize,
+          learningRate: config.learningRate
+        }
+
+        // Importer le service dynamiquement pour éviter les erreurs de build
+        const aiPredictionService = (await import('@/services/aiPredictionService')).default
+        
+        // Envoyer la requête
+        await aiPredictionService.runPrediction(apiData)
+        
+        // Afficher un message de succès
+        alert(`AI Prediction request sent successfully!\n\nChart: ${chartIndex + 1}\nModel: ${config.aiModel}\nPredictions: ${config.nPredictions}`)
+        
+      } catch (error) {
+        alert(`AI Prediction failed: ${error.message}`)
+      }
     },
 
     removeChart(index) {

@@ -38,20 +38,79 @@
            </div>
          </div>
 
-        <!-- Number of Predictions -->
-        <div class="form-group">
-          <label for="n-predictions">Number of Predictions:</label>
-          <input 
-            id="n-predictions" 
-            v-model.number="config.nPredictions" 
-            type="number" 
-            min="1" 
-            max="1000" 
-            class="form-input"
-            placeholder="Enter number of predictions"
-          >
-        </div>
-      </div>
+         <!-- Number of Predictions -->
+         <div class="form-group">
+           <label for="n-predictions">Number of Predictions:</label>
+           <input 
+             id="n-predictions" 
+             v-model.number="config.nPredictions" 
+             type="number" 
+             min="1" 
+             max="1000" 
+             class="form-input"
+             placeholder="Enter number of predictions"
+           >
+         </div>
+
+         <!-- Advanced Parameters -->
+         <div class="form-group advanced-section">
+           <h3 class="section-title">Advanced Parameters</h3>
+           
+           <!-- Epochs Slider -->
+           <div class="slider-group">
+             <label for="epochs">Epochs: {{ config.epochs }}</label>
+             <input 
+               id="epochs" 
+               v-model.number="config.epochs" 
+               type="range" 
+               min="50" 
+               max="300" 
+               step="10"
+               class="slider"
+             >
+             <div class="slider-labels">
+               <span>50</span>
+               <span>300</span>
+             </div>
+           </div>
+
+           <!-- Batch Size Slider -->
+           <div class="slider-group">
+             <label for="batch-size">Batch Size: {{ config.batchSize }}</label>
+             <input 
+               id="batch-size" 
+               v-model.number="config.batchSize" 
+               type="range" 
+               min="16" 
+               max="64" 
+               step="8"
+               class="slider"
+             >
+             <div class="slider-labels">
+               <span>16</span>
+               <span>64</span>
+             </div>
+           </div>
+
+           <!-- Learning Rate Slider -->
+           <div class="slider-group">
+             <label for="learning-rate">Learning Rate: {{ config.learningRate }}</label>
+             <input 
+               id="learning-rate" 
+               v-model.number="config.learningRate" 
+               type="range" 
+               min="0.0001" 
+               max="0.005" 
+               step="0.0001"
+               class="slider"
+             >
+             <div class="slider-labels">
+               <span>1e-4</span>
+               <span>5e-3</span>
+             </div>
+           </div>
+         </div>
+       </div>
 
        <div class="modal-footer">
          <button @click="closeModal" class="btn btn-secondary">Cancel</button>
@@ -81,16 +140,19 @@ export default {
     }
   },
   emits: ['close', 'run-prediction'],
-  data() {
-    return {
-      config: {
-        aiModel: 'convlstm',
-        xColumn: '',
-        yColumn: '',
-        nPredictions: 100
-      }
-    }
-  },
+   data() {
+     return {
+       config: {
+         aiModel: 'convlstm',
+         xColumn: '',
+         yColumn: '',
+         nPredictions: 100,
+         epochs: 200,
+         batchSize: 32,
+         learningRate: 0.001
+       }
+     }
+   },
   computed: {
     isFormValid() {
       return this.config.xColumn && this.config.yColumn && this.config.nPredictions > 0
@@ -291,11 +353,90 @@ export default {
   transform: translateY(-1px);
 }
 
-.btn-primary:disabled {
-  background-color: #6c757d;
-  cursor: not-allowed;
-  opacity: 0.6;
-}
+ .btn-primary:disabled {
+   background-color: #6c757d;
+   cursor: not-allowed;
+   opacity: 0.6;
+ }
+
+ /* Advanced Parameters Section */
+ .advanced-section {
+   border-top: 2px solid #e9ecef;
+   padding-top: 1.5rem;
+   margin-top: 1.5rem;
+ }
+
+ .section-title {
+   margin: 0 0 1.5rem 0;
+   color: #2c3e50;
+   font-size: 1.2rem;
+   font-weight: 600;
+ }
+
+ .slider-group {
+   margin-bottom: 2rem;
+ }
+
+ .slider-group label {
+   display: block;
+   margin-bottom: 0.5rem;
+   font-weight: 500;
+   color: #495057;
+   font-size: 0.95rem;
+ }
+
+ .slider {
+   width: 100%;
+   height: 6px;
+   border-radius: 3px;
+   background: #e9ecef;
+   outline: none;
+   -webkit-appearance: none;
+   appearance: none;
+   margin-bottom: 0.5rem;
+ }
+
+ .slider::-webkit-slider-thumb {
+   -webkit-appearance: none;
+   appearance: none;
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   background: #007bff;
+   cursor: pointer;
+   border: 2px solid white;
+   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+   transition: all 0.2s ease;
+ }
+
+ .slider::-webkit-slider-thumb:hover {
+   background: #0056b3;
+   transform: scale(1.1);
+ }
+
+ .slider::-moz-range-thumb {
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   background: #007bff;
+   cursor: pointer;
+   border: 2px solid white;
+   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+   transition: all 0.2s ease;
+ }
+
+ .slider::-moz-range-thumb:hover {
+   background: #0056b3;
+   transform: scale(1.1);
+ }
+
+ .slider-labels {
+   display: flex;
+   justify-content: space-between;
+   font-size: 0.8rem;
+   color: #6c757d;
+   margin-top: 0.25rem;
+ }
 
 /* Responsive design */
 @media (max-width: 768px) {
