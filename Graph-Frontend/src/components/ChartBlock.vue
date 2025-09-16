@@ -7,8 +7,9 @@
           <ButtonChartOptions @click="toggleChartOptions" />
           <ButtonDataPreview @click="$emit('open-data-preview')" />
           <ButtonAIPrediction 
-            :available-columns="availableColumns"
             :selected-columns="selectedColumns"
+            :chart-index="chartIndex"
+            :all-charts="allCharts"
             @run-prediction="handleAIPrediction"
           />
         </template>
@@ -92,6 +93,10 @@ export default {
     chartIndex: {
       type: Number,
       required: true
+    },
+    allCharts: {
+      type: Array,
+      default: () => []
     }
   },
   data() {

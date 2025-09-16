@@ -3,6 +3,7 @@
     <ChartBlock
       :file-data="fileData"
       :chart-index="chartIndex"
+      :all-charts="allCharts"
       @open-data-preview="$emit('open-data-preview')"
       @open-file-selector="$emit('open-file-selector', $event)"
       @remove-chart="$emit('remove-chart', chartIndex)"
@@ -27,6 +28,10 @@ export default {
     chartIndex: {
       type: Number,
       required: true
+    },
+    allCharts: {
+      type: Array,
+      default: () => []
     }
   },
   emits: ['open-data-preview', 'open-file-selector', 'remove-chart', 'ai-prediction']

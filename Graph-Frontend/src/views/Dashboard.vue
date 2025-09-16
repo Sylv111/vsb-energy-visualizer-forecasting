@@ -35,6 +35,7 @@
         :available-files="availableFiles"
         :file-data="chart"
         :chart-index="index"
+        :all-charts="charts"
         @select-file="(fileName) => selectFileForChart(fileName, index)"
         @open-data-preview="showDataPreview = true"
         @open-file-selector="(index) => { activeChartIndex = index; showFileSelector = true }"

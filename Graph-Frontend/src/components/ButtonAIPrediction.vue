@@ -7,8 +7,8 @@
     
     <ModalAIPrediction
       :is-visible="showModal"
-      :available-columns="availableColumns"
       :selected-columns="selectedColumns"
+      :chart-data="chartData"
       @close="closeModal"
       @run-prediction="handlePrediction"
     />
@@ -24,30 +24,76 @@ export default {
     ModalAIPrediction
   },
   props: {
-    availableColumns: {
-      type: Array,
-      default: () => []
-    },
     selectedColumns: {
       type: Object,
       default: () => ({ x: null, y: null })
+    },
+    chartIndex: {
+      type: Number,
+      required: true
+    },
+    allCharts: {
+      type: Array,
+      default: () => []
     }
   },
   emits: ['run-prediction'],
   data() {
     return {
-      showModal: false
+      showModal: false,
+      chartData: null
     }
   },
   methods: {
-    openModal() {
+    async openModal() {
+      const activeChart = this.allCharts[this.chartIndex] || {}
+      const chartFileName = activeChart.selectedFiles?.[0]
+      
+      let chartFileData = null
+      if (chartFileName) {
+        try {
+          await this.$store.dispatch('loadSelectedFile', chartFileName)
+          chartFileData = this.$store.getters.selectedFileData
+        } catch (error) {
+          console.error('Error loading chart file:', error)
+        }
+      }
+      
+      const chartInfo = {
+        chartIndex: this.chartIndex,
+        chartData: {
+          selectedFiles: activeChart.selectedFiles || [],
+          yColumn: activeChart.yColumn,
+          xColumns: activeChart.xColumns || [],
+          seriesCount: activeChart.series?.length || 0
+        },
+        csvFile: {
+          filename: chartFileName || 'Aucun fichier',
+          headers: chartFileData?.headers || [],
+          dataRows: chartFileData?.data?.length || 0
+        }
+      }
+      console.log('Graph info:', chartInfo)
+      
+      // Console.log de tous les graphiques
+      // console.log('All graphs:', this.allCharts.map((chart, index) => ({
+      //   chartIndex: index,
+      //   selectedFiles: chart.selectedFiles || [],
+      //   yColumn: chart.yColumn,
+      //   xColumns: chart.xColumns || [],
+      //   seriesCount: chart.series?.length || 0
+      // })))
+      this.chartData = chartInfo
       this.showModal = true
     },
     closeModal() {
       this.showModal = false
     },
     handlePrediction(config) {
-      this.$emit('run-prediction', config)
+      this.$emit('run-prediction', {
+        chartIndex: this.chartIndex,
+        config: config
+      })
     }
   }
 }

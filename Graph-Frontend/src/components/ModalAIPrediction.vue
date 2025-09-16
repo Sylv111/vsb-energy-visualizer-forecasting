@@ -130,13 +130,13 @@ export default {
       type: Boolean,
       default: false
     },
-    availableColumns: {
-      type: Array,
-      default: () => []
-    },
     selectedColumns: {
       type: Object,
       default: () => ({ x: null, y: null })
+    },
+    chartData: {
+      type: Object,
+      default: null
     }
   },
   emits: ['close', 'run-prediction'],
@@ -156,35 +156,54 @@ export default {
   computed: {
     isFormValid() {
       return this.config.xColumn && this.config.yColumn && this.config.nPredictions > 0
+    },
+    
+    availableColumns() {
+      return this.chartData?.csvFile?.headers || []
     }
   },
   watch: {
     isVisible(newVal) {
       if (newVal) {
-        this.$nextTick(() => {
-          this.initializeConfig()
-        })
+        this.initializeConfig()
       }
     },
     selectedColumns: {
       handler() {
-        this.$nextTick(() => {
-          this.initializeConfig()
-        })
+        this.initializeConfig()
+      },
+      deep: true
+    },
+    chartData: {
+      handler() {
+        this.initializeConfig()
       },
       deep: true
     }
   },
   methods: {
     initializeConfig() {
-      // Auto-fill Y column if one is selected
-      if (this.selectedColumns.y && this.availableColumns.includes(this.selectedColumns.y)) {
-        this.config.yColumn = this.selectedColumns.y
+      // Use headers from the specific chart's file
+      const chartHeaders = this.chartData?.csvFile?.headers || []
+      
+      // Auto-fill Y column from chart data
+      if (this.chartData?.chartData?.yColumn !== undefined && chartHeaders.length > 0) {
+        const yColumnIndex = this.chartData.chartData.yColumn
+        const yColumnName = chartHeaders[yColumnIndex]
+        if (yColumnName) {
+          this.config.yColumn = yColumnName
+        }
       }
       
-      // Auto-fill X column if one is selected
-      if (this.selectedColumns.x && this.availableColumns.includes(this.selectedColumns.x)) {
-        this.config.xColumn = this.selectedColumns.x
+      // Auto-fill X column from chart data ONLY if there's exactly one X column
+      if (this.chartData?.chartData?.xColumns?.length === 1 && chartHeaders.length > 0) {
+        const xColumnIndex = this.chartData.chartData.xColumns[0]
+        const xColumnName = chartHeaders[xColumnIndex]
+        if (xColumnName) {
+          this.config.xColumn = xColumnName
+        }
+      } else if (this.chartData?.chartData?.xColumns?.length > 1) {
+        this.config.xColumn = ''
       }
     },
     closeModal() {
