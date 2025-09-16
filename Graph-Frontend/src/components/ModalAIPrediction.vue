@@ -202,17 +202,17 @@ export default {
         if (xColumnName) {
           this.config.xColumn = xColumnName
         }
-      } else if (this.chartData?.chartData?.xColumns?.length > 1) {
-        this.config.xColumn = ''
       }
     },
     closeModal() {
       this.$emit('close')
     },
-    runPrediction() {
+    runPrediction() {  
       if (this.isFormValid) {
-        this.$emit('run-prediction', { ...this.config })
+        this.$emit('run-prediction', this.config)
         this.closeModal()
+      } else {
+        alert('Please select both X and Y columns before running prediction.')
       }
     }
   }
