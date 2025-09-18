@@ -45,6 +45,13 @@ class CSVService {
       let allHeaders = [];
       if (hasHeader) {
         allHeaders = this.parseCSVLine(lines[0], delimiter);
+        // Process headers to assign generic names to empty/unnamed columns
+        allHeaders = allHeaders.map((header, index) => {
+          if (!header || header.trim() === '' || header === 'Unnamed') {
+            return `Column_${index + 1}`;
+          }
+          return header;
+        });
         startIndex = 1;
       } else {
         // Generate headers if none provided
