@@ -59,7 +59,7 @@ class PythonExecutor {
         '--verbose', verbose.toString()
       ];
 
-      console.log('🚀 Exécution du script Python avec les paramètres:', {
+      console.log('Exécution du script Python avec les paramètres:', {
         script: this.scriptPath,
         args: args
       });
@@ -75,13 +75,13 @@ class PythonExecutor {
       pythonProcess.stdout.on('data', (data) => {
         const output = data.toString();
         stdout += output;
-        console.log('📊 Python stdout:', output.trim());
+        console.log('Python stdout:', output.trim());
       });
 
       pythonProcess.stderr.on('data', (data) => {
         const error = data.toString();
         stderr += error;
-        console.log('⚠️ Python stderr:', error.trim());
+        console.log('Python stderr:', error.trim());
       });
 
       pythonProcess.on('close', (code) => {
