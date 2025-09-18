@@ -205,7 +205,7 @@ class CSVService {
 
     try {
       // Create data directory if it doesn't exist
-      const dataDir = path.join(__dirname, '..', 'data', 'processed');
+      const dataDir = path.join(__dirname, '..', 'uploads');
       if (!fs.existsSync(dataDir)) {
         fs.mkdirSync(dataDir, { recursive: true });
       }
@@ -263,7 +263,7 @@ class CSVService {
 
   async loadCSVFile(filename) {
     try {
-      const dataDir = path.join(__dirname, '..', 'data', 'processed');
+      const dataDir = path.join(__dirname, '..', 'uploads');
       const filePath = path.join(dataDir, filename);
 
       if (!fs.existsSync(filePath)) {
@@ -303,7 +303,7 @@ class CSVService {
 
   async listCSVFiles() {
     try {
-      const dataDir = path.join(__dirname, '..', 'data', 'processed');
+      const dataDir = path.join(__dirname, '..', 'uploads');
       if (!fs.existsSync(dataDir)) {
         return [];
       }
