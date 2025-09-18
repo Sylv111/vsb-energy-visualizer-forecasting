@@ -149,7 +149,13 @@ export default {
          nPredictions: 100,
          epochs: 200,
          batchSize: 32,
-         learningRate: 0.001
+         learningRate: 0.001,
+         seqLength: 48,
+         filters: 64,
+         kernelSize: 3,
+         dropout: 0.2,
+         l2Reg: 0.001,
+         verbose: 1
        }
      }
    },

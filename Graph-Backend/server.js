@@ -8,6 +8,7 @@ const { MAIN_SERVER } = require('./config/ports');
 // Import routes
 const csvRoutes = require('./routes/csvRoutes');
 const healthRoutes = require('./routes/healthRoutes');
+const aiRoutes = require('./routes/aiRoutes');
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(express.urlencoded({ extended: true, limit: '30mb' }));
 
 // API Routes
 app.use('/api/csv', csvRoutes);
+app.use('/api/ai', aiRoutes);
 app.use('/api', healthRoutes);
 
 // Serve static files from Vue.js build

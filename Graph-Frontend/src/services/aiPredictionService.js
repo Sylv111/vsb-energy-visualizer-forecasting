@@ -22,8 +22,9 @@ class AIPredictionService {
    */
   async runPrediction(predictionData) {
     try {
+      
       const response = await this.api.post('/api/ai/predict', predictionData, {
-        timeout: 300000, // 5 minutes timeout pour les prédictions longues
+        timeout: 3000000,
         headers: {
           'Content-Type': 'application/json'
         }
@@ -32,8 +33,11 @@ class AIPredictionService {
       return response.data
       
     } catch (error) {
-      // Pour l'instant, on simule une réponse fictive en cas d'erreur
+      console.error('Erreur lors de la prédiction IA:', error)
+      
+      // Si le backend n'est pas encore prêt, on simule une réponse
       if (error.code === 'ECONNREFUSED' || error.response?.status === 404) {
+        console.log('Backend IA non disponible, simulation de la réponse')
         return this.simulateFictiveResponse(predictionData)
       }
       
@@ -42,7 +46,6 @@ class AIPredictionService {
   }
 
   /**
-   * Simule une réponse fictive pour les tests
    * @param {Object} predictionData - Données de prédiction
    * @returns {Object} - Réponse fictive
    */
