@@ -224,8 +224,8 @@ export default {
   background: white;
   border-radius: 12px;
   width: 95%;
-  max-width: 600px;
-  max-height: 80vh;
+  max-width: 900px;
+  max-height: 85vh;
   overflow: hidden;
   box-shadow: 0 10px 40px rgba(0,0,0,0.3);
   display: flex;
@@ -375,8 +375,8 @@ export default {
 
 .columns-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
 }
 
 .column-item {
