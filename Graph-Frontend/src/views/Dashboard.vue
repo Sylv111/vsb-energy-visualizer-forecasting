@@ -378,23 +378,25 @@ export default {
           throw new Error('No data loaded')
         }
 
-        // Préparer les données une seule fois
         const data = this.selectedFileData.data
         const headers = this.selectedFileData.headers
         
-        // Limiter le nombre de points pour éviter de faire planter le navigateur
-        const maxPoints = 10000; // Maximum 10,000 points par série
+        const maxPoints = 10000; 
         const step = Math.max(1, Math.floor(data.length / maxPoints));
         
-        // Créer les séries pour chaque colonne X
         const newSeries = xColumns.map((xCol, index) => {
-          // Créer un tableau de points avec échantillonnage
           const points = []
           for (let i = 0; i < data.length; i += step) {
-            points.push({
-              x: data[i][yColumn],
-              y: data[i][xCol]
-            })
+            const xValue = data[i][yColumn]
+            const yValue = data[i][xCol]
+            if (xValue !== null && xValue !== undefined && xValue !== '' && 
+                yValue !== null && yValue !== undefined && yValue !== '' && 
+                !isNaN(parseFloat(xValue)) && !isNaN(parseFloat(yValue))) {
+              points.push({
+                x: parseFloat(xValue),
+                y: parseFloat(yValue)
+              })
+            }
           }
 
           return {

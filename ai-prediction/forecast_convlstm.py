@@ -320,25 +320,68 @@ def main():
         increment_val = start_increment + (i + 1)  # Simple +1 increment from starting point
         future_increment.append(round_to_precision(increment_val, increment_precision))
     
-    # Create prediction-only DataFrame with only X and Y columns
-    prediction_df = pd.DataFrame({
-        args.col_y: future_increment,
-        args.col_x: predictions
-    })
+    # Check if input file is already a prediction file
+    input_filename = os.path.basename(args.file)
     
-    # Generate output filename
-    base_name, ext = os.path.splitext(args.file)
-    output_file = f"{base_name}_convlstm_preds{ext}"
+    if input_filename.startswith("AI prediction - "):
+        # Input file is already a prediction file, use it directly
+        result_df = df.copy()
+        output_file = args.file
+        print(f"INFO: Using existing prediction file as input and output", file=sys.stderr)
+    else:
+        # Input file is original data, check if prediction file exists
+        base_name, ext = os.path.splitext(input_filename)
+        prediction_file = os.path.join(os.path.dirname(args.file), f"AI prediction - {base_name}{ext}")
+        
+        if os.path.exists(prediction_file):
+            # Load existing prediction file
+            result_df = pd.read_csv(prediction_file)
+            print(f"INFO: Loaded existing prediction file with {len(result_df.columns)} columns", file=sys.stderr)
+            output_file = prediction_file
+        else:
+            # Create new DataFrame with original data
+            result_df = df.copy()
+            print(f"INFO: Created new prediction file from original data", file=sys.stderr)
+            output_file = prediction_file
     
-    # Save prediction-only file
+    # Create prediction column name with AI indicator and increment if needed
+    base_prediction_name = f"{args.col_x}_AI_Prediction"
+    prediction_col_name = base_prediction_name
+    
+    # Check if column already exists and find next available name
+    counter = 1
+    while prediction_col_name in result_df.columns:
+        counter += 1
+        prediction_col_name = f"{base_prediction_name}_{counter}"
+    
+    # Initialize prediction column with NaN values (better for visualization)
+    result_df[prediction_col_name] = np.nan
+    
+    # Add predictions starting from the specified index
+    for i, pred_value in enumerate(predictions):
+        # Round prediction to match input precision
+        rounded_pred = round_to_precision(pred_value, target_precision)
+        
+        pred_index = start_index + i + 1
+        if pred_index < len(result_df):
+            # If we're within existing data, add the prediction
+            result_df.loc[pred_index, prediction_col_name] = rounded_pred
+        else:
+            # If we're beyond existing data, add new rows
+            new_row = pd.Series([""] * len(result_df.columns), index=result_df.columns)
+            new_row[args.col_y] = start_increment + i + 1  # Increment column
+            new_row[prediction_col_name] = rounded_pred
+            result_df = pd.concat([result_df, new_row.to_frame().T], ignore_index=True)
+    
+    # Save file with original data + predictions
     try:
-        prediction_df.to_csv(output_file, index=False)
+        result_df.to_csv(output_file, index=False)
         print(f"INFO: Saved predictions to: {output_file}")
         print(f"INFO: Model: ConvLSTM with sequence length {seq_length}")
         print(f"INFO: Final Training - MAE: {mae_pct_train:.2f}%, RMSE: {rmse_pct_train:.2f}%")
         print(f"INFO: Final Validation - MAE: {mae_pct_val:.2f}%, RMSE: {rmse_pct_val:.2f}%")
         print(f"INFO: Precision preserved: {target_precision} decimal places for target, {increment_precision} decimal places for increment")
-        print(f"INFO: Created {args.n_pred} prediction rows in separate file")
+        print(f"INFO: Added prediction column '{prediction_col_name}' with {args.n_pred} predictions")
     except Exception as e:
         print(f"ERROR: Cannot save output file: {e}", file=sys.stderr)
         sys.exit(7)
