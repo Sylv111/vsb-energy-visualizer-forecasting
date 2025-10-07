@@ -39,7 +39,8 @@ class PythonExecutor {
         kernelSize = 3,
         dropout = 0.2,
         l2Reg = 0.001,
-        verbose = 1
+        verbose = 1,
+        startIndex = -1
       } = params;
 
       const args = [
@@ -48,6 +49,7 @@ class PythonExecutor {
         '--x', xColumn,
         '--y', yColumn,
         '--n', nPredictions.toString(),
+        '--start_index', startIndex.toString(),
         '--epochs', epochs.toString(),
         '--batch_size', batchSize.toString(),
         '--learning_rate', learningRate.toString(),

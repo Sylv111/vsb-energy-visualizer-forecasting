@@ -49,6 +49,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--x", dest="col_x", required=True, help="Name of target column to predict")
     p.add_argument("--y", dest="col_y", required=True, help="Name of increment/index column")
     p.add_argument("--n", dest="n_pred", type=int, required=True, help="Number of points to predict")
+    p.add_argument("--start_index", type=int, default=-1, help="Starting index for prediction (default: -1 for end of data)")
     
     # Advanced parameters
     p.add_argument("--epochs", type=int, default=200, help="Number of training epochs (default: 200)")
@@ -200,6 +201,16 @@ def main():
     # Handle missing values for target data
     target_data = target_data.fillna(method='ffill').fillna(method='bfill')
     
+    # Determine starting point for prediction
+    start_index = args.start_index
+    if start_index == -1:
+        start_index = len(target_data) - 1  # Use last point by default
+    elif start_index < 0 or start_index >= len(target_data):
+        print(f"ERROR: Invalid start_index {start_index}. Must be between 0 and {len(target_data)-1}", file=sys.stderr)
+        sys.exit(3)
+    
+    print(f"INFO: Starting prediction from index {start_index} (value: {target_data.iloc[start_index]})", file=sys.stderr)
+    
     # Detect precision
     target_precision = detect_precision(target_data.values)
     increment_precision = detect_precision(increment_data.values)
@@ -279,26 +290,34 @@ def main():
     
     # Generate predictions
     try:
-        # Use scaled data for prediction, not original data
-        last_sequence = target_scaled[-seq_length:]
+        # Use data from the specified starting point for prediction
+        if start_index >= seq_length:
+            # Use sequence ending at start_index
+            sequence_start = start_index - seq_length + 1
+            last_sequence = target_scaled[sequence_start:start_index + 1]
+        else:
+            # If start_index is too early, use the beginning of the data
+            last_sequence = target_scaled[:seq_length]
+            print(f"WARNING: start_index {start_index} is too early for sequence length {seq_length}, using beginning of data", file=sys.stderr)
+        
         predictions = predict_future_convlstm(model, last_sequence, args.n_pred, scaler)
         
         # Round predictions to match original precision
         predictions = [round_to_precision(pred, target_precision) for pred in predictions]
         
-        print(f"INFO: Generated {len(predictions)} predictions", file=sys.stderr)
+        print(f"INFO: Generated {len(predictions)} predictions starting from index {start_index}", file=sys.stderr)
     except Exception as e:
         print(f"ERROR: Prediction generation failed: {e}", file=sys.stderr)
         sys.exit(6)
     
-    # Generate future increment values with simple +1 increment
+    # Generate future increment values starting from the specified point
     increment_values = increment_data.values
-    # Use simple +1 increment instead of calculating step
-    last_increment = float(increment_values[~np.isnan(increment_values)][-1])
+    # Use the increment value at the starting point
+    start_increment = float(increment_values[start_index])
     
     future_increment = []
     for i in range(args.n_pred):
-        increment_val = last_increment + (i + 1)  # Simple +1 increment
+        increment_val = start_increment + (i + 1)  # Simple +1 increment from starting point
         future_increment.append(round_to_precision(increment_val, increment_precision))
     
     # Create output DataFrame with proper handling of all columns
@@ -316,22 +335,22 @@ def main():
             # For other columns, keep them empty (no values)
             future_rows[col] = [""] * args.n_pred
     
-    # Combine original and predictions
-    output_df = pd.concat([df, future_rows], ignore_index=True)
+    # Create prediction-only DataFrame (no original data)
+    prediction_df = future_rows.copy()
     
     # Generate output filename
     base_name, ext = os.path.splitext(args.file)
     output_file = f"{base_name}_convlstm_preds{ext}"
     
-    # Save output
+    # Save prediction-only file
     try:
-        output_df.to_csv(output_file, index=False)
+        prediction_df.to_csv(output_file, index=False)
         print(f"INFO: Saved predictions to: {output_file}")
         print(f"INFO: Model: ConvLSTM with sequence length {seq_length}")
         print(f"INFO: Final Training - MAE: {mae_pct_train:.2f}%, RMSE: {rmse_pct_train:.2f}%")
         print(f"INFO: Final Validation - MAE: {mae_pct_val:.2f}%, RMSE: {rmse_pct_val:.2f}%")
         print(f"INFO: Precision preserved: {target_precision} decimal places for target, {increment_precision} decimal places for increment")
-        print(f"INFO: Appended {args.n_pred} rows")
+        print(f"INFO: Created {args.n_pred} prediction rows in separate file")
     except Exception as e:
         print(f"ERROR: Cannot save output file: {e}", file=sys.stderr)
         sys.exit(7)

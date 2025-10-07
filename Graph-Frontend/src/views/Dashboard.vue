@@ -473,9 +473,16 @@ export default {
           xColumn: config.xColumn,
           yColumn: config.yColumn,
           nPredictions: config.nPredictions,
+          startIndex: config.startIndex || -1,
           epochs: config.epochs,
           batchSize: config.batchSize,
-          learningRate: config.learningRate
+          learningRate: config.learningRate,
+          seqLength: config.seqLength,
+          filters: config.filters,
+          kernelSize: config.kernelSize,
+          dropout: config.dropout,
+          l2Reg: config.l2Reg,
+          verbose: config.verbose
         }
         
 
@@ -511,8 +518,8 @@ export default {
       const chart = this.charts[chartIndex]
       chart.series.splice(seriesIndex, 1)
       chart.selectedFiles.splice(seriesIndex, 1)
-        }
-      }
+    }
+  }
 }
 </script>
 

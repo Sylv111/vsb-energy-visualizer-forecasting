@@ -52,6 +52,19 @@
            >
          </div>
 
+         <!-- Starting Point -->
+         <div class="form-group">
+           <label for="start-point">Starting Point (Index):</label>
+           <input 
+             id="start-point" 
+             v-model.number="config.startIndex" 
+             type="number" 
+             min="-1" 
+             class="form-input"
+             placeholder="Enter starting index"
+           >
+          </div>
+
          <!-- Advanced Parameters -->
          <div class="form-group advanced-section">
            <h3 class="section-title">Advanced Parameters</h3>
@@ -147,6 +160,7 @@ export default {
          xColumn: '',
          yColumn: '',
          nPredictions: 100,
+         startIndex: -1,
          epochs: 200,
          batchSize: 32,
          learningRate: 0.001,

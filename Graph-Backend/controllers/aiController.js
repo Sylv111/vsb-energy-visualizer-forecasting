@@ -18,7 +18,8 @@ class AIController {
         kernelSize,
         dropout,
         l2Reg,
-        verbose
+        verbose,
+        startIndex
       } = req.body;
 
       if (!csvFile || !xColumn || !yColumn || !nPredictions) {
@@ -60,7 +61,8 @@ class AIController {
         kernelSize: parseInt(kernelSize) || 3,
         dropout: parseFloat(dropout) || 0.2,
         l2Reg: parseFloat(l2Reg) || 0.001,
-        verbose: parseInt(verbose) || 1
+        verbose: parseInt(verbose) || 1,
+        startIndex: parseInt(startIndex) || -1
       });
 
       res.json({
