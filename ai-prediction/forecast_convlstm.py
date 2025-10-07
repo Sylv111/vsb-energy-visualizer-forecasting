@@ -320,23 +320,11 @@ def main():
         increment_val = start_increment + (i + 1)  # Simple +1 increment from starting point
         future_increment.append(round_to_precision(increment_val, increment_precision))
     
-    # Create output DataFrame with proper handling of all columns
-    future_rows = pd.DataFrame()
-    
-    # Fill all columns with proper values
-    for col in df.columns:
-        if col == args.col_x:
-            # X column is the target to predict
-            future_rows[col] = predictions
-        elif col == args.col_y:
-            # Y column is the increment column
-            future_rows[col] = future_increment
-        else:
-            # For other columns, keep them empty (no values)
-            future_rows[col] = [""] * args.n_pred
-    
-    # Create prediction-only DataFrame (no original data)
-    prediction_df = future_rows.copy()
+    # Create prediction-only DataFrame with only X and Y columns
+    prediction_df = pd.DataFrame({
+        args.col_y: future_increment,
+        args.col_x: predictions
+    })
     
     # Generate output filename
     base_name, ext = os.path.splitext(args.file)
