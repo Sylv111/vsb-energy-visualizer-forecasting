@@ -41,6 +41,9 @@
         @open-file-selector="(index) => { activeChartIndex = index; showFileSelector = true }"
         @remove-chart="removeChart"
         @ai-prediction="handleAIPrediction"
+        @remove-series="handleRemoveSeries"
+        @update-series-color="handleUpdateSeriesColor"
+        @update-series-style="handleUpdateSeriesStyle"
            />
          </div>
          
@@ -520,6 +523,22 @@ export default {
       const chart = this.charts[chartIndex]
       chart.series.splice(seriesIndex, 1)
       chart.selectedFiles.splice(seriesIndex, 1)
+    },
+    
+    handleRemoveSeries({ chartIndex, seriesIndex }) {
+      this.removeSeries(chartIndex, seriesIndex)
+    },
+    
+    handleUpdateSeriesColor({ chartIndex, seriesIndex, color }) {
+      if (this.charts[chartIndex] && this.charts[chartIndex].series[seriesIndex]) {
+        this.charts[chartIndex].series[seriesIndex].color = color
+      }
+    },
+    
+    handleUpdateSeriesStyle({ chartIndex, seriesIndex, strokeDashArray }) {
+      if (this.charts[chartIndex] && this.charts[chartIndex].series[seriesIndex]) {
+        this.charts[chartIndex].series[seriesIndex].strokeDashArray = strokeDashArray
+      }
     }
   }
 }

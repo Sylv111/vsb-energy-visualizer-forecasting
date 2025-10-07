@@ -8,17 +8,33 @@
       @open-file-selector="$emit('open-file-selector', $event)"
       @remove-chart="$emit('remove-chart', chartIndex)"
       @ai-prediction="$emit('ai-prediction', $event)"
+      @open-chart-options="showChartOptions = true"
+    />
+    
+    <!-- Chart Options Modal -->
+    <ModalChartOptions
+      :show="showChartOptions"
+      :chart-data="fileData"
+      :chart-index="chartIndex"
+      :available-columns="availableColumns"
+      @close="showChartOptions = false"
+      @toggle-series="handleToggleSeries"
+      @remove-series="handleRemoveSeries"
+      @update-series-color="handleUpdateSeriesColor"
+      @update-series-style="handleUpdateSeriesStyle"
     />
   </div>
 </template>
 
 <script>
 import ChartBlock from '@/components/ChartBlock.vue'
+import ModalChartOptions from '@/components/ModalChartOptions.vue'
 
 export default {
   name: 'ChartCard',
   components: {
-    ChartBlock
+    ChartBlock,
+    ModalChartOptions
   },
   props: {
     fileData: {
@@ -34,7 +50,38 @@ export default {
       default: () => []
     }
   },
-  emits: ['open-data-preview', 'open-file-selector', 'remove-chart', 'ai-prediction']
+  emits: ['open-data-preview', 'open-file-selector', 'remove-chart', 'ai-prediction'],
+  data() {
+    return {
+      showChartOptions: false
+    }
+  },
+  computed: {
+    availableColumns() {
+      return this.$store.getters.selectedFileData?.headers || []
+    }
+  },
+  methods: {
+    handleToggleSeries({ seriesIndex }) {
+      // Implement series visibility toggle logic
+      console.log('Toggle series:', seriesIndex)
+    },
+    
+    handleRemoveSeries({ seriesIndex }) {
+      // Emit to parent to handle series removal
+      this.$emit('remove-series', { chartIndex: this.chartIndex, seriesIndex })
+    },
+    
+    handleUpdateSeriesColor({ seriesIndex, color }) {
+      // Emit to parent to handle series color update
+      this.$emit('update-series-color', { chartIndex: this.chartIndex, seriesIndex, color })
+    },
+    
+    handleUpdateSeriesStyle({ seriesIndex, strokeDashArray }) {
+      // Emit to parent to handle series style update
+      this.$emit('update-series-style', { chartIndex: this.chartIndex, seriesIndex, strokeDashArray })
+    }
+  }
 }
 </script>
 

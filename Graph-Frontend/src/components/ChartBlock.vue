@@ -4,7 +4,7 @@
       <!-- Boutons d'action -->
       <div class="action-buttons">
         <template v-if="chartOptions">
-          <ButtonChartOptions @click="toggleChartOptions" />
+          <ButtonChartOptions @click="$emit('open-chart-options')" />
           <ButtonDataPreview @click="$emit('open-data-preview')" />
           <ButtonAIPrediction 
             :selected-columns="selectedColumns"
@@ -76,7 +76,7 @@ import ButtonRemoveChart from '@/components/ButtonRemoveChart.vue'
 
 export default {
   name: 'ChartBlock',
-  emits: ['open-data-preview', 'open-file-selector', 'remove-chart', 'ai-prediction'],
+  emits: ['open-data-preview', 'open-file-selector', 'remove-chart', 'ai-prediction', 'open-chart-options'],
   components: {
     ButtonChartOptions,
     ButtonDataPreview,
@@ -217,11 +217,9 @@ export default {
         markers: {
           size: this.chartSettings.showMarkers ? 5 : 0,
           hover: { size: this.chartSettings.showMarkers ? 8 : 0 },
-          colors: ['#667eea'],
           strokeColors: '#ffffff',
           strokeWidth: 2
         },
-        colors: ['#667eea', '#764ba2', '#f093fb'],
         grid: {
           show: this.chartSettings.showGrid,
           borderColor: '#e7e7e7',
@@ -269,7 +267,8 @@ export default {
         name: serie.name,
         data: serie.data,
         type: 'line',
-        color: serie.color
+        color: serie.color,
+        strokeDashArray: serie.strokeDashArray || 0
       }))
     }
   },
