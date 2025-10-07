@@ -60,14 +60,14 @@
                             :class="{ active: selectedYColumn === index }"
                             @click="setYColumn(index)"
                           >
-                            Y
+                            X
                           </button>
                           <button 
                             class="btn-x"
                             :class="{ active: selectedXColumns.includes(index) }"
                             @click="toggleXColumn(index)"
                           >
-                            X
+                            Y
                           </button>
                         </div>
                       </div>
