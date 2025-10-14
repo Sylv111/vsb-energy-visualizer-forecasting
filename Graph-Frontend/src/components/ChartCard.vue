@@ -50,7 +50,7 @@ export default {
       default: () => []
     }
   },
-  emits: ['open-data-preview', 'open-file-selector', 'remove-chart', 'ai-prediction'],
+  emits: ['open-data-preview', 'open-file-selector', 'remove-chart', 'ai-prediction', 'update-series-color', 'update-series-style'],
   data() {
     return {
       showChartOptions: false

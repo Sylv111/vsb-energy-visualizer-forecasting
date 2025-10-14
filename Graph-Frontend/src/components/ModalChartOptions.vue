@@ -44,9 +44,9 @@
                     @change="updateSeriesStyle(index, $event.target.value)"
                     class="style-select"
                   >
-                    <option value="0">—————————————</option>
+                    <option value="0">———————————</option>
+                    <option value="10,5">——— ——— ———</option>
                     <option value="5,5">— — — — — —</option>
-                    <option value="10,5">—— — ——— —</option>
                     <option value="3,3">· · · · · ·</option>
                   </select>
                 </div>

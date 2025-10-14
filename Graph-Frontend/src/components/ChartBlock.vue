@@ -43,6 +43,7 @@
 
             <!-- Le graphique -->
             <apexchart
+              :key="chartKey"
               :options="chartOptions"
               :series="chartSeries"
               type="line"
@@ -117,9 +118,18 @@ export default {
         }
       },
       immediate: true
-    }
+    },
+    
   },
   computed: {
+    chartKey() {
+      if (!this.fileData?.series?.length) return 0
+      
+      return this.fileData.series.map(serie => 
+        `${serie.name}-${serie.color}-${serie.strokeDashArray || 0}`
+      ).join('|')
+    },
+    
     chartSettings() {
       return this.$store.state.chartSettings[this.chartIndex] || {
         showMarkers: true,
@@ -211,8 +221,9 @@ export default {
         },
         stroke: {
           curve: this.chartSettings.smoothCurve ? 'monotoneCubic' : 'straight',
-          width: 3,
-          lineCap: 'round'
+          width: this.getSeriesWidths(),
+          lineCap: 'round',
+          dashArray: this.getSeriesDashArrays()
         },
         markers: {
           size: this.chartSettings.showMarkers ? 5 : 0,
@@ -261,18 +272,32 @@ export default {
         return []
       }
 
-      // Retourner directement les séries sans transformation supplémentaire
-      // car les données sont déjà formatées dans handleColumnSelection
       return this.fileData.series.map(serie => ({
         name: serie.name,
         data: serie.data,
         type: 'line',
-        color: serie.color,
-        strokeDashArray: serie.strokeDashArray || 0
+        color: serie.color
       }))
     }
   },
   methods: {
+    getSeriesDashArrays() {
+      if (!this.fileData?.series?.length) return []
+      
+      return this.fileData.series.map(serie => {
+        if (serie.strokeDashArray && serie.strokeDashArray !== '0' && serie.strokeDashArray !== 0) {
+          return serie.strokeDashArray.split(',').map(Number)
+        }
+        return 0
+      })
+    },
+    
+    getSeriesWidths() {
+      if (!this.fileData?.series?.length) return []
+      
+      return this.fileData.series.map(() => 3)
+    },
+    
     toggleChartOptions() {
       this.showChartOptions = !this.showChartOptions
     },
