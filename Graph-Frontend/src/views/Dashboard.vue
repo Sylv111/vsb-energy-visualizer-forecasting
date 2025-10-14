@@ -1,8 +1,19 @@
 <template>
   <!-- Dashboard Header -->
-      <div class="dashboard-header">
-    <h1>CSV Data Visualizer</h1>
-    <p class="subtitle">Import your CSV file and visualize the data</p>
+  <div class="dashboard-header">
+    <div class="header-content">
+      <div class="header-text">
+        <h1>CSV Data Visualizer</h1>
+        <p class="subtitle">Import your CSV file and visualize the data</p>
+      </div>
+      <button @click="toggleNotifications" class="notification-btn" :class="{ active: showNotifications }">
+        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 19.25C15 20.0456 14.6839 20.8087 14.1213 21.3713C13.5587 21.9339 12.7956 22.25 12 22.25C11.2044 22.25 10.4413 21.9339 9.87869 21.3713C9.31608 20.8087 9 20.0456 9 19.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M5.58096 18.25C5.09151 18.1461 4.65878 17.8626 4.36813 17.4553C4.07748 17.048 3.95005 16.5466 4.01098 16.05L5.01098 7.93998C5.2663 6.27263 6.11508 4.75352 7.40121 3.66215C8.68734 2.57077 10.3243 1.98054 12.011 1.99998V1.99998C13.6977 1.98054 15.3346 2.57077 16.6207 3.66215C17.9069 4.75352 18.7557 6.27263 19.011 7.93998L20.011 16.05C20.0723 16.5452 19.9462 17.0454 19.6576 17.4525C19.369 17.8595 18.9386 18.144 18.451 18.25C14.2186 19.2445 9.81332 19.2445 5.58096 18.25V18.25Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span v-if="notificationCount > 0" class="notification-badge">{{ notificationCount }}</span>
+      </button>
+    </div>
   </div>
 
   <!-- Import Button -->
@@ -80,12 +91,18 @@
     />
 
     <!-- File Selection Modal -->
-          <ModalFileSelector
+    <ModalFileSelector
       :show="showFileSelector"
       :available-files="availableFiles"
       :selected-files="charts[activeChartIndex]?.selectedFiles || []"
       @close="showFileSelector = false"
       @select-columns="handleColumnSelection"
+    />
+
+    <!-- Notification Modal -->
+    <ModalNotification
+      :show="showNotifications"
+      @close="showNotifications = false"
     />
 
     <!-- New Chart Section -->
@@ -101,6 +118,7 @@ import ButtonPlusCircle from '@/components/ButtonPlusCircle.vue'
 import ModalCsvImport from '@/components/ModalCsvImport.vue'
 import ModalDataPreview from '@/components/ModalDataPreview.vue'
 import ModalFileSelector from '@/components/ModalFileSelector.vue'
+import ModalNotification from '@/components/ModalNotification.vue'
 import ChartCard from '@/components/ChartCard.vue'
 
 export default {
@@ -110,11 +128,12 @@ export default {
     ModalCsvImport,
     ModalDataPreview,
     ModalFileSelector,
+    ModalNotification,
     ChartCard
   },
   
-           data() {
-        return {
+  data() {
+    return {
       showImportModal: false,
       importFile: null,
       rawCsvContent: null,  // Stockage du contenu brut du CSV
@@ -126,6 +145,10 @@ export default {
       displayedDataCount: 100,
       isLoadingMore: false,
       showFileSelector: false,
+      
+      // Notification system
+      showNotifications: false,
+      notificationCount: 3, // Exemple avec 3 notifications
 
       charts: [
         {
@@ -191,6 +214,10 @@ export default {
   
   methods: {
     ...mapActions(['uploadCSV', 'fetchAvailableFiles', 'loadSelectedFile']),
+    
+    toggleNotifications() {
+      this.showNotifications = !this.showNotifications
+    },
     
     closeModal() {
       this.showImportModal = false
@@ -552,8 +579,22 @@ export default {
 }
 
 .dashboard-header {
-  text-align: center;
   margin-bottom: 3rem;
+  position: relative;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.header-text {
+  text-align: center;
+  flex: 1;
 }
 
 .dashboard-header h1 {
@@ -565,6 +606,71 @@ export default {
 .subtitle {
   color: #7f8c8d;
   font-size: 1.2rem;
+}
+
+.notification-btn {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #e9ecef;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: #2c3e50;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.notification-btn:hover {
+  border-color: #667eea;
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.notification-btn.active {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.notification-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.notification-btn:hover svg {
+  transform: scale(1.1);
+}
+
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #ff4757;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 .import-section {
