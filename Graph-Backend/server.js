@@ -9,6 +9,7 @@ const { MAIN_SERVER } = require('./config/ports');
 const csvRoutes = require('./routes/csvRoutes');
 const healthRoutes = require('./routes/healthRoutes');
 const aiRoutes = require('./routes/aiRoutes');
+const sseRoutes = require('./routes/sseRoutes');
 
 const app = express();
 
@@ -19,9 +20,10 @@ app.use(cors);
 app.use(express.json({ limit: '30mb' }));
 app.use(express.urlencoded({ extended: true, limit: '30mb' }));
 
-// API Routes
+// API Routes (must be before static files)
 app.use('/api/csv', csvRoutes);
 app.use('/api/ai', aiRoutes);
+app.use('/api/sse', sseRoutes);
 app.use('/api', healthRoutes);
 
 // Serve static files from Vue.js build
@@ -30,6 +32,10 @@ app.use(express.static(frontendBuildPath));
 
 // SPA fallback route - serve Vue.js app for all non-API routes
 app.get('*', (req, res) => {
+  // Exclure les routes API du fallback SPA
+  if (req.path.startsWith('/api/')) {
+    return res.status(404).json({ error: 'API endpoint not found' });
+  }
   res.sendFile(path.join(frontendBuildPath, 'index.html'));
 });
 

@@ -1,4 +1,5 @@
 const pythonExecutor = require('../services/pythonExecutor');
+const sseService = require('../services/sseService');
 const path = require('path');
 
 class AIController {
@@ -48,6 +49,19 @@ class AIController {
         learningRate
       });
 
+      // Set up progress callback
+      pythonExecutor.setProgressCallback((progressData) => {
+        console.log(`📊 Progress Update: ${progressData.progress}% (Epoch ${progressData.currentEpoch}/${progressData.totalEpochs}) for file: ${progressData.fileName}`);
+        
+        // Envoyer la progression via SSE
+        sseService.sendProgress({
+          fileName: csvFile,
+          progress: progressData.progress,
+          currentEpoch: progressData.currentEpoch,
+          totalEpochs: progressData.totalEpochs
+        });
+      });
+
       const result = await pythonExecutor.runConvLSTMPrediction({
         csvFile: csvFilePath,
         xColumn,
@@ -63,6 +77,12 @@ class AIController {
         l2Reg: parseFloat(l2Reg) || 0.001,
         verbose: parseInt(verbose) || 1,
         startIndex: parseInt(startIndex) || -1
+      });
+
+      // Envoyer notification de completion via SSE
+      sseService.sendCompleted({
+        fileName: csvFile,
+        message: 'AI prediction completed successfully'
       });
 
       res.json({

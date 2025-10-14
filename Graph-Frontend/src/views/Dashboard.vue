@@ -120,6 +120,7 @@ import ModalDataPreview from '@/components/ModalDataPreview.vue'
 import ModalFileSelector from '@/components/ModalFileSelector.vue'
 import ModalNotification from '@/components/ModalNotification.vue'
 import ChartCard from '@/components/ChartCard.vue'
+import sseService from '@/services/sseService'
 
 export default {
   name: 'DashboardView',
@@ -148,7 +149,7 @@ export default {
       
       // Notification system
       showNotifications: false,
-      notificationCount: 3, // Exemple avec 3 notifications
+      notificationCount: 2, 
 
       charts: [
         {
@@ -202,6 +203,21 @@ export default {
   
   async mounted() {
     await this.refreshFileList()
+    
+    // Connecter SSE au démarrage pour recevoir les notifications en temps réel
+    console.log('📡 Dashboard: Connecting to SSE service')
+    try {
+      await sseService.connect()
+      console.log('📡 Dashboard: SSE service connected successfully')
+    } catch (error) {
+      console.error('❌ Dashboard: Failed to connect to SSE service:', error)
+    }
+  },
+  
+  beforeUnmount() {
+    // Déconnecter SSE lors de la destruction du composant
+    console.log('📡 Dashboard: Disconnecting from SSE service')
+    sseService.disconnect()
   },
   
   watch: {

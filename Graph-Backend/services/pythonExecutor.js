@@ -5,6 +5,15 @@ class PythonExecutor {
   constructor() {
     this.pythonPath = 'python'; 
     this.scriptPath = path.join(__dirname, '../../ai-prediction/forecast_convlstm.py');
+    this.emitProgress = null;
+  }
+  
+  /**
+   * Set progress callback function
+   * @param {Function} callback - Function to call with progress updates
+   */
+  setProgressCallback(callback) {
+    this.emitProgress = callback;
   }
 
   /**
@@ -83,7 +92,31 @@ class PythonExecutor {
       pythonProcess.stderr.on('data', (data) => {
         const error = data.toString();
         stderr += error;
-        console.log('Python stderr:', error.trim());
+        
+        // Parse progress messages
+        const progressMatch = error.match(/PROGRESS: (\d+)% \(Epoch (\d+)\/(\d+)\)/);
+        if (progressMatch) {
+          const progress = parseInt(progressMatch[1]);
+          const currentEpoch = parseInt(progressMatch[2]);
+          const totalEpochs = parseInt(progressMatch[3]);
+          
+          console.log(`📊 Training Progress: ${progress}% (Epoch ${currentEpoch}/${totalEpochs})`);
+          
+          // Emit progress event via callback
+          if (this.emitProgress) {
+            console.log('📡 Emitting progress via callback');
+            this.emitProgress({
+              progress,
+              currentEpoch,
+              totalEpochs,
+              fileName: csvFile
+            });
+          } else {
+            console.warn('⚠️ No progress callback set!');
+          }
+        } else {
+          console.log('Python stderr:', error.trim());
+        }
       });
 
       pythonProcess.on('close', (code) => {

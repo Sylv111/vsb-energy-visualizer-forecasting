@@ -45,9 +45,9 @@
                     class="style-select"
                   >
                     <option value="0">———————————</option>
-                    <option value="10,5">——— ——— ———</option>
-                    <option value="5,5">— — — — — —</option>
-                    <option value="3,3">· · · · · ·</option>
+                    <option value="10,10">——— ——— ———</option>
+                    <option value="5,6">— — — — — —</option>
+                    <option value="2,6">· · · · · ·</option>
                   </select>
                 </div>
               </div>

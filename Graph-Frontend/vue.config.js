@@ -6,6 +6,21 @@ module.exports = defineConfig({
   devServer: {
     port: 8080,
     proxy: {
+      '/api/sse': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        ws: true,
+        logLevel: 'debug',
+        onProxyReq: (proxyReq) => {
+          proxyReq.setHeader('Connection', 'keep-alive');
+          proxyReq.setHeader('Cache-Control', 'no-cache');
+        },
+        onProxyRes: (proxyRes) => {
+          proxyRes.headers['Connection'] = 'keep-alive';
+          proxyRes.headers['Cache-Control'] = 'no-cache';
+          proxyRes.headers['Content-Type'] = 'text/event-stream';
+        }
+      },
       '/api': {
         target: 'http://localhost:3000',
         changeOrigin: true

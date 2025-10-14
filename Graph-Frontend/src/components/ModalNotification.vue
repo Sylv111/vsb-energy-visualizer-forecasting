@@ -39,6 +39,8 @@
 </template>
 
 <script>
+import sseService from '@/services/sseService'
+
 export default {
   name: 'ModalNotification',
   props: {
@@ -53,13 +55,17 @@ export default {
       notifications: [
         {
           id: 1,
-          fileName: 'data_analysis.csv',
+          fileName: '600rows_2025-09-18.csv',
+          currentEpoch: 2,
+          totalEpochs: 50,
           progress: 0,
           isComplete: false
         },
         {
           id: 2,
-          fileName: 'temperature_data.csv',
+          fileName: '600rows_2025-09-18.csv',
+          currentEpoch: 0,
+          totalEpochs: 0,
           progress: 50,
           isComplete: false
         }
@@ -69,20 +75,124 @@ export default {
   computed: {
     processedNotifications() {
       return this.notifications.map(notification => {
-        const isComplete = notification.progress >= 100
+        // Calculer le pourcentage basé sur les epochs
+        let progress = notification.progress
+        if (notification.totalEpochs > 0) {
+          progress = Math.round((notification.currentEpoch / notification.totalEpochs) * 100)
+        }
+        
+        const isComplete = progress >= 100
         return {
           ...notification,
-          title: isComplete ? 'Data Processing Complete' : 'Data Processing in Progress',
+          progress: progress,
+          title: isComplete ? 'AI Training Complete' : 'AI Training in Progress',
           description: isComplete 
             ? `Your CSV file "${notification.fileName}" has been successfully processed and is ready for visualization.`
-            : `Processing your CSV file "${notification.fileName}". Please wait...`
+            : `Training ConvLSTM model on "${notification.fileName}". Epoch ${notification.currentEpoch}/${notification.totalEpochs}...`
         }
       })
     }
   },
+  mounted() {
+    // S'abonner aux événements SSE dès le montage du composant
+    console.log('📡 Modal: Subscribing to SSE events')
+    sseService.on('progress', this.handleProgress)
+    sseService.on('completed', this.handleCompleted)
+    sseService.on('error', this.handleError)
+    sseService.on('connected', this.handleConnected)
+  },
+  beforeUnmount() {
+    // Se désabonner des événements SSE
+    console.log('📡 Modal: Unsubscribing from SSE events')
+    sseService.off('progress', this.handleProgress)
+    sseService.off('completed', this.handleCompleted)
+    sseService.off('error', this.handleError)
+    sseService.off('connected', this.handleConnected)
+  },
   methods: {
     closeModal() {
       this.$emit('close')
+    },
+    
+    handleConnected() {
+      console.log('📡 Modal: SSE connected')
+    },
+    
+    handleProgress(data) {
+      console.log('📊 Modal: Progress received:', data)
+      
+      // Vérifier que les données sont valides
+      if (!data || !data.fileName) {
+        console.warn('⚠️ Modal: Invalid progress data received:', data)
+        return
+      }
+      
+      // Chercher une notification existante pour ce fichier
+      let notification = this.notifications.find(n => n.fileName === data.fileName)
+      
+      if (!notification) {
+        // Créer une nouvelle notification
+        notification = {
+          id: this.notifications.length + 1,
+          fileName: data.fileName,
+          currentEpoch: data.currentEpoch || 0,
+          totalEpochs: data.totalEpochs || 0,
+          progress: data.progress || 0,
+          isComplete: false
+        }
+        this.notifications.unshift(notification) // Ajouter au début
+      } else {
+        // Mettre à jour la progression
+        notification.currentEpoch = data.currentEpoch || notification.currentEpoch
+        notification.totalEpochs = data.totalEpochs || notification.totalEpochs
+        notification.progress = data.progress || notification.progress
+        notification.isComplete = (data.progress || 0) >= 100
+      }
+    },
+    
+    handleCompleted(data) {
+      console.log('✅ Modal: Completion received:', data)
+      
+      // Mettre à jour la notification pour marquer comme complète
+      const notification = this.notifications.find(n => n.fileName === data.fileName)
+      if (notification) {
+        notification.progress = 100
+        notification.isComplete = true
+      }
+    },
+    
+    handleError(data) {
+      console.error('❌ Modal: Error received:', data)
+      
+      // Marquer la notification comme erreur
+      const notification = this.notifications.find(n => n.fileName === data.fileName)
+      if (notification) {
+        notification.progress = -1 // -1 pour indiquer une erreur
+        notification.isComplete = false
+        notification.hasError = true
+        notification.error = data.error
+      }
+    },
+    
+    updateEpochProgress(notificationId, currentEpoch, totalEpochs) {
+      const notification = this.notifications.find(n => n.id === notificationId)
+      if (notification) {
+        notification.currentEpoch = currentEpoch
+        notification.totalEpochs = totalEpochs
+        // Le pourcentage sera automatiquement recalculé par la computed property
+      }
+    },
+    
+    // Méthode pour simuler la progression (à supprimer en production)
+    simulateTraining() {
+      const notification = this.notifications[0]
+      if (notification.totalEpochs > 0 && notification.currentEpoch < notification.totalEpochs) {
+        notification.currentEpoch++
+        // Simuler la progression toutes les 2 secondes
+        setTimeout(() => {
+          this.simulateTraining()
+        }, 2000)
+      }
     }
   }
 }
@@ -265,6 +375,22 @@ export default {
 
 .btn-secondary:hover {
   background: #5a6268;
+}
+
+.btn-primary {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-right: 1rem;
+}
+
+.btn-primary:hover {
+  background: #5a6fd8;
 }
 
 @keyframes modalFadeIn {

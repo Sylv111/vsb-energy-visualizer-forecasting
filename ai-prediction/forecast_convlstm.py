@@ -33,11 +33,25 @@ import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import ConvLSTM2D, Dense, Flatten, Reshape, Dropout
 from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.callbacks import Callback
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import mean_absolute_error
 
 warnings.filterwarnings("ignore", category=UserWarning)
 tf.get_logger().setLevel('ERROR')
+
+
+class ProgressCallback(Callback):
+    """Callback to display training progress percentage."""
+    
+    def __init__(self, total_epochs):
+        super().__init__()
+        self.total_epochs = total_epochs
+    
+    def on_epoch_end(self, epoch, logs=None):
+        """Called at the end of each epoch."""
+        progress = int(((epoch + 1) / self.total_epochs) * 100)
+        print(f"PROGRESS: {progress}% (Epoch {epoch + 1}/{self.total_epochs})", file=sys.stderr)
 
 
 def parse_args() -> argparse.Namespace:
@@ -247,8 +261,12 @@ def main():
     
     # Train model with configurable parameters
     try:
+        # Create progress callback
+        progress_callback = ProgressCallback(args.epochs)
+        
         history = model.fit(X, y, epochs=args.epochs, batch_size=args.batch_size, 
-                           validation_split=0.2, verbose=args.verbose)
+                           validation_split=0.2, verbose=args.verbose, 
+                           callbacks=[progress_callback])
         
         # Calculate and display metrics
         final_loss = history.history['loss'][-1]
