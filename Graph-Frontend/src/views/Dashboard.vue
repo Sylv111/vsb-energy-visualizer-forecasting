@@ -225,6 +225,12 @@ export default {
       if (newVal) {
         this.resetDataPreview()
       }
+    },
+    showFileSelector(newVal) {
+      if (newVal) {
+        // Recharger la liste des fichiers disponibles quand le modal s'ouvre
+        this.refreshFileList()
+      }
     }
   },
   
