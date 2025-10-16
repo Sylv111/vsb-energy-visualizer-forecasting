@@ -212,18 +212,37 @@ def main():
         print(f"ERROR: Cannot parse columns as numeric: {e}", file=sys.stderr)
         sys.exit(3)
     
-    # Handle missing values for target data
-    target_data = target_data.fillna(method='ffill').fillna(method='bfill')
-    
-    # Determine starting point for prediction
+    # Determine starting point for prediction BEFORE filling missing values
     start_index = args.start_index
     if start_index == -1:
-        start_index = len(target_data) - 1  # Use last point by default
+        # Find the last non-null value in the target column (original data)
+        # BEFORE applying fillna to avoid getting filled values
+        original_end_index = len(target_data) - 1
+        # Look backwards from the end to find the last non-null value
+        for i in range(len(target_data) - 1, -1, -1):
+            value = target_data.iloc[i]
+            is_not_null = pd.notna(value) and value != ''
+            if is_not_null:
+                original_end_index = i
+                break
+        
+        start_index = original_end_index
+        print(f"INFO: Using last non-null value in target column at index {start_index} (value: {target_data.iloc[start_index]})", file=sys.stderr)
     elif start_index < 0 or start_index >= len(target_data):
         print(f"ERROR: Invalid start_index {start_index}. Must be between 0 and {len(target_data)-1}", file=sys.stderr)
         sys.exit(3)
     
+    # Handle missing values for target data AFTER determining starting point
+    target_data = target_data.fillna(method='ffill').fillna(method='bfill')
+    
     print(f"INFO: Starting prediction from index {start_index} (value: {target_data.iloc[start_index]})", file=sys.stderr)
+    
+    # Use only original data for training (up to the starting point)
+    if start_index < len(target_data) - 1:
+        print(f"INFO: Using only original data up to index {start_index} for training", file=sys.stderr)
+        target_data = target_data.iloc[:start_index + 1]
+        increment_data = increment_data.iloc[:start_index + 1]
+        print(f"INFO: Training data length reduced to {len(target_data)} points", file=sys.stderr)
     
     # Detect precision
     target_precision = detect_precision(target_data.values)
