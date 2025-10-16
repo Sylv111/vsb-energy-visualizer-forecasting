@@ -6,12 +6,18 @@
         <h1>CSV Data Visualizer</h1>
         <p class="subtitle">Import your CSV file and visualize the data</p>
       </div>
-      <button @click="toggleNotifications" class="notification-btn" :class="{ active: showNotifications }">
-        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <button @click="toggleNotifications" class="notification-btn" :class="{ active: showNotifications, loading: hasActiveTraining }">
+        <!-- Loading spinner overlay -->
+        <div v-if="hasActiveTraining" class="loading-overlay">
+          <div class="loading-spinner"></div>
+        </div>
+        
+        <!-- Notification icon -->
+        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" :class="{ 'loading-hidden': hasActiveTraining }">
           <path d="M15 19.25C15 20.0456 14.6839 20.8087 14.1213 21.3713C13.5587 21.9339 12.7956 22.25 12 22.25C11.2044 22.25 10.4413 21.9339 9.87869 21.3713C9.31608 20.8087 9 20.0456 9 19.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M5.58096 18.25C5.09151 18.1461 4.65878 17.8626 4.36813 17.4553C4.07748 17.048 3.95005 16.5466 4.01098 16.05L5.01098 7.93998C5.2663 6.27263 6.11508 4.75352 7.40121 3.66215C8.68734 2.57077 10.3243 1.98054 12.011 1.99998V1.99998C13.6977 1.98054 15.3346 2.57077 16.6207 3.66215C17.9069 4.75352 18.7557 6.27263 19.011 7.93998L20.011 16.05C20.0723 16.5452 19.9462 17.0454 19.6576 17.4525C19.369 17.8595 18.9386 18.144 18.451 18.25C14.2186 19.2445 9.81332 19.2445 5.58096 18.25V18.25Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <span v-if="notificationCount > 0" class="notification-badge">{{ notificationCount }}</span>
+        <span v-if="notificationCount > 0 && !hasActiveTraining" class="notification-badge">{{ notificationCount }}</span>
       </button>
     </div>
   </div>
@@ -149,7 +155,8 @@ export default {
       
       // Notification system
       showNotifications: false,
-      notificationCount: 2, 
+      notificationCount: 0,
+      notifications: [], 
 
       charts: [
         {
@@ -166,6 +173,11 @@ export default {
   computed: {
     ...mapState(['loading', 'error']),
     ...mapGetters(['isLoading', 'hasError', 'errorMessage', 'hasData', 'dataHeaders', 'dataRows', 'totalRows', 'totalColumns', 'fileName', 'savedFileName', 'availableFiles', 'selectedFile', 'selectedFileData', 'hasSelectedFile']),
+    
+    hasActiveTraining() {
+      // Check if there are any notifications that are not complete
+      return this.notifications && this.notifications.some(n => !n.isComplete && n.progress >= 0)
+    },
     
     previewHeaders() {
       if (this.csvData.length === 0) return []
@@ -205,18 +217,22 @@ export default {
     await this.refreshFileList()
     
     // Connecter SSE au démarrage pour recevoir les notifications en temps réel
-    console.log('📡 Dashboard: Connecting to SSE service')
     try {
       await sseService.connect()
-      console.log('📡 Dashboard: SSE service connected successfully')
+      // Listen for progress updates to sync with local notifications
+      sseService.on('progress', this.handleSSEProgress)
+      sseService.on('completed', this.handleSSECompleted)
+      sseService.on('error', this.handleSSEError)
     } catch (error) {
-      console.error('❌ Dashboard: Failed to connect to SSE service:', error)
+      console.error('Failed to connect to SSE service:', error)
     }
   },
   
   beforeUnmount() {
     // Déconnecter SSE lors de la destruction du composant
-    console.log('📡 Dashboard: Disconnecting from SSE service')
+    sseService.off('progress', this.handleSSEProgress)
+    sseService.off('completed', this.handleSSECompleted)
+    sseService.off('error', this.handleSSEError)
     sseService.disconnect()
   },
   
@@ -588,6 +604,52 @@ export default {
       if (this.charts[chartIndex] && this.charts[chartIndex].series[seriesIndex]) {
         this.charts[chartIndex].series[seriesIndex].strokeDashArray = strokeDashArray
       }
+    },
+    
+    // SSE event handlers for dashboard
+    handleSSEProgress(data) {
+      if (!data || !data.fileName) return
+      
+      let notification = this.notifications.find(n => n.fileName === data.fileName)
+      if (!notification) {
+        notification = {
+          id: this.notifications.length + 1,
+          fileName: data.fileName,
+          currentEpoch: data.currentEpoch || 0,
+          totalEpochs: data.totalEpochs || 0,
+          progress: data.progress || 0,
+          isComplete: false
+        }
+        this.notifications.unshift(notification)
+      } else {
+        notification.currentEpoch = data.currentEpoch || notification.currentEpoch
+        notification.totalEpochs = data.totalEpochs || notification.totalEpochs
+        notification.progress = data.progress || notification.progress
+        notification.isComplete = (data.progress || 0) >= 100
+      }
+      
+      // Update notification count
+      this.notificationCount = this.notifications.filter(n => !n.isComplete).length
+    },
+    
+    handleSSECompleted(data) {
+      const notification = this.notifications.find(n => n.fileName === data.fileName)
+      if (notification) {
+        notification.progress = 100
+        notification.isComplete = true
+      }
+      this.notificationCount = this.notifications.filter(n => !n.isComplete).length
+    },
+    
+    handleSSEError(data) {
+      const notification = this.notifications.find(n => n.fileName === data.fileName)
+      if (notification) {
+        notification.progress = -1
+        notification.isComplete = false
+        notification.hasError = true
+        notification.error = data.error
+      }
+      this.notificationCount = this.notifications.filter(n => !n.isComplete).length
     }
   }
 }
@@ -644,6 +706,7 @@ export default {
   transition: all 0.3s ease;
   color: #2c3e50;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .notification-btn:hover {
@@ -693,6 +756,45 @@ export default {
   50% {
     transform: scale(1.1);
   }
+}
+
+/* Loading states */
+.notification-btn.loading {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+}
+
+.loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #e9ecef;
+  border-top: 2px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading-hidden {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .import-section {

@@ -9,12 +9,20 @@
       <div class="modal-body">
         <!-- Notification List -->
         <div class="notifications-list">
-            <div 
-              v-for="notification in processedNotifications" 
-              :key="notification.id"
-              class="notification-item"
-              :class="{ 'complete': notification.isComplete }"
-            >
+          <!-- Empty state message -->
+          <div v-if="processedNotifications.length === 0" class="empty-state">
+            <div class="empty-icon">📭</div>
+            <h3>No notifications yet</h3>
+            <p>AI training progress and completion notifications will appear here.</p>
+          </div>
+          
+          <!-- Notifications -->
+          <div 
+            v-for="notification in processedNotifications" 
+            :key="notification.id"
+            class="notification-item"
+            :class="{ 'complete': notification.isComplete }"
+          >
             <div class="notification-header">
               <h3>{{ notification.title }}</h3>
             </div>
@@ -52,24 +60,7 @@ export default {
   emits: ['close'],
   data() {
     return {
-      notifications: [
-        {
-          id: 1,
-          fileName: '600rows_2025-09-18.csv',
-          currentEpoch: 2,
-          totalEpochs: 50,
-          progress: 0,
-          isComplete: false
-        },
-        {
-          id: 2,
-          fileName: '600rows_2025-09-18.csv',
-          currentEpoch: 0,
-          totalEpochs: 0,
-          progress: 50,
-          isComplete: false
-        }
-      ]
+      notifications: []
     }
   },
   computed: {
@@ -115,8 +106,6 @@ export default {
     },
     
     handleProgress(data) {
-      console.log('Modal: Progress received:', data)
-      
       if (!data || !data.fileName) {
         console.warn('Modal: Invalid progress data received:', data)
         return
@@ -146,8 +135,6 @@ export default {
     },
     
     handleCompleted(data) {
-      console.log('Modal: Completed received:', data)
-      
       // Mettre à jour la notification pour marquer comme complète
       const notification = this.notifications.find(n => n.fileName === data.fileName)
       if (notification) {
@@ -403,6 +390,32 @@ export default {
   animation: modalFadeIn 0.3s ease-out;
 }
 
+/* Empty state styling */
+.empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #6c757d;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+.empty-state h3 {
+  margin: 0 0 0.5rem 0;
+  color: #495057;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .modal-content {
@@ -418,6 +431,10 @@ export default {
   
   .notification-time {
     align-self: flex-end;
+  }
+  
+  .empty-state {
+    padding: 2rem 1rem;
   }
 }
 </style>
