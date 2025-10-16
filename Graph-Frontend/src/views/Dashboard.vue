@@ -560,10 +560,10 @@ export default {
         
         await aiPredictionService.runPrediction(apiData)
         
-        alert(`AI Prediction request sent successfully!\n\nChart: ${chartIndex + 1}\nModel: ${config.aiModel}\nPredictions: ${config.nPredictions}`)
+        // AI Prediction request sent successfully
         
       } catch (error) {
-        alert(`AI Prediction failed: ${error.message}`)
+        console.error('AI Prediction failed:', error.message)
       }
     },
 

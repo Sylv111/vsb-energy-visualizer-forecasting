@@ -27,6 +27,8 @@ export default {
   background: white;
   border: 2px solid #e9ecef;
   color: #2c3e50;
+  position: relative;
+  z-index: 1;
 }
 
 .action-btn:hover {

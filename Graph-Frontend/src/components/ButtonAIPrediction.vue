@@ -1,18 +1,16 @@
 <template>
-  <div>
-    <button @click="openModal" class="action-btn ai-prediction-btn">
-      <img src="@/assets/icons/ai-neuron-network.svg" alt="AI Prediction" class="action-icon">
-      <span>AI Prediction</span>
-    </button>
-    
-    <ModalAIPrediction
-      :is-visible="showModal"
-      :selected-columns="selectedColumns"
-      :chart-data="chartData"
-      @close="closeModal"
-      @run-prediction="handlePrediction"
-    />
-  </div>
+  <button @click="openModal" class="action-btn ai-prediction-btn">
+    <img src="@/assets/icons/ai-neuron-network.svg" alt="AI Prediction" class="action-icon">
+    <span>AI Prediction</span>
+  </button>
+  
+  <ModalAIPrediction
+    :is-visible="showModal"
+    :selected-columns="selectedColumns"
+    :chart-data="chartData"
+    @close="closeModal"
+    @run-prediction="handlePrediction"
+  />
 </template>
 
 <script>
@@ -114,6 +112,10 @@ export default {
   background: white;
   border: 2px solid #e9ecef;
   color: #4f502c;
+  flex-shrink: 0;
+  min-width: fit-content;
+  position: relative;
+  z-index: 1;
 }
 
 .action-btn:hover {

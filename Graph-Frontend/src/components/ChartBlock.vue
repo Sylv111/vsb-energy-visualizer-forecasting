@@ -342,6 +342,8 @@ export default {
   padding: 1rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   border: 1px solid #e9ecef;
+  display: flex;
+  flex-direction: column;
 }
 
 .action-buttons { 
@@ -349,13 +351,17 @@ export default {
   gap: 1rem; 
   margin-bottom: 1rem;
   justify-content: flex-end;
-  padding-bottom: 1rem;
+  padding: 0.5rem 0 1rem 0;
   border-bottom: 1px solid #e9ecef;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  min-width: 0;
 }
 
 .chart-area {
-  min-height: 400px;
+  min-height: 300px;
   position: relative;
+  flex: 1;
 }
 
 .chart-content {
@@ -440,10 +446,27 @@ export default {
   margin-right: 8px !important;
 }
 
+/* Medium screens - allow wrapping */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .action-buttons {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
 @media (max-width: 768px) { 
   .action-buttons, .chart-toolbar { 
     flex-direction: column; 
     gap: 8px; 
-  } 
+    justify-content: center;
+  }
+  
+  .chart-area {
+    min-height: 250px;
+  }
+  
+  .chart-wrapper {
+    min-height: auto;
+  }
 }
 </style>
