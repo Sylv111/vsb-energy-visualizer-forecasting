@@ -71,7 +71,13 @@
            
            <!-- Epochs Slider -->
            <div class="slider-group">
-             <label for="epochs">Epochs: {{ config.epochs }}</label>
+             <div class="slider-header">
+               <label for="epochs">Epochs: {{ config.epochs }}</label>
+               <div class="info-tooltip">
+                 <span class="info-icon">i</span>
+                 <div class="tooltip-text">Higher values make training longer but usually more accurate.</div>
+               </div>
+             </div>
              <input 
                id="epochs" 
                v-model.number="config.epochs" 
@@ -89,7 +95,13 @@
 
            <!-- Batch Size Slider -->
            <div class="slider-group">
-             <label for="batch-size">Batch Size: {{ config.batchSize }}</label>
+             <div class="slider-header">
+               <label for="batch-size">Batch Size: {{ config.batchSize }}</label>
+               <div class="info-tooltip">
+                 <span class="info-icon">i</span>
+                 <div class="tooltip-text">Higher values train faster but may reduce precision.</div>
+               </div>
+             </div>
              <input 
                id="batch-size" 
                v-model.number="config.batchSize" 
@@ -107,7 +119,13 @@
 
            <!-- Learning Rate Slider -->
            <div class="slider-group">
-             <label for="learning-rate">Learning Rate: {{ config.learningRate }}</label>
+             <div class="slider-header">
+               <label for="learning-rate">Learning Rate: {{ config.learningRate }}</label>
+               <div class="info-tooltip">
+                 <span class="info-icon">i</span>
+                 <div class="tooltip-text">Higher values make learning faster but less stable.</div>
+               </div>
+             </div>
              <input 
                id="learning-rate" 
                v-model.number="config.learningRate" 
@@ -260,6 +278,7 @@ export default {
   max-width: 700px;
   max-height: 90vh;
   overflow-y: auto;
+  overflow-x: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
@@ -506,5 +525,65 @@ export default {
   .column-select {
     margin-bottom: 1.5rem;
   }
+}
+
+/* Info tooltip styles */
+.slider-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.info-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background: transparent;
+  color: #6c757d;
+  border: 1px solid #6c757d;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: help;
+  transition: all 0.2s ease;
+}
+
+.info-icon:hover {
+  color: #495057;
+  border-color: #495057;
+  transform: scale(1.1);
+}
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 125%;
+  right: 18px;
+  background: #333;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  min-width: 300px;
+  max-width: 400px;
+  z-index: 1000;
+}
+
+
+.info-tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
 }
 </style>
