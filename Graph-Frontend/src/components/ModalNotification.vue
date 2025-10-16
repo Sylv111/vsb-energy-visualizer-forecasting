@@ -99,14 +99,12 @@ export default {
     sseService.on('completed', this.handleCompleted)
     sseService.on('error', this.handleError)
     sseService.on('connected', this.handleConnected)
-    sseService.on('heartbeat', this.handleHeartbeat)
   },
   beforeUnmount() {
     sseService.off('progress', this.handleProgress)
     sseService.off('completed', this.handleCompleted)
     sseService.off('error', this.handleError)
     sseService.off('connected', this.handleConnected)
-    sseService.off('heartbeat', this.handleHeartbeat)
   },
   methods: {
     closeModal() {
@@ -117,6 +115,7 @@ export default {
     },
     
     handleProgress(data) {
+      console.log('Modal: Progress received:', data)
       
       if (!data || !data.fileName) {
         console.warn('Modal: Invalid progress data received:', data)
@@ -147,6 +146,7 @@ export default {
     },
     
     handleCompleted(data) {
+      console.log('Modal: Completed received:', data)
       
       // Mettre à jour la notification pour marquer comme complète
       const notification = this.notifications.find(n => n.fileName === data.fileName)
@@ -168,8 +168,6 @@ export default {
       }
     },
     
-    handleHeartbeat() {
-    },
     
     updateEpochProgress(notificationId, currentEpoch, totalEpochs) {
       const notification = this.notifications.find(n => n.id === notificationId)

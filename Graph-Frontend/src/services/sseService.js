@@ -7,7 +7,6 @@ class SSEService {
     this.reconnectDelay = 1000; // 1 seconde
     this.isConnected = false;
     this.connectionPromise = null;
-    this._heartbeatAttached = false;
   }
 
   /**
@@ -40,19 +39,6 @@ class SSEService {
   connect(fileName = null) {
     if (this.eventSource && this.eventSource.readyState !== EventSource.CLOSED) {
       // already connected
-      // Attach heartbeat listener if not yet attached
-      if (!this._heartbeatAttached) {
-        this.eventSource.addEventListener('heartbeat', (event) => {
-          try {
-            const data = this.parseEventData(event.data);
-            console.log('SSE: Heartbeat received:', data);
-            this.emit('heartbeat', data);
-          } catch (e) {
-            console.warn('SSE: Heartbeat parse error:', e);
-          }
-        });
-        this._heartbeatAttached = true;
-      }
       return Promise.resolve();
     }
 
@@ -120,17 +106,6 @@ class SSEService {
       }
     });
 
-    // Événement heartbeat de test (hello world toutes les 2s)
-    this.eventSource.addEventListener('heartbeat', (event) => {
-      try {
-        const data = this.parseEventData(event.data);
-        // heartbeat received
-        this.emit('heartbeat', data);
-      } catch (e) {
-        // heartbeat parse error
-      }
-    });
-    this._heartbeatAttached = true;
 
     this.eventSource.addEventListener('training_error', (event) => {
       const data = this.parseEventData(event.data);

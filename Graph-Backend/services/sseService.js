@@ -43,8 +43,7 @@ class SSEService extends EventEmitter {
     this.clients.set(clientId, {
       response: res,
       fileName: fileName,
-      connected: true,
-      heartbeatInterval: null
+      connected: true
     });
 
 
@@ -55,20 +54,6 @@ class SSEService extends EventEmitter {
         clientId: clientId,
         timestamp: new Date().toISOString()
       });
-
-      // Démarrer un heartbeat toutes les 2 secondes pour ce client
-      const intervalId = setInterval(() => {
-        this.sendToClient(clientId, 'heartbeat', {
-          message: 'hello world',
-          clientId: clientId,
-          timestamp: new Date().toISOString()
-        });
-      }, 2000);
-
-      const client = this.clients.get(clientId);
-      if (client) {
-        client.heartbeatInterval = intervalId;
-      }
     }, 100);
 
     // Gérer la déconnexion
@@ -86,10 +71,6 @@ class SSEService extends EventEmitter {
   removeClient(clientId) {
     const client = this.clients.get(clientId);
     if (client) {
-      if (client.heartbeatInterval) {
-        clearInterval(client.heartbeatInterval);
-        client.heartbeatInterval = null;
-      }
       client.connected = false;
       this.clients.delete(clientId);
     }
