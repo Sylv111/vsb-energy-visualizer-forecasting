@@ -13,26 +13,40 @@ class SSEService extends EventEmitter {
    * @param {string} fileName - Nom du fichier pour filtrer les événements
    * @returns {number} - ID du client
    */
-  addClient(res, fileName = null) {
+  addClient(req, res, fileName = null) {
     const clientId = this.nextClientId++;
     
     // Configuration des headers SSE
+    const origin = req.headers.origin || '*';
     res.writeHead(200, {
       'Content-Type': 'text/event-stream',
       'Cache-Control': 'no-cache',
       'Connection': 'keep-alive',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Headers': 'Cache-Control'
+      'X-Accel-Buffering': 'no',
+      'Access-Control-Allow-Origin': origin,
+      'Access-Control-Allow-Credentials': 'true'
     });
+
+    // Flush headers immediately to start the stream
+    if (typeof res.flushHeaders === 'function') {
+      res.flushHeaders();
+    }
+
+    // Send an initial comment to ensure the connection stays open
+    try {
+      res.write(`: connected\n\n`);
+    } catch (e) {
+      console.error('SSE: Failed to write initial keep-alive comment:', e);
+    }
 
     // Stocker la connexion d'abord
     this.clients.set(clientId, {
       response: res,
       fileName: fileName,
-      connected: true
+      connected: true,
+      heartbeatInterval: null
     });
 
-    console.log(`📡 SSE Client ${clientId} connected for file: ${fileName || 'all'}`);
 
     // Envoyer un message de connexion après un petit délai pour s'assurer que la connexion est établie
     setTimeout(() => {
@@ -41,6 +55,20 @@ class SSEService extends EventEmitter {
         clientId: clientId,
         timestamp: new Date().toISOString()
       });
+
+      // Démarrer un heartbeat toutes les 2 secondes pour ce client
+      const intervalId = setInterval(() => {
+        this.sendToClient(clientId, 'heartbeat', {
+          message: 'hello world',
+          clientId: clientId,
+          timestamp: new Date().toISOString()
+        });
+      }, 2000);
+
+      const client = this.clients.get(clientId);
+      if (client) {
+        client.heartbeatInterval = intervalId;
+      }
     }, 100);
 
     // Gérer la déconnexion
@@ -58,9 +86,12 @@ class SSEService extends EventEmitter {
   removeClient(clientId) {
     const client = this.clients.get(clientId);
     if (client) {
+      if (client.heartbeatInterval) {
+        clearInterval(client.heartbeatInterval);
+        client.heartbeatInterval = null;
+      }
       client.connected = false;
       this.clients.delete(clientId);
-      console.log(`📡 SSE Client ${clientId} disconnected`);
     }
   }
 
@@ -75,16 +106,13 @@ class SSEService extends EventEmitter {
     if (client && client.connected) {
       try {
         // S'assurer que data n'est pas undefined
-        const safeData = data || {};
-        const message = `event: ${event}\ndata: ${JSON.stringify(safeData)}\n\n`;
-        console.log(`📡 SSE: Sending event '${event}' to client ${clientId}:`, safeData);
+    const safeData = data || {};
+    const message = `event: ${event}\ndata: ${JSON.stringify(safeData)}\n\n`;
         client.response.write(message);
       } catch (error) {
-        console.error(`❌ Error sending SSE to client ${clientId}:`, error);
+        console.error(`Error sending SSE to client ${clientId}:`, error);
         this.removeClient(clientId);
       }
-    } else {
-      console.warn(`⚠️ SSE: Cannot send to client ${clientId} - not connected`);
     }
   }
 
@@ -95,7 +123,6 @@ class SSEService extends EventEmitter {
    * @param {string} fileName - Filtrer par nom de fichier (optionnel)
    */
   broadcast(event, data, fileName = null) {
-    console.log(`📡 Broadcasting SSE event '${event}' to ${this.clients.size} clients (fileName filter: ${fileName || 'none'})`);
     
     // S'assurer que data n'est pas undefined
     const safeData = data || {};
@@ -105,11 +132,9 @@ class SSEService extends EventEmitter {
       // - Envoyer aux clients qui ont le même fileName
       // - Envoyer aux clients qui n'ont pas de fileName (ils reçoivent tout)
       if (fileName && client.fileName && client.fileName !== fileName && client.fileName !== 'all') {
-        console.log(`📡 Skipping client ${clientId} (client file: ${client.fileName}, event file: ${fileName})`);
         return;
       }
       
-      console.log(`📡 Sending to client ${clientId} (client file: ${client.fileName || 'all'})`);
       this.sendToClient(clientId, event, safeData);
     });
   }

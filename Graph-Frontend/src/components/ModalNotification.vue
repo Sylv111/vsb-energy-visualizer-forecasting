@@ -94,20 +94,19 @@ export default {
     }
   },
   mounted() {
-    // S'abonner aux événements SSE dès le montage du composant
-    console.log('📡 Modal: Subscribing to SSE events')
+    sseService.connect()
     sseService.on('progress', this.handleProgress)
     sseService.on('completed', this.handleCompleted)
     sseService.on('error', this.handleError)
     sseService.on('connected', this.handleConnected)
+    sseService.on('heartbeat', this.handleHeartbeat)
   },
   beforeUnmount() {
-    // Se désabonner des événements SSE
-    console.log('📡 Modal: Unsubscribing from SSE events')
     sseService.off('progress', this.handleProgress)
     sseService.off('completed', this.handleCompleted)
     sseService.off('error', this.handleError)
     sseService.off('connected', this.handleConnected)
+    sseService.off('heartbeat', this.handleHeartbeat)
   },
   methods: {
     closeModal() {
@@ -115,15 +114,12 @@ export default {
     },
     
     handleConnected() {
-      console.log('📡 Modal: SSE connected')
     },
     
     handleProgress(data) {
-      console.log('📊 Modal: Progress received:', data)
       
-      // Vérifier que les données sont valides
       if (!data || !data.fileName) {
-        console.warn('⚠️ Modal: Invalid progress data received:', data)
+        console.warn('Modal: Invalid progress data received:', data)
         return
       }
       
@@ -151,7 +147,6 @@ export default {
     },
     
     handleCompleted(data) {
-      console.log('✅ Modal: Completion received:', data)
       
       // Mettre à jour la notification pour marquer comme complète
       const notification = this.notifications.find(n => n.fileName === data.fileName)
@@ -162,7 +157,6 @@ export default {
     },
     
     handleError(data) {
-      console.error('❌ Modal: Error received:', data)
       
       // Marquer la notification comme erreur
       const notification = this.notifications.find(n => n.fileName === data.fileName)
@@ -172,6 +166,9 @@ export default {
         notification.hasError = true
         notification.error = data.error
       }
+    },
+    
+    handleHeartbeat() {
     },
     
     updateEpochProgress(notificationId, currentEpoch, totalEpochs) {

@@ -70,7 +70,8 @@ class PythonExecutor {
         '--verbose', verbose.toString()
       ];
 
-      console.log('Exécution du script Python avec les paramètres:', {
+
+      console.log('Executing Python script with params', {
         script: this.scriptPath,
         args: args
       });
@@ -86,6 +87,7 @@ class PythonExecutor {
       pythonProcess.stdout.on('data', (data) => {
         const output = data.toString();
         stdout += output;
+
         console.log('Python stdout:', output.trim());
       });
 
@@ -100,11 +102,11 @@ class PythonExecutor {
           const currentEpoch = parseInt(progressMatch[2]);
           const totalEpochs = parseInt(progressMatch[3]);
           
-          console.log(`📊 Training Progress: ${progress}% (Epoch ${currentEpoch}/${totalEpochs})`);
+
           
           // Emit progress event via callback
           if (this.emitProgress) {
-            console.log('📡 Emitting progress via callback');
+
             this.emitProgress({
               progress,
               currentEpoch,
@@ -112,9 +114,10 @@ class PythonExecutor {
               fileName: csvFile
             });
           } else {
-            console.warn('⚠️ No progress callback set!');
+
           }
         } else {
+
           console.log('Python stderr:', error.trim());
         }
       });

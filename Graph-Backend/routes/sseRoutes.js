@@ -3,6 +3,11 @@ const sseService = require('../services/sseService');
 
 const router = express.Router();
 
+router.use((req, res, next) => {
+  req.headers['x-no-compression'] = 'true';
+  next();
+});
+
 /**
  * Route SSE pour recevoir les événements en temps réel
  * GET /api/sse?fileName=optional
@@ -10,10 +15,9 @@ const router = express.Router();
 router.get('/', (req, res) => {
   const fileName = req.query.fileName || null;
   
-  console.log(`📡 New SSE connection request for file: ${fileName || 'all'}`);
   
   // Ajouter le client SSE
-  const clientId = sseService.addClient(res, fileName);
+  const clientId = sseService.addClient(req, res, fileName);
   
   // Envoyer les statistiques initiales
   const stats = sseService.getStats();

@@ -39,7 +39,8 @@ class AIController {
 
       const csvFilePath = path.join(__dirname, '../uploads', csvFile);
 
-      console.log('🎯 Démarrage de la prédiction IA:', {
+
+      console.log('Starting AI prediction', {
         csvFile: csvFilePath,
         xColumn,
         yColumn,
@@ -51,7 +52,7 @@ class AIController {
 
       // Set up progress callback
       pythonExecutor.setProgressCallback((progressData) => {
-        console.log(`📊 Progress Update: ${progressData.progress}% (Epoch ${progressData.currentEpoch}/${progressData.totalEpochs}) for file: ${progressData.fileName}`);
+
         
         // Envoyer la progression via SSE
         sseService.sendProgress({
@@ -111,8 +112,20 @@ class AIController {
       });
 
     } catch (error) {
-      console.error('❌ Erreur lors de la prédiction IA:', error);
+      console.error('AI prediction error');
       
+      // Notify clients via SSE about the training error
+      try {
+        if (req.body && req.body.csvFile) {
+          sseService.sendError({
+            fileName: req.body.csvFile,
+            error: error.message || error.error || 'Unknown error'
+          });
+        }
+      } catch (e) {
+        console.error('Failed to emit SSE error:', e);
+      }
+
       res.status(500).json({
         success: false,
         error: 'Prediction failed',

@@ -7,6 +7,7 @@ class SSEService {
     this.reconnectDelay = 1000; // 1 seconde
     this.isConnected = false;
     this.connectionPromise = null;
+    this._heartbeatAttached = false;
   }
 
   /**
@@ -16,14 +17,14 @@ class SSEService {
    */
   parseEventData(data) {
     if (!data || data === 'undefined' || data.trim() === '') {
-      console.warn('⚠️ SSE: Empty or undefined data received');
+      console.warn('SSE: Empty or undefined data received');
       return null;
     }
 
     try {
       return JSON.parse(data);
     } catch (error) {
-      console.error('❌ SSE: Failed to parse event data:', data, error);
+      console.error('SSE: Failed to parse event data:', data, error);
       return {
         error: 'Invalid JSON data',
         rawData: data
@@ -38,7 +39,20 @@ class SSEService {
    */
   connect(fileName = null) {
     if (this.eventSource && this.eventSource.readyState !== EventSource.CLOSED) {
-      console.log('📡 SSE: Already connected');
+      // already connected
+      // Attach heartbeat listener if not yet attached
+      if (!this._heartbeatAttached) {
+        this.eventSource.addEventListener('heartbeat', (event) => {
+          try {
+            const data = this.parseEventData(event.data);
+            console.log('SSE: Heartbeat received:', data);
+            this.emit('heartbeat', data);
+          } catch (e) {
+            console.warn('SSE: Heartbeat parse error:', e);
+          }
+        });
+        this._heartbeatAttached = true;
+      }
       return Promise.resolve();
     }
 
@@ -49,9 +63,10 @@ class SSEService {
       ? `${baseUrl}/api/sse?fileName=${encodeURIComponent(fileName)}`
       : `${baseUrl}/api/sse`;
 
-    console.log(`📡 SSE: Connecting to ${url}`);
+    // connecting to SSE
     
-    this.eventSource = new EventSource(url);
+    // Utiliser withCredentials pour refléter Access-Control-Allow-Credentials côté serveur
+    this.eventSource = new EventSource(url, { withCredentials: true });
     this.isConnected = false;
     
     // Créer une promesse pour la connexion
@@ -62,7 +77,7 @@ class SSEService {
       // Auto-resolve after timeout if no connected event
       setTimeout(() => {
         if (this.connectionResolve) {
-          console.log('⚠️ SSE: Connection timeout, resolving anyway');
+          console.log('SSE: Connection timeout, resolving anyway');
           this.connectionResolve();
           this.connectionResolve = null;
         }
@@ -71,16 +86,15 @@ class SSEService {
 
     // Log de l'état de connexion
     this.eventSource.onopen = () => {
-      console.log('📡 SSE: EventSource connection opened, readyState:', this.eventSource.readyState);
-      console.log('📡 SSE: URL:', this.eventSource.url);
+      // connection opened
     };
 
     // Écouter les événements nommés spécifiques
     this.eventSource.addEventListener('connected', (event) => {
-      console.log('📡 SSE: Connected event received:', event.data);
+      // connected event received
       const data = this.parseEventData(event.data);
       if (data) {
-        console.log('📡 SSE: Connected successfully');
+        // connected successfully
         this.reconnectAttempts = 0;
         this.isConnected = true;
         this.emit('connected', data);
@@ -93,54 +107,54 @@ class SSEService {
     });
 
     this.eventSource.addEventListener('progress', (event) => {
-      console.log('📡 SSE: Progress event received:', event.data);
       const data = this.parseEventData(event.data);
       if (data) {
-        console.log('📊 SSE: Progress received:', data);
         this.emit('progress', data);
       }
     });
 
     this.eventSource.addEventListener('completed', (event) => {
-      console.log('📡 SSE: Completed event received:', event.data);
       const data = this.parseEventData(event.data);
       if (data) {
-        console.log('✅ SSE: Completion received:', data);
         this.emit('completed', data);
       }
     });
 
+    // Événement heartbeat de test (hello world toutes les 2s)
+    this.eventSource.addEventListener('heartbeat', (event) => {
+      try {
+        const data = this.parseEventData(event.data);
+        // heartbeat received
+        this.emit('heartbeat', data);
+      } catch (e) {
+        // heartbeat parse error
+      }
+    });
+    this._heartbeatAttached = true;
+
     this.eventSource.addEventListener('training_error', (event) => {
-      console.log('📡 SSE: Training error event received:', event.data);
       const data = this.parseEventData(event.data);
       if (data) {
-        console.error('❌ SSE: Training error received:', data);
         this.emit('error', data);
       }
     });
 
     this.eventSource.addEventListener('stats', (event) => {
-      console.log('📡 SSE: Stats event received:', event.data);
       const data = this.parseEventData(event.data);
       if (data) {
-        console.log('📊 SSE: Stats received:', data);
         this.emit('stats', data);
       }
     });
 
     // Listener général pour les événements sans nom
-    this.eventSource.onmessage = (event) => {
-      console.log('📡 SSE: Generic message received:', event.data);
+    this.eventSource.onmessage = () => {
     };
 
     // Gestion des erreurs de connexion
     this.eventSource.onerror = (error) => {
-      console.error('❌ SSE: Connection error:', error);
-      console.log('❌ SSE: EventSource readyState:', this.eventSource.readyState);
+      console.error('SSE: Connection error');
       
-      // Ne pas émettre d'erreur si c'est juste une déconnexion normale
       if (this.eventSource.readyState === EventSource.CLOSED) {
-        console.log('📡 SSE: Connection closed normally');
         return;
       }
       
@@ -149,7 +163,6 @@ class SSEService {
       // Tentative de reconnexion automatique
       if (this.reconnectAttempts < this.maxReconnectAttempts) {
         this.reconnectAttempts++;
-        console.log(`📡 SSE: Attempting to reconnect (${this.reconnectAttempts}/${this.maxReconnectAttempts}) in ${this.reconnectDelay}ms`);
         
         setTimeout(() => {
           this.disconnect();
@@ -169,7 +182,6 @@ class SSEService {
    */
   disconnect() {
     if (this.eventSource) {
-      console.log('📡 SSE: Disconnecting');
       this.eventSource.close();
       this.eventSource = null;
     }
