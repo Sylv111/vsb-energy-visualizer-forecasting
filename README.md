@@ -166,5 +166,6 @@ Or contact me
 ## VSB TUO
 
 This project was developed for VSB - Technical University of Ostrava.
+
 ![VSB - TUO](https://www.vsb.cz/713/.content/galerie-obrazku/vsb.png)
 ---
