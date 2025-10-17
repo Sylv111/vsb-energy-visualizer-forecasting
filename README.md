@@ -40,8 +40,7 @@ pip install matplotlib==3.7.2
 ### Step 1: Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd GraphTest
+git clone <https://github.com/Sylv111/vsb-energy-visualizer-forecasting.git>
 ```
 
 ### Step 2: Install Backend Dependencies
@@ -58,7 +57,18 @@ cd ../Graph-Frontend
 npm install
 ```
 
-### Step 4: Configure Python Path
+### Step 4: Launch
+
+Try launching the app:
+
+```bash
+# Development
+.\Start-Dashboard.bat
+```
+If you get an error related to Python, proceed to the next step.
+If everything works correctly, you have successfully installed the application.
+
+### Step 5: Configure Python Path
 
 **If Python is not found automatically**, edit the following file:
 
@@ -66,7 +76,7 @@ npm install
 **Line 6**: Change the Python path if needed:
 
 ```javascript
-// Default (try this first)
+// Default
 this.pythonPath = 'python';
 
 // If 'python' doesn't work, try:
@@ -85,10 +95,10 @@ Use the provided batch files:
 
 ```bash
 # Development
-Start-Dashboard.bat
+.\Start-Dashboard.bat
 
 # Production
-Start-Dashboard-Production.bat
+.\Start-Dashboard-Production.bat
 ```
 
 ### Development Mode
