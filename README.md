@@ -2,7 +2,7 @@
 
 A comprehensive web application for CSV data visualization and AI-powered predictions using ConvLSTM neural networks.
 
-## 🎯 Overview
+## Overview
 
 This application provides:
 - **CSV Data Import & Visualization**: Upload and visualize CSV files with interactive charts
@@ -10,7 +10,7 @@ This application provides:
 - **Real-time Progress**: Live updates during AI training via Server-Sent Events (SSE)
 - **Multi-chart Support**: Create and manage multiple charts simultaneously
 
-## 📋 Prerequisites
+## Prerequisites
 
 ### Required Software
 
@@ -35,7 +35,7 @@ pip install scikit-learn==1.3.0
 pip install matplotlib==3.7.2
 ```
 
-## 🚀 Installation Guide
+## Installation Guide
 
 ### Step 1: Clone the Repository
 
@@ -136,7 +136,7 @@ Use the provided batch files:
    ```
    Application will be available at: http://localhost:3000
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -163,8 +163,8 @@ Use the provided batch files:
 
 Or contact me
 
-## 🎓 VSB TUO
+## VSB TUO
 
 This project was developed for VSB - Technical University of Ostrava.
-
+![VSB - TUO](https://www.vsb.cz/713/.content/galerie-obrazku/vsb.png)
 ---
