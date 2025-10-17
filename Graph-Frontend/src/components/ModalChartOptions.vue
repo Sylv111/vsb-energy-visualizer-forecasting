@@ -2,7 +2,7 @@
   <div v-if="show" class="modal-overlay" @click="closeModal">
     <div class="modal-content" @click.stop>
       <div class="modal-header">
-        <h2>Chart Options</h2>
+        <h2>⚙️ Chart Options</h2>
         <button @click="closeModal" class="close-btn">&times;</button>
       </div>
       
@@ -209,12 +209,13 @@ export default {
   align-items: center;
   padding: 1.5rem;
   border-bottom: 1px solid #e9ecef;
+  background: #f8f9fa;
 }
 
 .modal-header h2 {
   margin: 0;
   color: #2c3e50;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .close-btn {
