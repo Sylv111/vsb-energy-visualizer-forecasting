@@ -9,23 +9,21 @@ router.use((req, res, next) => {
 });
 
 /**
- * Route SSE pour recevoir les événements en temps réel
+ * SSE route to receive real-time events
  * GET /api/sse?fileName=optional
  */
 router.get('/', (req, res) => {
   const fileName = req.query.fileName || null;
   
   
-  // Ajouter le client SSE
   const clientId = sseService.addClient(req, res, fileName);
   
-  // Envoyer les statistiques initiales
   const stats = sseService.getStats();
   sseService.sendToClient(clientId, 'stats', stats);
 });
 
 /**
- * Route pour obtenir les statistiques des connexions SSE
+ * Route to get SSE connection statistics
  * GET /api/sse/stats
  */
 router.get('/stats', (req, res) => {
@@ -36,25 +34,6 @@ router.get('/stats', (req, res) => {
   });
 });
 
-/**
- * Route pour tester l'envoi d'événements (développement)
- * POST /api/sse/test
- */
-router.post('/test', (req, res) => {
-  const { event, data, fileName } = req.body;
-  
-  if (event && data) {
-    sseService.broadcast(event, data, fileName);
-    res.json({
-      success: true,
-      message: `Event '${event}' broadcasted to ${sseService.getClientCount()} clients`
-    });
-  } else {
-    res.status(400).json({
-      success: false,
-      error: 'Missing event or data'
-    });
-  }
-});
+
 
 module.exports = router;

@@ -1,7 +1,7 @@
 <template>
   <div class="chart-container-main">
     <div class="chart-wrapper">
-      <!-- Boutons d'action -->
+      <!-- Action buttons -->
       <div class="action-buttons">
         <template v-if="chartOptions">
           <ButtonChartOptions @click="$emit('open-chart-options')" />
@@ -17,31 +17,14 @@
         <ButtonRemoveChart @click="$emit('remove-chart', chartIndex)" />
       </div>
 
-      <!-- Zone de graphique ou d'attente -->
+      <!-- Chart area -->
       <div class="chart-area">
-        <!-- État : Graphique chargé -->
+        <!-- State: Chart loaded -->
         <template v-if="chartOptions">
           <div class="chart-content">
 
-            <!-- Options du graphique -->
-            <div v-show="showChartOptions" class="chart-options-panel">
-              <div class="chart-options">
-                <label class="checkbox-label">
-                  <input type="checkbox" :checked="chartSettings.showMarkers" @change="updateChartSetting('showMarkers', $event.target.checked)" />
-                  Show Markers
-                </label>
-                <label class="checkbox-label">
-                  <input type="checkbox" :checked="chartSettings.smoothCurve" @change="updateChartSetting('smoothCurve', $event.target.checked)" />
-                  Smooth Curve
-                </label>
-                <label class="checkbox-label">
-                  <input type="checkbox" :checked="chartSettings.showGrid" @change="updateChartSetting('showGrid', $event.target.checked)" />
-                  Show Grid
-                </label>
-              </div>
-            </div>
 
-            <!-- Le graphique -->
+            <!-- ApexCharts Graph -->
             <apexchart
               :key="chartKey"
               :options="chartOptions"
@@ -52,7 +35,7 @@
           </div>
         </template>
 
-        <!-- État : En attente de sélection -->
+        <!-- State: Waiting for selection -->
         <div v-else class="chart-waiting">
           <div class="waiting-content">
             <svg class="waiting-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -139,7 +122,7 @@ export default {
     },
 
     availableColumns() {
-      // Les colonnes disponibles viennent du store (selectedFileData.headers)
+      // Available columns come from store (selectedFileData.headers)
       return this.$store.getters.selectedFileData?.headers || []
     },
 
@@ -148,7 +131,7 @@ export default {
         return { x: null, y: null }
       }
       
-      // Les colonnes sont stockées comme des index numériques, on doit les convertir en noms
+      // Columns are stored as numeric indexes, we need to convert them to names
       const headers = this.$store.getters.selectedFileData?.headers || []
       
       return {
@@ -162,10 +145,10 @@ export default {
         return null
       }
       
-      // Utiliser les données de la première série pour les axes
+      // Use first series data for axes
       const firstSerie = this.fileData.series[0]
       
-      // Extraire les valeurs X pour les catégories
+      // Extract X values for categories
       const xValues = firstSerie.data.map(point => point.x)
       
       return {
@@ -437,7 +420,7 @@ export default {
   100% { transform: scale(1); opacity: 1; }
 }
 
-/* Espacement de la légende */
+/* Legend spacing */
 :deep(.apexcharts-legend-series) {
   margin-right: 20px !important;
 }

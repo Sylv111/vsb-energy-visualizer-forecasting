@@ -25,7 +25,7 @@
                 </div>
               </div>
 
-              <!-- Colonnes du fichier -->
+              <!-- File columns -->
               <div v-if="expandedFile === file.name" class="file-columns">
                 <div v-if="loading" class="loading-indicator">
                   Loading file data...
@@ -161,11 +161,11 @@ export default {
     },
     selectFile(fileName) {
       if (this.expandedFile === fileName) {
-        // Si le fichier est déjà développé, on le ferme
+        // If file is already expanded, close it
         this.expandedFile = null
         this.fileData = null
       } else {
-        // Sinon on charge ses données
+        // Otherwise load its data
         this.loadFileData(fileName)
       }
     },

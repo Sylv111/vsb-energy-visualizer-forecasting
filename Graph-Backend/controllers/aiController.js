@@ -54,7 +54,7 @@ class AIController {
       pythonExecutor.setProgressCallback((progressData) => {
 
         
-        // Envoyer la progression via SSE
+        // Send progress via SSE
         sseService.sendProgress({
           fileName: csvFile,
           progress: progressData.progress,
@@ -80,7 +80,7 @@ class AIController {
         startIndex: parseInt(startIndex) || -1
       });
 
-      // Envoyer notification de completion via SSE
+      // Send completion notification via SSE
       sseService.sendCompleted({
         fileName: csvFile,
         message: 'AI prediction completed successfully'

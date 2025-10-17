@@ -91,7 +91,6 @@ export default {
     }
   },
   beforeUnmount() {
-    // Rétablir le scroll au cas où le composant est démonté pendant que la modale est ouverte
     document.body.style.overflow = ''
   },
   methods: {

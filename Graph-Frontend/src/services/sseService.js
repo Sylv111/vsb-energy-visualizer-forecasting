@@ -10,9 +10,9 @@ class SSEService {
   }
 
   /**
-   * Parser les données d'événement SSE de manière sécurisée
-   * @param {string} data - Données brutes de l'événement
-   * @returns {Object|null} - Données parsées ou null si erreur
+   * Parse SSE event data securely
+   * @param {string} data - Raw event data
+   * @returns {Object|null} - Parsed data or null if error
    */
   parseEventData(data) {
     if (!data || data === 'undefined' || data.trim() === '') {
@@ -32,9 +32,9 @@ class SSEService {
   }
 
   /**
-   * Se connecter au serveur SSE
-   * @param {string} fileName - Nom du fichier pour filtrer les événements (optionnel)
-   * @returns {Promise} - Promesse qui se résout quand la connexion est établie
+   * Connect to SSE server
+   * @param {string} fileName - File name to filter events (optional)
+   * @returns {Promise} - Promise that resolves when connection is established
    */
   connect(fileName = null) {
     if (this.eventSource && this.eventSource.readyState !== EventSource.CLOSED) {
@@ -42,8 +42,8 @@ class SSEService {
       return Promise.resolve();
     }
 
-    // Se connecter directement au backend sans passer par le proxy
-    // car le proxy webpack-dev-server ne gère pas bien SSE
+    // Connect directly to backend without going through proxy
+    // because webpack-dev-server proxy doesn't handle SSE well
     const baseUrl = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:3000';
     const url = fileName 
       ? `${baseUrl}/api/sse?fileName=${encodeURIComponent(fileName)}`
@@ -51,11 +51,11 @@ class SSEService {
 
     // connecting to SSE
     
-    // Utiliser withCredentials pour refléter Access-Control-Allow-Credentials côté serveur
+    // Use withCredentials to reflect Access-Control-Allow-Credentials on server side
     this.eventSource = new EventSource(url, { withCredentials: true });
     this.isConnected = false;
     
-    // Créer une promesse pour la connexion
+    // Create promise for connection
     this.connectionPromise = new Promise((resolve, reject) => {
       this.connectionResolve = resolve;
       this.connectionReject = reject;
@@ -70,12 +70,12 @@ class SSEService {
       }, 2000);
     });
 
-    // Log de l'état de connexion
+    // Log connection state
     this.eventSource.onopen = () => {
       // connection opened
     };
 
-    // Écouter les événements nommés spécifiques
+    // Listen for specific named events
     this.eventSource.addEventListener('connected', (event) => {
       // connected event received
       const data = this.parseEventData(event.data);
@@ -84,7 +84,7 @@ class SSEService {
         this.reconnectAttempts = 0;
         this.isConnected = true;
         this.emit('connected', data);
-        // Résoudre la promesse de connexion
+        // Resolve connection promise
         if (this.connectionResolve) {
           this.connectionResolve();
           this.connectionResolve = null;
@@ -121,11 +121,11 @@ class SSEService {
       }
     });
 
-    // Listener général pour les événements sans nom
+    // General listener for unnamed events
     this.eventSource.onmessage = () => {
     };
 
-    // Gestion des erreurs de connexion
+    // Connection error handling
     this.eventSource.onerror = (error) => {
       console.error('SSE: Connection error');
       
@@ -135,7 +135,7 @@ class SSEService {
       
       this.emit('connection_error', { type: 'connection', error });
       
-      // Tentative de reconnexion automatique
+      // Automatic reconnection attempt
       if (this.reconnectAttempts < this.maxReconnectAttempts) {
         this.reconnectAttempts++;
         
@@ -153,7 +153,7 @@ class SSEService {
   }
 
   /**
-   * Se déconnecter du serveur SSE
+   * Disconnect from SSE server
    */
   disconnect() {
     if (this.eventSource) {
@@ -163,9 +163,9 @@ class SSEService {
   }
 
   /**
-   * Ajouter un écouteur d'événement
-   * @param {string} event - Nom de l'événement
-   * @param {Function} callback - Fonction de callback
+   * Add event listener
+   * @param {string} event - Event name
+   * @param {Function} callback - Callback function
    */
   on(event, callback) {
     if (!this.listeners.has(event)) {
@@ -175,9 +175,9 @@ class SSEService {
   }
 
   /**
-   * Supprimer un écouteur d'événement
-   * @param {string} event - Nom de l'événement
-   * @param {Function} callback - Fonction de callback
+   * Remove event listener
+   * @param {string} event - Event name
+   * @param {Function} callback - Callback function
    */
   off(event, callback) {
     if (this.listeners.has(event)) {
@@ -190,9 +190,9 @@ class SSEService {
   }
 
   /**
-   * Émettre un événement
-   * @param {string} event - Nom de l'événement
-   * @param {*} data - Données à émettre
+   * Emit an event
+   * @param {string} event - Event name
+   * @param {*} data - Data to emit
    */
   emit(event, data) {
     if (this.listeners.has(event)) {
@@ -207,7 +207,7 @@ class SSEService {
   }
 
   /**
-   * Vérifier si la connexion est active
+   * Check if connection is active
    * @returns {boolean}
    */
   isConnected() {
@@ -215,7 +215,7 @@ class SSEService {
   }
 
   /**
-   * Obtenir l'état de la connexion
+   * Get connection state
    * @returns {string}
    */
   getConnectionState() {

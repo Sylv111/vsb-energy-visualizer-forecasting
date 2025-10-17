@@ -1,24 +1,24 @@
 import axios from 'axios'
 import { mainApi } from '@/config/api'
 
-// Service pour les prédictions IA
+// Service for AI predictions
 class AIPredictionService {
   constructor() {
     this.api = axios.create(mainApi)
   }
 
   /**
-   * Envoie une requête de prédiction IA
-   * @param {Object} predictionData - Données de prédiction
-   * @param {string} predictionData.csvFile - Nom du fichier CSV
-   * @param {string} predictionData.aiModel - Modèle IA (convlstm, etc.)
-   * @param {string} predictionData.xColumn - Colonne X (incrément/temps)
-   * @param {string} predictionData.yColumn - Colonne Y (valeur à prédire)
-   * @param {number} predictionData.nPredictions - Nombre de prédictions
-   * @param {number} predictionData.epochs - Nombre d'époques
-   * @param {number} predictionData.batchSize - Taille du batch
-   * @param {number} predictionData.learningRate - Taux d'apprentissage
-   * @returns {Promise} - Réponse de l'API
+   * Send an AI prediction request
+   * @param {Object} predictionData - Prediction data
+   * @param {string} predictionData.csvFile - CSV file name
+   * @param {string} predictionData.aiModel - AI model (convlstm, etc.)
+   * @param {string} predictionData.xColumn - X column (increment/time)
+   * @param {string} predictionData.yColumn - Y column (value to predict)
+   * @param {number} predictionData.nPredictions - Number of predictions
+   * @param {number} predictionData.epochs - Number of epochs
+   * @param {number} predictionData.batchSize - Batch size
+   * @param {number} predictionData.learningRate - Learning rate
+   * @returns {Promise} - API response
    */
   async runPrediction(predictionData) {
     try {
@@ -35,7 +35,7 @@ class AIPredictionService {
     } catch (error) {
       console.error('Erreur lors de la prédiction IA:', error)
       
-      // Si le backend n'est pas encore prêt, on simule une réponse
+      // If backend is not ready yet, simulate a response
       if (error.code === 'ECONNREFUSED' || error.response?.status === 404) {
         console.log('Backend IA non disponible, simulation de la réponse')
         return this.simulateFictiveResponse(predictionData)
@@ -46,8 +46,8 @@ class AIPredictionService {
   }
 
   /**
-   * @param {Object} predictionData - Données de prédiction
-   * @returns {Object} - Réponse fictive
+   * @param {Object} predictionData - Prediction data
+   * @returns {Object} - Fictive response
    */
   simulateFictiveResponse(predictionData) {
     return {

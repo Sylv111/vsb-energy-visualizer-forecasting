@@ -172,10 +172,10 @@ export default {
       this.$emit('file-upload', event)
     },
     updatePreview() {
-      // Ne rien faire, cette méthode est obsolète
+      // Do nothing, this method is obsolete
     },
     importData() {
-      // Émettre les colonnes sélectionnées avec l'événement import-data
+      // Emit selected columns with import-data event
       this.$emit('import-data', this.selectedColumns)
     },
     updateHasHeader(event) {

@@ -197,9 +197,9 @@ export default {
   background: white;
   border-radius: 12px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  max-width: 800px; /* Élargi de 600px à 800px */
-  width: 95%; /* Augmenté de 90% à 95% */
-  max-height: 85vh; /* Légèrement augmenté */
+  max-width: 800px; 
+  width: 95%;
+  max-height: 85vh;
   overflow-y: auto;
 }
 
@@ -371,7 +371,7 @@ export default {
 
 .settings-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Changé de 1fr à 1fr 1fr pour plus d'espace */
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
 
@@ -432,7 +432,7 @@ export default {
   
   
   .settings-grid {
-    grid-template-columns: 1fr; /* Retour à 1 colonne sur mobile */
+    grid-template-columns: 1fr; 
   }
   
   .series-item {

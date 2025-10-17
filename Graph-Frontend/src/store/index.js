@@ -11,7 +11,7 @@ export default createStore({
     availableFiles: [],
     selectedFile: null,
     selectedFileData: null,
-    chartSettings: {}  // Stockage des options par graphique
+    chartSettings: {}  // Storage of options per chart
   },
   
   mutations: {
@@ -58,7 +58,7 @@ export default createStore({
       const newSettings = { ...state.chartSettings }
       delete newSettings[chartIndex]
       
-      // Réindexer les paramètres des graphiques restants
+      // Reindex remaining chart parameters
       const finalSettings = {}
       Object.keys(newSettings)
         .filter(key => key > chartIndex)

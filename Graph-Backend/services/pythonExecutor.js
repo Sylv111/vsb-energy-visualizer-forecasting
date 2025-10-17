@@ -17,21 +17,21 @@ class PythonExecutor {
   }
 
   /**
-   * @param {Object} params - Paramètres de prédiction
-   * @param {string} params.csvFile - Chemin vers le fichier CSV
-   * @param {string} params.xColumn - Nom de la colonne X
-   * @param {string} params.yColumn - Nom de la colonne Y
-   * @param {number} params.nPredictions - Nombre de prédictions
-   * @param {number} params.epochs - Nombre d'époques (optionnel)
-   * @param {number} params.batchSize - Taille du batch (optionnel)
-   * @param {number} params.learningRate - Taux d'apprentissage (optionnel)
-   * @param {number} params.seqLength - Longueur de séquence (optionnel)
-   * @param {number} params.filters - Nombre de filtres (optionnel)
-   * @param {number} params.kernelSize - Taille du kernel (optionnel)
-   * @param {number} params.dropout - Taux de dropout (optionnel)
-   * @param {number} params.l2Reg - Régularisation L2 (optionnel)
-   * @param {number} params.verbose - Niveau de verbosité (optionnel)
-   * @returns {Promise<Object>} - Résultat de la prédiction
+   * @param {Object} params - Prediction parameters
+   * @param {string} params.csvFile - Path to CSV file
+   * @param {string} params.xColumn - X column name
+   * @param {string} params.yColumn - Y column name
+   * @param {number} params.nPredictions - Number of predictions
+   * @param {number} params.epochs - Number of epochs (optional)
+   * @param {number} params.batchSize - Batch size (optional)
+   * @param {number} params.learningRate - Learning rate (optional)
+   * @param {number} params.seqLength - Sequence length (optional)
+   * @param {number} params.filters - Number of filters (optional)
+   * @param {number} params.kernelSize - Kernel size (optional)
+   * @param {number} params.dropout - Dropout rate (optional)
+   * @param {number} params.l2Reg - L2 regularization (optional)
+   * @param {number} params.verbose - Verbosity level (optional)
+   * @returns {Promise<Object>} - Prediction result
    */
   async runConvLSTMPrediction(params) {
     return new Promise((resolve, reject) => {
@@ -124,7 +124,7 @@ class PythonExecutor {
 
       pythonProcess.on('close', (code) => {
         if (code === 0) {
-          // Succès
+          // Success
           const result = this.parsePythonOutput(stdout);
           resolve({
             success: true,

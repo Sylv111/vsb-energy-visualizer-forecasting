@@ -66,7 +66,7 @@ export default {
   computed: {
     processedNotifications() {
       return this.notifications.map(notification => {
-        // Calculer le pourcentage basé sur les epochs
+        // Calculate percentage based on epochs
         let progress = notification.progress
         if (notification.totalEpochs > 0) {
           progress = Math.round((notification.currentEpoch / notification.totalEpochs) * 100)
@@ -111,11 +111,11 @@ export default {
         return
       }
       
-      // Chercher une notification existante pour ce fichier
+      // Find existing notification for this file
       let notification = this.notifications.find(n => n.fileName === data.fileName)
       
       if (!notification) {
-        // Créer une nouvelle notification
+        // Create new notification
         notification = {
           id: this.notifications.length + 1,
           fileName: data.fileName,
@@ -124,9 +124,9 @@ export default {
           progress: data.progress || 0,
           isComplete: false
         }
-        this.notifications.unshift(notification) // Ajouter au début
+        this.notifications.unshift(notification) // Add to beginning
       } else {
-        // Mettre à jour la progression
+        // Update progress
         notification.currentEpoch = data.currentEpoch || notification.currentEpoch
         notification.totalEpochs = data.totalEpochs || notification.totalEpochs
         notification.progress = data.progress || notification.progress
@@ -135,7 +135,7 @@ export default {
     },
     
     handleCompleted(data) {
-      // Mettre à jour la notification pour marquer comme complète
+      // Update notification to mark as complete
       const notification = this.notifications.find(n => n.fileName === data.fileName)
       if (notification) {
         notification.progress = 100
@@ -145,10 +145,10 @@ export default {
     
     handleError(data) {
       
-      // Marquer la notification comme erreur
+      // Mark notification as error
       const notification = this.notifications.find(n => n.fileName === data.fileName)
       if (notification) {
-        notification.progress = -1 // -1 pour indiquer une erreur
+        notification.progress = -1 // -1 to indicate error
         notification.isComplete = false
         notification.hasError = true
         notification.error = data.error
@@ -161,16 +161,16 @@ export default {
       if (notification) {
         notification.currentEpoch = currentEpoch
         notification.totalEpochs = totalEpochs
-        // Le pourcentage sera automatiquement recalculé par la computed property
+        // Percentage will be automatically recalculated by the computed property
       }
     },
     
-    // Méthode pour simuler la progression (à supprimer en production)
+    // Method to simulate progress (to be removed in production)
     simulateTraining() {
       const notification = this.notifications[0]
       if (notification.totalEpochs > 0 && notification.currentEpoch < notification.totalEpochs) {
         notification.currentEpoch++
-        // Simuler la progression toutes les 2 secondes
+        // Simulate progress every 2 seconds
         setTimeout(() => {
           this.simulateTraining()
         }, 2000)

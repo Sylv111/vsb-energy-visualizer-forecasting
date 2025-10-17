@@ -1,19 +1,19 @@
-// Configuration de l'API
+// API configuration
 const API_CONFIG = {
-  // URL du service
+  // Service URL
   MAIN_API: process.env.VUE_APP_MAIN_API || 'http://localhost:3000',
   
   // Timeout
   REQUEST_TIMEOUT: 30000,
   
-  // Headers par défaut
+  // Default headers
   DEFAULT_HEADERS: {
     'Content-Type': 'application/json',
     'Accept': 'application/json'
   }
 };
 
-// Configuration axios pour l'API principale
+// Axios configuration for main API
 export const mainApi = {
   baseURL: API_CONFIG.MAIN_API,
   timeout: API_CONFIG.REQUEST_TIMEOUT,

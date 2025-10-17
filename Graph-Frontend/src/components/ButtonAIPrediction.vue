@@ -73,7 +73,7 @@ export default {
       }
       console.log('Graph info:', chartInfo)
       
-      // Console.log de tous les graphiques
+      // Console.log of all charts
       // console.log('All graphs:', this.allCharts.map((chart, index) => ({
       //   chartIndex: index,
       //   selectedFiles: chart.selectedFiles || [],

@@ -3,20 +3,20 @@ const EventEmitter = require('events');
 class SSEService extends EventEmitter {
   constructor() {
     super();
-    this.clients = new Map(); // Map pour stocker les connexions SSE
+    this.clients = new Map(); // Map to store SSE connections
     this.nextClientId = 1;
   }
 
   /**
-   * Ajouter un nouveau client SSE
+   * Add a new SSE client
    * @param {Object} res - Response object Express
-   * @param {string} fileName - Nom du fichier pour filtrer les événements
-   * @returns {number} - ID du client
+   * @param {string} fileName - File name to filter events
+   * @returns {number} - Client ID
    */
   addClient(req, res, fileName = null) {
     const clientId = this.nextClientId++;
     
-    // Configuration des headers SSE
+    // SSE headers configuration
     const origin = req.headers.origin || '*';
     res.writeHead(200, {
       'Content-Type': 'text/event-stream',
@@ -39,7 +39,7 @@ class SSEService extends EventEmitter {
       console.error('SSE: Failed to write initial keep-alive comment:', e);
     }
 
-    // Stocker la connexion d'abord
+    // Store the connection first
     this.clients.set(clientId, {
       response: res,
       fileName: fileName,
@@ -47,7 +47,7 @@ class SSEService extends EventEmitter {
     });
 
 
-    // Envoyer un message de connexion après un petit délai pour s'assurer que la connexion est établie
+    // Send a connection message after a small delay to ensure the connection is established
     setTimeout(() => {
       this.sendToClient(clientId, 'connected', { 
         message: 'SSE connection established',
@@ -56,7 +56,7 @@ class SSEService extends EventEmitter {
       });
     }, 100);
 
-    // Gérer la déconnexion
+    // Handle disconnection
     res.on('close', () => {
       this.removeClient(clientId);
     });
@@ -65,8 +65,8 @@ class SSEService extends EventEmitter {
   }
 
   /**
-   * Supprimer un client
-   * @param {number} clientId - ID du client
+   * Remove a client
+   * @param {number} clientId - Client ID
    */
   removeClient(clientId) {
     const client = this.clients.get(clientId);
@@ -77,16 +77,16 @@ class SSEService extends EventEmitter {
   }
 
   /**
-   * Envoyer un message à un client spécifique
-   * @param {number} clientId - ID du client
-   * @param {string} event - Type d'événement
-   * @param {Object} data - Données à envoyer
+   * Send a message to a specific client
+   * @param {number} clientId - Client ID
+   * @param {string} event - Event type
+   * @param {Object} data - Data to send
    */
   sendToClient(clientId, event, data) {
     const client = this.clients.get(clientId);
     if (client && client.connected) {
       try {
-        // S'assurer que data n'est pas undefined
+        // Ensure data is not undefined
     const safeData = data || {};
     const message = `event: ${event}\ndata: ${JSON.stringify(safeData)}\n\n`;
         client.response.write(message);
@@ -98,20 +98,19 @@ class SSEService extends EventEmitter {
   }
 
   /**
-   * Envoyer un message à tous les clients
-   * @param {string} event - Type d'événement
-   * @param {Object} data - Données à envoyer
-   * @param {string} fileName - Filtrer par nom de fichier (optionnel)
+   * Send a message to all clients
+   * @param {string} event - Event type
+   * @param {Object} data - Data to send
+   * @param {string} fileName - Filter by file name (optional)
    */
   broadcast(event, data, fileName = null) {
     
-    // S'assurer que data n'est pas undefined
     const safeData = data || {};
     
     this.clients.forEach((client, clientId) => {
-      // Si un fileName est spécifié pour l'événement, filtrer:
-      // - Envoyer aux clients qui ont le même fileName
-      // - Envoyer aux clients qui n'ont pas de fileName (ils reçoivent tout)
+      // If a fileName is specified for the event, filter:
+      // - Send to clients that have the same fileName
+      // - Send to clients that don't have a fileName (they receive everything)
       if (fileName && client.fileName && client.fileName !== fileName && client.fileName !== 'all') {
         return;
       }
@@ -121,8 +120,8 @@ class SSEService extends EventEmitter {
   }
 
   /**
-   * Envoyer une progression de training
-   * @param {Object} progressData - Données de progression
+   * Send training progress
+   * @param {Object} progressData - Progress data
    */
   sendProgress(progressData) {
     this.broadcast('progress', {
@@ -135,8 +134,8 @@ class SSEService extends EventEmitter {
   }
 
   /**
-   * Envoyer une notification de completion
-   * @param {Object} completionData - Données de completion
+   * Send completion notification
+   * @param {Object} completionData - Completion data
    */
   sendCompleted(completionData) {
     this.broadcast('completed', {
@@ -147,8 +146,8 @@ class SSEService extends EventEmitter {
   }
 
   /**
-   * Envoyer une notification d'erreur
-   * @param {Object} errorData - Données d'erreur
+   * Send error notification
+   * @param {Object} errorData - Error data
    */
   sendError(errorData) {
     this.broadcast('error', {
@@ -159,7 +158,7 @@ class SSEService extends EventEmitter {
   }
 
   /**
-   * Obtenir le nombre de clients connectés
+   * Get number of connected clients
    * @returns {number}
    */
   getClientCount() {
@@ -167,7 +166,7 @@ class SSEService extends EventEmitter {
   }
 
   /**
-   * Obtenir les statistiques des connexions
+   * Get connection statistics
    * @returns {Object}
    */
   getStats() {

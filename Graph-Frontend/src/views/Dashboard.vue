@@ -143,11 +143,11 @@ export default {
     return {
       showImportModal: false,
       importFile: null,
-      rawCsvContent: null,  // Stockage du contenu brut du CSV
+      rawCsvContent: null,  // Raw CSV content storage
       csvData: [],
       hasHeader: true,
       delimiter: ',',
-      selectedColumns: [],  // Nouvelle propriété pour stocker les colonnes sélectionnées
+      selectedColumns: [],  // New property to store selected columns
       showDataPreview: false,
       displayedDataCount: 100,
       isLoadingMore: false,
@@ -216,7 +216,7 @@ export default {
   async mounted() {
     await this.refreshFileList()
     
-    // Connecter SSE au démarrage pour recevoir les notifications en temps réel
+    // Connect SSE at startup to receive real-time notifications
     try {
       await sseService.connect()
       // Listen for progress updates to sync with local notifications
@@ -229,7 +229,7 @@ export default {
   },
   
   beforeUnmount() {
-    // Déconnecter SSE lors de la destruction du composant
+    // Disconnect SSE when component is destroyed
     sseService.off('progress', this.handleSSEProgress)
     sseService.off('completed', this.handleSSECompleted)
     sseService.off('error', this.handleSSEError)
@@ -244,7 +244,7 @@ export default {
     },
     showFileSelector(newVal) {
       if (newVal) {
-        // Recharger la liste des fichiers disponibles quand le modal s'ouvre
+        // Reload available files list when modal opens
         this.refreshFileList()
       }
     }
@@ -281,14 +281,14 @@ export default {
 
     async parseCSV(file) {
       try {
-        // Lire et stocker le contenu brut du fichier
+        // Read and store raw file content
         const text = await file.text()
         this.rawCsvContent = text
         
-        // Découper en lignes
+        // Split into lines
         const lines = text.split('\n').filter(line => line.trim())
         
-        // Détecter automatiquement le délimiteur
+        // Automatically detect delimiter
         const delimiters = [',', ';', '\t', '|']
         let bestDelimiter = ','
         let maxColumns = 0
@@ -303,7 +303,7 @@ export default {
 
         this.delimiter = bestDelimiter
         
-        // Parser avec le délimiteur détecté
+        // Parse with detected delimiter
         this.updateCsvData(lines)
       } catch (error) {
         console.error('Error parsing CSV:', error)
@@ -311,13 +311,13 @@ export default {
     },
 
     updateCsvData(lines = null) {
-      // Si pas de lignes fournies, utiliser le contenu brut stocké
+      // If no lines provided, use stored raw content
       if (!lines) {
         if (!this.rawCsvContent) return
         lines = this.rawCsvContent.split('\n').filter(line => line.trim())
       }
       
-      // Mettre à jour les données avec le délimiteur actuel
+      // Update data with current delimiter
       this.csvData = lines.map(line => line.split(this.delimiter))
     },
 
@@ -477,7 +477,7 @@ export default {
         })
 
 
-        // Mettre à jour le graphique en une seule fois
+        // Update chart in one go
         this.charts[this.activeChartIndex] = {
           series: newSeries,
           selectedFiles: [fileName],
@@ -491,15 +491,15 @@ export default {
     },
 
     getSeriesColor(index) {
-      // Palette de couleurs pour les séries
+      // Color palette for series
       const colors = [
-        '#667eea', // Bleu
+        '#667eea', // Blue
         '#f6ad55', // Orange
-        '#48bb78', // Vert
-        '#ed64a6', // Rose
-        '#9f7aea', // Violet
-        '#4299e1', // Bleu clair
-        '#ed8936', // Orange foncé
+        '#48bb78', // Green
+        '#ed64a6', // Pink
+        '#9f7aea', // Purple
+        '#4299e1', // Light blue
+        '#ed8936', // Dark orange
         '#38b2ac', // Turquoise
       ]
       return colors[index % colors.length]
@@ -573,7 +573,7 @@ export default {
         this.charts.splice(index, 1)
         this.$store.commit('REMOVE_CHART_SETTINGS', index)
       } else {
-        // Si c'est le dernier graphique, on le réinitialise
+        // If it's the last chart, reset it
         this.charts[index] = {
           series: [],
           selectedFiles: [],

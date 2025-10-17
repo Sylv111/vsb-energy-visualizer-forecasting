@@ -32,7 +32,6 @@ app.use(express.static(frontendBuildPath));
 
 // SPA fallback route - serve Vue.js app for all non-API routes
 app.get('*', (req, res) => {
-  // Exclure les routes API du fallback SPA
   if (req.path.startsWith('/api/')) {
     return res.status(404).json({ error: 'API endpoint not found' });
   }
